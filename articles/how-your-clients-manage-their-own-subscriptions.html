@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Your Clients Manage Their Own Subscriptions — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=courses-funnels">Courses & Funnels</a>
+        <span>›</span>
+        <span>How Your Clients Manage Their Own Subscriptions</span>
+      </nav>
+      <h1 class="article-title">How Your Clients Manage Their Own Subscriptions</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=courses-funnels" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Courses & Funnels
+    </a>
+
+    <div class="article-content">
+      <p><i>A walkthrough of everything your clients can see and do inside the Alvéya client portal — from viewing subscriptions and invoices to cancelling, updating payment details, and managing their profile.</i></p><p><b>Before you start:  </b>This guide is written from your client's perspective. For this feature to be available, you must have the client portal set up and subscription management enabled in your App Permissions. See the admin setup note at the end of this guide if you haven't done this yet.</p><table><thead><tr><th><p><b>Section</b></p></th><th><p><b>What your client can do</b></p></th></tr></thead><tbody><tr><td><p><b>Log in</b></p></td><td><p>How clients access the portal and get through the billing verification step</p></td></tr><tr><td><p><b>Subscriptions</b></p></td><td><p>How to view, filter, and manage active and past subscriptions</p></td></tr><tr><td><p><b>Invoices</b></p></td><td><p>How to find, view, and download invoices</p></td></tr><tr><td><p><b>Transactions</b></p></td><td><p>How to review individual payment transactions</p></td></tr><tr><td><p><b>Profile picture</b></p></td><td><p>How to upload and crop a profile image</p></td></tr><tr><td><p><b>Admin: permissions</b></p></td><td><p>How you (as the account owner) can turn this feature on or off</p></td></tr></tbody></table>		
+						<h3>Logging In and Accessing Billing</h3><p>When your clients log into their Alvéya portal, they land on their course library by default. From there, they can navigate to their billing and subscription details — here&#8217;s how.</p><p><b>Step 1 — Log into the portal</b></p><ul><li aria-level="1">Your client opens the portal URL you have shared with them and clicks Login.</li></ul><ul><li aria-level="1">They will land on their Courses Library — this is the default home screen once logged in.</li></ul><p><b>Step 2 — Navigate to Billing &amp; Subscriptions</b></p><ul><li aria-level="1">In the top right corner of the portal, they click on Account.</li></ul><ul><li aria-level="1">A new page opens. On the left-hand menu, they click Billing &amp; Subscriptions.</li></ul><ul><li aria-level="1">A confirmation code will be sent to their email address. They need to retrieve that code, enter it into the field provided, and confirm.</li></ul><ul><li aria-level="1">Once verified, they will see the full Billing &amp; Subscriptions area with three tabs across the top: Subscriptions, Invoices, and Transactions.</li></ul><p><i>💡  The email verification step is a security measure to make sure only the account holder can access billing information. If your client says they did not receive the code, ask them to check their spam folder or request a new code.</i></p><p><br /><br /></p>
+						<h3>Managing Subscriptions</h3><p>The Subscriptions tab gives clients a clear view of everything they are currently enrolled in or have previously subscribed to. They can filter by date, view details, update payment methods, and cancel — all from this one screen.</p><p><b>Searching and filtering subscriptions</b></p><ul><li aria-level="1">On the Subscriptions tab, clients can use the date search field to narrow results by a specific date range. They select a start date and end date, then click Confirm.</li></ul><ul><li aria-level="1">They can also click the Filter button to filter by status or by source.</li></ul><p>Available status filters:</p><table><tbody><tr><td><p><b>Active</b></p></td><td><p><b>Trial</b></p></td><td><p><b>Expired</b></p></td><td><p><b>Past due</b></p></td></tr><tr><td><p><b>Unpaid</b></p></td><td><p><b>Failed</b></p></td><td><p><b>Cancelled</b></p></td><td><p><b>Incomplete</b></p></td></tr></tbody></table><p>Available source filters:</p><ul><li style="font-weight: 400;" aria-level="1">Membership subscriptions</li><li style="font-weight: 400;" aria-level="1">Community subscriptions</li></ul><p><i>💡  If a client can&#8217;t find a subscription they expect to see, ask them to widen their date range or clear any active filters. Subscriptions only appear within the date window selected.</i></p><p><b>Viewing subscription details</b></p><p>Each subscription in the list shows the subscription name, source (e.g. payment link or membership), start date, and the subscription amount. To view full details:</p><ul><li aria-level="1">Click the three-dot menu on the right side of the subscription row.</li></ul><ul><li aria-level="1">Select View.</li></ul><ul><li aria-level="1">A detail panel opens showing:</li></ul><ul><li style="font-weight: 400;" aria-level="1">Trial information (if applicable) and when it ends</li><li style="font-weight: 400;" aria-level="1">The date the next invoice is due</li><li style="font-weight: 400;" aria-level="1">The subscription ID and internal order ID</li><li style="font-weight: 400;" aria-level="1">The subscription type</li></ul><p><b>Updating a payment method</b></p><ul><li aria-level="1">Click the three-dot menu on the subscription.</li></ul><ul><li aria-level="1">Select Update Payment Method (or Share Update Payment Link, depending on your setup).</li></ul><ul><li aria-level="1">A link is generated. The client can open this in a new tab and enter their updated card details directly.</li></ul><p><i>💡  This is the safest way for clients to update their payment details — no card information passes through you or your team.</i></p><p><b>Cancelling a subscription</b></p><ul><li aria-level="1">Click the three-dot menu on the subscription the client wants to cancel.</li></ul><ul><li aria-level="1">Select Cancel.</li></ul><ul><li aria-level="1">A confirmation prompt appears asking the client to confirm the cancellation.</li></ul><ul><li aria-level="1">If they want to proceed, they click Cancel Subscription. If they change their mind, they close the prompt.</li></ul><p><i>⚠️  As soon as a subscription is cancelled, access to any linked courses and memberships is automatically revoked. Your client will no longer be able to view course content. This action cannot be undone from the portal — if they wish to regain access, they will need to re-enrol.</i></p><p><br /><br /></p>
+						<h3>Viewing and Downloading Invoices</h3><p>The Invoices tab shows all invoices attached to the client&#8217;s account. Clients can search by date, filter by payment status, view invoice details, and download a PDF copy.</p><p><b>Finding an invoice</b></p><ul><li aria-level="1">Click the Invoices tab at the top of the Billing &amp; Subscriptions area.</li></ul><ul><li aria-level="1">Use the date search field to narrow by date range, or use the Filter button to filter by invoice status.</li></ul><p>Available invoice status filters:</p><ul><li style="font-weight: 400;" aria-level="1">Paid</li><li style="font-weight: 400;" aria-level="1">Draft</li><li style="font-weight: 400;" aria-level="1">Sent</li><li style="font-weight: 400;" aria-level="1">Processing</li><li style="font-weight: 400;" aria-level="1">Partially paid</li><li style="font-weight: 400;" aria-level="1">Overdue</li></ul><p><b>Viewing and downloading an invoice</b></p><ul><li aria-level="1">Click the three-dot menu on any invoice in the list.</li></ul><ul><li aria-level="1">Select View — this opens the full invoice in a new tab, where all invoice details are shown.</li></ul><ul><li aria-level="1">From the invoice view, clients can click Download PDF at the bottom right to save a copy.</li></ul><ul><li aria-level="1">Alternatively, from the invoice list, they can click the three-dot menu and select Download to download the PDF directly without opening the invoice first.</li></ul><p><i>💡  Clients often ask for invoices for tax or reimbursement purposes. Let them know they can download these themselves at any time — no need to contact you.</i></p><p><br /><br /></p>
+						<h3>Reviewing Transactions</h3><p>The Transactions tab shows a record of all individual payments processed against the client&#8217;s account. This is useful for checking the status of a specific payment or understanding the payment history behind a subscription.</p><p><b>Reading a transaction</b></p><p>Each transaction shows the amount, date, status (e.g. Succeeded, Failed), and what it is connected to (e.g. a subscription or a one-off payment). A status of Succeeded with a $0 amount typically means the client is in a trial period — their card details have been captured but they have not been charged yet.</p><p><b>Viewing transaction details</b></p><ul><li aria-level="1">Click the three-dot menu on any transaction.</li></ul><ul><li aria-level="1">Select View.</li></ul><ul><li aria-level="1">A detail panel opens showing the transaction date, transaction ID, internal order ID, and any other relevant payment information.</li></ul><p><b>Filtering and pagination</b></p><ul><li aria-level="1">Use the date filter and status/source filters (same options as in the Subscriptions tab) to narrow the transaction list.</li></ul><ul><li aria-level="1">At the bottom of the list, clients can choose to display 10, 20, or 50 records per page.</li></ul><p><i>💡  If a client believes they have been charged incorrectly, the Transactions tab is the first place to look — it will confirm exactly what was processed and when.</i></p>
+						<h3>Updating a Profile Picture</h3><p>Clients can personalise their portal account by uploading a profile photo. This appears on their account within the portal.</p><p><br /><b></b></p><ul><li aria-level="1">In the top right corner of the portal, click on the profile icon or account name.</li></ul><ul><li aria-level="1">Click Edit Profile.</li></ul><ul><li aria-level="1">Click the pencil icon on the profile image area.</li></ul><ul><li aria-level="1">Upload an image from their device.</li></ul><ul><li aria-level="1">Use the crop tool to zoom in or out and position the image until it looks right.</li></ul><ul><li aria-level="1">Click Save to apply the new profile picture.</li></ul><p><i>💡  Profile images are cropped to a circle. Square photos with the subject centred tend to look best after cropping.</i></p>
+						<h3>For You: Turning This Feature On or Off</h3><p>If you decide you do not want your clients to be able to manage their own subscriptions — for example, if you prefer to handle all changes manually — you can disable this feature from your Alvéya admin settings.</p><p><br /><b></b></p><ul><li aria-level="1">From the Alvéya main menu, go to Settings.</li></ul><ul><li aria-level="1">Navigate to App Permissions (or Client Portal Permissions, depending on your version).</li></ul><ul><li aria-level="1">Find the option for Subscription Management or Billing Access.</li></ul><ul><li aria-level="1">Toggle this off to prevent clients from seeing or interacting with their billing details inside the portal.</li></ul><ul><li aria-level="1">Save your changes.</li></ul><p><i>⚠️  If you turn this feature off, clients will no longer be able to cancel their own subscription or update their payment method from the portal. Any requests will need to come through you directly.</i></p><p><i>💡  Most practitioners benefit from leaving this on — it reduces the number of admin requests you receive and gives clients a sense of autonomy over their account.</i></p>								
+									<p><b>Your clients now have a clear, self-serve way to manage their billing — freeing you up to focus on what you do best.</b></p><p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+		<p>When your clients log into their Alvéya portal, they land on their course library by default. From there, they can navigate to their billing and subscription details — here's how.</p><p><b>Step 1 — Log into the portal</b></p><ul><li aria-level="1">Your client opens the portal URL you have shared with them and clicks Login.</li></ul><ul><li aria-level="1">They will land on their Courses Library — this is the default home screen once logged in.</li></ul><p><b>Step 2 — Navigate to Billing &amp; Subscriptions</b></p><ul><li aria-level="1">In the top right corner of the portal, they click on Account.</li></ul><ul><li aria-level="1">A new page opens. On the left-hand menu, they click Billing &amp; Subscriptions.</li></ul><ul><li aria-level="1">A confirmation code will be sent to their email address. They need to retrieve that code, enter it into the field provided, and confirm.</li></ul><ul><li aria-level="1">Once verified, they will see the full Billing &amp; Subscriptions area with three tabs across the top: Subscriptions, Invoices, and Transactions.</li></ul><p><i>💡  The email verification step is a security measure to make sure only the account holder can access billing information. If your client says they did not receive the code, ask them to check their spam folder or request a new code.</i></p><p><br /><br /></p><p>The Subscriptions tab gives clients a clear view of everything they are currently enrolled in or have previously subscribed to. They can filter by date, view details, update payment methods, and cancel — all from this one screen.</p><p><b>Searching and filtering subscriptions</b></p><ul><li aria-level="1">On the Subscriptions tab, clients can use the date search field to narrow results by a specific date range. They select a start date and end date, then click Confirm.</li></ul><ul><li aria-level="1">They can also click the Filter button to filter by status or by source.</li></ul><p>Available status filters:</p><table><tbody><tr><td><p><b>Active</b></p></td><td><p><b>Trial</b></p></td><td><p><b>Expired</b></p></td><td><p><b>Past due</b></p></td></tr><tr><td><p><b>Unpaid</b></p></td><td><p><b>Failed</b></p></td><td><p><b>Cancelled</b></p></td><td><p><b>Incomplete</b></p></td></tr></tbody></table><p>Available source filters:</p><ul><li style="font-weight: 400;" aria-level="1">Membership subscriptions</li><li style="font-weight: 400;" aria-level="1">Community subscriptions</li></ul><p><i>💡  If a client can't find a subscription they expect to see, ask them to widen their date range or clear any active filters. Subscriptions only appear within the date window selected.</i></p><p><b>Viewing subscription details</b></p><p>Each subscription in the list shows the subscription name, source (e.g. payment link or membership), start date, and the subscription amount. To view full details:</p><ul><li aria-level="1">Click the three-dot menu on the right side of the subscription row.</li></ul><ul><li aria-level="1">Select View.</li></ul><ul><li aria-level="1">A detail panel opens showing:</li></ul><ul><li style="font-weight: 400;" aria-level="1">Trial information (if applicable) and when it ends</li><li style="font-weight: 400;" aria-level="1">The date the next invoice is due</li><li style="font-weight: 400;" aria-level="1">The subscription ID and internal order ID</li><li style="font-weight: 400;" aria-level="1">The subscription type</li></ul><p><b>Updating a payment method</b></p><ul><li aria-level="1">Click the three-dot menu on the subscription.</li></ul><ul><li aria-level="1">Select Update Payment Method (or Share Update Payment Link, depending on your setup).</li></ul><ul><li aria-level="1">A link is generated. The client can open this in a new tab and enter their updated card details directly.</li></ul><p><i>💡  This is the safest way for clients to update their payment details — no card information passes through you or your team.</i></p><p><b>Cancelling a subscription</b></p><ul><li aria-level="1">Click the three-dot menu on the subscription the client wants to cancel.</li></ul><ul><li aria-level="1">Select Cancel.</li></ul><ul><li aria-level="1">A confirmation prompt appears asking the client to confirm the cancellation.</li></ul><ul><li aria-level="1">If they want to proceed, they click Cancel Subscription. If they change their mind, they close the prompt.</li></ul><p><i>⚠️  As soon as a subscription is cancelled, access to any linked courses and memberships is automatically revoked. Your client will no longer be able to view course content. This action cannot be undone from the portal — if they wish to regain access, they will need to re-enrol.</i></p><p><br /><br /></p><p>The Invoices tab shows all invoices attached to the client's account. Clients can search by date, filter by payment status, view invoice details, and download a PDF copy.</p><p><b>Finding an invoice</b></p><ul><li aria-level="1">Click the Invoices tab at the top of the Billing &amp; Subscriptions area.</li></ul><ul><li aria-level="1">Use the date search field to narrow by date range, or use the Filter button to filter by invoice status.</li></ul><p>Available invoice status filters:</p><ul><li style="font-weight: 400;" aria-level="1">Paid</li><li style="font-weight: 400;" aria-level="1">Draft</li><li style="font-weight: 400;" aria-level="1">Sent</li><li style="font-weight: 400;" aria-level="1">Processing</li><li style="font-weight: 400;" aria-level="1">Partially paid</li><li style="font-weight: 400;" aria-level="1">Overdue</li></ul><p><b>Viewing and downloading an invoice</b></p><ul><li aria-level="1">Click the three-dot menu on any invoice in the list.</li></ul><ul><li aria-level="1">Select View — this opens the full invoice in a new tab, where all invoice details are shown.</li></ul><ul><li aria-level="1">From the invoice view, clients can click Download PDF at the bottom right to save a copy.</li></ul><ul><li aria-level="1">Alternatively, from the invoice list, they can click the three-dot menu and select Download to download the PDF directly without opening the invoice first.</li></ul><p><i>💡  Clients often ask for invoices for tax or reimbursement purposes. Let them know they can download these themselves at any time — no need to contact you.</i></p><p><br /><br /></p><p>The Transactions tab shows a record of all individual payments processed against the client's account. This is useful for checking the status of a specific payment or understanding the payment history behind a subscription.</p><p><b>Reading a transaction</b></p><p>Each transaction shows the amount, date, status (e.g. Succeeded, Failed), and what it is connected to (e.g. a subscription or a one-off payment). A status of Succeeded with a $0 amount typically means the client is in a trial period — their card details have been captured but they have not been charged yet.</p><p><b>Viewing transaction details</b></p><ul><li aria-level="1">Click the three-dot menu on any transaction.</li></ul><ul><li aria-level="1">Select View.</li></ul><ul><li aria-level="1">A detail panel opens showing the transaction date, transaction ID, internal order ID, and any other relevant payment information.</li></ul><p><b>Filtering and pagination</b></p><ul><li aria-level="1">Use the date filter and status/source filters (same options as in the Subscriptions tab) to narrow the transaction list.</li></ul><ul><li aria-level="1">At the bottom of the list, clients can choose to display 10, 20, or 50 records per page.</li></ul><p><i>💡  If a client believes they have been charged incorrectly, the Transactions tab is the first place to look — it will confirm exactly what was processed and when.</i></p><p>Clients can personalise their portal account by uploading a profile photo. This appears on their account within the portal.</p><p><br /><b></b></p><ul><li aria-level="1">In the top right corner of the portal, click on the profile icon or account name.</li></ul><ul><li aria-level="1">Click Edit Profile.</li></ul><ul><li aria-level="1">Click the pencil icon on the profile image area.</li></ul><ul><li aria-level="1">Upload an image from their device.</li></ul><ul><li aria-level="1">Use the crop tool to zoom in or out and position the image until it looks right.</li></ul><ul><li aria-level="1">Click Save to apply the new profile picture.</li></ul><p><i>💡  Profile images are cropped to a circle. Square photos with the subject centred tend to look best after cropping.</i></p><p>If you decide you do not want your clients to be able to manage their own subscriptions — for example, if you prefer to handle all changes manually — you can disable this feature from your Alvéya admin settings.</p><p><br /><b></b></p><ul><li aria-level="1">From the Alvéya main menu, go to Settings.</li></ul><ul><li aria-level="1">Navigate to App Permissions (or Client Portal Permissions, depending on your version).</li></ul><ul><li aria-level="1">Find the option for Subscription Management or Billing Access.</li></ul><ul><li aria-level="1">Toggle this off to prevent clients from seeing or interacting with their billing details inside the portal.</li></ul><ul><li aria-level="1">Save your changes.</li></ul><p><i>⚠️  If you turn this feature off, clients will no longer be able to cancel their own subscription or update their payment method from the portal. Any requests will need to come through you directly.</i></p><p><i>💡  Most practitioners benefit from leaving this on — it reduces the number of admin requests you receive and gives clients a sense of autonomy over their account.</i></p><p><b>Your clients now have a clear, self-serve way to manage their billing — freeing you up to focus on what you do best.</b></p><p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

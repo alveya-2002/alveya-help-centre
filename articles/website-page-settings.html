@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website and Page Settings — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=getting-started">Getting Started</a>
+        <span>›</span>
+        <span>Website and Page Settings</span>
+      </nav>
+      <h1 class="article-title">Website and Page Settings</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=getting-started" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Getting Started
+    </a>
+
+    <div class="article-content">
+      <h2>Website Settings</h2>				
+		<p data-start="190" data-end="498">This tutorial walks through the main settings that apply at a <strong data-start="252" data-end="269">website level</strong> in Alvéya. These settings control how your site is structured, tracked, secured, and displayed, and they apply across the entire website rather than to individual pages. Page specific settings are covered in a separate tutorial below.</p>
+<p data-start="500" data-end="602">Use this guide to understand where key website level controls live and when they should be configured.</p>		
+						<h3>What this video covers:</h3><ul data-start="639" data-end="2268">
+<li data-start="639" data-end="768">
+<p data-start="641" data-end="768">Viewing and managing all website pages, including renaming pages, adjusting URL paths, duplicating pages, and adding new ones</p>
+<p></li></p>
+<li data-start="769" data-end="858">
+<p data-start="771" data-end="858">Understanding page paths (slugs), why numbers may appear, and how slug conflicts work</p>
+<p></li></p>
+<li data-start="859" data-end="959">
+<p data-start="861" data-end="959">Using the Stats tab to review page views, unique visitors, opt ins, sales, and earnings per page</p>
+<p></li></p>
+<li data-start="960" data-end="1045">
+<p data-start="962" data-end="1045">Reviewing individual sales data including customer details and purchased products</p>
+<p></li></p>
+<li data-start="1046" data-end="1129">
+<p data-start="1048" data-end="1129">Understanding the Security section and when it should be handled by a developer</p>
+<p></li></p>
+<li data-start="1130" data-end="1223">
+<p data-start="1132" data-end="1223">Adding tracking through Events, including Facebook Meta pixels at a page or website level</p>
+<p></li></p>
+<li data-start="1224" data-end="1303">
+<p data-start="1226" data-end="1303">Knowing when to use funnel level tracking instead of website level tracking</p>
+<p></li></p>
+<li data-start="1304" data-end="1380">
+<p data-start="1306" data-end="1380">Setting core website details such as business name and domain connection</p>
+<p></li></p>
+<li data-start="1381" data-end="1492">
+<p data-start="1383" data-end="1492">Best practice timing for connecting your domain depending on whether your site is live or still being built</p>
+<p></li></p>
+<li data-start="1493" data-end="1568">
+<p data-start="1495" data-end="1568">Using the website path field safely without affecting your public pages</p>
+<p></li></p>
+<li data-start="1569" data-end="1634">
+<p data-start="1571" data-end="1634">Adding a favicon using a hosted image link from media storage</p>
+<p></li></p>
+<li data-start="1635" data-end="1726">
+<p data-start="1637" data-end="1726">Adding header and body tracking codes for tools like Google Analytics or Facebook Pixel</p>
+<p></li></p>
+<li data-start="1727" data-end="1808">
+<p data-start="1729" data-end="1808">Enabling or disabling the chat widget for live chat, AI chat, or lead capture</p>
+<p></li></p>
+<li data-start="1809" data-end="1893">
+<p data-start="1811" data-end="1893">Using test mode to safely test checkout flows without creating real transactions</p>
+<p></li></p>
+<li data-start="1894" data-end="1986">
+<p data-start="1896" data-end="1986">Understanding image optimisation settings and how they affect speed versus image quality</p>
+<p></li></p>
+<li data-start="1987" data-end="2077">
+<p data-start="1989" data-end="2077">Knowing when to disable image optimisation and follow SEO image best practices instead</p>
+<p></li></p>
+<li data-start="2078" data-end="2136">
+<p data-start="2080" data-end="2136">Keeping JavaScript enabled for full site functionality</p>
+<p></li></p>
+<li data-start="2137" data-end="2196">
+<p data-start="2139" data-end="2196">Managing font loading for GDPR compliance when required</p>
+<p></li></p>
+<li data-start="2197" data-end="2268">
+<p data-start="2199" data-end="2268">Saving changes correctly so settings are applied across the website</p>
+<p></li> </ul></p>
+		<ul data-start="639" data-end="2268">
+<li data-start="639" data-end="768">
+<p data-start="641" data-end="768">Viewing and managing all website pages, including renaming pages, adjusting URL paths, duplicating pages, and adding new ones</p>
+<p></li></p>
+<li data-start="769" data-end="858">
+<p data-start="771" data-end="858">Understanding page paths (slugs), why numbers may appear, and how slug conflicts work</p>
+<p></li></p>
+<li data-start="859" data-end="959">
+<p data-start="861" data-end="959">Using the Stats tab to review page views, unique visitors, opt ins, sales, and earnings per page</p>
+<p></li></p>
+<li data-start="960" data-end="1045">
+<p data-start="962" data-end="1045">Reviewing individual sales data including customer details and purchased products</p>
+<p></li></p>
+<li data-start="1046" data-end="1129">
+<p data-start="1048" data-end="1129">Understanding the Security section and when it should be handled by a developer</p>
+<p></li></p>
+<li data-start="1130" data-end="1223">
+<p data-start="1132" data-end="1223">Adding tracking through Events, including Facebook Meta pixels at a page or website level</p>
+<p></li></p>
+<li data-start="1224" data-end="1303">
+<p data-start="1226" data-end="1303">Knowing when to use funnel level tracking instead of website level tracking</p>
+<p></li></p>
+<li data-start="1304" data-end="1380">
+<p data-start="1306" data-end="1380">Setting core website details such as business name and domain connection</p>
+<p></li></p>
+<li data-start="1381" data-end="1492">
+<p data-start="1383" data-end="1492">Best practice timing for connecting your domain depending on whether your site is live or still being built</p>
+<p></li></p>
+<li data-start="1493" data-end="1568">
+<p data-start="1495" data-end="1568">Using the website path field safely without affecting your public pages</p>
+<p></li></p>
+<li data-start="1569" data-end="1634">
+<p data-start="1571" data-end="1634">Adding a favicon using a hosted image link from media storage</p>
+<p></li></p>
+<li data-start="1635" data-end="1726">
+<p data-start="1637" data-end="1726">Adding header and body tracking codes for tools like Google Analytics or Facebook Pixel</p>
+<p></li></p>
+<li data-start="1727" data-end="1808">
+<p data-start="1729" data-end="1808">Enabling or disabling the chat widget for live chat, AI chat, or lead capture</p>
+<p></li></p>
+<li data-start="1809" data-end="1893">
+<p data-start="1811" data-end="1893">Using test mode to safely test checkout flows without creating real transactions</p>
+<p></li></p>
+<li data-start="1894" data-end="1986">
+<p data-start="1896" data-end="1986">Understanding image optimisation settings and how they affect speed versus image quality</p>
+<p></li></p>
+<li data-start="1987" data-end="2077">
+<p data-start="1989" data-end="2077">Knowing when to disable image optimisation and follow SEO image best practices instead</p>
+<p></li></p>
+<li data-start="2078" data-end="2136">
+<p data-start="2080" data-end="2136">Keeping JavaScript enabled for full site functionality</p>
+<p></li></p>
+<li data-start="2137" data-end="2196">
+<p data-start="2139" data-end="2196">Managing font loading for GDPR compliance when required</p>
+<p></li></p>
+<li data-start="2197" data-end="2268">
+<p data-start="2199" data-end="2268">Saving changes correctly so settings are applied across the website</p>
+<p></li> </ul></p>
+					<h2>Page Settings</h2>				
+		<p>Page settings in Alvéya are applied <strong data-start="264" data-end="293">individually to each page</strong>. This means settings do not automatically carry across your website unless a page has been duplicated. When using templates, you’ll need to review and update the settings on each page to ensure everything is configured correctly.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

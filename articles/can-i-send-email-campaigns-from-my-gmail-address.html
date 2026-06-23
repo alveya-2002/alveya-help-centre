@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Can I Send Email Campaigns from My Gmail Address? — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=email-marketing">Email Marketing</a>
+        <span>›</span>
+        <span>Can I Send Email Campaigns from My Gmail Address?</span>
+      </nav>
+      <h1 class="article-title">Can I Send Email Campaigns from My Gmail Address?</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=email-marketing" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Email Marketing
+    </a>
+
+    <div class="article-content">
+      <p><em>If you have been using a personal Gmail address as your main business email, you will need to set up a domain-based email address before sending campaigns through Alvéya. This guide explains why, and walks you through your options.</em></p>
+<h2 class="wp-block-heading"><strong>The short version</strong></h2>
+<p>When you send an email campaign through Alvéya, your emails are sent using a dedicated sending domain that has been authenticated for your account. This is what allows your emails to reach inboxes reliably rather than landing in spam.</p>
+<p>The From address you use in your campaigns needs to match (or closely align with) that sending domain. If your From address is a personal Gmail account, such as yourname@gmail.com, your emails will almost certainly be rejected or sent to spam. This is not a limitation of Alvéya — it is how email authentication works globally, and <strong>Google tightened these rules significantly in 2024.</strong></p>
+<p><em>⚠️&nbsp; Sending campaigns from a @gmail.com, @hotmail.com, or @yahoo.com address is likely to cause delivery failures. Most inbox providers will reject or filter these emails before they ever reach your subscribers.</em></p>
+<h2 class="wp-block-heading"><strong>Why this happens</strong></h2>
+<p>When you send an email, inbox providers check whether the email was actually sent by who it claims to be from. This is done through a set of authentication checks called SPF, DKIM, and DMARC.</p>
+<p>If your From address is yourname@gmail.com but the email was sent through Alvéya's infrastructure rather than Google's servers, the authentication check fails. Google's own security policies mean that emails claiming to be from a Gmail address but sent through a third party will be blocked or rejected.</p>
+<p>A domain-based email address — such as yourname@yourbusiness.com — solves this completely. When your sending domain and your From address use the same domain, everything aligns and your emails have the best possible chance of reaching the inbox.</p>
+<p><em>💡&nbsp; You do not need to actively monitor the email address you use as your From address. It just needs to exist and be associated with your domain. You can set a separate reply-to address if you prefer replies to go somewhere else.</em></p>
+<h2 class="wp-block-heading"><strong>Setting up a domain-based email address</strong></h2>
+<p>There are several ways to set this up, depending on what works best for you and your budget.</p>
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Option</strong></th><th><strong>Cost</strong></th><th><strong>Best for</strong></th></tr></thead><tbody><tr><td><strong>Google Workspace</strong></td><td>From approx. $10 AUD/month</td><td>Practitioners who prefer staying in the Gmail interface. Gives you a branded address like yourname@yourbusiness.com inside Gmail.</td></tr><tr><td><strong>Zoho Mail (free plan)</strong></td><td>Free for 1 user</td><td>A simple, cost-effective option if you just need a working domain email address for campaigns.</td></tr><tr><td><strong>Email hosting via your domain registrar</strong></td><td>Often included or low cost</td><td>If your domain is registered with a provider like Namecheap, Cloudflare, or Squarespace, they may already offer basic email hosting or forwarding.</td></tr></tbody></table></figure>
+<p><em>💡&nbsp; Not sure where your domain is registered? Check with whoever manages your website. They will be able to point you toward the right email hosting option.</em></p>
+<h2 class="wp-block-heading"><strong>Once you have your domain email address</strong></h2>
+<p>Once your domain-based email address is set up, you will add it to your campaign settings inside Alvéya so it appears as the From address in everything you send.</p>
+<p><strong>Before you start:&nbsp; </strong>Make sure your dedicated sending domain has already been set up in Alvéya. If you are unsure whether this is done, check with your account setup confirmation email or contact support.</p>
+<ol class="wp-block-list">
+<li>Log in to your Alvéya account.</li>
+<li>Go to Settings in the left-hand navigation.</li>
+<li>Select Email Services, then navigate to the From Addresses section.</li>
+<li>Click Add From Address and enter your new domain email address.</li>
+<li>You may be asked to verify the address — follow the prompts to confirm ownership.</li>
+<li>Once verified, set this address as the default sender for your campaigns.</li>
+<p></ol></p>
+<p><em>💡&nbsp; If you plan to use this address as a genuine inbox as well, make sure you check it regularly. Replies from subscribers and auto-responses from inbox providers will land there.</em><br></p>
+<h2 class="wp-block-heading"><strong>In summary</strong></h2>
+<p>A domain-based email address is not optional when it comes to email campaigns — it is the foundation that makes reliable delivery possible. The good news is that it is a straightforward thing to set up, and once it is done, you will not need to think about it again.</p>
+<p>If you are unsure which option is right for you, the most common choice for practitioners is Google Workspace. It keeps everything familiar and gives you a professional address you can use across all of your business communications — not just for campaigns.</p>
+<p><strong>With your domain email address in place, your campaigns are set up to reach your subscribers' inboxes reliably.</strong></p>
+<p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

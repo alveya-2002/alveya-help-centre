@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email notification in Forms &amp;amp; Surveys — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=courses-funnels">Courses & Funnels</a>
+        <span>›</span>
+        <span>Email notification in Forms &amp;amp; Surveys</span>
+      </nav>
+      <h1 class="article-title">Email notification in Forms &amp;amp; Surveys</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=courses-funnels" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Courses & Funnels
+    </a>
+
+    <div class="article-content">
+      <p>Email Notifications in Forms &amp; Surveys offer a convenient way to stay updated on form submissions without the need for manual monitoring. With this feature, you can respond promptly, share submission details with team members, and ensure seamless form management. Additionally, Auto Responder allows you to automatically send a confirmation email back to the person who filled out the form.</p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<h2 class="wp-block-heading">What are Email Notifications in Forms &amp; Surveys?</h2>
+<p>Email Notifications are alerts sent whenever a form or survey is submitted. These notifications go directly to designated inboxes, keeping teams informed in real time. Auto Responder works alongside this feature, sending an automated reply to the person submitting the form, which may include a copy of their responses.</p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<h2 class="wp-block-heading">Key Benefits of Email Notifications in Forms &amp; Surveys</h2>
+<p>Email notifications and auto responders improve efficiency, speed, and collaboration for teams handling form and survey data.</p>
+<ul class="wp-block-list">
+<li><strong>Instant alerts</strong>: Receive an immediate email whenever someone submits a form or survey.</li>
+<p></ul></p>
+<ul class="wp-block-list">
+<li><strong>Improved response time</strong>: Ensure faster follow-up with leads and contacts.</li>
+<p></ul></p>
+<ul class="wp-block-list">
+<li><strong>Collaboration</strong>: Send notifications to multiple team members at once.</li>
+<p></ul></p>
+<ul class="wp-block-list">
+<li><strong>Customization</strong>: Personalize the subject, sender name, and reply-to email for better organization.</li>
+<p></ul></p>
+<ul class="wp-block-list">
+<li><strong>Auto Responder</strong>: Automatically acknowledge the person submitting the form, creating a professional touch.</li>
+<p></ul></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<h3 class="wp-block-heading"><strong>Finding Notification Icon</strong></h3>
+<p>The notification option is found in the form editor's secondary bar. From here, you can enable email notification and auto responder.</p>
+<h3 class="wp-block-heading">Navigate to Forms or Surveys</h3>
+<p>Go to Websites &amp; Funnels → Forms (orWebsites &amp; Funnels → Surveys) from the top navigation bar. This is where all your forms or surveys are stored and managed.</p>
+<figure class="wp-block-image"><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155054693559/original/grjS3_gBCCE79cDoTv7IQOAw3QRWGTr47Q.png?1758896344" alt=""/></figure>
+<h3 class="wp-block-heading">Select or Create a Form or Survey</h3>
+<p>In the dashboard, you can either select an existing form or survey from the list or click the Add Form button in the top right to create a new one.</p>
+<figure class="wp-block-image"><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155054693581/original/-AvTQAy2mn-ZUTtdDO_wex_D174Q6TyCPw.png?1758896368" alt=""/></figure>
+<h3 class="wp-block-heading">Open the Notification Sidebar</h3>
+<p>Inside the form or survey editor, click the Bell icon in the secondary bar. This opens the Form Notification panel on the left side of the screen.</p>
+<figure class="wp-block-image"><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155054693673/original/djiUT4bnc0JX_yWrRrp5xDImOb2uWwQR0A.png?1758896413" alt=""/></figure>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<h2 class="wp-block-heading">Configure Email Notifications</h2>
+<p>The Email Notifications sidebar allows you to configure who receives alerts and how the email appears.</p>
+<p>Configuring email notifications properly ensures that the right team members are informed, and that your notifications appear consistent with your organization’s standards.</p>
+<p>Click the&nbsp;<strong>Bell icon</strong>&nbsp;in the form editor.&nbsp;Toggle on&nbsp;<strong>Email Notification</strong>.</p>
+<p>Fill out the configuration fields:</p>
+<ul class="wp-block-list">
+<li><strong>Subject</strong>: Enter a subject line. If left blank, the form or survey name will be used. You can also include a custom field.</li>
+<p></ul></p>
+<ul class="wp-block-list">
+<li><strong>Email (To)</strong>: Enter one or multiple email addresses. Each address will convert into a tag.</li>
+<p></ul></p>
+<ul class="wp-block-list">
+<li><strong>Reply-to Email</strong>: Add the email address you want replies directed to.</li>
+<p></ul></p>
+<ul class="wp-block-list">
+<li><strong>Sender Name</strong>: If left empty, the location or agency name will be used by default.</li>
+<p></ul></p>
+<ul class="wp-block-list">
+<li><strong>Save</strong> your changes.</li>
+<p></ul></p>
+<pre class="wp-block-preformatted"><strong>Note:</strong> Email notifications use email credits. Ensure your account has credits available.</pre>
+<figure class="wp-block-image"><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155054693910/original/HPewSlXztrt9mIgJ-Jf5adgB7_kjf_k7YQ.png?1758896549" alt=""/></figure>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<h2 class="wp-block-heading">Configure Auto Responder</h2>
+<p>Auto Responder sends an automated email to the contact who submitted the form.</p>
+<p>Auto Responder helps build trust with contacts by instantly acknowledging their submission and optionally sending them a copy of their responses.</p>
+<p>Open the&nbsp;<strong>Form Notification</strong>&nbsp;sidebar.&nbsp;Toggle on&nbsp;<strong>Auto Responder</strong>.</p>
+<p>Fill out the configuration fields:</p>
+<ul class="wp-block-list">
+<li><strong>Subject</strong>: Enter a subject line. Default is the form name.</li>
+<p></ul></p>
+<ul class="wp-block-list">
+<li><strong>Reply-to Email</strong>: Add an email for contact replies.</li>
+<p></ul></p>
+<ul class="wp-block-list">
+<li><strong>Sender Name</strong>: If blank, defaults to the sub-account name.</li>
+<p></ul></p>
+<ul class="wp-block-list">
+<li><strong>Save</strong> your changes.</li>
+<p></ul></p>
+<pre class="wp-block-preformatted"><strong>Note:</strong> The Reply-To you set here applies only to the auto-responder email that goes to the submitter. It does not affect the team notification email.
+<p>Replies to this notification will go to the address set in the "Reply-to-email" field".</pre></p>
+<figure class="wp-block-image"><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155054694119/original/4VHPEtW8lADxTHpSPlE2Q2qzoZ3dlteOtA.png?1758896677" alt=""/></figure>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<h2 class="wp-block-heading">How to View Survey Responses After Receiving an Email Notification</h2>
+<p>Email notifications serve as alerts only and do not include full survey responses. To view responses:</p>
+<p><strong>Steps:</strong></p>
+<ol start="1" class="wp-block-list">
+<li>Navigate to Websites &amp; Funnels from the left-hand menu.</li>
+<li>Select the <strong>Surveys</strong> tab, then click <strong>Submissions</strong>.</li>
+<li>Review the list of submissions with timestamps and answers.</li>
+<li>Click an individual entry to see all responses.</li>
+<p></ol></p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

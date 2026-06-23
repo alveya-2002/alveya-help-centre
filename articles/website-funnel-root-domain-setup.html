@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connect your domain to the website or funnel — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=website-templates">Website Templates</a>
+        <span>›</span>
+        <span>Connect your domain to the website or funnel</span>
+      </nav>
+      <h1 class="article-title">Connect your domain to the website or funnel</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=website-templates" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Website Templates
+    </a>
+
+    <div class="article-content">
+      <p data-start="889" data-end="895">This article is step one from the Domains playbook. To continue the process of setting up your domains after this step, head back to the playbook here. or the <a href="https://help.alveya.io/websites-playbook/">website Playbook</a></p><p>A branded domain ensures that system-generated links — such as form links, calendar booking links, survey links, and trigger links — display your own domain name rather than a default Alvéya address. This guide walks you through how to set one up.</p><h2 dir="ltr" style="line-height: 1.2; margin-top: 18pt; margin-bottom: 8pt;">What Is a Branded Domain?</h2><p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 8pt;">When Alvéya generates links for things like opt-in forms, booking calendars, or surveys, those links include a domain name. Without a branded domain configured, the links will display a default Alvéya address — for example, links.alveya.io.</p><p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 8pt;">Once you set up a branded domain, those same links will display your own subdomain instead — for example, links.yourwebsite.com. This creates a more professional and consistent experience for anyone who receives or clicks those links.</p><p dir="ltr" style="line-height: 1.2; border-left: solid #07636e 1.5pt; background-color: #feffb9; margin-top: 5pt; margin-bottom: 9pt; background-clip: padding-box; padding: 0pt 0pt 0pt 8pt;">💡  A branded domain builds trust with your audience. Seeing your own domain name in a link reassures people that it is genuinely coming from you, rather than an unfamiliar third-party platform.</p><h2 dir="ltr" style="line-height: 1.2; margin-top: 18pt; margin-bottom: 8pt;">Before You Begin</h2><p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 8pt;">To complete this setup you will need:</p><ul><li dir="ltr" style="line-height: 1.2;" role="presentation">Access to your Alvéya Business Profile Settings.</li><li dir="ltr" style="line-height: 1.2;" role="presentation">Access to the DNS settings for your domain — this is usually managed through your domain registrar (e.g. VentraIP, GoDaddy, Cloudflare, Namecheap, or similar).</li></ul><p dir="ltr" style="line-height: 1.2; border-left: solid #698c8e 1.5pt; background-color: #d6e8e9; margin-top: 5pt; margin-bottom: 9pt; background-clip: padding-box; padding: 0pt 0pt 0pt 8pt;">⚠️  You must use a subdomain for your branded domain — a root domain (e.g. yourwebsite.com) will not work here. A subdomain such as links.yourwebsite.com is the recommended format.</p> https://www.youtube.com/watch?v=sECKvzKuq0s		
+						<h3>Getting to the Domain Settings in Alvéya</h3><p>There are two ways to reach the domain setup area — both take you to the same screen:</p><ul><li style="font-weight: 400;" aria-level="1">From the left-hand menu, go to Websites &amp; Funnels, then click the Settings cog wheel.</li><li style="font-weight: 400;" aria-level="1">From the left-hand menu, scroll to Settings at the bottom, then click Domains &amp; URL Redirects.</li></ul>
+						<h3>Connecting Your Domain</h3><ul><li aria-level="1">Click Connect Domain.</li></ul><ul><li aria-level="1">Choose what you are connecting the domain to — for example, a funnel or a website.</li></ul><ul><li aria-level="1">Type or paste your domain name exactly as it appears in your domain host account, then click Continue.</li></ul><ul><li aria-level="1">Alvéya will display the DNS records you need to add. On the next screen, select Add Record Manually.</li></ul><p><i>💡  Copy and paste your domain name rather than typing it by hand. Even a single extra space or character will cause the connection to fail.</i></p><p><i>⚠️  Most domain hosts require you to add DNS records manually. The automatic connection option may not be supported by your provider — adding records manually is the reliable path for most setups.</i></p>
+						<h3>Adding DNS Records in Your Domain Host</h3><ul><li aria-level="1"><p>Alvéya will show you two records to add. Here is what each one does:</p><br /><table><thead><tr><th><p><b>Record type</b></p></th><th><p><b>Host / Name</b></p></th><th><p><b>What it does</b></p></th></tr></thead><tbody><tr><td><p><b>A Record</b></p></td><td><p>@ (root domain)</p></td><td><p>Points your root domain (e.g. yourdomain.com) to the Alvéya server IP address</p></td></tr><tr><td><p><b>CNAME Record</b></p></td><td><p>www</p></td><td><p>Directs the www version of your domain (e.g. www.yourdomain.com) to your Alvéya site</p></td></tr></tbody></table><br /><p>Log in to your domain host, navigate to the DNS settings for your domain, and add each record as follows.</p><h3><b>Adding the A Record</b></h3><ul><li aria-level="1">Select A Record as the record type.</li></ul><ul><li aria-level="1">In the Host or Name field, enter @ to indicate the root domain. Some hosts fill this in automatically — if the field does not accept @ or shows an error that the hostname is unavailable, leave it blank and your host will apply it to the root domain automatically.</li></ul><ul><li aria-level="1">Paste the IP address provided by Alvéya into the Value or Points To field.</li></ul><ul><li aria-level="1">Save the record.</li></ul><h3><b>Adding the CNAME Record</b></h3><ul><li aria-level="1">Select CNAME as the record type.</li></ul><ul><li aria-level="1">In the Host or Name field, enter www.</li></ul><ul><li aria-level="1">Paste the value provided by Alvéya into the Value or Points To field.</li></ul><ul><li aria-level="1">Save the record.</li></ul><p><i>⚠️  If your domain host already has an existing A record or CNAME record for these hostnames, you will need to delete the old ones first. Duplicate records will conflict and cause an error when saving. Remove the conflicting record, then add the new one.</i></p><p><i>💡  Not sure which existing record is conflicting? Look for any A record with @ as the host, or any CNAME record with www as the host. These are the ones to remove before adding the Alvéya versions.</i></p></li></ul>
+						<h3>Verifying the Connection in Alvéya</h3><ul><li aria-level="1"><p>Once both DNS records are saved in your domain host, return to Alvéya and click Verify. DNS changes can take a few minutes to propagate, so if it does not verify immediately, wait a moment and try again.</p><p>When the verification is successful, Alvéya will confirm that your domain is connected and prompt you to link it to a product.</p></li></ul>
+						<h3>Linking Your Domain to a Product</h3><ul><li aria-level="1"><p>After verification, choose what your domain should point to:</p><ul><li style="font-weight: 400;" aria-level="1">Sales funnel</li><li style="font-weight: 400;" aria-level="1">Website</li><li style="font-weight: 400;" aria-level="1">Store</li><li style="font-weight: 400;" aria-level="1">Blog</li><li style="font-weight: 400;" aria-level="1">Webinar</li></ul><p>You will also have the option to set a 404 page — the page visitors will land on if they navigate to a URL that does not exist on your site. If you have already created a 404 page in Alvéya, you can select it from the list here. If not, you can come back and set this later.</p><ul><li aria-level="1">Select the product you want your domain to point to.</li></ul><ul><li aria-level="1">Set the homepage — the page visitors will land on when they go to your domain directly.</li></ul><ul><li aria-level="1">Click Proceed to Finish.</li></ul><p>Your domain will now appear under External Domains in your Alvéya settings.</p><p><i>💡  To make changes to your domain connection later — such as updating which product it points to or adjusting the homepage — go back to the Domains settings area, find your domain, and click Manage Records.</i></p></li></ul>
+		<p>There are two ways to reach the domain setup area — both take you to the same screen:</p><ul><li style="font-weight: 400;" aria-level="1">From the left-hand menu, go to Websites &amp; Funnels, then click the Settings cog wheel.</li><li style="font-weight: 400;" aria-level="1">From the left-hand menu, scroll to Settings at the bottom, then click Domains &amp; URL Redirects.</li></ul><ul><li aria-level="1">Click Connect Domain.</li></ul><ul><li aria-level="1">Choose what you are connecting the domain to — for example, a funnel or a website.</li></ul><ul><li aria-level="1">Type or paste your domain name exactly as it appears in your domain host account, then click Continue.</li></ul><ul><li aria-level="1">Alvéya will display the DNS records you need to add. On the next screen, select Add Record Manually.</li></ul><p><i>💡  Copy and paste your domain name rather than typing it by hand. Even a single extra space or character will cause the connection to fail.</i></p><p><i>⚠️  Most domain hosts require you to add DNS records manually. The automatic connection option may not be supported by your provider — adding records manually is the reliable path for most setups.</i></p><ul><li aria-level="1"><p>Alvéya will show you two records to add. Here is what each one does:</p><br /><table><thead><tr><th><p><b>Record type</b></p></th><th><p><b>Host / Name</b></p></th><th><p><b>What it does</b></p></th></tr></thead><tbody><tr><td><p><b>A Record</b></p></td><td><p>@ (root domain)</p></td><td><p>Points your root domain (e.g. yourdomain.com) to the Alvéya server IP address</p></td></tr><tr><td><p><b>CNAME Record</b></p></td><td><p>www</p></td><td><p>Directs the www version of your domain (e.g. www.yourdomain.com) to your Alvéya site</p></td></tr></tbody></table><br /><p>Log in to your domain host, navigate to the DNS settings for your domain, and add each record as follows.</p><h3><b>Adding the A Record</b></h3><ul><li aria-level="1">Select A Record as the record type.</li></ul><ul><li aria-level="1">In the Host or Name field, enter @ to indicate the root domain. Some hosts fill this in automatically — if the field does not accept @ or shows an error that the hostname is unavailable, leave it blank and your host will apply it to the root domain automatically.</li></ul><ul><li aria-level="1">Paste the IP address provided by Alvéya into the Value or Points To field.</li></ul><ul><li aria-level="1">Save the record.</li></ul><h3><b>Adding the CNAME Record</b></h3><ul><li aria-level="1">Select CNAME as the record type.</li></ul><ul><li aria-level="1">In the Host or Name field, enter www.</li></ul><ul><li aria-level="1">Paste the value provided by Alvéya into the Value or Points To field.</li></ul><ul><li aria-level="1">Save the record.</li></ul><p><i>⚠️  If your domain host already has an existing A record or CNAME record for these hostnames, you will need to delete the old ones first. Duplicate records will conflict and cause an error when saving. Remove the conflicting record, then add the new one.</i></p><p><i>💡  Not sure which existing record is conflicting? Look for any A record with @ as the host, or any CNAME record with www as the host. These are the ones to remove before adding the Alvéya versions.</i></p></li></ul><ul><li aria-level="1"><p>Once both DNS records are saved in your domain host, return to Alvéya and click Verify. DNS changes can take a few minutes to propagate, so if it does not verify immediately, wait a moment and try again.</p><p>When the verification is successful, Alvéya will confirm that your domain is connected and prompt you to link it to a product.</p></li></ul><ul><li aria-level="1"><p>After verification, choose what your domain should point to:</p><ul><li style="font-weight: 400;" aria-level="1">Sales funnel</li><li style="font-weight: 400;" aria-level="1">Website</li><li style="font-weight: 400;" aria-level="1">Store</li><li style="font-weight: 400;" aria-level="1">Blog</li><li style="font-weight: 400;" aria-level="1">Webinar</li></ul><p>You will also have the option to set a 404 page — the page visitors will land on if they navigate to a URL that does not exist on your site. If you have already created a 404 page in Alvéya, you can select it from the list here. If not, you can come back and set this later.</p><ul><li aria-level="1">Select the product you want your domain to point to.</li></ul><ul><li aria-level="1">Set the homepage — the page visitors will land on when they go to your domain directly.</li></ul><ul><li aria-level="1">Click Proceed to Finish.</li></ul><p>Your domain will now appear under External Domains in your Alvéya settings.</p><p><i>💡  To make changes to your domain connection later — such as updating which product it points to or adjusting the homepage — go back to the Domains settings area, find your domain, and click Manage Records.</i></p></li></ul><p><b>Once your domain is connected, your website or funnel is ready to meet the world under your own address.</b></p><p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

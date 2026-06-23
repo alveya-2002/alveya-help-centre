@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automate Appointment Reminders in Alvéya™ — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=automations">Automations</a>
+        <span>›</span>
+        <span>Automate Appointment Reminders in Alvéya™</span>
+      </nav>
+      <h1 class="article-title">Automate Appointment Reminders in Alvéya™</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=automations" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Automations
+    </a>
+
+    <div class="article-content">
+      <p>Automated appointment reminders help reduce no-shows and make client communication seamless.<br data-start="341" data-end="344" />In Alvéya™, reminders are managed through <strong data-start="386" data-end="399">Automations</strong>, where you can set emails or SMS messages to go out automatically before (or after) a booking.</p>		
+					<h2>Step 1: Open or Create a Workflow</h2>				
+		<ol>
+<li data-start="545" data-end="584">
+<p data-start="548" data-end="584">Go to <strong data-start="554" data-end="581">Automations → Workflows</strong>.</p>
+<p></li></p>
+<li data-start="585" data-end="693">
+<p data-start="588" data-end="693">Click <strong data-start="594" data-end="615">+ Create Workflow</strong> (or open an existing one if you already have an appointment reminder flow).</p>
+<p></li></p>
+<li data-start="694" data-end="803">
+<p data-start="697" data-end="803">Choose <strong data-start="704" data-end="726">Start from Scratch</strong> and name it something like <em data-start="754" data-end="800">Appointment Reminder – Naturopathic Consults</em>.</p>
+<p></li> </ol></p>
+															<img width="800" height="296" src="https://help.alveya.io/wp-content/uploads/2025/11/Screen-Shot-2025-11-10-at-6.41.06-am-1024x379.png" alt="Go high level workflow, create new workflow automation" srcset="https://help.alveya.io/wp-content/uploads/2025/11/Screen-Shot-2025-11-10-at-6.41.06-am-1024x379.png 1024w, https://help.alveya.io/wp-content/uploads/2025/11/Screen-Shot-2025-11-10-at-6.41.06-am-300x111.png 300w, https://help.alveya.io/wp-content/uploads/2025/11/Screen-Shot-2025-11-10-at-6.41.06-am-768x284.png 768w, https://help.alveya.io/wp-content/uploads/2025/11/Screen-Shot-2025-11-10-at-6.41.06-am-1536x569.png 1536w, https://help.alveya.io/wp-content/uploads/2025/11/Screen-Shot-2025-11-10-at-6.41.06-am-2048x758.png 2048w" sizes="(max-width: 800px) 100vw, 800px" />															
+					<h2>Step 2: Set the Trigger</h2>				
+		<ol data-start="842" data-end="1135">
+<li data-start="842" data-end="875">
+<p data-start="845" data-end="875">Click <strong data-start="851" data-end="872">+ Add New Trigger</strong>.</p>
+<p></li></p>
+<li data-start="876" data-end="935">
+<p data-start="879" data-end="935">From the dropdown list, choose <strong data-start="910" data-end="932">Appointment Status</strong>.</p>
+<p></li> </ol></p>
+															<img width="800" height="439" src="https://help.alveya.io/wp-content/uploads/2025/11/Screen-Shot-2025-11-10-at-6.46.18-am-1024x562.png" alt="" srcset="https://help.alveya.io/wp-content/uploads/2025/11/Screen-Shot-2025-11-10-at-6.46.18-am-1024x562.png 1024w, https://help.alveya.io/wp-content/uploads/2025/11/Screen-Shot-2025-11-10-at-6.46.18-am-300x165.png 300w, https://help.alveya.io/wp-content/uploads/2025/11/Screen-Shot-2025-11-10-at-6.46.18-am-768x422.png 768w, https://help.alveya.io/wp-content/uploads/2025/11/Screen-Shot-2025-11-10-at-6.46.18-am-1536x844.png 1536w, https://help.alveya.io/wp-content/uploads/2025/11/Screen-Shot-2025-11-10-at-6.46.18-am.png 1846w" sizes="(max-width: 800px) 100vw, 800px" />															
+		<p data-start="939" data-end="1016">3. Under <strong data-start="945" data-end="970">Workflow Trigger Name</strong>, enter something like <em data-start="993" data-end="1013">Appointment Booked</em>.</p>
+<p data-start="1020" data-end="1106">4. Add a <strong data-start="1026" data-end="1036">Filter</strong> → <strong data-start="1039" data-end="1064">Status Is = Confirmed</strong> (or <em data-start="1069" data-end="1077">Booked</em> depending on your naming).</p>
+<p data-start="1110" data-end="1135">5. Click <strong data-start="1116" data-end="1132">Save Trigger</strong>.</p>
+<p data-start="1137" data-end="1232">💡 <em data-start="1140" data-end="1230">This tells Alvéya™ to start the workflow whenever an appointment is booked or confirmed.</em></p>		
+															<img width="800" height="487" src="https://help.alveya.io/wp-content/uploads/2025/11/Workflow-Trigger-Appointment-confirmed-1024x623.png" alt="" srcset="https://help.alveya.io/wp-content/uploads/2025/11/Workflow-Trigger-Appointment-confirmed-1024x623.png 1024w, https://help.alveya.io/wp-content/uploads/2025/11/Workflow-Trigger-Appointment-confirmed-300x183.png 300w, https://help.alveya.io/wp-content/uploads/2025/11/Workflow-Trigger-Appointment-confirmed-768x467.png 768w, https://help.alveya.io/wp-content/uploads/2025/11/Workflow-Trigger-Appointment-confirmed-1536x935.png 1536w, https://help.alveya.io/wp-content/uploads/2025/11/Workflow-Trigger-Appointment-confirmed.png 1614w" sizes="(max-width: 800px) 100vw, 800px" />															
+					<h2>Step 3: Add the Email to the workflow</h2>				
+		<ol>
+<li>Click the + that is below the trigger step, connected with the line.</li>
+<li>Type in : <strong>Send email</strong> to search for the Send email step.</li>
+<li>Write your email confirmation or if you would like to create a template. Save your progress by click Save in the top right corner and exit out of the automation to create an email template</li>
+<p></ol></p>
+					<h2>Step 3: Add a Wait Step (Timing the Reminder)</h2>				
+		<ol data-start="1293" data-end="1549">
+<li data-start="1293" data-end="1340">
+<p data-start="1296" data-end="1340">Click <strong data-start="1302" data-end="1318">+ Add Action</strong> under your trigger.</p>
+<p></li></p>
+<li data-start="1341" data-end="1362">
+<p data-start="1344" data-end="1362">Select <strong data-start="1351" data-end="1359">Wait</strong>.</p>
+<p></li></p>
+<li data-start="1363" data-end="1521">
+<p data-start="1366" data-end="1448">Choose how long before the appointment you’d like to send the reminder, such as:</p>
+<ul data-start="1452" data-end="1521">
+<li data-start="1452" data-end="1470">
+<p data-start="1454" data-end="1470"><code data-start="1454" data-end="1468">1 day before</code></p>
+<p></li></p>
+<li data-start="1474" data-end="1494">
+<p data-start="1476" data-end="1494"><code data-start="1476" data-end="1492">3 hours before</code></p>
+<p></li></p>
+<li data-start="1498" data-end="1521">
+<p data-start="1500" data-end="1521"><code data-start="1500" data-end="1519">15 minutes before</code></p>
+<p></li> </ul> </li></p>
+<li data-start="1522" data-end="1549">
+<p data-start="1525" data-end="1549">Click <strong data-start="1531" data-end="1546">Save Action</strong>.</p>
+<p></li> </ol></p>
+<p data-start="1551" data-end="1687">💡 <em data-start="1554" data-end="1685">You can add multiple wait steps if you want several reminders — for example, one email the day before and one SMS an hour before.</em></p>		
+					<h2>Step 4: Test the Booking Flow</h2>				
+		<ol><li style="font-weight: 400;" aria-level="1">Visit your live website.</li><li style="font-weight: 400;" aria-level="1">Click the button or use the embedded calendar/service menu.</li><li style="font-weight: 400;" aria-level="1">Make a test booking to confirm:<ul><li style="font-weight: 400;" aria-level="2">The booking form works correctly.</li><li style="font-weight: 400;" aria-level="2">The booking appears in your calendar.</li><li style="font-weight: 400;" aria-level="2">Notifications are sent to both you and the client.</li></ul></li></ol>		
+					<h2>Troubleshooting</h2>				
+		<ul><li style="font-weight: 400;" aria-level="1">Booking form not showing? Double-check you pasted the correct embed code.</li><li style="font-weight: 400;" aria-level="1">Layout looks off? Adjust the width/height settings in your website editor.</li><li style="font-weight: 400;" aria-level="1">Mobile display issues? Consider using the Booking Link instead of embed for a smoother mobile experience.</li></ul>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

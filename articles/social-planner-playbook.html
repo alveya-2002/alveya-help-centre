@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Planner Playbook — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=getting-started">Getting Started</a>
+        <span>›</span>
+        <span>Social Planner Playbook</span>
+      </nav>
+      <h1 class="article-title">Social Planner Playbook</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=getting-started" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Getting Started
+    </a>
+
+    <div class="article-content">
+      <h2>A Complete Setup Guide for Alvéya™
+<p></h2></p>
+		<p data-start="86" data-end="328">Social Planner helps you plan, schedule, and publish content from one place, without juggling multiple tabs or tools. It’s designed to support consistent marketing, reduce last-minute posting, and keep your content organised across platforms.</p><p data-start="330" data-end="422">This Playbook walks you through the essential setup so you can start scheduling confidently.</p>		
+						<h3>What You’ll Complete in This Guide</h3><p data-start="468" data-end="508">You’ll move through the following steps:</p><ol data-start="510" data-end="708"><li data-start="510" data-end="543"><p data-start="513" data-end="543">Connect Your Social Accounts</p></li><li data-start="544" data-end="578"><p data-start="547" data-end="578">Set Up Your Posting Workspace</p></li><li data-start="579" data-end="606"><p data-start="582" data-end="606">Create Your First Post</p></li><li data-start="607" data-end="628"><p data-start="610" data-end="628">Schedule Content</p></li><li data-start="629" data-end="674"><p data-start="632" data-end="674">Review the Calendar and Manage Approvals</p></li><li data-start="675" data-end="708"><p data-start="678" data-end="708">Track Performance (Optional)</p></li></ol>
+						<h3>Before You Begin</h3><p data-start="736" data-end="763"><strong>Before starting, make sure:</strong></p><ul data-start="765" data-end="962"><li data-start="765" data-end="833"><p data-start="767" data-end="833">You have login access to the social accounts you want to connect</p></li><li data-start="834" data-end="886"><p data-start="836" data-end="886">You know which platforms you want to schedule to</p></li><li data-start="887" data-end="962"><p data-start="889" data-end="962">Your brand assets are saved in Media Storage (logos, images, templates)</p></li></ul>
+						<h3>What platforms can you connect to?</h3><p>Instagram</p><p>Facebook</p><p>Google Business Profile (GBP)</p><p>Threads</p>								
+									<p>LinkedIn</p><p>Pinterest</p><p>Bluesky</p>Youtube
+		<p data-start="468" data-end="508">You’ll move through the following steps:</p><ol data-start="510" data-end="708"><li data-start="510" data-end="543"><p data-start="513" data-end="543">Connect Your Social Accounts</p></li><li data-start="544" data-end="578"><p data-start="547" data-end="578">Set Up Your Posting Workspace</p></li><li data-start="579" data-end="606"><p data-start="582" data-end="606">Create Your First Post</p></li><li data-start="607" data-end="628"><p data-start="610" data-end="628">Schedule Content</p></li><li data-start="629" data-end="674"><p data-start="632" data-end="674">Review the Calendar and Manage Approvals</p></li><li data-start="675" data-end="708"><p data-start="678" data-end="708">Track Performance (Optional)</p></li></ol><p data-start="736" data-end="763"><strong>Before starting, make sure:</strong></p><ul data-start="765" data-end="962"><li data-start="765" data-end="833"><p data-start="767" data-end="833">You have login access to the social accounts you want to connect</p></li><li data-start="834" data-end="886"><p data-start="836" data-end="886">You know which platforms you want to schedule to</p></li><li data-start="887" data-end="962"><p data-start="889" data-end="962">Your brand assets are saved in Media Storage (logos, images, templates)</p></li></ul><p>Instagram</p><p>Facebook</p><p>Google Business Profile (GBP)</p><p>Threads</p><p>LinkedIn</p><p>Pinterest</p><p>Bluesky</p>Youtube		
+					<h2>Steps to setting up the Social Planner</h2>				
+						<h3>Step 1 – Connect Your Social Accounts</h3><p data-start="1023" data-end="1112">Go to <strong data-start="1029" data-end="1059">Marketing → Social Planner</strong></p><p data-start="1114" data-end="1183">Select each of the social media platforms you want to connect and log in to each</p><p data-start="1185" data-end="1209">Typical options include:</p><ul data-start="1210" data-end="1297"><li data-start="1210" data-end="1225"><p data-start="1212" data-end="1225">Facebook Page</p></li><li data-start="1226" data-end="1260"><p data-start="1228" data-end="1260">Instagram (professional account)</p></li><li data-start="1261" data-end="1271"><p data-start="1263" data-end="1271">LinkedIn</p></li><li data-start="1272" data-end="1297"><p data-start="1274" data-end="1297">Google Business Profile</p></li></ul><p data-start="1299" data-end="1405">During connection, ensure you approve the required permissions so Alvéya can publish posts on your behalf.</p><p data-start="1486" data-end="1532"><img role="img" draggable="false" src="https://s.w.org/images/core/emoji/17.0.2/svg/1f4d6.svg" alt="📖" /> Troubleshooting social account connection →</p>
+						<h3>Step 2 – Set Up Your Posting Workspace</h3><p>Once you have connected at least one account, the option to select settings will show</p><p><img role="img" draggable="false" src="https://s.w.org/images/core/emoji/17.0.2/svg/1f4d6.svg" alt="📖" /> Customise your Social Media Settings →</p>								
+															<img width="800" height="430" src="https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-6.46.22-am-1024x550.png" alt="" srcset="https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-6.46.22-am-1024x550.png 1024w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-6.46.22-am-300x161.png 300w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-6.46.22-am-768x413.png 768w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-6.46.22-am-1536x825.png 1536w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-6.46.22-am-2048x1100.png 2048w" sizes="(max-width: 800px) 100vw, 800px" />
+						<h3>Step 3 – Create Your First Post</h3><p data-start="2063" data-end="2108">Inside Social Planner, click <strong data-start="2092" data-end="2107">Create Post</strong>.</p><p data-start="2110" data-end="2114">Add:</p><ul data-start="2115" data-end="2222"><li data-start="2115" data-end="2129"><p data-start="2117" data-end="2129">Caption text</p></li><li data-start="2130" data-end="2158"><p data-start="2132" data-end="2158">Image or video (if needed)</p></li><li data-start="2159" data-end="2182"><p data-start="2161" data-end="2182">Links (if applicable)</p></li><li data-start="2183" data-end="2222"><p data-start="2185" data-end="2222">The channel(s) you want to publish to</p></li></ul><p data-start="2224" data-end="2338">If you are posting to multiple platforms at once, adjust your caption to suit the most strict platform formatting.</p><p data-start="2340" data-end="2370">Tips that keep posting smooth:</p><ul data-start="2371" data-end="2514"><li data-start="2371" data-end="2407"><p data-start="2373" data-end="2407">Keep your first line strong (hook)</p></li><li data-start="2408" data-end="2446"><p data-start="2410" data-end="2446">Use short paragraphs for readability</p></li><li data-start="2447" data-end="2514"><p data-start="2449" data-end="2514">Avoid overly long hashtags on platforms where they reduce clarity</p></li></ul><p data-start="2579" data-end="2613">📖 Best-practice post formatting →</p>
+						<h3>Step 4 – Schedule Content</h3><p data-start="2662" data-end="2689">Choose a publishing option:</p><ul data-start="2690" data-end="2763"><li data-start="2690" data-end="2700"><p data-start="2692" data-end="2700">Post Now</p></li><li data-start="2701" data-end="2711"><p data-start="2703" data-end="2711">Schedule</p></li><li data-start="2712" data-end="2763"><p data-start="2714" data-end="2763">Save as Draft (recommended when batching content)</p></li></ul><p data-start="2765" data-end="2781">When scheduling:</p><ul data-start="2782" data-end="2872"><li data-start="2782" data-end="2804"><p data-start="2784" data-end="2804">Select date and time</p></li><li data-start="2805" data-end="2823"><p data-start="2807" data-end="2823">Confirm timezone</p></li><li data-start="2824" data-end="2872"><p data-start="2826" data-end="2872">Double-check you selected the correct channels</p></li></ul><p data-start="2874" data-end="2991">If your content relies on a specific campaign, schedule it after any funnel, landing page, or email campaign is live.</p><p data-start="2993" data-end="3033"> </p>
+						<h3>Step 5 – Review the Calendar and Manage Approvals</h3><p data-start="3106" data-end="3165">Use the Calendar view to see your posting plan at a glance.</p><p data-start="3167" data-end="3185">From here you can:</p><ul data-start="3186" data-end="3351"><li data-start="3186" data-end="3222"><p data-start="3188" data-end="3222">Move posts to a different day/time</p></li><li data-start="3223" data-end="3238"><p data-start="3225" data-end="3238">Edit captions</p></li><li data-start="3239" data-end="3254"><p data-start="3241" data-end="3254">Replace media</p></li><li data-start="3255" data-end="3303"><p data-start="3257" data-end="3303">Duplicate posts (useful for repeating formats)</p></li><li data-start="3304" data-end="3351"><p data-start="3306" data-end="3351">Approve or publish (if approvals are enabled)</p></li></ul><p data-start="3353" data-end="3461">If you batch-create content, the calendar becomes your single source of truth for what’s going out and when.</p>
+						<h3>Step 6 – Track Performance (Optional)</h3><p data-start="3597" data-end="3707">Depending on your connected channels and plan level, you may have access to basic performance metrics such as:</p><ul data-start="3708" data-end="3737"><li data-start="3708" data-end="3720"><p data-start="3710" data-end="3720">Engagement</p></li><li data-start="3721" data-end="3729"><p data-start="3723" data-end="3729">Clicks</p></li><li data-start="3730" data-end="3737"><p data-start="3732" data-end="3737">Reach</p></li></ul><p data-start="3739" data-end="3767">Use performance insights to:</p><ul data-start="3768" data-end="3871"><li data-start="3768" data-end="3800"><p data-start="3770" data-end="3800">Identify which topics resonate</p></li><li data-start="3801" data-end="3823"><p data-start="3803" data-end="3823">Refine posting times</p></li><li data-start="3824" data-end="3871"><p data-start="3826" data-end="3871">Improve caption structure and calls to action</p></li></ul><p data-start="3873" data-end="3942">Keep this simple. The goal is consistency first, optimisation second.</p><p data-start="3944" data-end="3975">📖 Social metrics definitions →</p>
+<p>https://www.youtube.com/watch?v=XHOmBV4js_E<p data-start="1023" data-end="1112">Go to <strong data-start="1029" data-end="1059">Marketing → Social Planner</strong></p><p data-start="1114" data-end="1183">Select each of the social media platforms you want to connect and log in to each</p><p data-start="1185" data-end="1209">Typical options include:</p><ul data-start="1210" data-end="1297"><li data-start="1210" data-end="1225"><p data-start="1212" data-end="1225">Facebook Page</p></li><li data-start="1226" data-end="1260"><p data-start="1228" data-end="1260">Instagram (professional account)</p></li><li data-start="1261" data-end="1271"><p data-start="1263" data-end="1271">LinkedIn</p></li><li data-start="1272" data-end="1297"><p data-start="1274" data-end="1297">Google Business Profile</p></li></ul><p data-start="1299" data-end="1405">During connection, ensure you approve the required permissions so Alvéya can publish posts on your behalf.</p><p data-start="1486" data-end="1532"><img role="img" draggable="false" src="https://s.w.org/images/core/emoji/17.0.2/svg/1f4d6.svg" alt="📖" /> Troubleshooting social account connection →</p><p>Once you have connected at least one account, the option to select settings will show</p><p><img role="img" draggable="false" src="https://s.w.org/images/core/emoji/17.0.2/svg/1f4d6.svg" alt="📖" /> Customise your Social Media Settings →</p>
+															<img width="800" height="430" src="https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-6.46.22-am-1024x550.png" alt="" srcset="https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-6.46.22-am-1024x550.png 1024w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-6.46.22-am-300x161.png 300w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-6.46.22-am-768x413.png 768w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-6.46.22-am-1536x825.png 1536w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-6.46.22-am-2048x1100.png 2048w" sizes="(max-width: 800px) 100vw, 800px" />															
+		<p data-start="2063" data-end="2108">Inside Social Planner, click <strong data-start="2092" data-end="2107">Create Post</strong>.</p><p data-start="2110" data-end="2114">Add:</p><ul data-start="2115" data-end="2222"><li data-start="2115" data-end="2129"><p data-start="2117" data-end="2129">Caption text</p></li><li data-start="2130" data-end="2158"><p data-start="2132" data-end="2158">Image or video (if needed)</p></li><li data-start="2159" data-end="2182"><p data-start="2161" data-end="2182">Links (if applicable)</p></li><li data-start="2183" data-end="2222"><p data-start="2185" data-end="2222">The channel(s) you want to publish to</p></li></ul><p data-start="2224" data-end="2338">If you are posting to multiple platforms at once, adjust your caption to suit the most strict platform formatting.</p><p data-start="2340" data-end="2370">Tips that keep posting smooth:</p><ul data-start="2371" data-end="2514"><li data-start="2371" data-end="2407"><p data-start="2373" data-end="2407">Keep your first line strong (hook)</p></li><li data-start="2408" data-end="2446"><p data-start="2410" data-end="2446">Use short paragraphs for readability</p></li><li data-start="2447" data-end="2514"><p data-start="2449" data-end="2514">Avoid overly long hashtags on platforms where they reduce clarity</p></li></ul><p data-start="2579" data-end="2613">📖 Best-practice post formatting →</p>https://www.youtube.com/watch?v=XHOmBV4js_E<p data-start="2662" data-end="2689">Choose a publishing option:</p><ul data-start="2690" data-end="2763"><li data-start="2690" data-end="2700"><p data-start="2692" data-end="2700">Post Now</p></li><li data-start="2701" data-end="2711"><p data-start="2703" data-end="2711">Schedule</p></li><li data-start="2712" data-end="2763"><p data-start="2714" data-end="2763">Save as Draft (recommended when batching content)</p></li></ul><p data-start="2765" data-end="2781">When scheduling:</p><ul data-start="2782" data-end="2872"><li data-start="2782" data-end="2804"><p data-start="2784" data-end="2804">Select date and time</p></li><li data-start="2805" data-end="2823"><p data-start="2807" data-end="2823">Confirm timezone</p></li><li data-start="2824" data-end="2872"><p data-start="2826" data-end="2872">Double-check you selected the correct channels</p></li></ul><p data-start="2874" data-end="2991">If your content relies on a specific campaign, schedule it after any funnel, landing page, or email campaign is live.</p><p data-start="2993" data-end="3033"> </p>https://www.youtube.com/watch?v=XHOmBV4js_E<p data-start="3106" data-end="3165">Use the Calendar view to see your posting plan at a glance.</p><p data-start="3167" data-end="3185">From here you can:</p><ul data-start="3186" data-end="3351"><li data-start="3186" data-end="3222"><p data-start="3188" data-end="3222">Move posts to a different day/time</p></li><li data-start="3223" data-end="3238"><p data-start="3225" data-end="3238">Edit captions</p></li><li data-start="3239" data-end="3254"><p data-start="3241" data-end="3254">Replace media</p></li><li data-start="3255" data-end="3303"><p data-start="3257" data-end="3303">Duplicate posts (useful for repeating formats)</p></li><li data-start="3304" data-end="3351"><p data-start="3306" data-end="3351">Approve or publish (if approvals are enabled)</p></li></ul><p data-start="3353" data-end="3461">If you batch-create content, the calendar becomes your single source of truth for what’s going out and when.</p>https://www.youtube.com/watch?v=XHOmBV4js_E<p data-start="3597" data-end="3707">Depending on your connected channels and plan level, you may have access to basic performance metrics such as:</p><ul data-start="3708" data-end="3737"><li data-start="3708" data-end="3720"><p data-start="3710" data-end="3720">Engagement</p></li><li data-start="3721" data-end="3729"><p data-start="3723" data-end="3729">Clicks</p></li><li data-start="3730" data-end="3737"><p data-start="3732" data-end="3737">Reach</p></li></ul><p data-start="3739" data-end="3767">Use performance insights to:</p><ul data-start="3768" data-end="3871"><li data-start="3768" data-end="3800"><p data-start="3770" data-end="3800">Identify which topics resonate</p></li><li data-start="3801" data-end="3823"><p data-start="3803" data-end="3823">Refine posting times</p></li><li data-start="3824" data-end="3871"><p data-start="3826" data-end="3871">Improve caption structure and calls to action</p></li></ul><p data-start="3873" data-end="3942">Keep this simple. The goal is consistency first, optimisation second.</p><p data-start="3944" data-end="3975">📖 Social metrics definitions →</p>https://www.youtube.com/watch?v=XHOmBV4js_E		
+					<h2>FAQs</h2>				
+						<h3>Can I schedule to Instagram?</h3><p>Yes, if your Instagram account is a professional account and correctly connected.</p>
+						<h3>Why can’t I connect my Instagram?</h3><p>This is usually caused by missing permissions, an incorrect account type, or connection issues between Facebook Business and Instagram.</p>
+						<h3>Can I post to multiple channels at once?</h3><p>Typically, scheduling is designed for Pages rather than personal profiles.</p>
+						<h3>What if I delete a page accidentally?</h3><p>Yes. Select multiple channels when creating your post</p>
+		<p>Yes, if your Instagram account is a professional account and correctly connected.</p><p>This is usually caused by missing permissions, an incorrect account type, or connection issues between Facebook Business and Instagram.</p><p>Typically, scheduling is designed for Pages rather than personal profiles.</p><p>Yes. Select multiple channels when creating your post</p>		
+					<h2>Troubleshooting</h2>				
+						<h3>Issue: Account won’t connect</h3><p>Fix: Reconnect and approve permissions. If it still fails, disconnect fully and reconnect from scratch.</p>
+						<h3>Issue: Scheduled post didn’t publish</h3><p>Fix: Check the account is still connected and permissions have not expired.</p>
+						<h3>Issue: Wrong publish time</h3><p>Fix: Confirm timezone in the account settings.</p>
+		<p>Fix: Reconnect and approve permissions. If it still fails, disconnect fully and reconnect from scratch.</p><p>Fix: Check the account is still connected and permissions have not expired.</p><p>Fix: Confirm timezone in the account settings.</p><article dir="auto" tabindex="-1" data-turn-id="request-68c8f318-fe28-8333-970c-c46ad83488b4-0" data-testid="conversation-turn-208" data-scroll-anchor="true" data-turn="assistant"><h2 data-start="4887" data-end="4903">Extra Support</h2><p data-start="4905" data-end="4928">If you need assistance:</p><ul data-start="4930" data-end="5057"><li data-start="4930" data-end="4971"><p data-start="4932" data-end="4971">Review the linked 📖 support articles</p></li><li data-start="4972" data-end="5007"><p data-start="4974" data-end="5007">Watch the embedded walkthroughs</p></li><li data-start="5008" data-end="5057"><p data-start="5010" data-end="5057">Contact the Alvéya support team via live chat</p></li></ul><p data-start="5059" data-end="5199">Build a simple schedule, post consistently, and refine from there. Social Planner is designed to support momentum without adding more admin.</p> </article>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

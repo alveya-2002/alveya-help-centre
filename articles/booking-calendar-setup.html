@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Set Up Your Booking Calendar in Alvéya™ — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=getting-started">Getting Started</a>
+        <span>›</span>
+        <span>Set Up Your Booking Calendar in Alvéya™</span>
+      </nav>
+      <h1 class="article-title">Set Up Your Booking Calendar in Alvéya™</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=getting-started" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Getting Started
+    </a>
+
+    <div class="article-content">
+      <p>https://youtu.be/nvd_Gi_29Do</p>
+						<h3>Written Instructions</h3><p><strong>1. Access Calendar Settings</strong> </p><p><img src="https://loom.com/i/98961d0c9cf04f84be933a19cfcdea22?workflows_screenshot=true" alt="generated-image-at-00:00:01" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Navigate to the &#8216;Calendars&#8217; section.</p></li><li><p>Click on &#8216;Calendar Settings&#8217;.</p></li></ul><p><strong>2. Understand Appointment Types</strong> </p><p><img src="https://loom.com/i/916bf17496b14d958388274714155301?workflows_screenshot=true" alt="generated-image-at-00:00:16" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Recognize that calendars are commonly known as appointment times.</p></li><li><p>Note that a personal calendar appointment type is already available.</p></li></ul><p><strong>3. Create a New Appointment Type</strong></p><p><img src="https://loom.com/i/0a640ebe961f474dac4bab0a1dde1ac6?workflows_screenshot=true" alt="generated-image-at-00:00:30" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Example: Set up a &#8216;Follow Up Consultation&#8217;.</p></li><li><p>Click on &#8216;New Calendar&#8217; and then &#8216;Explore More Types&#8217;.</p></li></ul><p><strong>4. Choose Appointment Type</strong> </p><p><img src="https://loom.com/i/9480ba0a90b44c4995c55d0ab8481d15?workflows_screenshot=true" alt="generated-image-at-00:00:59" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Select &#8216;Service Booking&#8217; for the appointment type.</p></li></ul><p><strong>5. Fill in Appointment Details</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=69" target="_blank" rel="noopener noreferrer nofollow">1:09</a></p><p><img src="https://loom.com/i/47e2d3def70c49a98988056f144c0444?workflows_screenshot=true" alt="generated-image-at-00:01:09" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Enter the appointment title (e.g., &#8216;Follow Up Consultation&#8217;).</p></li><li><p>Add a description if desired.</p></li></ul><p><strong>6. Customize URL Slug</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=83" target="_blank" rel="noopener noreferrer nofollow">1:23</a></p><p><img src="https://loom.com/i/88317f51f536489691739eead6d71d8d?workflows_screenshot=true" alt="generated-image-at-00:01:23" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Note that a random slug is generated if a custom domain is not set.</p></li><li><p>Once a custom domain is added, the slug will be standard.</p></li></ul><p><strong>7. Set Booking Availability</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=115" target="_blank" rel="noopener noreferrer nofollow">1:55</a></p><p><img src="https://loom.com/i/cebe37ffcd1745cda9c3442533ce8382?workflows_screenshot=true" alt="generated-image-at-00:01:55" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Choose to use an existing availability schedule or create a custom one.</p></li></ul><p><strong>8. Advanced Settings</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=126" target="_blank" rel="noopener noreferrer nofollow">2:06</a></p><p><img src="https://loom.com/i/815f06cc35924ceebfbee30cc5cd276f?workflows_screenshot=true" alt="generated-image-at-00:02:06" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Add an image or logo for the appointment type.</p></li><li><p>Group calendars together if needed.</p></li></ul><p><strong>9. Configure Appointment Title and Location</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=146" target="_blank" rel="noopener noreferrer nofollow">2:26</a></p><p><img src="https://loom.com/i/b2443bb553dc4ad0b6e9287de6648754?workflows_screenshot=true" alt="generated-image-at-00:02:26" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Set the title for the calendar meeting.</p></li><li><p>Select the staff member and meeting location.</p></li></ul><p><strong>10. Set Meeting Priority</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=173" target="_blank" rel="noopener noreferrer nofollow">2:53</a></p><p><img src="https://loom.com/i/adc3000698314755b4c62bb9092e3d9b?workflows_screenshot=true" alt="generated-image-at-00:02:53" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Choose the meeting platform (Zoom, Google Meet, etc.).</p></li><li><p>Enter the meeting link if applicable.</p></li></ul><p><strong>11. Define Availability and Booking Rules</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=186" target="_blank" rel="noopener noreferrer nofollow">3:06</a></p><p><img src="https://loom.com/i/68e60ac5699a4d38b88fbd235925da82?workflows_screenshot=true" alt="generated-image-at-00:03:06" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Set custom hours or standard hours for availability.</p></li><li><p>Define booking rules such as duration, minimum scheduling notice, and buffer time.</p></li></ul><p><strong>12. Advanced Settings for Forms and Notifications</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=248" target="_blank" rel="noopener noreferrer nofollow">4:08</a></p><p><img src="https://loom.com/i/cde8323c1b2648f3bbb7cc8a6af19778?workflows_screenshot=true" alt="generated-image-at-00:04:08" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Set up intake forms (default or custom).</p></li><li><p>Configure consent and confirmation settings.</p></li></ul><p><strong>13. Payment and Widget Customization</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=292" target="_blank" rel="noopener noreferrer nofollow">4:52</a></p><p><img src="https://loom.com/i/0e2c0cdc07a64942b3f52f7af3863175?workflows_screenshot=true" alt="generated-image-at-00:04:52" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Set up payment acceptance through management services.</p></li><li><p>Customize widget appearance to match brand colors.</p></li></ul><p><strong>14. Save the Appointment Type</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=304" target="_blank" rel="noopener noreferrer nofollow">5:04</a></p><p><img src="https://loom.com/i/1211c1e07aba4ff48ea892d5fa455601?workflows_screenshot=true" alt="generated-image-at-00:05:04" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Click &#8216;Save&#8217; to finalize the appointment type.</p></li></ul><p><strong>15. Group Appointment Types</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=325" target="_blank" rel="noopener noreferrer nofollow">5:25</a></p><p><img src="https://loom.com/i/ddcf27c77ca0478fb15d01a5a3e41b28?workflows_screenshot=true" alt="generated-image-at-00:05:25" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Create a new group (e.g., &#8216;Consultations&#8217;).</p></li><li><p>Add initial and follow-up appointments into the group.</p></li></ul>
+		<p><strong>1. Access Calendar Settings</strong> </p><p><img src="https://loom.com/i/98961d0c9cf04f84be933a19cfcdea22?workflows_screenshot=true" alt="generated-image-at-00:00:01" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Navigate to the 'Calendars' section.</p></li><li><p>Click on 'Calendar Settings'.</p></li></ul><p><strong>2. Understand Appointment Types</strong> </p><p><img src="https://loom.com/i/916bf17496b14d958388274714155301?workflows_screenshot=true" alt="generated-image-at-00:00:16" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Recognize that calendars are commonly known as appointment times.</p></li><li><p>Note that a personal calendar appointment type is already available.</p></li></ul><p><strong>3. Create a New Appointment Type</strong></p><p><img src="https://loom.com/i/0a640ebe961f474dac4bab0a1dde1ac6?workflows_screenshot=true" alt="generated-image-at-00:00:30" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Example: Set up a 'Follow Up Consultation'.</p></li><li><p>Click on 'New Calendar' and then 'Explore More Types'.</p></li></ul><p><strong>4. Choose Appointment Type</strong> </p><p><img src="https://loom.com/i/9480ba0a90b44c4995c55d0ab8481d15?workflows_screenshot=true" alt="generated-image-at-00:00:59" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Select 'Service Booking' for the appointment type.</p></li></ul><p><strong>5. Fill in Appointment Details</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=69" target="_blank" rel="noopener noreferrer nofollow">1:09</a></p><p><img src="https://loom.com/i/47e2d3def70c49a98988056f144c0444?workflows_screenshot=true" alt="generated-image-at-00:01:09" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Enter the appointment title (e.g., 'Follow Up Consultation').</p></li><li><p>Add a description if desired.</p></li></ul><p><strong>6. Customize URL Slug</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=83" target="_blank" rel="noopener noreferrer nofollow">1:23</a></p><p><img src="https://loom.com/i/88317f51f536489691739eead6d71d8d?workflows_screenshot=true" alt="generated-image-at-00:01:23" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Note that a random slug is generated if a custom domain is not set.</p></li><li><p>Once a custom domain is added, the slug will be standard.</p></li></ul><p><strong>7. Set Booking Availability</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=115" target="_blank" rel="noopener noreferrer nofollow">1:55</a></p><p><img src="https://loom.com/i/cebe37ffcd1745cda9c3442533ce8382?workflows_screenshot=true" alt="generated-image-at-00:01:55" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Choose to use an existing availability schedule or create a custom one.</p></li></ul><p><strong>8. Advanced Settings</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=126" target="_blank" rel="noopener noreferrer nofollow">2:06</a></p><p><img src="https://loom.com/i/815f06cc35924ceebfbee30cc5cd276f?workflows_screenshot=true" alt="generated-image-at-00:02:06" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Add an image or logo for the appointment type.</p></li><li><p>Group calendars together if needed.</p></li></ul><p><strong>9. Configure Appointment Title and Location</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=146" target="_blank" rel="noopener noreferrer nofollow">2:26</a></p><p><img src="https://loom.com/i/b2443bb553dc4ad0b6e9287de6648754?workflows_screenshot=true" alt="generated-image-at-00:02:26" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Set the title for the calendar meeting.</p></li><li><p>Select the staff member and meeting location.</p></li></ul><p><strong>10. Set Meeting Priority</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=173" target="_blank" rel="noopener noreferrer nofollow">2:53</a></p><p><img src="https://loom.com/i/adc3000698314755b4c62bb9092e3d9b?workflows_screenshot=true" alt="generated-image-at-00:02:53" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Choose the meeting platform (Zoom, Google Meet, etc.).</p></li><li><p>Enter the meeting link if applicable.</p></li></ul><p><strong>11. Define Availability and Booking Rules</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=186" target="_blank" rel="noopener noreferrer nofollow">3:06</a></p><p><img src="https://loom.com/i/68e60ac5699a4d38b88fbd235925da82?workflows_screenshot=true" alt="generated-image-at-00:03:06" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Set custom hours or standard hours for availability.</p></li><li><p>Define booking rules such as duration, minimum scheduling notice, and buffer time.</p></li></ul><p><strong>12. Advanced Settings for Forms and Notifications</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=248" target="_blank" rel="noopener noreferrer nofollow">4:08</a></p><p><img src="https://loom.com/i/cde8323c1b2648f3bbb7cc8a6af19778?workflows_screenshot=true" alt="generated-image-at-00:04:08" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Set up intake forms (default or custom).</p></li><li><p>Configure consent and confirmation settings.</p></li></ul><p><strong>13. Payment and Widget Customization</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=292" target="_blank" rel="noopener noreferrer nofollow">4:52</a></p><p><img src="https://loom.com/i/0e2c0cdc07a64942b3f52f7af3863175?workflows_screenshot=true" alt="generated-image-at-00:04:52" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Set up payment acceptance through management services.</p></li><li><p>Customize widget appearance to match brand colors.</p></li></ul><p><strong>14. Save the Appointment Type</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=304" target="_blank" rel="noopener noreferrer nofollow">5:04</a></p><p><img src="https://loom.com/i/1211c1e07aba4ff48ea892d5fa455601?workflows_screenshot=true" alt="generated-image-at-00:05:04" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Click 'Save' to finalize the appointment type.</p></li></ul><p><strong>15. Group Appointment Types</strong> <a href="https://loom.com/share/a3c917f2f2a648aa9a32270af228be07?t=325" target="_blank" rel="noopener noreferrer nofollow">5:25</a></p><p><img src="https://loom.com/i/ddcf27c77ca0478fb15d01a5a3e41b28?workflows_screenshot=true" alt="generated-image-at-00:05:25" width="384px" height="240px" /></p><ul data-tight="true"><li><p>Create a new group (e.g., 'Consultations').</p></li><li><p>Add initial and follow-up appointments into the group.</p></li></ul>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

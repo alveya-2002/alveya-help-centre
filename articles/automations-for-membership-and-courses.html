@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automations for membership and courses — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=courses-funnels">Courses & Funnels</a>
+        <span>›</span>
+        <span>Automations for membership and courses</span>
+      </nav>
+      <h1 class="article-title">Automations for membership and courses</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=courses-funnels" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Courses & Funnels
+    </a>
+
+    <div class="article-content">
+      <h3>Remove user when there is a failed payment (Video Coming)</h3><p>When running memberships or subscription-based offers, it’s important that access is managed automatically if a payment fails or a subscription is cancelled.</p>
+<p>Rather than manually checking transactions, you can create a simple automation workflow that removes access when specific payment events occur.</p>
+<p>This keeps your system consistent and protects your revenue without additional admin work.</p>
+<h2>What This Automation Does</h2>
+<p>When a payment fails or a subscription becomes inactive, the system will:</p>
+<ul>
+<li>Remove access to the membership or course</li>
+<li>Remove any related access tags</li>
+<li>Optionally notify the client</li>
+<li>Optionally notify you or a team member</li>
+<p></ul></p>
+<p>Once set up, this runs automatically in the background.</p>
+<h2>Step-by-Step: Setting Up the Workflow</h2>
+<h3>Step 1: Create a New Workflow</h3>
+<p>Navigate to:</p>
+<p><strong>Automations → Workflows → Create New Workflow</strong></p>
+<p>You can start from scratch or use a template if available.</p>
+<h3>Step 2: Add the Trigger</h3>
+<p>Choose one of the following triggers, depending on your setup:</p>
+<ul>
+<li>Invoice Payment Failed</li>
+<li>Subscription Status Changed</li>
+<li>Order Status Updated</li>
+<p></ul></p>
+<p>If using subscription logic, set the trigger condition to:</p>
+<ul>
+<li>Status = Failed</li>
+<li>OR Status = Cancelled</li>
+<li>OR Status = Past Due</li>
+<p></ul></p>
+<p>This tells the system when to activate the automation.</p>
+<h3>Step 3: Remove Membership Access</h3>
+<p>Add an action:</p>
+<ul>
+<li>Remove Offer<br />or</li>
+<li>Remove Course Access</li>
+<p></ul></p>
+<p>Select the relevant membership or product.</p>
+<p>This ensures the user no longer has access to gated content.</p>
+<h3>Step 4: Remove Access Tags (If Applicable)</h3>
+<p>If you use tags to manage membership status, add:</p>
+<ul>
+<li>Remove Tag<br />Select the tag associated with active members.</li>
+<p></ul></p>
+<p>This keeps your contact segmentation clean.</p>
+<h3>Step 5: Optional – Send a Payment Notification Email</h3>
+<p>You may wish to add:</p>
+<ul>
+<li>Send Email</li>
+<p></ul></p>
+<p>This can:</p>
+<ul>
+<li>Inform the client their payment failed</li>
+<li>Provide instructions to update billing details</li>
+<li>Offer a grace period if appropriate</li>
+<p></ul></p>
+<p>Keep this message calm and clear.</p>
+<h3>Step 6: Optional – Internal Notification</h3>
+<p>You can also add:</p>
+<ul>
+<li>Internal Notification</li>
+<p></ul></p>
+<p>This alerts you or your team if a payment fails, so you can follow up if needed.</p>
+<h3>Step 7: Publish the Workflow</h3>
+<p>Once all steps are added:</p>
+<ul>
+<li>Review your trigger</li>
+<li>Confirm actions are in the correct order</li>
+<li>Turn the workflow on</li>
+<p></ul></p>
+<p>Your automation is now live.</p>
+<h2>What the Flow Looks Like</h2>
+<p>Payment fails<br />→ Workflow triggers<br />→ Membership access removed<br />→ Tags updated<br />→ Notifications sent</p>
+<p>No manual work required.</p>
+<h2>Best Practice Tips</h2>
+<ul>
+<li>Test the workflow using a test subscription before going live</li>
+<li>Ensure your trigger is connected to the correct product</li>
+<li>Keep notification emails clear and supportive</li>
+<li>Avoid relying solely on manual monitoring</li>
+<p></ul></p>
+<h2>Why This Matters</h2>
+<p>Automated access control:</p>
+<ul>
+<li>Protects your revenue</li>
+<li>Maintains fairness across members</li>
+<li>Reduces admin time</li>
+<li>Creates a clean, professional system</li>
+<p></ul></p>
+<p>When your automations are set up correctly, your membership can run smoothly without constant oversight.</p>
+						<h3>How to Regrant Membership Access After Payment Is Resolved</h3><p data-pm-slice="1 1 []">If a client’s payment fails, your automation may remove their membership access automatically.</p>
+<p data-start="367" data-end="481">Once their payment is successfully processed or their subscription is reactivated, you may need to restore access.</p>
+<p data-start="483" data-end="565">This guide explains how to do that manually and how to automate it for the future.</p>
+<h2 data-start="572" data-end="610">When You May Need to Regrant Access</h2>
+<p data-start="612" data-end="646">You may need to restore access if:</p>
+<ul data-start="648" data-end="838">
+<li data-start="648" data-end="712">
+<p data-start="650" data-end="712">A client updates their payment details after a failed charge</p>
+<p></li></p>
+<li data-start="713" data-end="761">
+<p data-start="715" data-end="761">A past-due subscription becomes active again</p>
+<p></li></p>
+<li data-start="762" data-end="803">
+<p data-start="764" data-end="803">You manually approve continued access</p>
+<p></li></p>
+<li data-start="804" data-end="838">
+<p data-start="806" data-end="838">A refund or error was resolved</p>
+<p></li> </ul></p>
+<p data-start="840" data-end="923">Regranting access ensures the client can log back into their membership or program.</p>
+<h2 data-start="930" data-end="966">Option 1: Manually Restore Access</h2>
+<p data-start="968" data-end="1004">This is best for one-off situations.</p>
+<h3 data-start="1006" data-end="1036">Step 1: Locate the Contact</h3>
+<p data-start="1038" data-end="1044">Go to:</p>
+<p data-start="1046" data-end="1080"><strong data-start="1046" data-end="1080">Contacts → Search Contact Name</strong></p>
+<p data-start="1082" data-end="1108">Open the client’s profile.</p>
+<h3 data-start="1115" data-end="1152">Step 2: Reapply Membership Access</h3>
+<p data-start="1154" data-end="1166">Navigate to:</p>
+<p data-start="1168" data-end="1204"><strong data-start="1168" data-end="1204">Memberships / Offers → Add Offer</strong></p>
+<p data-start="1206" data-end="1247">Select the relevant course or membership.</p>
+<p data-start="1249" data-end="1264">Confirm access.</p>
+<h3 data-start="1271" data-end="1318">Step 3: Reapply Any Required Tags (If Used)</h3>
+<p data-start="1320" data-end="1379">If your system uses tags to control access or segmentation:</p>
+<ul data-start="1381" data-end="1484">
+<li data-start="1381" data-end="1419">
+<p data-start="1383" data-end="1419">Add the appropriate membership tag</p>
+<p></li></p>
+<li data-start="1420" data-end="1484">
+<p data-start="1422" data-end="1484">Remove any “payment failed” or “inactive” tags if applicable</p>
+<p></li> </ul></p>
+<p data-start="1486" data-end="1542">This ensures your contact remains correctly categorised.</p>
+<h3 data-start="1549" data-end="1575">Step 4: Confirm Access</h3>
+<p data-start="1577" data-end="1600">It is good practice to:</p>
+<ul data-start="1602" data-end="1681">
+<li data-start="1602" data-end="1635">
+<p data-start="1604" data-end="1635">Confirm the client can log in</p>
+<p></li></p>
+<li data-start="1636" data-end="1681">
+<p data-start="1638" data-end="1681">Send a brief confirmation email if needed</p>
+<p></li> </ul></p>
+<p data-start="1683" data-end="1728">Keep this communication clear and supportive.</p>
+<h2 data-start="1735" data-end="1784">Option 2: Automate Reinstatement (Recommended)</h2>
+<p data-start="1786" data-end="1867">If you regularly manage subscriptions, it is best to automate access restoration.</p>
+<h3 data-start="1869" data-end="1902">Step 1: Create a New Workflow</h3>
+<p data-start="1904" data-end="1910">Go to:</p>
+<p data-start="1912" data-end="1961"><strong data-start="1912" data-end="1961">Automations → Workflows → Create New Workflow</strong></p>
+<h3 data-start="1968" data-end="1995">Step 2: Add the Trigger</h3>
+<p data-start="1997" data-end="2034">Choose one of the following triggers:</p>
+<ul data-start="2036" data-end="2121">
+<li data-start="2036" data-end="2064">
+<p data-start="2038" data-end="2064">Invoice Payment Received</p>
+<p></li></p>
+<li data-start="2065" data-end="2096">
+<p data-start="2067" data-end="2096">Subscription Status Changed</p>
+<p></li></p>
+<li data-start="2097" data-end="2121">
+<p data-start="2099" data-end="2121">Order Status Updated</p>
+<p></li> </ul></p>
+<p data-start="2123" data-end="2144">Set the condition to:</p>
+<ul data-start="2146" data-end="2193">
+<li data-start="2146" data-end="2165">
+<p data-start="2148" data-end="2165">Status = Active</p>
+<p></li></p>
+<li data-start="2166" data-end="2193">
+<p data-start="2168" data-end="2193">OR Payment = Successful</p>
+<p></li> </ul></p>
+<p data-start="2195" data-end="2252">This ensures access is only restored once payment clears.</p>
+<h3 data-start="2259" data-end="2303">Step 3: Add the Action to Regrant Access</h3>
+<p data-start="2305" data-end="2309">Add:</p>
+<ul data-start="2311" data-end="2353">
+<li data-start="2311" data-end="2331">
+<p data-start="2313" data-end="2331">Grant Offer<br />or</p>
+<p></li></p>
+<li data-start="2332" data-end="2353">
+<p data-start="2334" data-end="2353">Add Course Access</p>
+<p></li> </ul></p>
+<p data-start="2355" data-end="2397">Select the relevant membership or program.</p>
+<h3 data-start="2404" data-end="2438">Step 4: Reapply Tags (If Used)</h3>
+<p data-start="2440" data-end="2444">Add:</p>
+<ul data-start="2446" data-end="2457">
+<li data-start="2446" data-end="2457">
+<p data-start="2448" data-end="2457">Add Tag</p>
+<p></li> </ul></p>
+<p data-start="2459" data-end="2513">Select the appropriate “Active Member” or similar tag.</p>
+<p data-start="2515" data-end="2547">This keeps segmentation aligned.</p>
+<h3 data-start="2554" data-end="2600">Step 5: Optional – Send Confirmation Email</h3>
+<p data-start="2602" data-end="2622">You may wish to add:</p>
+<ul data-start="2624" data-end="2638">
+<li data-start="2624" data-end="2638">
+<p data-start="2626" data-end="2638">Send Email</p>
+<p></li> </ul></p>
+<p data-start="2640" data-end="2733">This reassures the client that access has been restored and provides login details if needed.</p>
+<h3 data-start="2740" data-end="2772">Step 6: Publish the Workflow</h3>
+<p data-start="2774" data-end="2833">Review your trigger and actions, then turn the workflow on.</p>
+<p data-start="2835" data-end="2916">Your system will now automatically restore access whenever payment is successful.</p>
+<h2 data-start="2923" data-end="2950">What the Flow Looks Like</h2>
+<p data-start="2952" data-end="3068">Payment resolved<br />→ Workflow triggers<br />→ Membership access restored<br />→ Tags updated<br />→ Confirmation email sent</p>
+<p data-start="3070" data-end="3099">No manual follow-up required.</p>
+<h2 data-start="3106" data-end="3127">Best Practice Tips</h2>
+<ul data-start="3129" data-end="3373">
+<li data-start="3129" data-end="3179">
+<p data-start="3131" data-end="3179">Always test your workflow before relying on it</p>
+<p></li></p>
+<li data-start="3180" data-end="3233">
+<p data-start="3182" data-end="3233">Avoid granting access before payment is confirmed</p>
+<p></li></p>
+<li data-start="3234" data-end="3285">
+<p data-start="3236" data-end="3285">Keep email communication supportive and neutral</p>
+<p></li></p>
+<li data-start="3286" data-end="3373">
+<p data-start="3288" data-end="3373">Review your failed-payment and reactivation workflows together to ensure they align</p>
+<p></li> </ul></p>
+<h2 data-start="3380" data-end="3399">Why This Matters</h2>
+<p data-start="3401" data-end="3426">Automating reinstatement:</p>
+<ul data-start="3428" data-end="3575">
+<li data-start="3428" data-end="3450">
+<p data-start="3430" data-end="3450">Reduces admin time</p>
+<p></li></p>
+<li data-start="3451" data-end="3486">
+<p data-start="3453" data-end="3486">Prevents accidental access gaps</p>
+<p></li></p>
+<li data-start="3487" data-end="3531">
+<p data-start="3489" data-end="3531">Creates a professional client experience</p>
+<p></li></p>
+<li data-start="3532" data-end="3575">
+<p data-start="3534" data-end="3575">Keeps your membership system consistent</p>
+<p></li> </ul></p>
+<p data-start="3577" data-end="3679">When your payment and access workflows work together, your membership runs smoothly in the background.</p>
+<p>When running memberships or subscription-based offers, it’s important that access is managed automatically if a payment fails or a subscription is cancelled.</p>
+<p>Rather than manually checking transactions, you can create a simple automation workflow that removes access when specific payment events occur.</p>
+<p>This keeps your system consistent and protects your revenue without additional admin work.</p>
+<h2>What This Automation Does</h2>
+<p>When a payment fails or a subscription becomes inactive, the system will:</p>
+<ul>
+<li>Remove access to the membership or course</li>
+<li>Remove any related access tags</li>
+<li>Optionally notify the client</li>
+<li>Optionally notify you or a team member</li>
+<p></ul></p>
+<p>Once set up, this runs automatically in the background.</p>
+<h2>Step-by-Step: Setting Up the Workflow</h2>
+<h3>Step 1: Create a New Workflow</h3>
+<p>Navigate to:</p>
+<p><strong>Automations → Workflows → Create New Workflow</strong></p>
+<p>You can start from scratch or use a template if available.</p>
+<h3>Step 2: Add the Trigger</h3>
+<p>Choose one of the following triggers, depending on your setup:</p>
+<ul>
+<li>Invoice Payment Failed</li>
+<li>Subscription Status Changed</li>
+<li>Order Status Updated</li>
+<p></ul></p>
+<p>If using subscription logic, set the trigger condition to:</p>
+<ul>
+<li>Status = Failed</li>
+<li>OR Status = Cancelled</li>
+<li>OR Status = Past Due</li>
+<p></ul></p>
+<p>This tells the system when to activate the automation.</p>
+<h3>Step 3: Remove Membership Access</h3>
+<p>Add an action:</p>
+<ul>
+<li>Remove Offer<br />or</li>
+<li>Remove Course Access</li>
+<p></ul></p>
+<p>Select the relevant membership or product.</p>
+<p>This ensures the user no longer has access to gated content.</p>
+<h3>Step 4: Remove Access Tags (If Applicable)</h3>
+<p>If you use tags to manage membership status, add:</p>
+<ul>
+<li>Remove Tag<br />Select the tag associated with active members.</li>
+<p></ul></p>
+<p>This keeps your contact segmentation clean.</p>
+<h3>Step 5: Optional – Send a Payment Notification Email</h3>
+<p>You may wish to add:</p>
+<ul>
+<li>Send Email</li>
+<p></ul></p>
+<p>This can:</p>
+<ul>
+<li>Inform the client their payment failed</li>
+<li>Provide instructions to update billing details</li>
+<li>Offer a grace period if appropriate</li>
+<p></ul></p>
+<p>Keep this message calm and clear.</p>
+<h3>Step 6: Optional – Internal Notification</h3>
+<p>You can also add:</p>
+<ul>
+<li>Internal Notification</li>
+<p></ul></p>
+<p>This alerts you or your team if a payment fails, so you can follow up if needed.</p>
+<h3>Step 7: Publish the Workflow</h3>
+<p>Once all steps are added:</p>
+<ul>
+<li>Review your trigger</li>
+<li>Confirm actions are in the correct order</li>
+<li>Turn the workflow on</li>
+<p></ul></p>
+<p>Your automation is now live.</p>
+<h2>What the Flow Looks Like</h2>
+<p>Payment fails<br />→ Workflow triggers<br />→ Membership access removed<br />→ Tags updated<br />→ Notifications sent</p>
+<p>No manual work required.</p>
+<h2>Best Practice Tips</h2>
+<ul>
+<li>Test the workflow using a test subscription before going live</li>
+<li>Ensure your trigger is connected to the correct product</li>
+<li>Keep notification emails clear and supportive</li>
+<li>Avoid relying solely on manual monitoring</li>
+<p></ul></p>
+<h2>Why This Matters</h2>
+<p>Automated access control:</p>
+<ul>
+<li>Protects your revenue</li>
+<li>Maintains fairness across members</li>
+<li>Reduces admin time</li>
+<li>Creates a clean, professional system</li>
+<p></ul></p>
+<p>When your automations are set up correctly, your membership can run smoothly without constant oversight.</p>
+<p data-pm-slice="1 1 []">If a client’s payment fails, your automation may remove their membership access automatically.</p>
+<p data-start="367" data-end="481">Once their payment is successfully processed or their subscription is reactivated, you may need to restore access.</p>
+<p data-start="483" data-end="565">This guide explains how to do that manually and how to automate it for the future.</p>
+<h2 data-start="572" data-end="610">When You May Need to Regrant Access</h2>
+<p data-start="612" data-end="646">You may need to restore access if:</p>
+<ul data-start="648" data-end="838">
+<li data-start="648" data-end="712">
+<p data-start="650" data-end="712">A client updates their payment details after a failed charge</p>
+<p></li></p>
+<li data-start="713" data-end="761">
+<p data-start="715" data-end="761">A past-due subscription becomes active again</p>
+<p></li></p>
+<li data-start="762" data-end="803">
+<p data-start="764" data-end="803">You manually approve continued access</p>
+<p></li></p>
+<li data-start="804" data-end="838">
+<p data-start="806" data-end="838">A refund or error was resolved</p>
+<p></li> </ul></p>
+<p data-start="840" data-end="923">Regranting access ensures the client can log back into their membership or program.</p>
+<h2 data-start="930" data-end="966">Option 1: Manually Restore Access</h2>
+<p data-start="968" data-end="1004">This is best for one-off situations.</p>
+<h3 data-start="1006" data-end="1036">Step 1: Locate the Contact</h3>
+<p data-start="1038" data-end="1044">Go to:</p>
+<p data-start="1046" data-end="1080"><strong data-start="1046" data-end="1080">Contacts → Search Contact Name</strong></p>
+<p data-start="1082" data-end="1108">Open the client’s profile.</p>
+<h3 data-start="1115" data-end="1152">Step 2: Reapply Membership Access</h3>
+<p data-start="1154" data-end="1166">Navigate to:</p>
+<p data-start="1168" data-end="1204"><strong data-start="1168" data-end="1204">Memberships / Offers → Add Offer</strong></p>
+<p data-start="1206" data-end="1247">Select the relevant course or membership.</p>
+<p data-start="1249" data-end="1264">Confirm access.</p>
+<h3 data-start="1271" data-end="1318">Step 3: Reapply Any Required Tags (If Used)</h3>
+<p data-start="1320" data-end="1379">If your system uses tags to control access or segmentation:</p>
+<ul data-start="1381" data-end="1484">
+<li data-start="1381" data-end="1419">
+<p data-start="1383" data-end="1419">Add the appropriate membership tag</p>
+<p></li></p>
+<li data-start="1420" data-end="1484">
+<p data-start="1422" data-end="1484">Remove any “payment failed” or “inactive” tags if applicable</p>
+<p></li> </ul></p>
+<p data-start="1486" data-end="1542">This ensures your contact remains correctly categorised.</p>
+<h3 data-start="1549" data-end="1575">Step 4: Confirm Access</h3>
+<p data-start="1577" data-end="1600">It is good practice to:</p>
+<ul data-start="1602" data-end="1681">
+<li data-start="1602" data-end="1635">
+<p data-start="1604" data-end="1635">Confirm the client can log in</p>
+<p></li></p>
+<li data-start="1636" data-end="1681">
+<p data-start="1638" data-end="1681">Send a brief confirmation email if needed</p>
+<p></li> </ul></p>
+<p data-start="1683" data-end="1728">Keep this communication clear and supportive.</p>
+<h2 data-start="1735" data-end="1784">Option 2: Automate Reinstatement (Recommended)</h2>
+<p data-start="1786" data-end="1867">If you regularly manage subscriptions, it is best to automate access restoration.</p>
+<h3 data-start="1869" data-end="1902">Step 1: Create a New Workflow</h3>
+<p data-start="1904" data-end="1910">Go to:</p>
+<p data-start="1912" data-end="1961"><strong data-start="1912" data-end="1961">Automations → Workflows → Create New Workflow</strong></p>
+<h3 data-start="1968" data-end="1995">Step 2: Add the Trigger</h3>
+<p data-start="1997" data-end="2034">Choose one of the following triggers:</p>
+<ul data-start="2036" data-end="2121">
+<li data-start="2036" data-end="2064">
+<p data-start="2038" data-end="2064">Invoice Payment Received</p>
+<p></li></p>
+<li data-start="2065" data-end="2096">
+<p data-start="2067" data-end="2096">Subscription Status Changed</p>
+<p></li></p>
+<li data-start="2097" data-end="2121">
+<p data-start="2099" data-end="2121">Order Status Updated</p>
+<p></li> </ul></p>
+<p data-start="2123" data-end="2144">Set the condition to:</p>
+<ul data-start="2146" data-end="2193">
+<li data-start="2146" data-end="2165">
+<p data-start="2148" data-end="2165">Status = Active</p>
+<p></li></p>
+<li data-start="2166" data-end="2193">
+<p data-start="2168" data-end="2193">OR Payment = Successful</p>
+<p></li> </ul></p>
+<p data-start="2195" data-end="2252">This ensures access is only restored once payment clears.</p>
+<h3 data-start="2259" data-end="2303">Step 3: Add the Action to Regrant Access</h3>
+<p data-start="2305" data-end="2309">Add:</p>
+<ul data-start="2311" data-end="2353">
+<li data-start="2311" data-end="2331">
+<p data-start="2313" data-end="2331">Grant Offer<br />or</p>
+<p></li></p>
+<li data-start="2332" data-end="2353">
+<p data-start="2334" data-end="2353">Add Course Access</p>
+<p></li> </ul></p>
+<p data-start="2355" data-end="2397">Select the relevant membership or program.</p>
+<h3 data-start="2404" data-end="2438">Step 4: Reapply Tags (If Used)</h3>
+<p data-start="2440" data-end="2444">Add:</p>
+<ul data-start="2446" data-end="2457">
+<li data-start="2446" data-end="2457">
+<p data-start="2448" data-end="2457">Add Tag</p>
+<p></li> </ul></p>
+<p data-start="2459" data-end="2513">Select the appropriate “Active Member” or similar tag.</p>
+<p data-start="2515" data-end="2547">This keeps segmentation aligned.</p>
+<h3 data-start="2554" data-end="2600">Step 5: Optional – Send Confirmation Email</h3>
+<p data-start="2602" data-end="2622">You may wish to add:</p>
+<ul data-start="2624" data-end="2638">
+<li data-start="2624" data-end="2638">
+<p data-start="2626" data-end="2638">Send Email</p>
+<p></li> </ul></p>
+<p data-start="2640" data-end="2733">This reassures the client that access has been restored and provides login details if needed.</p>
+<h3 data-start="2740" data-end="2772">Step 6: Publish the Workflow</h3>
+<p data-start="2774" data-end="2833">Review your trigger and actions, then turn the workflow on.</p>
+<p data-start="2835" data-end="2916">Your system will now automatically restore access whenever payment is successful.</p>
+<h2 data-start="2923" data-end="2950">What the Flow Looks Like</h2>
+<p data-start="2952" data-end="3068">Payment resolved<br />→ Workflow triggers<br />→ Membership access restored<br />→ Tags updated<br />→ Confirmation email sent</p>
+<p data-start="3070" data-end="3099">No manual follow-up required.</p>
+<h2 data-start="3106" data-end="3127">Best Practice Tips</h2>
+<ul data-start="3129" data-end="3373">
+<li data-start="3129" data-end="3179">
+<p data-start="3131" data-end="3179">Always test your workflow before relying on it</p>
+<p></li></p>
+<li data-start="3180" data-end="3233">
+<p data-start="3182" data-end="3233">Avoid granting access before payment is confirmed</p>
+<p></li></p>
+<li data-start="3234" data-end="3285">
+<p data-start="3236" data-end="3285">Keep email communication supportive and neutral</p>
+<p></li></p>
+<li data-start="3286" data-end="3373">
+<p data-start="3288" data-end="3373">Review your failed-payment and reactivation workflows together to ensure they align</p>
+<p></li> </ul></p>
+<h2 data-start="3380" data-end="3399">Why This Matters</h2>
+<p data-start="3401" data-end="3426">Automating reinstatement:</p>
+<ul data-start="3428" data-end="3575">
+<li data-start="3428" data-end="3450">
+<p data-start="3430" data-end="3450">Reduces admin time</p>
+<p></li></p>
+<li data-start="3451" data-end="3486">
+<p data-start="3453" data-end="3486">Prevents accidental access gaps</p>
+<p></li></p>
+<li data-start="3487" data-end="3531">
+<p data-start="3489" data-end="3531">Creates a professional client experience</p>
+<p></li></p>
+<li data-start="3532" data-end="3575">
+<p data-start="3534" data-end="3575">Keeps your membership system consistent</p>
+<p></li> </ul></p>
+<p data-start="3577" data-end="3679">When your payment and access workflows work together, your membership runs smoothly in the background.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

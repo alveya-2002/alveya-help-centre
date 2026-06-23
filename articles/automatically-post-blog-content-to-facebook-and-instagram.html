@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatically Post Blog Content to Facebook and Instagram — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=automations">Automations</a>
+        <span>›</span>
+        <span>Automatically Post Blog Content to Facebook and Instagram</span>
+      </nav>
+      <h1 class="article-title">Automatically Post Blog Content to Facebook and Instagram</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=automations" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Automations
+    </a>
+
+    <div class="article-content">
+      <p><i>Every time you publish a new blog post, Alvéya can automatically share it to your Facebook and Instagram — no manual posting required. This guide walks you through setting up an RSS-powered social post so your content keeps working for you long after you hit publish.</i></p><p><b>Before you start:  </b>You will need at least one Facebook or Instagram account connected in your Social Planner. If you haven't connected your accounts yet, head to Settings → Integrations → Social Planner and link them before continuing.</p><p data-start="889" data-end="895">Written step by step instructions  for this video are below.</p>https://youtu.be/TNrSWr-laVg		
+						<h3>WRITTEN INSTRUCTIONS:</h3><h2>Step 1: Open the RSS Post Creator</h2><p>Head to Social Planner in the left-hand menu. In the top right corner, click New Post — then select RSS Post from the options that appear.</p><p><i>💡  RSS Post is different from a regular social post. It runs on a schedule and checks your blog for new content automatically, so it only needs to be set up once.</i></p><h2>Step 2: Add Your Blog RSS Feed URL</h2><p>In the RSS Feed URL field, enter the web address of your blog page with ?format=rss added to the end.</p><h3><b>For Squarespace websites:</b></h3><p>Take your blog page URL — for example, www.yoursite.com/blog — and add ?format=rss to the end so it reads:</p><p>  www.yoursite.com/blog?format=rss</p><h3><b>Using a different website platform?</b></h3><p>The RSS format varies depending on where your website is hosted. Check your platform&#8217;s help documentation to find the correct RSS URL structure. Common examples include:</p><ul><li style="font-weight: 400;" aria-level="1">WordPress: www.yoursite.com/feed</li><li style="font-weight: 400;" aria-level="1">Wix: www.yoursite.com/blog-feed.xml</li><li style="font-weight: 400;" aria-level="1">Webflow: www.yoursite.com/blog/rss.xml</li></ul><p><i>⚠️  If you paste in an incorrect RSS URL, the feed will not pull any posts. Most platforms have a help article on finding your RSS link — a quick search for &#8220; RSS feed URL&#8221; will get you there.</i></p><h2>Step 3: Choose Your Social Accounts</h2><p>Select which social accounts you want the posts to go to. You can choose one or multiple accounts — for example, your Facebook Page and your Instagram Business account at the same time.</p><p><i>💡  Instagram requires a Business or Creator account linked to a Facebook Page. Personal Instagram accounts cannot receive automated posts through this integration.</i></p><h3><b>Call to Action (optional)</b></h3><p>You will also see an option to include a call-to-action on each post. If you turn this on, a line like Read more from the link above will be appended to the post, directing your audience back to the full blog article on your website.</p><p>This is a simple but effective way to drive traffic from social media to your site — worth turning on if you want readers to click through.</p><h2>Step 4: Set Your Posting Schedule</h2><p>This is where you tell Alvéya how often to check your RSS feed for new content. When a new blog post is detected, it will automatically create and publish a social post based on what you have set up here.</p><h3><b>Check frequency</b></h3><p>Choose how often Alvéya checks your feed for new posts. The options typically include every few hours through to once a day. If you publish blog content frequently, a shorter check interval means posts go out sooner. If you post weekly or less often, a daily check is perfectly fine.</p><h3><b>Content to include in the post</b></h3><p>You can choose what gets pulled through from your blog post into the social post:</p><ul><li style="font-weight: 400;" aria-level="1">Blog post title — this is always included and becomes the main text of the post.</li><li style="font-weight: 400;" aria-level="1">Excerpt — a short snippet of the post content, usually the first sentence or two.</li><li style="font-weight: 400;" aria-level="1">Post description — the meta description you added when writing the blog post, if your platform supports it.</li></ul><p>Including the excerpt or description gives your audience a preview of the content before they click through. It tends to perform better than just a title on its own — a couple of lines of context can make the difference between someone scrolling past and someone clicking.</p><p><i>💡  Write your blog post meta descriptions with social sharing in mind — a compelling one or two sentences that make someone want to read more works perfectly as both SEO copy and social post content.</i></p><h2>Step 5: Save and Activate</h2><p>Once you are happy with your settings, save the RSS Post. Alvéya will begin checking your feed on the schedule you have chosen and will automatically publish new posts to your selected social accounts as soon as new blog content is detected.</p><p>You do not need to do anything else — from this point forward, every new blog post you publish will flow automatically through to your social channels.</p><p><i>⚠️  If you update an existing blog post rather than publishing a new one, the RSS feed may not detect it as new content. This automation is designed for new posts only.</i></p><h2>Quick Reference: RSS Post Settings</h2><table><thead><tr><th><p><b>Setting</b></p></th><th><p><b>What to do</b></p></th></tr></thead><tbody><tr><td><p><b>RSS Feed URL</b></p></td><td><p>Your blog URL + ?format=rss (or your platform&#8217;s RSS format)</p></td></tr><tr><td><p><b>Social accounts</b></p></td><td><p>Select all accounts you want the post shared to</p></td></tr><tr><td><p><b>Call to action</b></p></td><td><p>Turn on to add a &#8216;Read more&#8217; link to each post</p></td></tr><tr><td><p><b>Check frequency</b></p></td><td><p>How often Alvéya checks for new blog posts</p></td></tr><tr><td><p><b>Post content</b></p></td><td><p>Choose to include title only, or add excerpt / description</p></td></tr></tbody></table>
+		<h2>Step 1: Open the RSS Post Creator</h2><p>Head to Social Planner in the left-hand menu. In the top right corner, click New Post — then select RSS Post from the options that appear.</p><p><i>💡  RSS Post is different from a regular social post. It runs on a schedule and checks your blog for new content automatically, so it only needs to be set up once.</i></p><h2>Step 2: Add Your Blog RSS Feed URL</h2><p>In the RSS Feed URL field, enter the web address of your blog page with ?format=rss added to the end.</p><h3><b>For Squarespace websites:</b></h3><p>Take your blog page URL — for example, www.yoursite.com/blog — and add ?format=rss to the end so it reads:</p><p>  www.yoursite.com/blog?format=rss</p><h3><b>Using a different website platform?</b></h3><p>The RSS format varies depending on where your website is hosted. Check your platform's help documentation to find the correct RSS URL structure. Common examples include:</p><ul><li style="font-weight: 400;" aria-level="1">WordPress: www.yoursite.com/feed</li><li style="font-weight: 400;" aria-level="1">Wix: www.yoursite.com/blog-feed.xml</li><li style="font-weight: 400;" aria-level="1">Webflow: www.yoursite.com/blog/rss.xml</li></ul><p><i>⚠️  If you paste in an incorrect RSS URL, the feed will not pull any posts. Most platforms have a help article on finding your RSS link — a quick search for " RSS feed URL" will get you there.</i></p><h2>Step 3: Choose Your Social Accounts</h2><p>Select which social accounts you want the posts to go to. You can choose one or multiple accounts — for example, your Facebook Page and your Instagram Business account at the same time.</p><p><i>💡  Instagram requires a Business or Creator account linked to a Facebook Page. Personal Instagram accounts cannot receive automated posts through this integration.</i></p><h3><b>Call to Action (optional)</b></h3><p>You will also see an option to include a call-to-action on each post. If you turn this on, a line like Read more from the link above will be appended to the post, directing your audience back to the full blog article on your website.</p><p>This is a simple but effective way to drive traffic from social media to your site — worth turning on if you want readers to click through.</p><h2>Step 4: Set Your Posting Schedule</h2><p>This is where you tell Alvéya how often to check your RSS feed for new content. When a new blog post is detected, it will automatically create and publish a social post based on what you have set up here.</p><h3><b>Check frequency</b></h3><p>Choose how often Alvéya checks your feed for new posts. The options typically include every few hours through to once a day. If you publish blog content frequently, a shorter check interval means posts go out sooner. If you post weekly or less often, a daily check is perfectly fine.</p><h3><b>Content to include in the post</b></h3><p>You can choose what gets pulled through from your blog post into the social post:</p><ul><li style="font-weight: 400;" aria-level="1">Blog post title — this is always included and becomes the main text of the post.</li><li style="font-weight: 400;" aria-level="1">Excerpt — a short snippet of the post content, usually the first sentence or two.</li><li style="font-weight: 400;" aria-level="1">Post description — the meta description you added when writing the blog post, if your platform supports it.</li></ul><p>Including the excerpt or description gives your audience a preview of the content before they click through. It tends to perform better than just a title on its own — a couple of lines of context can make the difference between someone scrolling past and someone clicking.</p><p><i>💡  Write your blog post meta descriptions with social sharing in mind — a compelling one or two sentences that make someone want to read more works perfectly as both SEO copy and social post content.</i></p><h2>Step 5: Save and Activate</h2><p>Once you are happy with your settings, save the RSS Post. Alvéya will begin checking your feed on the schedule you have chosen and will automatically publish new posts to your selected social accounts as soon as new blog content is detected.</p><p>You do not need to do anything else — from this point forward, every new blog post you publish will flow automatically through to your social channels.</p><p><i>⚠️  If you update an existing blog post rather than publishing a new one, the RSS feed may not detect it as new content. This automation is designed for new posts only.</i></p><h2>Quick Reference: RSS Post Settings</h2><table><thead><tr><th><p><b>Setting</b></p></th><th><p><b>What to do</b></p></th></tr></thead><tbody><tr><td><p><b>RSS Feed URL</b></p></td><td><p>Your blog URL + ?format=rss (or your platform's RSS format)</p></td></tr><tr><td><p><b>Social accounts</b></p></td><td><p>Select all accounts you want the post shared to</p></td></tr><tr><td><p><b>Call to action</b></p></td><td><p>Turn on to add a 'Read more' link to each post</p></td></tr><tr><td><p><b>Check frequency</b></p></td><td><p>How often Alvéya checks for new blog posts</p></td></tr><tr><td><p><b>Post content</b></p></td><td><p>Choose to include title only, or add excerpt / description</p></td></tr></tbody></table>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

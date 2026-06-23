@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Course Setup Workflow — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=courses-funnels">Courses & Funnels</a>
+        <span>›</span>
+        <span>Interactive Course Setup Workflow</span>
+      </nav>
+      <h1 class="article-title">Interactive Course Setup Workflow</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=courses-funnels" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Courses & Funnels
+    </a>
+
+    <div class="article-content">
+      <p><!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Alvéya — Course Funnel Workflow</title> <style> @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap'); :root { --teal: #2D7D7D; --teal-dark: #1A5252; --teal-light: #4AA8A8; --teal-pale: #E8F5F5; --sage: #8BA888; --sage-light: #C8DBC6; --warm: #F5F0E8; --yellow: #E8C547; --charcoal: #2A2A2A; --mid: #5A5A5A; --light: #A0A0A0; --white: #FAFAF8; --red: #C0453A; --red-light: #F9ECEB; --green: #3D8B5E; --green-light: #E8F4ED; --orange: #D4732A; --orange-light: #FBF0E6; --purple: #7B5EA7; --purple-light: #F0EBF8; } * { margin: 0; padding: 0; box-sizing: border-box; } body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--charcoal); min-height: 100vh; } /* LEGEND */ .legend-bar { background: var(--charcoal); padding: 16px 48px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap; } .legend-label { font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em; margin-right: 8px; } .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.75); font-weight: 400; } .legend-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; } /* MAIN CANVAS */ .canvas { padding: 48px; overflow-x: auto; } /* PHASE COLUMNS */ .phases { display: flex; gap: 0; min-width: 1400px; position: relative; } .phase { flex: 1; min-width: 180px; position: relative; } .phase-header { padding: 10px 16px; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; border-bottom: 2px solid; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; } .phase-num { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: white; flex-shrink: 0; } /* Phase colours */ .ph-1 .phase-header { color: var(--teal); border-color: var(--teal); } .ph-1 .phase-num { background: var(--teal); } .ph-2 .phase-header { color: var(--sage); border-color: var(--sage); } .ph-2 .phase-num { background: var(--sage); } .ph-3 .phase-header { color: var(--orange); border-color: var(--orange); } .ph-3 .phase-num { background: var(--orange); } .ph-4 .phase-header { color: var(--green); border-color: var(--green); } .ph-4 .phase-num { background: var(--green); } .ph-5 .phase-header { color: var(--purple); border-color: var(--purple); } .ph-5 .phase-num { background: var(--purple); } .ph-6 .phase-header { color: var(--red); border-color: var(--red); } .ph-6 .phase-num { background: var(--red); } .ph-7 .phase-header { color: var(--teal-dark); border-color: var(--teal-dark); } .ph-7 .phase-num { background: var(--teal-dark); } /* NODE CARDS */ .node { border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; position: relative; border: 1.5px solid transparent; transition: all 0.2s; cursor: default; } .node:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); } .node-title { font-size: 12px; font-weight: 600; line-height: 1.35; margin-bottom: 4px; } .node-detail { font-size: 10.5px; color: var(--mid); line-height: 1.45; } .node-tag { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 7px; border-radius: 20px; margin-top: 6px; } /* Node types */ .node-page { background: var(--teal-pale); border-color: #B0DADA; } .node-page .node-title { color: var(--teal-dark); } .node-page .node-tag { background: var(--teal); color: white; } .node-email { background: #FFF8E1; border-color: #F0DC8A; } .node-email .node-title { color: #6B500A; } .node-email .node-tag { background: var(--yellow); color: var(--charcoal); } .node-workflow { background: var(--purple-light); border-color: #C5B0E0; } .node-workflow .node-title { color: #4A2D7A; } .node-workflow .node-tag { background: var(--purple); color: white; } .node-action { background: var(--green-light); border-color: #A8D4B8; } .node-action .node-title { color: #1E5C3A; } .node-action .node-tag { background: var(--green); color: white; } .node-payment { background: var(--orange-light); border-color: #E8C09A; } .node-payment .node-title { color: #7A3A0A; } .node-payment .node-tag { background: var(--orange); color: white; } .node-danger { background: var(--red-light); border-color: #E8A8A4; } .node-danger .node-title { color: #7A1A15; } .node-danger .node-tag { background: var(--red); color: white; } .node-crm { background: #F0EBF8; border-color: #C5B0E0; } .node-crm .node-title { color: #4A2D7A; } .node-crm .node-tag { background: var(--purple); color: white; } .node-system { background: #F0F0F5; border-color: #C8C8D8; } .node-system .node-title { color: var(--charcoal); } .node-system .node-tag { background: var(--charcoal); color: white; } /* ARROWS */ .arrow-down { display: flex; justify-content: center; margin: 2px 0; color: var(--light); font-size: 16px; line-height: 1; } .arrow-right-label { display: flex; align-items: center; gap: 6px; margin: 8px 0; font-size: 9.5px; color: var(--light); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; } .arrow-right-label::before, .arrow-right-label::after { content: ''; flex: 1; height: 1px; background: #D8D8D8; } /* BRANCH SECTION */ .branch-container { margin-top: 16px; } .branch-title { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--light); margin-bottom: 8px; padding-bottom: 4px; border-bottom: 1px dashed #D0D0D0; } /* PHASE CONNECTOR ARROWS (between columns) */ .phase-connector { display: flex; align-items: flex-start; padding-top: 56px; color: #C0C0C0; font-size: 22px; padding-left: 6px; padding-right: 6px; flex-shrink: 0; } /* DECISION DIAMOND */ .decision { background: #FFFBEC; border: 2px dashed var(--yellow); border-radius: 10px; padding: 10px 14px; margin-bottom: 10px; text-align: center; } .decision-label { font-size: 10px; font-weight: 700; color: #6B500A; text-transform: uppercase; letter-spacing: 0.08em; } .decision-q { font-size: 11.5px; color: var(--charcoal); margin-top: 3px; font-weight: 500; } /* DIVIDER */ .section-divider { width: 100%; height: 1px; background: linear-gradient(to right, transparent, #D0D0D0, transparent); margin: 6px 0; } /* FULL FLOW SECTION */ .flow-section { margin-bottom: 48px; } .flow-section-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--teal-dark); margin-bottom: 6px; } .flow-section-sub { font-size: 13px; color: var(--mid); margin-bottom: 28px; } /* HORIZONTAL FLOW TRACK */ .track { display: flex; align-items: flex-start; gap: 0; overflow-x: auto; padding-bottom: 8px; } .track-step { flex-shrink: 0; width: 200px; position: relative; } .track-step-inner { background: white; border: 1.5px solid #E0E0E0; border-radius: 12px; padding: 16px; margin: 0 8px; min-height: 120px; } .track-step-inner:hover { border-color: var(--teal); box-shadow: 0 4px 16px rgba(45,125,125,0.12); transform: translateY(-2px); transition: all 0.2s; } .step-number { width: 28px; height: 28px; background: var(--teal); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; margin-bottom: 10px; } .step-title { font-size: 12px; font-weight: 700; color: var(--charcoal); margin-bottom: 6px; line-height: 1.3; } .step-items { list-style: none; padding: 0; } .step-items li { font-size: 10.5px; color: var(--mid); padding: 2px 0; padding-left: 10px; position: relative; line-height: 1.4; } .step-items li::before { content: '→'; position: absolute; left: 0; color: var(--teal-light); font-size: 9px; top: 3px; } .track-arrow { flex-shrink: 0; display: flex; align-items: center; padding-top: 28px; color: #C8C8C8; font-size: 20px; } /* BRANCH FLOWS */ .branches { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 32px; } .branch { border-radius: 14px; overflow: hidden; border: 1.5px solid #E0E0E0; } .branch-head { padding: 14px 18px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; } .branch-head-icon { font-size: 16px; } .branch-success .branch-head { background: var(--green); color: white; } .branch-failure .branch-head { background: var(--red); color: white; } .branch-cancel .branch-head { background: var(--charcoal); color: white; } .branch-complete .branch-head { background: var(--teal-dark); color: white; } .branch-upsell .branch-head { background: var(--purple); color: white; } .branch-recovery .branch-head { background: var(--orange); color: white; } .branch-body { padding: 16px 18px; background: white; } .branch-step { display: flex; gap: 10px; padding: 7px 0; border-bottom: 1px solid #F0F0F0; align-items: flex-start; } .branch-step:last-child { border-bottom: none; } .branch-icon { font-size: 13px; flex-shrink: 0; margin-top: 1px; } .branch-text { font-size: 11px; color: var(--charcoal); line-height: 1.4; font-weight: 500; } .branch-sub { font-size: 10px; color: var(--light); margin-top: 2px; font-weight: 400; } /* TAG BADGES */ .tag-badge { display: inline-block; background: var(--charcoal); color: white; font-size: 9px; font-weight: 600; padding: 2px 8px; border-radius: 20px; font-family: 'DM Sans', monospace; letter-spacing: 0.04em; margin: 2px 2px 2px 0; } .tag-badge.green { background: var(--green); } .tag-badge.red { background: var(--red); } .tag-badge.orange { background: var(--orange); } .tag-badge.teal { background: var(--teal); } .tag-badge.purple { background: var(--purple); } /* PRINT */ @media print { body { background: white; } .canvas { padding: 20px; } } </style> </head> <body> Node types: Page / Funnel Email Workflow / Automation Access / CRM Action Payment Revocation / Failure System Setup <!-- ===================== MAIN LINEAR FLOW ===================== --> Main Funnel Flow SCROLL RIGHT TO SEE THE FULL FLOW - The linear journey from cold lead to active course member <!-- Step 1 --> 1 Free Opt-In</p>
+          <ul>
+            <li>Opt-in funnel page</li>
+            <li>Form (name + email)</li>
+            <li>Privacy policy link</li>
+            <li>Thank you page</li>
+<p></ul> course-lead › <!-- Step 2 --> 2 Instant Delivery</p>
+          <ul>
+            <li>Confirmation email</li>
+            <li>Freebie delivery email</li>
+            <li>Download link / redirect</li>
+<p></ul> Triggered by: form submit › <!-- Step 3 --> 3 Nurture Sequence</p>
+          <ul>
+            <li>Email 1: Value + intro</li>
+            <li>Email 2: Problem-aware</li>
+            <li>Email 3: Tease the course</li>
+            <li>Email 4: Social proof</li>
+            <li>Email 5: Sales page CTA</li>
+<p></ul> 7–14 day sequence › <!-- Step 4 --> 4 Sales Page</p>
+          <ul>
+            <li>Hero + problem block</li>
+            <li>Course overview</li>
+            <li>Proof + credibility</li>
+            <li>Pricing + CTA</li>
+            <li>Objection handling</li>
+<p></ul> › <!-- Step 5 --> 5 Checkout</p>
+          <ul>
+            <li>GHL order form</li>
+            <li>Stripe connected</li>
+            <li>One-time or plan</li>
+            <li>Order bump (optional)</li>
+            <li>T&Cs link</li>
+<p></ul> › <!-- Step 6 --> 6 Purchase Trigger</p>
+          <ul>
+            <li>Workflow fires</li>
+            <li>Add tags</li>
+            <li>Grant access</li>
+            <li>Send emails</li>
+            <li>Update pipeline</li>
+<p></ul> course-purchased course-active › <!-- Step 7 --> 7 Course Access</p>
+          <ul>
+            <li>GHL membership portal</li>
+            <li>Modules + lessons live</li>
+            <li>Login details sent</li>
+            <li>Drip schedule (if set)</li>
+<p></ul> › <!-- Step 8 --> 8 Onboarding Sequence</p>
+          <ul>
+            <li>Email 1: Welcome + login</li>
+            <li>Email 2: Quick win tip</li>
+            <li>Email 3: Check-in</li>
+<p></ul> Days 0, 2, 5 › <!-- Step 9 --> 9 Active Member</p>
+          <ul>
+            <li>Course in progress</li>
+            <li>Re-engagement if stalled</li>
+            <li>Community access (if on)</li>
+            <li>Progress tracked</li>
+<p></ul> course-active › <!-- Step 10 --> 10 Completion</p>
+          <ul>
+            <li>Completion trigger fires</li>
+            <li>Congrats email</li>
+            <li>Next offer CTA</li>
+            <li>Update pipeline stage</li>
+<p></ul> course-completed <!-- ===================== BRANCH FLOWS ===================== --> Branch Workflows Triggered automations you can set up for every scenario outside the happy path <!-- PAYMENT FAILURE --> ⚠ Payment Failure ⚡ Trigger: Subscription Payment Status: Failed Recurring charge declined 🏷 Add tag course-payment-failed ✉ Email 1 (immediate) Friendly notice + update payment link ✉ Email 2 (48hrs) Second notice, increased urgency ✉ Email 3 (96hrs) Final notice before access paused 🚫 Access revoked Remove from membership offer <!-- PAYMENT RECOVERY --> ✓ Payment Recovery ⚡ Trigger: Payment updated / successful retry Stripe payment succeeds after failure 📋 Action: Remove from workflow Filter: Payment failed workflow 🏷 Remove failed tag course-payment-failed removed ✅ Restore access Re-add to membership offer ✉ Confirmation email sent "You're back in — pick up where you left off" 📋 Pipeline updated Return to Active stage <!-- CANCELLATION --> ✕ Cancellation ⚡ Trigger: Subscription cancelled Manual or auto via Stripe 🏷 Tag update Remove course-active<br/>Add course-cancelled 🚫 Remove from membership offer Access revoked immediately ✉ Cancellation confirmation email Warm close, door left open 📋 Pipeline moved to Churned Internal note added to contact <!-- REFUND / CHARGEBACK --> ↩ Refund / Chargeback ⚡ Trigger: Refund issued or dispute opened Via Stripe or manually 🚫 Access revoked immediately Remove from membership offer 🏷 Tag update Remove active, add course-cancelled 📝 Internal note added Flag contact for manual review ✉ Refund confirmation email Professional, no-burn-bridges tone <!-- COMPLETION + UPSELL --> 🎓 Completion + Upsell ⚡ Trigger: Course completed All modules marked complete 🏷 Add tag course-completed ✉ Congratulations email Celebrate the win + next step 📋 Pipeline → Completed stage 💼 Upsell sequence triggers (2–3 emails) Logical next offer introduced <!-- RE-ENGAGEMENT --> ↻ Re-engagement ⚡ Trigger: No login activity for X days Or stalled at specific module ✉ Re-engagement email "You've got X modules left — here's why it matters" ✉ Follow-up nudge (if no action) Targeted to where they dropped off 📝 Internal note if still no activity Flag for manual personal outreach <!-- ===================== CRM & TAG REFERENCE ===================== --> CRM Tag Map Every tag used in this funnel and when it is applied or removed Applied on opt-in course-lead Applied when form submitted. Triggers freebie delivery + nurture sequence. Applied on purchase course-purchased course-active Applied together on successful payment. Triggers access grant + onboarding. Applied on payment failure course-payment-failed Applied when Stripe payment fails. Triggers 3-email dunning sequence. Applied on cancellation course-cancelled Applied on cancel or refund. course-active removed simultaneously. Applied on completion course-completed Applied when all modules marked complete. Triggers completion email + upsell sequence. Removed on recovery course-payment-failed → removed Removed when payment recovers. Access restored and confirmation email sent. <!-- ===================== PIPELINE STAGES ===================== --> Pipeline Stage Map Contact movement through the GHL pipeline Lead Opted in › Nurture In sequence › Sales Page Visit Considering › Purchased Payment taken › Active In course › Completed Finished course ↘ Churned Cancelled / refunded </body> </html></p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

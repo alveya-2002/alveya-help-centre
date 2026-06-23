@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Going Live in Your Alvéya Community — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=courses-funnels">Courses & Funnels</a>
+        <span>›</span>
+        <span>Going Live in Your Alvéya Community</span>
+      </nav>
+      <h1 class="article-title">Going Live in Your Alvéya Community</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=courses-funnels" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Courses & Funnels
+    </a>
+
+    <div class="article-content">
+      <p><em>Alvéya Communities include a built-in live streaming feature that lets you host real-time sessions directly inside your group — without needing a separate tool like Zoom or Streamyard. This guide walks you through how to set up, run, and manage live sessions for your community.</em></p>
+<h2 class="wp-block-heading"><strong>What You Can Use Live Sessions For</strong></h2>
+<p>The live feature inside Alvéya Communities is well suited to any situation where you want to gather your members in real time. Some practical examples for health practitioners include:</p>
+<ul class="wp-block-list">
+<li>Weekly group coaching or Q&amp;A calls with program participants.</li>
+<li>Live education sessions — presenting research, walking through protocols, or demonstrating techniques.</li>
+<li>Orientation or onboarding calls for new members joining a program.</li>
+<li>Group check-ins or accountability sessions throughout a course.</li>
+<li>Informal community connection calls to build relationships between members.</li>
+<p></ul></p>
+<p><em>💡&nbsp; Running live sessions inside your community rather than through a separate platform keeps everything in one place — members do not need to manage multiple logins, links, or apps to participate.</em></p>
+<h2 class="wp-block-heading"><strong>Before You Go Live</strong></h2>
+<p>To host a live session, you need to be logged into your community as an admin. Navigate to your community by going to Memberships from your Alvéya dashboard, then Communities, then Groups, and click Log In on the group you want to go live in.</p>
+<p>Make sure you have your channels set up before starting a live session — you will be asked to select which channel the recording is posted to once the session ends.</p>
+<h2 class="wp-block-heading"><strong>Step 1 — Start Your Live Session</strong></h2>
+<p>Once you are inside your community, you will see a Go Live button. Click it to open the live session setup panel.</p>
+<h3 class="wp-block-heading"><strong>Grant browser permissions</strong></h3>
+<p>Your browser will ask for permission to access your camera and microphone. You will need to allow both. This is a standard browser security prompt — it only appears the first time or if you have previously blocked access.</p>
+<h3 class="wp-block-heading"><strong>Configure your session settings</strong></h3>
+<p>Before going live, take a moment to set up the session correctly:</p>
+<ul class="wp-block-list">
+<li>Channel — use the dropdown menu to select which channel the live video will be posted to once the session ends. Choose the channel that is most relevant to the session content (e.g. a specific week's channel in a program, or your general Announcements channel).</li>
+<li>Timing — choose whether to go live immediately or schedule the session for a future date and time.</li>
+<li>Camera and microphone — toggle these on or off as needed in the centre of the setup panel.</li>
+<li>Title — give your session a clear, descriptive title so members know what the session covers.</li>
+<li>Description — add a brief description of what will be discussed or covered in the session.</li>
+<li>Keep as post — enable this option so the recording is automatically saved and posted to the selected channel after the session ends. Members who could not attend live can then watch the replay.</li>
+<li>Notify members — enable this to send in-app and push notifications to members when you go live, prompting them to join.</li>
+<p></ul></p>
+<p><em>💡&nbsp; Writing a clear title and description before going live is worth taking a moment to do — these appear on the saved post in the channel, so members browsing for replay content can quickly understand what each session covers.</em></p>
+<h2 class="wp-block-heading"><strong>Step 2 — Choose Your Streaming Mode</strong></h2>
+<p>Alvéya offers two options for how you run your live session. Choose the one that best suits your session format.</p>
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Mode</strong></th><th><strong>How it works</strong></th><th><strong>Best for</strong></th></tr></thead><tbody><tr><td><strong>Meeting Room</strong></td><td>Members join interactively — they can turn on their cameras, unmute, chat, react, and raise hands. Similar to a Zoom or Google Meet call.</td><td>Group coaching calls, Q&amp;As, live workshops where participant interaction is part of the session.</td></tr><tr><td><strong>Streaming Software</strong></td><td>Broadcast from an external tool (such as Streamyard or OBS) by copying the server URL and stream key into your streaming software. Alvéya receives the broadcast and streams it to your community.</td><td>Polished broadcast-style sessions, panel presentations, or high-production content where you want more control over the output.</td></tr></tbody></table></figure>
+<h3 class="wp-block-heading"><strong>Using Streaming Software mode</strong></h3>
+<p>If you select Streaming Software, scroll down in the setup panel to find your Stream Key and Server URL. Copy both values and paste them into the settings of your streaming software (e.g. Streamyard, OBS). Once configured in that software, start your broadcast there and it will stream live into your Alvéya community automatically.</p>
+<h2 class="wp-block-heading"><strong>Step 3 — During the Live Session</strong></h2>
+<p>Once you click Go Live, your session begins. Here is a summary of what you and your members can do during the session.</p>
+<h3 class="wp-block-heading"><strong>Recording consent</strong></h3>
+<p>As soon as the session starts, all participants will see a notification informing them that the meeting is being recorded. They can choose to continue and consent to the recording, or leave the session. This is displayed automatically — you do not need to manage it manually.</p>
+<h3 class="wp-block-heading"><strong>Live session controls</strong></h3>
+<p>The controls available during a Meeting Room session include:</p>
+<p><strong>Participants&nbsp; </strong>View how many members are currently in the session.</p>
+<p><strong>Chat&nbsp; </strong>Members can send messages in real time during the session. These chat comments are saved and will appear as comments under the post once the recording is stored in the channel.</p>
+<p><strong>React&nbsp; </strong>Members can respond with emoji reactions — like, love, funny, celebrate, or angry — at any point during the session.</p>
+<p><strong>Raise Hand&nbsp; </strong>Members can raise a virtual hand to signal they have a question. The raised hand icon appears in the top left corner of your view so you can acknowledge them.</p>
+<p><strong>Share Screen&nbsp; </strong>You can share your screen during the session — choose to share a specific browser tab, a single window, or your entire screen.</p>
+<p><strong>View Mode&nbsp; </strong>Switch between Speaker view (one person highlighted) and Gallery view (all participants visible).</p>
+<p><strong>Pin Speaker&nbsp; </strong>Pin a specific participant to the top of everyone's screen — useful in larger sessions to keep focus on the person presenting or speaking.</p>
+<p><em>💡&nbsp; Letting members know at the start of the session how to use the chat and raise hand features helps keep the session organised, especially if some participants are less familiar with this format.</em></p>
+<h2 class="wp-block-heading"><strong>Step 4 — Ending the Session</strong></h2>
+<p>When your session is complete, click End Session. You will be asked to confirm before the session closes — this prevents accidentally ending the call.</p>
+<p>Once ended, Alvéya will immediately begin processing the recording. Depending on the length of the session, the video is typically ready within a few minutes. It will be posted automatically to the channel you selected before going live, along with the title and description you entered, and any chat messages from the session will appear as comments on the post.</p>
+<p><em>⚠️&nbsp; Make sure you have selected the correct channel before going live — you cannot change the destination channel after the session has started.</em></p>
+<h2 class="wp-block-heading"><strong>Step 5 — Managing the Recording After the Session</strong></h2>
+<p>Once the recording is posted to the channel, you have several options for managing it.</p>
+<h3 class="wp-block-heading"><strong>Viewing and sharing</strong></h3>
+<ul class="wp-block-list">
+<li>Members can click Play to watch the full recording at any time.</li>
+<li>Click the three dots on the post to copy a direct link to the recording. This link opens the video in a focused view without other community content — useful if you want to share it with a specific member.</li>
+<p></ul></p>
+<h3 class="wp-block-heading"><strong>Managing the post</strong></h3>
+<ul class="wp-block-list">
+<li>Edit — update the title or description of the post, or add additional content such as images, links, or supplementary resources.</li>
+<li>Move to Another Channel — if you want to reorganise the recording into a different channel (e.g. moving a session into a specific week's content folder), use the dropdown to relocate it.</li>
+<li>Download — save the recording to your device for local storage or repurposing.</li>
+<li>Delete — permanently remove the post and recording from the channel.</li>
+<li>Report — flag the post if needed (primarily relevant for member-generated content).</li>
+<p></ul></p>
+<p><em>💡&nbsp; Adding resources, notes, or a summary to the recording post after the session is a great way to extend the value of each live call. Members watching the replay get more context, and it makes the content easier to reference later.</em></p>
+<h3 class="wp-block-heading"><strong>Mini player</strong></h3>
+<p>Members can also click a button on the post to open the recording in a mini player in the bottom right corner of their screen. This allows them to watch the replay while continuing to scroll through and read other content in the community — a small but helpful feature for engaged members who want to multitask.</p>
+<h2 class="wp-block-heading"><strong>Quick Recap</strong></h2>
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>#</strong></th><th><strong>Action</strong></th></tr></thead><tbody><tr><td><strong>1</strong></td><td>Log into your community as admin via Memberships → Communities → Groups.</td></tr><tr><td><strong>2</strong></td><td>Click Go Live. Allow browser permissions for camera and microphone.</td></tr><tr><td><strong>3</strong></td><td>Select your channel, set the timing, add a title and description, and choose whether to keep the recording as a post and notify members.</td></tr><tr><td><strong>4</strong></td><td>Select your mode — Meeting Room for interactive sessions, Streaming Software for broadcast-style sessions.</td></tr><tr><td><strong>5</strong></td><td>Click Go Live. Participants join, can chat, react, raise hands, and share screens.</td></tr><tr><td><strong>6</strong></td><td>Click End Session when finished and confirm. The recording processes automatically and is posted to the selected channel.</td></tr><tr><td><strong>7</strong></td><td>After the session, edit the post to add resources, move it to another channel, download it, or share the link with members.</td></tr></tbody></table></figure>
+<p><strong>Live sessions are one of the most effective ways to deepen connection with your community — bringing the warmth of real-time interaction to practitioners who are growing their impact beyond the clinic.</strong></p>
+<p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

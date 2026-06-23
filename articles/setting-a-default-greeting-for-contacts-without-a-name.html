@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setting a Default Greeting for Contacts Without a Name — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=email-marketing">Email Marketing</a>
+        <span>›</span>
+        <span>Setting a Default Greeting for Contacts Without a Name</span>
+      </nav>
+      <h1 class="article-title">Setting a Default Greeting for Contacts Without a Name</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=email-marketing" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Email Marketing
+    </a>
+
+    <div class="article-content">
+      <p><i>When a contact is imported with only an email address and no first name on file, your email greeting can end up reading "Hi ," which looks unfinished and unprofessional. This guide covers two ways to handle it — a one-line fix that works for most people, and a more flexible setup using Conditional Sending if you want full control over your greeting text.</i></p><p><b>Before you start:  </b>This guide applies to email campaigns and broadcasts built inside the Alvéya email editor. You will be working inside a specific email — not in global settings.</p>		
+						<h3>Option 1 — The Simplest Fix (One Line, No Extra Setup)</h3><p>The quickest solution does not require Conditional Sending at all. Just write your greeting like this:</p>
+<p>Hey there {{contact.first_name}},</p>
+<p>Here is why it works: if the contact has a first name saved, the email reads &#8220;Hey there Sarah,&#8221; — warm and personal. If the name field is empty, the merge field simply disappears and the email reads &#8220;Hey there,&#8221; — which still sounds natural and intentional.</p>
+<p>No extra blocks. No conditions. Just one line that handles both situations gracefully.</p>								
+									<p><i>💡  This is the approach we recommend starting with. It is quick, it works, and it reads well for most practitioners. If &#8220;Hey there&#8221; suits your tone, you are done right here.</i></p>
+						<h3>Option 2 — Conditional Sending (For a Different Greeting Style)</h3><p>If &#8220;Hey there&#8221; does not suit your tone — or you want to use a completely different greeting for contacts without a name — Conditional Sending gives you that flexibility. It takes a few extra minutes to set up, but lets you choose exactly what each contact sees.</p>
+<h3><b>How it works</b></h3>
+<p>Rather than one greeting line, you create two separate greeting blocks in your email:</p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Block A shows the personalised greeting — but only if the contact has a first name saved.</li>
+<li style="font-weight: 400;" aria-level="1">Block B shows your chosen fallback — but only if the first name field is empty.</li>
+<p></ul></p>
+
+<p>Alvéya checks each contact at send time and shows only the block that applies to them. Neither group ever sees a blank or broken greeting.</p>
+
+<h3><b>Step 1 — Add your personalised greeting block</b></h3>
+<ul>
+<li aria-level="1">Open your email in the Alvéya email builder.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Add a text block where you want your greeting to appear.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Type your personalised greeting, including the name merge field:</li>
+<p></ul></p>
+<p>Hi {{contact.first_name}},</p>
+<ul>
+<li aria-level="1">In the content block&#8217;s sidebar, find and enable the Conditional Sending toggle.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Under Set your conditions, configure the following:</li>
+<p></ul></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Custom field: First Name</li>
+<li style="font-weight: 400;" aria-level="1">Condition: Is Not</li>
+<li style="font-weight: 400;" aria-level="1">Value: leave this blank</li>
+<p></ul></p>
+
+<p>This tells Alvéya to show this block only when the First Name field is not empty — i.e. when the contact actually has a name saved.</p>
+<p><br /><br /></p>								
+									<p><i>💡  The Value field being blank is intentional. You are not filtering by a specific word — you are simply checking whether the field has any content at all.</i></p>								
+									<h3><b>Step 2 — Add your fallback greeting block</b></h3>
+<ul>
+<li aria-level="1">Add a second text block directly below (or in the same position as) your first block.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Type your fallback greeting — the one that will show when no name is available:</li>
+<p></ul></p>
+<p>Hi there,</p>
+<ul>
+<li aria-level="1">Enable the Conditional Sending toggle on this block as well.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Under Set your conditions, configure the following:</li>
+<p></ul></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Custom field: First Name</li>
+<li style="font-weight: 400;" aria-level="1">Condition: Is</li>
+<li style="font-weight: 400;" aria-level="1">Value: leave this blank</li>
+<p></ul></p>
+<h3> </h3>
+<p>This tells Alvéya to show this block only when the First Name field is empty.</p>								
+									<p><i>💡  You can use any fallback text that suits your brand. &#8220;Hello,&#8221;, &#8220;Dear friend,&#8221; or &#8220;Hi lovely,&#8221; all work — just make sure it reads naturally without a name following it.</i></p>								
+									<h3><b>Step 3 — Preview and test</b></h3>
+<ul>
+<li aria-level="1">Use the Preview feature in the email builder to check how your email appears.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Test with a contact who has a first name saved, and again with a contact who does not.</li>
+<li aria-level="1">Confirm that each contact sees only the correct greeting block — not both.</li>
+<p></ul></p>
+									<p><i>⚠️  Always preview before sending. If both blocks appear for the same contact, double-check your conditions — one block should use &#8220;Is Not&#8221; (blank) and the other should use &#8220;Is&#8221; (blank).</i></p>
+		<p>The quickest solution does not require Conditional Sending at all. Just write your greeting like this:</p>
+<p>Hey there {{contact.first_name}},</p>
+<p>Here is why it works: if the contact has a first name saved, the email reads "Hey there Sarah," — warm and personal. If the name field is empty, the merge field simply disappears and the email reads "Hey there," — which still sounds natural and intentional.</p>
+<p>No extra blocks. No conditions. Just one line that handles both situations gracefully.</p><p><i>💡  This is the approach we recommend starting with. It is quick, it works, and it reads well for most practitioners. If "Hey there" suits your tone, you are done right here.</i></p><p>If "Hey there" does not suit your tone — or you want to use a completely different greeting for contacts without a name — Conditional Sending gives you that flexibility. It takes a few extra minutes to set up, but lets you choose exactly what each contact sees.</p>
+<h3><b>How it works</b></h3>
+<p>Rather than one greeting line, you create two separate greeting blocks in your email:</p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Block A shows the personalised greeting — but only if the contact has a first name saved.</li>
+<li style="font-weight: 400;" aria-level="1">Block B shows your chosen fallback — but only if the first name field is empty.</li>
+<p></ul></p>
+
+<p>Alvéya checks each contact at send time and shows only the block that applies to them. Neither group ever sees a blank or broken greeting.</p>
+
+<h3><b>Step 1 — Add your personalised greeting block</b></h3>
+<ul>
+<li aria-level="1">Open your email in the Alvéya email builder.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Add a text block where you want your greeting to appear.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Type your personalised greeting, including the name merge field:</li>
+<p></ul></p>
+<p>Hi {{contact.first_name}},</p>
+<ul>
+<li aria-level="1">In the content block's sidebar, find and enable the Conditional Sending toggle.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Under Set your conditions, configure the following:</li>
+<p></ul></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Custom field: First Name</li>
+<li style="font-weight: 400;" aria-level="1">Condition: Is Not</li>
+<li style="font-weight: 400;" aria-level="1">Value: leave this blank</li>
+<p></ul></p>
+
+<p>This tells Alvéya to show this block only when the First Name field is not empty — i.e. when the contact actually has a name saved.</p>
+<p><br /><br /></p><p><i>💡  The Value field being blank is intentional. You are not filtering by a specific word — you are simply checking whether the field has any content at all.</i></p><h3><b>Step 2 — Add your fallback greeting block</b></h3>
+<ul>
+<li aria-level="1">Add a second text block directly below (or in the same position as) your first block.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Type your fallback greeting — the one that will show when no name is available:</li>
+<p></ul></p>
+<p>Hi there,</p>
+<ul>
+<li aria-level="1">Enable the Conditional Sending toggle on this block as well.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Under Set your conditions, configure the following:</li>
+<p></ul></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Custom field: First Name</li>
+<li style="font-weight: 400;" aria-level="1">Condition: Is</li>
+<li style="font-weight: 400;" aria-level="1">Value: leave this blank</li>
+<p></ul></p>
+<h3> </h3>
+<p>This tells Alvéya to show this block only when the First Name field is empty.</p><p><i>💡  You can use any fallback text that suits your brand. "Hello,", "Dear friend," or "Hi lovely," all work — just make sure it reads naturally without a name following it.</i></p><h3><b>Step 3 — Preview and test</b></h3>
+<ul>
+<li aria-level="1">Use the Preview feature in the email builder to check how your email appears.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Test with a contact who has a first name saved, and again with a contact who does not.</li>
+<li aria-level="1">Confirm that each contact sees only the correct greeting block — not both.</li>
+<p></ul><p><i>⚠️  Always preview before sending. If both blocks appear for the same contact, double-check your conditions — one block should use "Is Not" (blank) and the other should use "Is" (blank).</i></p>
+					<h2>Things to Keep in Mind</h2>				
+		<ul>
+<li style="font-weight: 400;" aria-level="1">Each content block can only hold one Conditional Sending condition. You cannot stack multiple field conditions within a single block.</li>
+<li style="font-weight: 400;" aria-level="1">This setup applies per email — you will need to configure it in each template or campaign where you want the fallback to work.</li>
+<li style="font-weight: 400;" aria-level="1">Conditional Sending works for any custom field, not just First Name. Use the same approach for Company, Location, or any field that might sometimes be empty.</li>
+<p></ul></p>
+					<h2>Common Questions
+<p></h2></p>
+		<table>
+<thead>
+<tr>
+<th>
+<p><b>Question</b></p>
+<p></th></p>
+<th>
+<p><b>Answer</b></p>
+<p></th> </tr> </thead></p>
+<tbody>
+<tr>
+<td>
+<p><b>Can I use this for fields other than First Name?</b></p>
+<p></td></p>
+<td>
+<p>Yes — Conditional Sending works for any custom field in Alvéya.</p>
+<p></td> </tr></p>
+<tr>
+<td>
+<p><b>Can I use multiple custom fields in one content block?</b></p>
+<p></td></p>
+<td>
+<p>No — only one custom field condition per content block is supported.</p>
+<p></td> </tr></p>
+<tr>
+<td>
+<p><b>What if I leave the value field blank in my condition?</b></p>
+<p></td></p>
+<td>
+<p>That is intentional. A blank value tells Alvéya to check whether the field itself is empty or not — it is how the logic works.</p>
+<p></td> </tr></p>
+<tr>
+<td>
+<p><b>Can I customise the default greeting text?</b></p>
+<p></td></p>
+<td>
+<p>Yes — use any text that fits your brand. "Hi there,", "Hello Friend," or "Dear Practitioner," all work perfectly.</p>
+<p></td> </tr> </tbody> </table><p><b>Every contact on your list will now receive a greeting that looks intentional — no blank names, no awkward gaps.</b></p>
+<p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

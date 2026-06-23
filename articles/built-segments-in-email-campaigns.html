@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using Pre-Built Segments in Email Campaigns — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=crm-contacts">CRM & Contacts</a>
+        <span>›</span>
+        <span>Using Pre-Built Segments in Email Campaigns</span>
+      </nav>
+      <h1 class="article-title">Using Pre-Built Segments in Email Campaigns</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=crm-contacts" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to CRM & Contacts
+    </a>
+
+    <div class="article-content">
+      <p data-start="889" data-end="895"><i>Not every contact on your list is at the same stage — and sending the same email to everyone rarely gets the best results. Pre-built segments let you quickly target the right people based on how they have been engaging with your emails, so every campaign lands with more relevance and less effort.</i></p>					<h2 
+<p>data-interaction-id="55b377e" class="e-heading-base" data-e-type="widget" data-id="55b377e" > What are pre-built segments? </h2></p>
+		<p>Pre-built segments are ready-made groups of contacts, automatically organised based on their email engagement. Instead of manually filtering your list every time you send a campaign, you simply pick a segment and Alvéya does the sorting for you.</p><p>Each segment uses real behaviour data — specifically, whether a contact has opened or clicked an email you've sent through a campaign, workflow, or bulk action. That interaction is what Alvéya counts as 'engaged'.</p><p><strong>Here's what that looks like in practice:</strong></p><ul><li style="font-weight: 400;" aria-level="1">You want to promote a new offer — send it to your most engaged contacts from the last 30 days.</li><li style="font-weight: 400;" aria-level="1">You're running a re-engagement push — target contacts who haven't interacted with your last five campaigns.</li><li style="font-weight: 400;" aria-level="1">You have a time-sensitive announcement — focus on your hottest audience with the 7-day engaged segment.</li></ul><p><i>💡  Subscribers and contacts mean the same thing in Alvéya. The terms are used interchangeably across the platform.</i></p>		
+							<h2 
+<p>data-interaction-id="1eae9e0" class="e-heading-base" data-e-type="widget" data-id="1eae9e0" > Available segments at a glance </h2></p>
+		<p>You can choose from five pre-built segments when setting up your campaign send or schedule:</p><table><thead><tr><th><p><b>Segment Name</b></p></th><th><p><b>When to use it</b></p></th></tr></thead><tbody><tr><td><p><b>Engaged – last 7 days</b></p></td><td><p>Contacts who opened or clicked an email in the past 7 days. Great for time-sensitive offers or announcements to your most active audience.</p></td></tr><tr><td><p><b>Engaged – last 30 days</b></p></td><td><p>Contacts who have engaged in the past month. A solid general-purpose segment for regular campaign sends.</p></td></tr><tr><td><p><b>Engaged – last 60 days</b></p></td><td><p>A broader active audience — ideal for promotions or content you want maximum reach on, without emailing completely cold contacts.</p></td></tr><tr><td><p><b>Engaged – last 5 campaigns</b></p></td><td><p>Contacts who opened or clicked in at least one of your last five campaigns. Use this when you want to reward your most consistent readers.</p></td></tr><tr><td><p><b>Disengaged – last 5 campaigns</b></p></td><td><p>Contacts who did not interact with your last five campaigns. Use this for re-engagement sequences — a targeted nudge to see who is still interested.</p></td></tr></tbody></table>		
+					<h2>Why targeted sending matters</h2>				
+		<p>Sending to everyone on your list every time is a shortcut that usually backfires. Contacts who aren't ready to hear from you are more likely to ignore your emails, unsubscribe, or mark them as spam — all of which hurt your deliverability over time.</p><p>Pre-built segments help you avoid that by making it easy to:</p><ul><li style="font-weight: 400;" aria-level="1">Send to the right people — your most engaged contacts are the ones most likely to act.</li><li style="font-weight: 400;" aria-level="1">Win back lost interest — a well-timed re-engagement email to your disengaged list can recover clients you thought were gone.</li><li style="font-weight: 400;" aria-level="1">Protect your sender reputation — fewer emails to uninterested contacts means better deliverability across the board.</li></ul><p><i>💡  Re-engagement campaigns work best when you give the reader a reason to click — a relevant resource, a question that prompts a reply, or a clear call to action. Keep it human and low-pressure.</i></p>		
+					<h2>How to send a campaign using a pre-built segment</h2>				
+		<p><b>Before you start:  </b>You will need an email campaign already created in Alvéya. If you haven't set one up yet, head to Email Marketing &gt; Campaigns and build your campaign content first, then come back to this guide.</p><ol><li aria-level="1">Go to Marketing in the left-hand sidebar, then select Emails &gt; Campaigns.</li><li aria-level="1">Open an existing campaign or create a new one. Once your content is ready, click Send or Schedule in the top right corner.</li><li aria-level="1">Choose how you would like to send — Send Now, Scheduled, Batch Schedule, or RSS Schedule.</li><li aria-level="1">Complete the sender details: your email address, display name, and subject line.</li><li aria-level="1">In the Recipients section, select Pre-Built Segments from the recipient type options.<br /><br /><img src="https://help.alveya.io/wp-content/uploads/2026/05/Pre-built-segments-1024x393.png" alt="" width="800" height="307" /><br /><br /></li><li aria-level="1">Use the dropdown menu to choose the segment that fits your goal.</li><li aria-level="1">Alvéya will display a contact count showing how many people match that segment. Review this number, then click Send or Save to finalise.</li></ol><p><i>⚠️  Segmentation is calculated at the time you create or schedule the campaign — not when it sends. The contact list is locked from that point. If you schedule something in advance, keep this in mind: contacts who engage after you schedule won't be added automatically.</i></p><p><i>💡  Not sure which segment to pick? Start with 'Engaged – last 30 days' as a reliable default for most campaign types. Move to the 7-day segment for high-priority sends, or the disengaged segment when running a dedicated re-engagement sequence.</i></p>		
+					<h2>Frequently asked questions</h2>				
+						<h3>Can I edit the criteria for a pre-built segment?</h3><p>No — the criteria are fixed. If you need something more tailored, head to the Contacts section and create a Smart List. Smart Lists are fully customisable and work similarly</p>
+						<h3>When is the segment calculated?</h3><p>At the time you create or schedule your campaign, not when it sends. The contact list is locked at that point. Dynamic updates at send time are coming in a future release.</p>
+						<h3>Can I create my own segments?</h3><p>Not as pre-built segments — but you can build Smart Lists from the Contacts section to achieve the same result with custom filters.</p>
+						<h3>What counts as 'engaged'?</h3><p>A contact is considered engaged if they opened or clicked an email sent through a campaign, workflow, or bulk action. It does not include contacts who only received an email without interacting.</p>
+		<p>No — the criteria are fixed. If you need something more tailored, head to the Contacts section and create a Smart List. Smart Lists are fully customisable and work similarly</p><p>At the time you create or schedule your campaign, not when it sends. The contact list is locked at that point. Dynamic updates at send time are coming in a future release.</p><p>Not as pre-built segments — but you can build Smart Lists from the Contacts section to achieve the same result with custom filters.</p><p>A contact is considered engaged if they opened or clicked an email sent through a campaign, workflow, or bulk action. It does not include contacts who only received an email without interacting.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

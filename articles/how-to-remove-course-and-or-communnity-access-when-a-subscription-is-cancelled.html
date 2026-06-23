@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handling Failed Payments and Revoking Course Access — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=courses-funnels">Courses & Funnels</a>
+        <span>›</span>
+        <span>Handling Failed Payments and Revoking Course Access</span>
+      </nav>
+      <h1 class="article-title">Handling Failed Payments and Revoking Course Access</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=courses-funnels" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Courses & Funnels
+    </a>
+
+    <div class="article-content">
+      <p><em>When a subscription payment fails, the way you respond matters — both for your cash flow and for your client relationship. This guide walks you through how Alvéya handles failed payment retries, how to set up the two automation templates that manage client notifications and access revocation, and what to do depending on which payment processor you use.</em><br></p>
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div class="video-wrap"><iframe src="https://www.youtube.com/embed/40G1vPOtzfY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p></div></figure></p>
+<p><strong>Setting up the access removal workflow</strong></p>
+<h2 class="wp-block-heading"><strong>How Alvéya Handles Failed Payment Retries</strong></h2>
+<p>When a subscription payment fails, Alvéya can automatically retry the charge — but how this works depends on which payment processor you are connected to.</p>
+<h3 class="wp-block-heading"><strong>Authorize.Net, NMI, or Square</strong></h3>
+<p>If you are using Authorize.Net, NMI, or Square, Alvéya's native payment retry settings are available directly inside the platform. You can configure:</p>
+<ul class="wp-block-list">
+<li>How many times a failed payment should be retried</li>
+<li>The interval between retry attempts</li>
+<li>Email notifications to your clients when a payment fails</li>
+<p></ul></p>
+<p><em>💡&nbsp; To find these settings, go to Payments &gt; Settings inside Alvéya and look for the subscription retry or dunning management options.</em></p>
+<h3 class="wp-block-heading"><strong>Stripe</strong></h3>
+<p>If you are using Stripe as your payment processor, the retry and notification settings are managed inside your Stripe dashboard — not inside Alvéya. Stripe has its own smart retry logic and email notification tools built in, and these are the settings you should configure.</p>
+<p><em>⚠️&nbsp; Do not set up duplicate retry notifications in both Stripe and Alvéya, as your clients may receive the same message twice. Choose one place to manage this communication.</em></p>
+<p>To configure your retry settings in Stripe, refer to Stripe's official support documentation:</p>
+<p>Stripe Smart Retries: <a href="https://stripe.com/docs/billing/revenue-recovery/smart-retries">stripe.com/docs/billing/revenue-recovery/smart-retries</a></p>
+<p>Stripe Failed Payment Emails: <a href="https://stripe.com/docs/billing/revenue-recovery/customer-emails">stripe.com/docs/billing/revenue-recovery/customer-emails</a></p>
+<p><strong>FAQ&nbsp; </strong><strong>Will Stripe automatically email my clients when a payment fails?</strong></p>
+<p>Yes — if you have enabled it. Stripe can automatically send a payment failure notification to your client after each failed charge, including a link for them to update their payment method. This setting is turned off by default, so you will need to switch it on.</p>
+<p>To turn on failed payment email notifications in Stripe:</p>
+<p><strong>1.</strong>&nbsp; Go to Settings &gt; Billing &gt; Subscriptions and emails in your Stripe dashboard.</p>
+<p><strong>2.</strong>&nbsp; Under Email notifications and customer management, enable Send emails when card payments fail.</p>
+<p>Once enabled, Stripe sends the email automatically after each failed payment. The email lets your client know what happened and includes a link where they can update their payment method so the charge can be retried.</p>
+<p>You can configure that link to direct clients to either a Stripe-hosted Customer Portal or your own custom subscription management page.</p>
+<h2 class="wp-block-heading"><strong>The Two Automation Templates</strong></h2>
+<p>Regardless of which payment processor you use, Alvéya includes two automation workflow templates designed to handle the client communication and access management side of a failed payment. These templates work together to give you a complete, professional response when something goes wrong.</p>
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Template name</strong></th><th><strong>What it does</strong></th></tr></thead><tbody><tr><td><strong>[Template] Failed Membership Subscription Payment</strong></td><td>Triggered when a subscription payment fails. Sends a payment failure notification directly to your client so they can update their payment details before access is affected.</td></tr><tr><td><strong>[Template] Course/Community Access Revocation and Internal Email Notification</strong></td><td>Triggered when access needs to be removed — either after repeated failed payments or a manual decision. Revokes the client's course or community access and sends you an internal notification so you are always across what is happening.</td></tr></tbody></table></figure>
+<p><em>💡&nbsp; These templates are starting points, not finished workflows. You will need to duplicate them and customise the messaging, timing, and conditions to suit each course or membership you offer.</em></p>
+<h2 class="wp-block-heading"><strong>Setting Up Your Payment Failure Workflows</strong></h2>
+<p>Follow the steps below to duplicate and configure both templates for your course or membership. You will repeat this process for each product that has a paid subscription.</p>
+<h3 class="wp-block-heading"><strong>Step 1: Duplicate the Failed Payment Template</strong></h3>
+<p><strong>Before you start:&nbsp; </strong>Make sure you have at least one course or membership product set up in Alvéya before configuring these workflows.</p>
+<ol class="wp-block-list">
+<li>Go to Automation in the left-hand menu and select Workflows.</li>
+<li>Use the search bar or scroll to find [Template] Failed Membership Subscription Payment.</li>
+<li>Click the three-dot menu beside the template and select Duplicate.</li>
+<li>Rename the duplicate to something that identifies the specific course or membership — for example: Failed Payment — [Your Course Name].</li>
+<li>Open the duplicated workflow and review the trigger. Confirm it is set to trigger on a failed subscription payment for the correct product.</li>
+<li>Review and edit the client-facing email or SMS in the workflow. Update the message to reflect your brand voice, your course name, and any specific instructions for how clients should update their payment details.</li>
+<li>Set the timing if applicable — for example, how long after a failed payment the message should send.</li>
+<li>Once you are happy with the setup, set the workflow to Active.</li>
+<p></ol></p>
+<p><em>💡&nbsp; Keep the client message clear and reassuring. Let them know their access has not been removed yet and give them simple instructions for updating their payment details.</em></p>
+<h3 class="wp-block-heading"><strong>Step 2: Duplicate the Access Revocation Template</strong></h3>
+<ol start="9" class="wp-block-list">
+<li>Return to Workflows and locate [Template] Course/Community Access Revocation and Internal Email Notification.</li>
+<li>Duplicate it and rename it — for example: Access Revocation — [Your Course Name].</li>
+<li>Open the duplicated workflow and review the trigger. Decide what condition should trigger access removal — for example, after a set number of failed retries, or after a specific number of days without a successful payment.</li>
+<li>Review the access revocation action inside the workflow. Confirm it is set to remove access to the correct course or community.</li>
+<li>Review the internal notification email. Update it with your own email address so you receive the alert, and adjust the message if needed.</li>
+<li>Review any client-facing message included in the workflow and update the tone and content to match your communication style.</li>
+<li>Set the workflow to Active when you are ready.</li>
+<p></ol></p>
+<p><em>⚠️&nbsp; Test this workflow carefully before going live. Accidentally revoking access to the wrong product, or triggering it too early, can create a poor client experience and additional admin work for you.</em></p>
+<h3 class="wp-block-heading"><strong>Connecting the Two Workflows</strong></h3>
+<p>These two workflows are designed to run in sequence:</p>
+<ul class="wp-block-list">
+<li>The Failed Payment template fires first — notifying your client and giving them a chance to resolve the issue.</li>
+<li>The Access Revocation template fires later — removing access if the payment is still unresolved after your chosen timeframe.</li>
+<p></ul></p>
+<p>You can connect them using a condition or a wait step inside the revocation workflow, so that access is only removed if the payment has not been successfully collected by the time the wait period ends.</p>
+<p><em>💡&nbsp; A common approach is to wait 5–7 days after the initial failed payment before revoking access — this gives clients enough time to update their details without feeling like access was removed without warning.</em></p>
+<h2 class="wp-block-heading"><strong>A Note on Repeat Setup</strong></h2>
+<p>You will need to duplicate and configure both templates separately for each course or membership product you sell. This ensures each workflow is scoped to the right product and that your internal notifications are specific enough to be useful.</p>
+<p>Once you have set up the first pair of workflows, duplicating and adapting them for additional products is quick — most of the structure is already in place and you are only updating product names, timing, and message copy.</p>
+<p><strong>With these workflows in place, you can handle payment issues professionally — protecting your business without losing the relationship.</strong></p>
+<p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

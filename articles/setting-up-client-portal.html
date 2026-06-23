@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setting up your Client Portal — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=courses-funnels">Courses & Funnels</a>
+        <span>›</span>
+        <span>Setting up your Client Portal</span>
+      </nav>
+      <h1 class="article-title">Setting up your Client Portal</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=courses-funnels" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Courses & Funnels
+    </a>
+
+    <div class="article-content">
+      <p data-start="889" data-end="895">This article is step one from the Client Portal playbook. To continue the process of setting up your community after this step, <a href="https://help.alveya.io/communities-playbook/">head back to the playbook here.</a></p><p data-start="889" data-end="895">Written step by step instructions and links to the templates for this video are below.</p>https://youtu.be/DTHDEFqqmho		
+						<h3>Written Instructions</h3><p data-start="2489" data-end="2590" data-pm-slice="1 1 []">Communities are part of your <strong data-start="2518" data-end="2535">Client Portal</strong>, so the next step is to configure the portal settings.</p><p data-start="2592" data-end="2598">Go to:</p><p data-start="2600" data-end="2626"><strong data-start="2600" data-end="2626">Communities → Settings</strong></p><p data-start="2628" data-end="2663">Here you will see several sections:</p><p data-start="2665" data-end="2721">• Domain<br />• Branding<br />• Permissions<br />• Email settings</p><h2 data-section-id="7kg7lh" data-start="2728" data-end="2773">Connect a Custom Domain (Optional)</h2><p>You can create a custom domain or subdomain for your portal.</p><p data-start="2837" data-end="2849">For example:</p> <p><a href="http://members.yourdomain.com" target="_blank" rel="noopener noreferrer nofollow">members.yourdomain.com</a></p> <p data-start="2883" data-end="2971">If you would like to do this, follow the <strong data-start="2924" data-end="2949">Domain Setup Tutorial</strong> in the domain module.</p><p data-start="2973" data-end="3036">Otherwise you can continue using the <strong data-start="3010" data-end="3035">default Alvéya domain</strong>.</p><h2 data-section-id="hhqkm4" data-start="3043" data-end="3091">Customise Your Client Portal Branding</h2><p data-start="3093" data-end="3174">Inside the <strong data-start="3104" data-end="3116">Branding</strong> section you can customise how your client portal appears.</p><p data-start="3176" data-end="3188">You can set:</p><p data-start="3190" data-end="3304">• Portal name<br />• Portal image <a href="https://www.canva.com/design/DAHEFAPokvc/8mJOshgQ67XaQUbVihG8ew/view?utm_content=DAHEFAPokvc&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=publishsharelink&amp;mode=preview" target="_blank" rel="noopener noreferrer nofollow">(Canva Template)</a></p><p data-start="3190" data-end="3304">• <a href="https://www.canva.com/design/DAHEE8Hc_yU/liWxcIbsN6wn52RXJos0UA/view?utm_content=DAHEE8Hc_yU&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=uniquelinks&amp;utlId=h02aa4e76e0" target="_blank" rel="noopener noreferrer nofollow">Logo &amp; Favicon template</a><br />• Support email address<br />• Business name<br />• Copyright year</p><p data-start="3306" data-end="3391">These settings control the overall appearance of the portal your clients will access.</p><p data-start="3393" data-end="3472">Advanced users can also add custom <strong data-start="3428" data-end="3449">CSS or JavaScript</strong>, but this is optional.</p><p data-start="3474" data-end="3514">Once completed, click <strong data-start="3496" data-end="3513">Save Settings</strong>.</p><h2 data-section-id="1164s4c" data-start="3521" data-end="3560">Configure Portal Permissions</h2><p data-start="3562" data-end="3630">Next you can choose which features appear inside your client portal.</p><p data-start="3632" data-end="3638">Go to:</p><p data-start="3640" data-end="3666"><strong data-start="3640" data-end="3666">Settings → Permissions</strong></p><p data-start="3668" data-end="3723">Here you can turn portal features on or off, including:</p><p data-start="3725" data-end="3840">• Communities<br />• Courses<br />• Affiliates<br />• Billing and subscriptions<br />• Contracts<br />• Estimates<br />• File sharing</p><p data-start="3842" data-end="3907">You can also choose the <strong data-start="3866" data-end="3890">default landing page</strong> for your portal.</p><p data-start="3909" data-end="3942">For example, members can land on:</p><p data-start="3944" data-end="4005">• Communities<br />• Courses<br />• Affiliates<br />• Portal home page</p><p data-start="4007" data-end="4068">Choose the option that best suits your program or membership.</p><h2 data-section-id="1ynd4x8" data-start="4075" data-end="4117">Configure Portal Email Settings</h2><p data-start="4119" data-end="4206">Inside <strong data-start="4126" data-end="4144">Email Settings</strong> you can customise the emails sent through your client portal.</p><p data-start="4208" data-end="4242">You will find email templates for:</p><p data-start="4244" data-end="4367">• Client portal notifications<br />• Course notifications<br />• Invoices<br />• Estimates<br />• Contracts<br />• Community notifications</p><p data-start="4369" data-end="4439">Each template includes a default email, which you can edit or replace.</p><p data-start="4441" data-end="4512">You can also enable or disable specific emails depending on your needs.</p>
+		<p data-start="2489" data-end="2590" data-pm-slice="1 1 []">Communities are part of your <strong data-start="2518" data-end="2535">Client Portal</strong>, so the next step is to configure the portal settings.</p><p data-start="2592" data-end="2598">Go to:</p><p data-start="2600" data-end="2626"><strong data-start="2600" data-end="2626">Communities → Settings</strong></p><p data-start="2628" data-end="2663">Here you will see several sections:</p><p data-start="2665" data-end="2721">• Domain<br />• Branding<br />• Permissions<br />• Email settings</p><h2 data-section-id="7kg7lh" data-start="2728" data-end="2773">Connect a Custom Domain (Optional)</h2><p>You can create a custom domain or subdomain for your portal.</p><p data-start="2837" data-end="2849">For example:</p> <p><a href="http://members.yourdomain.com" target="_blank" rel="noopener noreferrer nofollow">members.yourdomain.com</a></p> <p data-start="2883" data-end="2971">If you would like to do this, follow the <strong data-start="2924" data-end="2949">Domain Setup Tutorial</strong> in the domain module.</p><p data-start="2973" data-end="3036">Otherwise you can continue using the <strong data-start="3010" data-end="3035">default Alvéya domain</strong>.</p><h2 data-section-id="hhqkm4" data-start="3043" data-end="3091">Customise Your Client Portal Branding</h2><p data-start="3093" data-end="3174">Inside the <strong data-start="3104" data-end="3116">Branding</strong> section you can customise how your client portal appears.</p><p data-start="3176" data-end="3188">You can set:</p><p data-start="3190" data-end="3304">• Portal name<br />• Portal image <a href="https://www.canva.com/design/DAHEFAPokvc/8mJOshgQ67XaQUbVihG8ew/view?utm_content=DAHEFAPokvc&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=publishsharelink&amp;mode=preview" target="_blank" rel="noopener noreferrer nofollow">(Canva Template)</a></p><p data-start="3190" data-end="3304">• <a href="https://www.canva.com/design/DAHEE8Hc_yU/liWxcIbsN6wn52RXJos0UA/view?utm_content=DAHEE8Hc_yU&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=uniquelinks&amp;utlId=h02aa4e76e0" target="_blank" rel="noopener noreferrer nofollow">Logo &amp; Favicon template</a><br />• Support email address<br />• Business name<br />• Copyright year</p><p data-start="3306" data-end="3391">These settings control the overall appearance of the portal your clients will access.</p><p data-start="3393" data-end="3472">Advanced users can also add custom <strong data-start="3428" data-end="3449">CSS or JavaScript</strong>, but this is optional.</p><p data-start="3474" data-end="3514">Once completed, click <strong data-start="3496" data-end="3513">Save Settings</strong>.</p><h2 data-section-id="1164s4c" data-start="3521" data-end="3560">Configure Portal Permissions</h2><p data-start="3562" data-end="3630">Next you can choose which features appear inside your client portal.</p><p data-start="3632" data-end="3638">Go to:</p><p data-start="3640" data-end="3666"><strong data-start="3640" data-end="3666">Settings → Permissions</strong></p><p data-start="3668" data-end="3723">Here you can turn portal features on or off, including:</p><p data-start="3725" data-end="3840">• Communities<br />• Courses<br />• Affiliates<br />• Billing and subscriptions<br />• Contracts<br />• Estimates<br />• File sharing</p><p data-start="3842" data-end="3907">You can also choose the <strong data-start="3866" data-end="3890">default landing page</strong> for your portal.</p><p data-start="3909" data-end="3942">For example, members can land on:</p><p data-start="3944" data-end="4005">• Communities<br />• Courses<br />• Affiliates<br />• Portal home page</p><p data-start="4007" data-end="4068">Choose the option that best suits your program or membership.</p><h2 data-section-id="1ynd4x8" data-start="4075" data-end="4117">Configure Portal Email Settings</h2><p data-start="4119" data-end="4206">Inside <strong data-start="4126" data-end="4144">Email Settings</strong> you can customise the emails sent through your client portal.</p><p data-start="4208" data-end="4242">You will find email templates for:</p><p data-start="4244" data-end="4367">• Client portal notifications<br />• Course notifications<br />• Invoices<br />• Estimates<br />• Contracts<br />• Community notifications</p><p data-start="4369" data-end="4439">Each template includes a default email, which you can edit or replace.</p><p data-start="4441" data-end="4512">You can also enable or disable specific emails depending on your needs.</p>https://youtu.be/1W8jR4F8HQ8		
+						<h3>WRITTEN INSTRUCTIONS:</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

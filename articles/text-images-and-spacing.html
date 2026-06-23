@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editing and Customising Text, Images and Spacing — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=website-templates">Website Templates</a>
+        <span>›</span>
+        <span>Editing and Customising Text, Images and Spacing</span>
+      </nav>
+      <h1 class="article-title">Editing and Customising Text, Images and Spacing</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=website-templates" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Website Templates
+    </a>
+
+    <div class="article-content">
+      <p data-start="889" data-end="895">This article is a step from the  Playbook. To continue the process of setting up your <b>Website</b> after this step, <strong>head back to the playbook here.</strong></p>
+<p data-start="889" data-end="895">Written step by step instructions  for this video are below.</p>
+<p><em>This guide walks you through everything you need to know about editing and customising your Alvéya funnel page — from updating text and duplicating sections, to adjusting spacing, adding images, and applying animations. Templates are your starting point, not your limit.</em></p>
+
+<p>https://youtu.be/p45LLVM0yL8</p>
+						<h3>Editing Text on Your Page</h3><p>Clicking on any text element on the page opens it for editing — simply start typing to replace the placeholder content. Each text box will show a label (Heading, Subheading, or Paragraph Text) to help you identify what type of content it holds.</p>
+<p><i>💡  Templates are a starting point, not a fixed structure. You are welcome to add, remove, or duplicate any section to suit your business.</i></p>
+<h3><b>Changing Font Size, Weight, and Style</b></h3>
+<p>With a text box selected, you will see formatting controls appear in the right-hand panel. Here is what each setting does:</p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Font size — measured in rem by default (1 rem ≈ 16 pixels). Switch to pixels if that is easier to work with.</li>
+<li style="font-weight: 400;" aria-level="1">Font weight — controls how bold or light the text appears.</li>
+<li style="font-weight: 400;" aria-level="1">Line height — adjusts the space between lines of text within the same paragraph.</li>
+<li style="font-weight: 400;" aria-level="1">Text transform — choose from Uppercase, Lowercase, or Capitalised.</li>
+<li style="font-weight: 400;" aria-level="1">Letter spacing — adds or reduces space between individual characters.</li>
+<li style="font-weight: 400;" aria-level="1">Colour — click the colour swatch to open the colour picker and change the text colour.</li>
+<li style="font-weight: 400;" aria-level="1">Font style — switch between your body font and heading font as set in your Typography settings.</li>
+<p></ul></p>
+
+<h3><b>Adjusting for Mobile Layout</b></h3>
+<p>Always check your page in mobile layout mode after making changes. Font sizes can be set independently for mobile and desktop — so if a heading looks too large on a phone, you can reduce it for mobile without affecting the desktop view.</p>
+<p><i>💡  To set a different font size for mobile, switch to mobile layout mode in the editor, select the text element, and update the font size. The desktop size will remain unchanged.</i></p>
+						<h3>Duplicating and Rearranging Sections</h3><p>If you need to repeat a section — for example, to add a third service to a two-service layout — click the duplicate icon (two overlapping squares) on the section or element. This will create a copy directly below the original.</p>
+<p>To reorder sections, click and drag them into the position you need. This works for both desktop and mobile layouts.</p>
+<p><i>⚠️  After duplicating or moving sections, switch to mobile layout mode to confirm everything still sits correctly on smaller screens.</i></p>
+						<h3>Working with Padding, Margins, and Spacing</h3><p>Spacing is controlled through two settings found in the Styles tab of any element:</p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Margin — the space outside the element, pushing other elements away from it.</li>
+<li style="font-weight: 400;" aria-level="1">Padding — the space inside the element, between its border and its content.</li>
+<p></ul></p>
+<p>As a general rule, use margin-bottom to create breathing room between stacked elements. Most of the spacing will already be set correctly in your template — you will only need to adjust this if you have added new elements and they are not sitting the way you would like.</p>
+<p><i>💡  When adding space between a button and the text above it, add margin-bottom to the text element above rather than margin-top to the button. Working downward keeps your spacing consistent.</i></p>
+						<h3>Column Layout and Content Alignment</h3><p>When you have a multi-column layout and the content in each column is a different length, you may notice the elements within columns are not aligning the way you expect. To fix this:</p>
+<ul>
+<li aria-level="1">Click into the column settings (the column will highlight in purple).</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Find the Content Spacing option.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Set the alignment to Left to push all content to the top of the column.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Repeat this for each column in the row.</li>
+<p></ul></p>
+<p>You can also choose from other alignment options such as Space Around, Space Evenly, or Space Between — which distributes elements differently within the column height.</p>
+						<h3>Adding Borders, Shadows, and Animations</h3><h3><b>Borders</b></h3>
+<p>You can add a border to any text box or element through the Styles tab. Choose to apply a border to all four sides, or unlink the sides and apply it to just the top, bottom, left, or right. Set the pixel width and colour for each border individually.</p>
+<h3><b>Box Shadows</b></h3>
+<p>To add a shadow to an image or text box, scroll to the bottom of the Styles tab and locate the Box Shadow option. From here you can:</p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Increase the blur to soften and expand the shadow.</li>
+<li style="font-weight: 400;" aria-level="1">Adjust the spread to change how far it extends.</li>
+<li style="font-weight: 400;" aria-level="1">Change the shadow colour if the default grey feels too strong.</li>
+<p></ul></p>
+<h3><b>Animations</b></h3>
+<p>Any block on the page — text, images, buttons — can have an entrance animation applied to it. Click on the block, open the Animations option in the panel, and choose from the available styles. To remove an animation, select None.</p>
+<p><i>💡  Use animations sparingly. A page with too many animated elements can feel distracting rather than polished. One or two subtle entrance animations on key sections work well.</i></p>
+						<h3>Working with Images</h3><h3><b>Image Elements vs Background Images</b></h3>
+<p>Images in Alvéya funnel pages work in two different ways, and it is worth understanding the difference:</p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Image elements — the image is placed as its own block within the layout. The full image is always visible, and its dimensions stay fixed regardless of screen size.</li>
+<li style="font-weight: 400;" aria-level="1">Background images — the image is set as the background of a section, row, or column. The image scales with the width of the screen, which means parts of it may crop or shift on different devices.</li>
+<p></ul></p>
+<p>To check which type is being used, click on the section or row and look in the General tab. If there is a background image linked there, that is what is controlling the image display.</p>
+<h3><b>Changing a Background Image</b></h3>
+<ul>
+<li aria-level="1">Click on the row or section where the background image sits.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Open the General tab in the right-hand panel.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Click the image icon to the right of the background field.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Upload your new image or select one from your media library.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Choose a display style: Parallax (the image stays fixed as you scroll) or Full Centre (the full image is displayed centred in the container).</li>
+<p></ul></p>
+<h3><b>Adding a Fade Overlay</b></h3>
+<p>If you have text sitting over a background image and it is hard to read, you can add a fade overlay to darken or lighten the image beneath. In the background settings, switch the fade option to Light Half or Heavy Fade. To change the overlay colour, open the Colour tab for that section.</p>
+<p><i>💡  A dark overlay is the most common choice when text needs to be legible over a busy image. Stick to black at reduced opacity for a clean, professional result.</i></p>
+<h3><b>Replacing an Image Element</b></h3>
+<p>To swap out an image that is placed as an image element (not a background), simply click on the image and update the source in the panel. If you would prefer to display a full image in a section that currently uses a background image, delete the background image setting and add a standalone image element into the column instead.</p>
+		<p>Clicking on any text element on the page opens it for editing — simply start typing to replace the placeholder content. Each text box will show a label (Heading, Subheading, or Paragraph Text) to help you identify what type of content it holds.</p>
+<p><i>💡  Templates are a starting point, not a fixed structure. You are welcome to add, remove, or duplicate any section to suit your business.</i></p>
+<h3><b>Changing Font Size, Weight, and Style</b></h3>
+<p>With a text box selected, you will see formatting controls appear in the right-hand panel. Here is what each setting does:</p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Font size — measured in rem by default (1 rem ≈ 16 pixels). Switch to pixels if that is easier to work with.</li>
+<li style="font-weight: 400;" aria-level="1">Font weight — controls how bold or light the text appears.</li>
+<li style="font-weight: 400;" aria-level="1">Line height — adjusts the space between lines of text within the same paragraph.</li>
+<li style="font-weight: 400;" aria-level="1">Text transform — choose from Uppercase, Lowercase, or Capitalised.</li>
+<li style="font-weight: 400;" aria-level="1">Letter spacing — adds or reduces space between individual characters.</li>
+<li style="font-weight: 400;" aria-level="1">Colour — click the colour swatch to open the colour picker and change the text colour.</li>
+<li style="font-weight: 400;" aria-level="1">Font style — switch between your body font and heading font as set in your Typography settings.</li>
+<p></ul></p>
+
+<h3><b>Adjusting for Mobile Layout</b></h3>
+<p>Always check your page in mobile layout mode after making changes. Font sizes can be set independently for mobile and desktop — so if a heading looks too large on a phone, you can reduce it for mobile without affecting the desktop view.</p>
+<p><i>💡  To set a different font size for mobile, switch to mobile layout mode in the editor, select the text element, and update the font size. The desktop size will remain unchanged.</i></p><p>If you need to repeat a section — for example, to add a third service to a two-service layout — click the duplicate icon (two overlapping squares) on the section or element. This will create a copy directly below the original.</p>
+<p>To reorder sections, click and drag them into the position you need. This works for both desktop and mobile layouts.</p>
+<p><i>⚠️  After duplicating or moving sections, switch to mobile layout mode to confirm everything still sits correctly on smaller screens.</i></p><p>Spacing is controlled through two settings found in the Styles tab of any element:</p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Margin — the space outside the element, pushing other elements away from it.</li>
+<li style="font-weight: 400;" aria-level="1">Padding — the space inside the element, between its border and its content.</li>
+<p></ul></p>
+<p>As a general rule, use margin-bottom to create breathing room between stacked elements. Most of the spacing will already be set correctly in your template — you will only need to adjust this if you have added new elements and they are not sitting the way you would like.</p>
+<p><i>💡  When adding space between a button and the text above it, add margin-bottom to the text element above rather than margin-top to the button. Working downward keeps your spacing consistent.</i></p><p>When you have a multi-column layout and the content in each column is a different length, you may notice the elements within columns are not aligning the way you expect. To fix this:</p>
+<ul>
+<li aria-level="1">Click into the column settings (the column will highlight in purple).</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Find the Content Spacing option.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Set the alignment to Left to push all content to the top of the column.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Repeat this for each column in the row.</li>
+<p></ul></p>
+<p>You can also choose from other alignment options such as Space Around, Space Evenly, or Space Between — which distributes elements differently within the column height.</p><h3><b>Borders</b></h3>
+<p>You can add a border to any text box or element through the Styles tab. Choose to apply a border to all four sides, or unlink the sides and apply it to just the top, bottom, left, or right. Set the pixel width and colour for each border individually.</p>
+<h3><b>Box Shadows</b></h3>
+<p>To add a shadow to an image or text box, scroll to the bottom of the Styles tab and locate the Box Shadow option. From here you can:</p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Increase the blur to soften and expand the shadow.</li>
+<li style="font-weight: 400;" aria-level="1">Adjust the spread to change how far it extends.</li>
+<li style="font-weight: 400;" aria-level="1">Change the shadow colour if the default grey feels too strong.</li>
+<p></ul></p>
+<h3><b>Animations</b></h3>
+<p>Any block on the page — text, images, buttons — can have an entrance animation applied to it. Click on the block, open the Animations option in the panel, and choose from the available styles. To remove an animation, select None.</p>
+<p><i>💡  Use animations sparingly. A page with too many animated elements can feel distracting rather than polished. One or two subtle entrance animations on key sections work well.</i></p><h3><b>Image Elements vs Background Images</b></h3>
+<p>Images in Alvéya funnel pages work in two different ways, and it is worth understanding the difference:</p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Image elements — the image is placed as its own block within the layout. The full image is always visible, and its dimensions stay fixed regardless of screen size.</li>
+<li style="font-weight: 400;" aria-level="1">Background images — the image is set as the background of a section, row, or column. The image scales with the width of the screen, which means parts of it may crop or shift on different devices.</li>
+<p></ul></p>
+<p>To check which type is being used, click on the section or row and look in the General tab. If there is a background image linked there, that is what is controlling the image display.</p>
+<h3><b>Changing a Background Image</b></h3>
+<ul>
+<li aria-level="1">Click on the row or section where the background image sits.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Open the General tab in the right-hand panel.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Click the image icon to the right of the background field.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Upload your new image or select one from your media library.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Choose a display style: Parallax (the image stays fixed as you scroll) or Full Centre (the full image is displayed centred in the container).</li>
+<p></ul></p>
+<h3><b>Adding a Fade Overlay</b></h3>
+<p>If you have text sitting over a background image and it is hard to read, you can add a fade overlay to darken or lighten the image beneath. In the background settings, switch the fade option to Light Half or Heavy Fade. To change the overlay colour, open the Colour tab for that section.</p>
+<p><i>💡  A dark overlay is the most common choice when text needs to be legible over a busy image. Stick to black at reduced opacity for a clean, professional result.</i></p>
+<h3><b>Replacing an Image Element</b></h3>
+<p>To swap out an image that is placed as an image element (not a background), simply click on the image and update the source in the panel. If you would prefer to display a full image in a section that currently uses a background image, delete the background image setting and add a standalone image element into the column instead.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

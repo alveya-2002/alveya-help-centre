@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar Playbook — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=getting-started">Getting Started</a>
+        <span>›</span>
+        <span>Calendar Playbook</span>
+      </nav>
+      <h1 class="article-title">Calendar Playbook</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=getting-started" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Getting Started
+    </a>
+
+    <div class="article-content">
+      <h2>A Complete Setup Guide for Alvéya™<br />
+<p></h2></p>
+<h3>What You’ll Complete in This Guide<br />
+			<br />
+			<br /></h3><p data-start="845" data-end="881">• Enable your Client Portal and Communities feature<br data-start="934" data-end="937" />• Create your first community group<br data-start="972" data-end="975" />• Set your access and visibility settings<br data-start="1016" data-end="1019" />• Customise your community structure and channels<br data-start="1068" data-end="1071" />• Invite your members<br data-start="1092" data-end="1095" />• Test the login and user experience</p>
+<p data-start="845" data-end="881">• Enable your Client Portal and Communities feature<br data-start="934" data-end="937" />• Create your first community group<br data-start="972" data-end="975" />• Set your access and visibility settings<br data-start="1016" data-end="1019" />• Customise your community structure and channels<br data-start="1068" data-end="1071" />• Invite your members<br data-start="1092" data-end="1095" />• Test the login and user experience</p>
+<h2>Steps to setting up your community</h2>
+<ul>
+<li>
+											<a href="http://client%20po" target="_blank"><br />
+							<br />
+<p>Step 1 – Set up your client portal (skip this if you already have)<br /> </a> </li></p>
+<li>
+											<a href="https://help.alveya.io/create-a-community-in-alveya/" target="_blank"><br />
+							<br />
+<p>Step 2 – Create your first community<br /> </a> </li></p>
+<li>
+											<a href="https://help.alveya.io/community-channels/" target="_blank"><br />
+							<br />
+<p>Step 3 – Create community channels<br /> </a> </li></p>
+<li>
+											<a href="https://help.alveya.io/email-notifications-for-communities/" target="_blank"><br />
+							<br />
+<p>Step 4 – Create automated emails to welcome your members<br /> </a> </li></p>
+<li>
+											<a href="https://help.alveya.io/add-a-course-to-your-community-or-portal/" target="_blank"><br />
+							<br />
+<p>Step 5 – Add a course to the community learning tab<br /> </a> </li></p>
+<li>
+											<a href="https://help.alveya.io/inviting-members-and-setting-up-user-roles/" target="_blank"><br />
+							<br />
+<p>Step 6 – Invite members or create sign up options<br /> </a> </li> </ul></p>
+<h2>Further help articles to learn more about communities</h2>
+<ul>
+<li>
+											<a href="https://help.alveya.io/scheduling-posts-to-your-community-groups/" target="_blank"><br />
+							<br />
+<p>Creating a post within the community<br /> </a> </li></p>
+<li>
+											<a href="https://help.alveya.io/going-live-in-your-alveya-community/" target="_blank"><br />
+							<br />
+<p>Live streaming within the community<br /> </a> </li></p>
+<li>
+											<a href="https://help.alveya.io/client-portal-notification-settings/" target="_blank"><br />
+							<br />
+<p>Setting up notifications to users for new posts etc<br /> </a> </li></p>
+<li>
+											<a href="https://help.alveya.io/add-a-course-to-your-community-or-portal/" target="_blank"><br />
+							<br />
+<p>Adding an event to your community<br /> </a> </li></p>
+<li>
+											<a href="https://help.alveya.io/inviting-members-and-setting-up-user-roles/" target="_blank"><br />
+							<br />
+<p>Managing access, ownership and roles<br /> </a> </li> </ul></p>
+<h2>FAQs</h2>
+<h3>Why am I being asked to create a password when logging in?<br />
+			<br />
+			<br /></h3><p data-start="1465" data-end="1540">This is the standard client login experience. Your access level is determined by your user permissions, not by creating a password.</p>
+<h3>Will creating a login make me a member instead of an admin?<br />
+			<br />
+			<br /></h3><p>No. If you have been added as an admin, you will still have admin access once logged in.</p>
+<h3>Can I control who sees my community?<br />
+			<br />
+			<br /></h3><p>No. If you have been added as an admin, you will still have admin access once logged in.</p>
+<h3>Can I connect my community to a course or program?<br />
+			<br />
+			<br /></h3><p>Yes. Communities can be used alongside courses, memberships or offers inside your Client Portal.</p>
+<h3>Do my clients need a separate login?<br />
+			<br />
+			<br /></h3><p data-start="4291" data-end="4448">No. Your Client Portal gives them access to everything in one place, including communities, courses and resources.</p>
+<p data-start="1465" data-end="1540">This is the standard client login experience. Your access level is determined by your user permissions, not by creating a password.</p>
+<p>No. If you have been added as an admin, you will still have admin access once logged in.</p>
+<p>No. If you have been added as an admin, you will still have admin access once logged in.</p>
+<p>Yes. Communities can be used alongside courses, memberships or offers inside your Client Portal.</p>
+<p data-start="4291" data-end="4448">No. Your Client Portal gives them access to everything in one place, including communities, courses and resources.</p>
+<h2>Troubleshooting</h2>
+<h3>Issue: I can’t access the community settings<br />
+			<br />
+			<br /></h3><p>Cause: You are logged in as a member, not an admin<br data-start="4580" data-end="4583" />Fix: Ensure you are added as a staff/admin user in your account</p>
+<h3>Issue: Clients can’t access the community<br />
+			<br />
+			<br /></h3><p>Cause: You are logged in as a member, not an admin<br data-start="4580" data-end="4583" />Fix: Ensure you are added as a staff/admin user in your account</p>
+<h3>Issue: Login is taking me to the front-end view<br />
+			<br />
+			<br /></h3><p>Cause: You are logged in as a member, not an admin<br data-start="4580" data-end="4583" />Fix: Ensure you are added as a staff/admin user in your account</p>
+<p>Cause: You are logged in as a member, not an admin<br data-start="4580" data-end="4583" />Fix: Ensure you are added as a staff/admin user in your account</p>
+<p>Cause: You are logged in as a member, not an admin<br data-start="4580" data-end="4583" />Fix: Ensure you are added as a staff/admin user in your account</p>
+<p>Cause: You are logged in as a member, not an admin<br data-start="4580" data-end="4583" />Fix: Ensure you are added as a staff/admin user in your account</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

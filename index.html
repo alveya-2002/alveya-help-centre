@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Help Centre</p>
+      <h1 class="hero-title">How can we help you?</h1>
+      <p class="hero-subtitle">Search our guides, or browse by category below.</p>
+      <div class="search-wrap">
+        <div class="search-box">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="9" r="6" />
+            <line x1="13.5" y1="13.5" x2="18" y2="18" />
+          </svg>
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Search for articles…"
+            autocomplete="off"
+            aria-label="Search articles"
+          />
+        </div>
+        <div id="search-results" class="search-results" role="listbox" aria-label="Search results"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Cards -->
+  <main class="categories-section">
+    <div class="categories-grid">
+
+      <a href="category.html#getting-started" class="category-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 8 12 12 14.5 14.5"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Getting Started</h2>
+          <p class="card-desc">Set up your account, explore the dashboard, and launch your first project with confidence.</p>
+          <span class="card-link">Browse articles →</span>
+        </div>
+      </a>
+
+      <a href="category.html#website-templates" class="category-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="9" y1="21" x2="9" y2="9"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Website Templates</h2>
+          <p class="card-desc">Customise and publish beautiful, conversion-ready websites built for natural health practitioners.</p>
+          <span class="card-link">Browse articles →</span>
+        </div>
+      </a>
+
+      <a href="category.html#email-marketing" class="category-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Email Marketing</h2>
+          <p class="card-desc">Create campaigns, grow your list, and nurture clients with personalised email sequences.</p>
+          <span class="card-link">Browse articles →</span>
+        </div>
+      </a>
+
+      <a href="category.html#courses-funnels" class="category-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Courses &amp; Funnels</h2>
+          <p class="card-desc">Build and sell online courses, membership programmes, and high-converting sales funnels.</p>
+          <span class="card-link">Browse articles →</span>
+        </div>
+      </a>
+
+      <a href="category.html#crm-contacts" class="category-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">CRM &amp; Contacts</h2>
+          <p class="card-desc">Manage client relationships, track interactions, and keep your contact database organised.</p>
+          <span class="card-link">Browse articles →</span>
+        </div>
+      </a>
+
+      <a href="category.html#automations" class="category-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Automations</h2>
+          <p class="card-desc">Save time by automating follow-ups, bookings, reminders, and repetitive administrative tasks.</p>
+          <span class="card-link">Browse articles →</span>
+        </div>
+      </a>
+
+      <a href="category.html#integrations" class="category-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"/>
+            <circle cx="6" cy="12" r="3"/>
+            <circle cx="18" cy="19" r="3"/>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Integrations</h2>
+          <p class="card-desc">Connect Alvéya with the tools you already use — from payment gateways to booking calendars.</p>
+          <span class="card-link">Browse articles →</span>
+        </div>
+      </a>
+
+      <a href="category.html#account-billing" class="category-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="5" width="20" height="14" rx="2"/>
+            <line x1="2" y1="10" x2="22" y2="10"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Account &amp; Billing</h2>
+          <p class="card-desc">Update your profile, manage your subscription, view invoices, and handle payment details.</p>
+          <span class="card-link">Browse articles →</span>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="search.js"></script>
+</body>
+</html>

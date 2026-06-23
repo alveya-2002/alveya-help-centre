@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connecting ThriveCart to Alvéya — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=integrations">Integrations</a>
+        <span>›</span>
+        <span>Connecting ThriveCart to Alvéya</span>
+      </nav>
+      <h1 class="article-title">Connecting ThriveCart to Alvéya</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=integrations" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Integrations
+    </a>
+
+    <div class="article-content">
+      <p><i>ThriveCart doesn't have a built-in integration with Alvéya — but that doesn't mean you have to handle it manually. This guide walks you through connecting ThriveCart to Alvéya using OttoKit, so that every purchase automatically creates a contact, applies a tag, and triggers the right workflow. You'll also learn how to handle subscription cancellations and refunds, so your access management stays accurate without any manual work.</i></p><p><b>Before you start:  </b>You'll need active accounts in ThriveCart, Alvéya, and OttoKit. Make sure your ThriveCart product is set up before starting this process.</p>		
+					<h2>What is OttoKit and why do you need it?</h2>				
+		<p>ThriveCart doesn't yet have a native connection to Alvéya, so we use a third-party automation tool to bridge the two. OttoKit acts as the connector — it watches for events in ThriveCart (like a purchase or cancellation) and tells Alvéya what to do in response.</p><p><i>💡  OttoKit is the recommended tool for this integration. It's more economical than alternatives and has a clean, intuitive interface that works well with Alvéya's setup. The free subscription will be enough</i></p>		
+		<h2>Part 1: Setting Up Your ThriveCart Product</h2><p>Before building your automation, make sure your ThriveCart product is ready to go. Under the Fulfilment section of your product settings, you don't need to connect a membership platform — instead, set the post-purchase action to display the customer's invoice or redirect them to a URL. The automation in OttoKit will handle the rest.</p><p><i>⚠️  Do not select a third-party membership platform under Fulfilment unless you're using that platform separately. The Alvéya integration is handled entirely through OttoKit.</i></p><h2>Part 2: Building the OttoKit Workflow</h2><p>Log into your OttoKit account (if you don't have one, sign up for the free version)  and create a new workflow. Give it a clear name — something like ThriveCart Purchase to Alvéya — so it's easy to find later.</p><h3>Step 1: Add a ThriveCart trigger</h3><ul><li aria-level="1">Click Add Trigger and search for ThriveCart.</li></ul><ul><li aria-level="1">Select Product Purchased as your trigger event. This works for both one-off purchases and subscriptions.</li></ul><ul><li aria-level="1">Under Select Connection, click Create New Connection if you haven't linked ThriveCart before.</li></ul><ul><li aria-level="1">Give your connection a name, then head to your ThriveCart account.</li></ul><ul><li aria-level="1">In ThriveCart, go to Settings → API and Webhooks → API Keys. Click Create API Key, give it a name, then copy the key that's generated.</li></ul><ul><li aria-level="1">Back in OttoKit, paste in your API key and click Connect ThriveCart.</li></ul><ul><li aria-level="1">Click the refresh button next to Select Connection to load your account, then select it.</li></ul><ul><li aria-level="1">Choose Test Mode if your product is still in testing, or Live if it's already published.</li></ul><ul><li aria-level="1">Select the specific product you want this workflow to trigger from.</li></ul><ul><li aria-level="1">Click Save. OttoKit will load sample data for you automatically — no test purchase needed.</li></ul><p><i>💡  OttoKit provides sample data when you save the trigger, which saves a lot of time compared to other automation tools that require you to perform a live test purchase to capture data.</i></p><h3>Step 2: Add an Alvéya action — Create Contact</h3><p>Now we tell OttoKit what to do in Alvéya when a purchase happens.</p><p><br /><b></b></p><ul><li aria-level="1">Click Add Action and search for High Level Lead Connector (this is the Alvéya integration).</li></ul><ul><li aria-level="1">Select Create Contact as the event.</li></ul><ul><li aria-level="1">Under Select Connection, click Create New Connection.</li></ul><ul><li aria-level="1">In Alvéya, navigate to your account. <b>Go to Settings</b> → <b>Private integration</b> and <b>create a new integration</b>. If you are only wanting a contact made, <b>Choose View contacts and Edit Contacts</b> for the scope of what this integration can do. <b>Click Create</b> then <b>copy the code</b>. </li></ul><ul><li aria-level="1">Back in OttoKit, paste in the API key, give the connection a name, and click Connect.</li></ul><ul><li aria-level="1">Click the refresh button next to Select Connection, then select your account.</li></ul><ul><li aria-level="1">Now map the data from ThriveCart to the contact fields in Alvéya:</li></ul><ul><li style="font-weight: 400;" aria-level="1">First Name → Customer First Name</li><li style="font-weight: 400;" aria-level="1">Last Name → Customer Last Name</li><li style="font-weight: 400;" aria-level="1">Email → Customer Email</li><li style="font-weight: 400;" aria-level="1">City, State, Country, Zip → relevant address fields (if you collect these on your checkout form)</li></ul><p><i>⚠️  Alvéya requires at least one of the following to create a contact: email address or phone number. You don't need both, but one must be mapped.</i></p><ul><li aria-level="1">Scroll down to the Tags field and type the tag you want applied to this customer. For example: All Access Pass. This tag will be used to trigger the onboarding workflow inside Alvéya.</li></ul><ul><li aria-level="1">Click Save, then scroll down and click Test Action. If the test runs successfully, head into your Alvéya sub-account to confirm the test contact appeared with the correct tag and details.</li></ul><p><i>💡  Using tags to trigger workflows gives you more flexibility than adding someone directly to a workflow from OttoKit. It also means you have a clean record in Alvéya of exactly what a customer has purchased.</i></p><h2>Part 3: Building the Onboarding Workflow in Alvéya</h2><p>Now that OttoKit is creating contacts and applying tags, you can use that tag as a trigger inside Alvéya to kick off an onboarding sequence.</p><p><br /><b></b></p><ul><li aria-level="1">In Alvéya, go to Automation → Workflows and create a new workflow from scratch.</li></ul><ul><li aria-level="1">Give it a clear name, such as ThriveCart Customer — All Access Onboarding.</li></ul><ul><li aria-level="1">Add a trigger: select Tag and then choose Tag Added. Set the tag to match exactly what you entered in OttoKit (e.g. All Access Pass).</li></ul><ul><li aria-level="1">Click Save Trigger.</li></ul><ul><li aria-level="1">Add your actions. Some options to consider:</li></ul><ul><li style="font-weight: 400;" aria-level="1">Send a welcome email with login details or next steps</li><li style="font-weight: 400;" aria-level="1">Grant access to a course or membership area</li><li style="font-weight: 400;" aria-level="1">Add the contact to a community group</li><li style="font-weight: 400;" aria-level="1">Add them to a sales pipeline opportunity</li></ul><ul><li aria-level="1">Once your workflow is complete, click Publish and then Save.</li></ul><p><i>💡  Build your full onboarding sequence here — confirmation email, access grant, follow-up sequence. This is where the real power of Alvéya comes in once ThriveCart handles the payment.</i></p><h2>Part 4: Handling Cancellations and Refunds</h2><p>If you're selling subscriptions, you'll also want to handle what happens when someone cancels or requests a refund. This requires a second OttoKit workflow and a corresponding Alvéya workflow to revoke access cleanly.</p><h3>Step 1: Create the cancellation workflow in OttoKit</h3><ul><li aria-level="1">In OttoKit, create a new workflow — name it something like ThriveCart Cancelled Subscription.</li></ul><ul><li aria-level="1">Add a ThriveCart trigger and select Rebill Payment Cancelled (or the relevant event for your subscription type).</li></ul><ul><li aria-level="1">Select your account, mode, and product as before.</li></ul><ul><li aria-level="1">Click Save.</li></ul><ul><li aria-level="1">Add an Alvéya action and select Add Contact to Workflow.</li></ul><ul><li aria-level="1">Toggle on the Map option for the Contact field, then search for and select Customer Email. This ensures OttoKit finds the right person in Alvéya by matching their email address.</li></ul><ul><li aria-level="1">Click the refresh button next to Select Workflow — but don't select one yet. You'll build the Alvéya workflow first.</li></ul><h3>Step 2: Create the cancellation workflow in Alvéya</h3><ul><li aria-level="1">In Alvéya, go to Automation → Workflows and create a new workflow from scratch.</li></ul><ul><li aria-level="1">Name it clearly — for example: ThriveCart Cancelled Subscription — Revoke Access.</li></ul><ul><li aria-level="1">Do not add a trigger. This workflow will be triggered directly by OttoKit via the API.</li></ul><ul><li aria-level="1">Add your actions. Common steps include:</li></ul><ul><li style="font-weight: 400;" aria-level="1">Remove the purchase tag (e.g. All Access Pass)</li><li style="font-weight: 400;" aria-level="1">Revoke course or community access</li><li style="font-weight: 400;" aria-level="1">Send an offboarding or win-back email</li><li style="font-weight: 400;" aria-level="1">Update the contact's pipeline opportunity to Lost</li></ul><ul><li aria-level="1">Click Publish, then Save.</li></ul><h3>Step 3: Connect the workflows</h3><ul><li aria-level="1">Back in OttoKit, click the refresh button next to Select Workflow.</li></ul><ul><li aria-level="1">Select the cancellation workflow you just created in Alvéya.</li></ul><ul><li aria-level="1">Click Test Action to verify the connection.</li></ul><p><i>⚠️  If you get an error saying the contact ID is invalid during testing, that's normal — it just means the test email doesn't match a real contact. Toggle off the Map option temporarily, select a known test contact, run the test, then toggle Map back on before saving.</i></p><ul><li aria-level="1">Once the test passes, click Save to finalise the workflow.</li></ul><h2>What You've Built</h2><p>You now have a fully automated connection between ThriveCart and Alvéya. When someone purchases, they are automatically added as a contact, tagged, and moved into your onboarding sequence. When someone cancels or refunds, their access is revoked and any follow-up steps happen automatically — without you needing to do a thing.</p><p><b>Your ThriveCart purchases are now flowing directly into Alvéya — your sales and your systems are working together.</b></p><p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

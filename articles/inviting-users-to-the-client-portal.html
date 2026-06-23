@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inviting Users to the Client Portal — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=courses-funnels">Courses & Funnels</a>
+        <span>›</span>
+        <span>Inviting Users to the Client Portal</span>
+      </nav>
+      <h1 class="article-title">Inviting Users to the Client Portal</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=courses-funnels" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Courses & Funnels
+    </a>
+
+    <div class="article-content">
+      <p>Once your client portal is set up, the next step is inviting your clients or audience to access it.</p>
+<p>There are a few different ways to give users access, depending on how you want them to log in.</p>
+<h2 class="wp-block-heading">Client Portal URL</h2>
+<p>Every client portal has its own unique URL that you either set up with your sub domain in the previous step or using the system client club default url.</p>
+<p>You can copy this link and send it directly to your clients so they can access the portal.</p>
+<h2 class="wp-block-heading">Invited Users vs Joined Users</h2>
+<p>Inside your client portal dashboard , you will see two user counts.</p>
+<figure class="wp-block-image"><img src="https://storage.googleapis.com/revex-membership-production/memberships/qDqwedJ1gJVHrjfqFC3k/courses/Screenshot-2026-03-17-at-9-pfys.png" alt="Uploaded image" title="Uploaded image"/></figure>
+<p><strong>Invited Users</strong><br>This shows how many people you have invited to join the portal.</p>
+<p><strong>Joined Users</strong><br>This shows how many people have successfully logged in and created their account.</p>
+<p>This helps you track who has access and who still needs to complete their setup.</p>
+<h2 class="wp-block-heading">Ways to Give Users Access</h2>
+<p>There are three main ways to invite or log users into the client portal.</p>
+<figure class="wp-block-image"><img src="https://storage.googleapis.com/revex-membership-production/memberships/qDqwedJ1gJVHrjfqFC3k/courses/Screenshot-2026-03-17-at-9-4v8d.png" alt="Uploaded image" title="Uploaded image"/></figure>
+<h3 class="wp-block-heading">Action 1 — Magic Link</h3>
+<p>A magic link allows a user to log in instantly without needing a password.</p>
+<p>This is useful when sending links via:</p>
+<p>• Email<br>• SMS<br>• Direct messages</p>
+<p>When a user clicks the link, they are taken straight into the portal.</p>
+<p><strong>Important:</strong><br>Magic links are created at the <strong>individual contact level</strong>.</p>
+<p>If you are using workflows or automations, you should use the <strong>custom value for magic links</strong>, which will automatically generate a unique login link for each contact.</p>
+<h3 class="wp-block-heading">Action 2 — Invite to Client Portal</h3>
+<p>You can send a direct invitation to join the portal.</p>
+<p>To do this:</p>
+<ol class="wp-block-list">
+<li>Click the <strong>Invite</strong> action</li>
+<li>Select an existing contact or enter a new email address</li>
+<li>Send the invitation</li>
+<p></ol></p>
+<p>The user will receive an email inviting them to create their login and access the portal.</p>
+<p>Invitations are sent from your <strong>default domain</strong>.</p>
+<h3 class="wp-block-heading">Action 3 — Login Email</h3>
+<p>The login email allows users to access the portal quickly without needing to enter their password.</p>
+<p>When sent, the email includes a <strong>login button</strong> that takes them directly into the portal.</p>
+<p>This is useful for:</p>
+<p>• Clients who have already been invited<br>• Resending access to existing users<br>• Quick access without password resets</p>
+<p>You can also select <strong>multiple contacts at once</strong> and send the login email in bulk.</p>
+<h2 class="wp-block-heading">When to Use Each Option</h2>
+<p>• Use <strong>Magic Links</strong> for quick, seamless access<br>• Use <strong>Invitations</strong> when onboarding new users<br>• Use <strong>Login Emails</strong> when users already have access but need an easy way back in</p>
+<h2 class="wp-block-heading">Next Step</h2>
+<p>Once your users have access, you can start directing them to:</p>
+<p>• Your community<br>• Courses or programs<br>• Events or resources</p>
+<p>Your client portal becomes the central space where your clients engage with your business.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

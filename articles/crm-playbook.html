@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM Playbook — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=crm-contacts">CRM & Contacts</a>
+        <span>›</span>
+        <span>CRM Playbook</span>
+      </nav>
+      <h1 class="article-title">CRM Playbook</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=crm-contacts" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to CRM & Contacts
+    </a>
+
+    <div class="article-content">
+      <h2>A Complete Setup Guide for Alvéya™
+<p></h2></p>
+		<p data-start="225" data-end="269">Your CRM is the operational heart of Alvéya.</p><p data-start="271" data-end="519">It stores every contact, tracks every interaction, and gives you a complete view of your client journey in one place. When configured properly, your CRM removes manual admin, reduces missed follow-ups, and keeps your practice organised as you grow.</p><p data-start="521" data-end="620">This Playbook walks you through how to structure, clean, and confidently use your CRM from day one.</p>		
+						<h3>What You’ll Complete in This Guide</h3><ol data-start="665" data-end="876"><li data-start="665" data-end="698"><p data-start="668" data-end="698">Understand the CRM structure</p></li><li data-start="699" data-end="732"><p data-start="702" data-end="732">Import and organise contacts</p></li><li data-start="733" data-end="765"><p data-start="736" data-end="765">Set up tags and smart lists</p></li><li data-start="766" data-end="797"><p data-start="769" data-end="797">Clean and merge duplicates</p></li><li data-start="798" data-end="837"><p data-start="801" data-end="837">Configure contact management tools</p></li><li data-start="838" data-end="876"><p data-start="841" data-end="876">Navigate and use the contact file</p></li></ol>
+						<h3>Understanding the CRM</h3><p data-start="921" data-end="961">The CRM is your central client database.</p><p data-start="963" data-end="975">It contains:</p><ul data-start="976" data-end="1122"><li data-start="976" data-end="995"><p data-start="978" data-end="995">Contact records</p></li><li data-start="996" data-end="1021"><p data-start="998" data-end="1021">Communication history</p></li><li data-start="1022" data-end="1038"><p data-start="1024" data-end="1038">Appointments</p></li><li data-start="1039" data-end="1048"><p data-start="1041" data-end="1048">Tasks</p></li><li data-start="1049" data-end="1061"><p data-start="1051" data-end="1061">Payments</p></li><li data-start="1062" data-end="1082"><p data-start="1064" data-end="1082">Form submissions</p></li><li data-start="1083" data-end="1100"><p data-start="1085" data-end="1100">Course access</p></li><li data-start="1101" data-end="1122"><p data-start="1103" data-end="1122">Activity tracking</p></li></ul><p data-start="1124" data-end="1186">It is different from your “Contacts” view only in perspective.</p><p data-start="1188" data-end="1269"><strong data-start="1188" data-end="1200">Contacts</strong> is the list.<br data-start="1213" data-end="1216" /><strong data-start="1216" data-end="1223">CRM</strong> is the system that manages the relationships.</p><p data-start="1271" data-end="1354">Every interaction feeds into the CRM automatically once your systems are connected.</p>
+		<ol data-start="665" data-end="876"><li data-start="665" data-end="698"><p data-start="668" data-end="698">Understand the CRM structure</p></li><li data-start="699" data-end="732"><p data-start="702" data-end="732">Import and organise contacts</p></li><li data-start="733" data-end="765"><p data-start="736" data-end="765">Set up tags and smart lists</p></li><li data-start="766" data-end="797"><p data-start="769" data-end="797">Clean and merge duplicates</p></li><li data-start="798" data-end="837"><p data-start="801" data-end="837">Configure contact management tools</p></li><li data-start="838" data-end="876"><p data-start="841" data-end="876">Navigate and use the contact file</p></li></ol><p data-start="921" data-end="961">The CRM is your central client database.</p><p data-start="963" data-end="975">It contains:</p><ul data-start="976" data-end="1122"><li data-start="976" data-end="995"><p data-start="978" data-end="995">Contact records</p></li><li data-start="996" data-end="1021"><p data-start="998" data-end="1021">Communication history</p></li><li data-start="1022" data-end="1038"><p data-start="1024" data-end="1038">Appointments</p></li><li data-start="1039" data-end="1048"><p data-start="1041" data-end="1048">Tasks</p></li><li data-start="1049" data-end="1061"><p data-start="1051" data-end="1061">Payments</p></li><li data-start="1062" data-end="1082"><p data-start="1064" data-end="1082">Form submissions</p></li><li data-start="1083" data-end="1100"><p data-start="1085" data-end="1100">Course access</p></li><li data-start="1101" data-end="1122"><p data-start="1103" data-end="1122">Activity tracking</p></li></ul><p data-start="1124" data-end="1186">It is different from your “Contacts” view only in perspective.</p><p data-start="1188" data-end="1269"><strong data-start="1188" data-end="1200">Contacts</strong> is the list.<br data-start="1213" data-end="1216" /><strong data-start="1216" data-end="1223">CRM</strong> is the system that manages the relationships.</p><p data-start="1271" data-end="1354">Every interaction feeds into the CRM automatically once your systems are connected.</p>https://youtu.be/HEBWfsIFwBA		
+					<h2>Steps to setting up your contacts &amp; CRM</h2>				
+						<h3>Step 1 – Import Your Contacts</h3><p data-start="1465" data-end="1540">If you are migrating from another platform, import your contact list first.</p><p data-start="1542" data-end="1568">Go to:<br /><strong>Contacts → Import</strong></p><p data-start="1570" data-end="1613">Upload a CSV file and map fields correctly.</p><p data-start="1615" data-end="1621">Check:</p><ul data-start="1622" data-end="1731"><li data-start="1622" data-end="1660"><p data-start="1624" data-end="1660">Email fields are matched correctly</p></li><li data-start="1661" data-end="1699"><p data-start="1663" data-end="1699">Phone numbers include country code</p></li><li data-start="1700" data-end="1731"><p data-start="1702" data-end="1731">Tags are assigned if needed</p></li></ul><p data-start="1733" data-end="1772">Clean imports prevent future confusion.</p>
+						<h3>Step 2 – Create Tags and Smart Lists</h3><p data-start="1868" data-end="1903">Tags allow you to segment contacts.</p><p data-start="1905" data-end="1914">Examples:</p><ul data-start="1915" data-end="1988"><li data-start="1915" data-end="1927"><p data-start="1917" data-end="1927">New Lead</p></li><li data-start="1928" data-end="1945"><p data-start="1930" data-end="1945">Active Client</p></li><li data-start="1946" data-end="1967"><p data-start="1948" data-end="1967">Completed Program</p></li><li data-start="1968" data-end="1988"><p data-start="1970" data-end="1988">Webinar Attendee</p></li></ul><p data-start="1990" data-end="2067">Smart Lists allow you to dynamically group contacts based on filters such as:</p><ul data-start="2068" data-end="2138"><li data-start="2068" data-end="2079"><p data-start="2070" data-end="2079">Has tag</p></li><li data-start="2080" data-end="2102"><p data-start="2082" data-end="2102">Booked appointment</p></li><li data-start="2103" data-end="2119"><p data-start="2105" data-end="2119">Opened email</p></li><li data-start="2120" data-end="2138"><p data-start="2122" data-end="2138">Pipeline stage</p></li></ul><p data-start="2140" data-end="2191">Tags organise.<br data-start="2154" data-end="2157" />Smart Lists automate segmentation.</p><p data-start="2140" data-end="2191"><img role="img" draggable="false" src="https://s.w.org/images/core/emoji/17.0.2/svg/1f4d6.svg" alt="📖" />  <strong><a href="https://help.alveya.io/tags-smart-lists/">Learn more Creating tags and building a Smart List.</a></strong></p>
+						<h3>Step 3 – Merge Duplicate Contacts</h3><p data-start="2306" data-end="2340">Duplicate contacts can occur when:</p>
+<ul data-start="2342" data-end="2444">
+<li data-start="2342" data-end="2376">
+<p data-start="2344" data-end="2376">Someone submits multiple forms</p>
+<p></li></p>
+<li data-start="2377" data-end="2409">
+<p data-start="2379" data-end="2409">You import overlapping lists</p>
+<p></li></p>
+<li data-start="2410" data-end="2444">
+<p data-start="2412" data-end="2444">Email and phone entries differ</p>
+<p></li> </ul></p>
+<p data-start="2446" data-end="2466">To merge duplicates:</p>
+<ol data-start="2468" data-end="2567">
+<li data-start="2468" data-end="2491">
+<p data-start="2471" data-end="2491">Search the contact</p>
+<p></li></p>
+<li data-start="2492" data-end="2521">
+<p data-start="2495" data-end="2521">Select duplicate records</p>
+<p></li></p>
+<li data-start="2522" data-end="2542">
+<p data-start="2525" data-end="2542">Click &#8220;More&#8221;</p>
+<p></li></p>
+<li data-start="2543" data-end="2567">
+<p data-start="2546" data-end="2567">Select &#8220;Merge&#8221;</p>
+<p></li> </ol></p>
+<p data-start="2569" data-end="2609">Always review before confirming a merge.</p>								
+															<img width="800" height="473" src="https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-10.50.30-am-1024x606.png" alt="" srcset="https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-10.50.30-am-1024x606.png 1024w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-10.50.30-am-300x178.png 300w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-10.50.30-am-768x454.png 768w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-10.50.30-am-1536x909.png 1536w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-10.50.30-am-2048x1212.png 2048w" sizes="(max-width: 800px) 100vw, 800px" />
+						<h3>Step 4 – Manage Your CRM Structure</h3><p data-start="2700" data-end="2759">Now configure your CRM to match how your business operates.</p><p data-start="2761" data-end="2777">You may need to:</p><ul data-start="2779" data-end="2878"><li data-start="2779" data-end="2803"><p data-start="2781" data-end="2803">Create custom fields</p></li><li data-start="2804" data-end="2824"><p data-start="2806" data-end="2824">Create pipelines</p></li><li data-start="2825" data-end="2850"><p data-start="2827" data-end="2850">Assign contact owners</p></li><li data-start="2851" data-end="2878"><p data-start="2853" data-end="2878">Define lifecycle stages</p></li></ul><p data-start="2880" data-end="2893">This ensures:</p><ul data-start="2894" data-end="2969"><li data-start="2894" data-end="2914"><p data-start="2896" data-end="2914">Clear visibility</p></li><li data-start="2915" data-end="2945"><p data-start="2917" data-end="2945">Proper automation triggers</p></li><li data-start="2946" data-end="2969"><p data-start="2948" data-end="2969">Team accountability</p></li></ul> 🎥 Embed video: Custom fields and pipelines overview.
+						<h3>Step 5 – Using the Contact Profile</h3><p data-start="3082" data-end="3137">Every contact file contains a full interaction history.</p><p data-start="3139" data-end="3178">Inside a contact profile, you can view:</p><ul data-start="3180" data-end="3413"><li data-start="3180" data-end="3235"><p data-start="3182" data-end="3235">All conversations (Email, SMS, Instagram, Facebook)</p></li><li data-start="3236" data-end="3262"><p data-start="3238" data-end="3262">Tags and custom fields</p></li><li data-start="3263" data-end="3283"><p data-start="3265" data-end="3283">Form submissions</p></li><li data-start="3284" data-end="3320"><p data-start="3286" data-end="3320">Booked or cancelled appointments</p></li><li data-start="3321" data-end="3352"><p data-start="3323" data-end="3352">Courses or community access</p></li><li data-start="3353" data-end="3375"><p data-start="3355" data-end="3375">Uploaded documents</p></li><li data-start="3376" data-end="3395"><p data-start="3378" data-end="3395">Payment history</p></li><li data-start="3396" data-end="3413"><p data-start="3398" data-end="3413">Activity logs</p></li></ul><p data-start="3415" data-end="3461">From within the contact profile, you can also:</p><ul data-start="3463" data-end="3618"><li data-start="3463" data-end="3484"><p data-start="3465" data-end="3484">Send email or SMS</p></li><li data-start="3485" data-end="3522"><p data-start="3487" data-end="3522">Send Instagram DMs (if connected)</p></li><li data-start="3523" data-end="3553"><p data-start="3525" data-end="3553">Use templates and snippets</p></li><li data-start="3554" data-end="3578"><p data-start="3556" data-end="3578">Leave internal notes</p></li><li data-start="3579" data-end="3595"><p data-start="3581" data-end="3595">Assign tasks</p></li><li data-start="3596" data-end="3618"><p data-start="3598" data-end="3618">Add or remove tags</p></li></ul><p data-start="3620" data-end="3661">This becomes your single source of truth.</p>
+		<p data-start="1465" data-end="1540">If you are migrating from another platform, import your contact list first.</p><p data-start="1542" data-end="1568">Go to:<br /><strong>Contacts → Import</strong></p><p data-start="1570" data-end="1613">Upload a CSV file and map fields correctly.</p><p data-start="1615" data-end="1621">Check:</p><ul data-start="1622" data-end="1731"><li data-start="1622" data-end="1660"><p data-start="1624" data-end="1660">Email fields are matched correctly</p></li><li data-start="1661" data-end="1699"><p data-start="1663" data-end="1699">Phone numbers include country code</p></li><li data-start="1700" data-end="1731"><p data-start="1702" data-end="1731">Tags are assigned if needed</p></li></ul><p data-start="1733" data-end="1772">Clean imports prevent future confusion.</p>https://youtu.be/dYk9dHJTAsY<p data-start="1868" data-end="1903">Tags allow you to segment contacts.</p><p data-start="1905" data-end="1914">Examples:</p><ul data-start="1915" data-end="1988"><li data-start="1915" data-end="1927"><p data-start="1917" data-end="1927">New Lead</p></li><li data-start="1928" data-end="1945"><p data-start="1930" data-end="1945">Active Client</p></li><li data-start="1946" data-end="1967"><p data-start="1948" data-end="1967">Completed Program</p></li><li data-start="1968" data-end="1988"><p data-start="1970" data-end="1988">Webinar Attendee</p></li></ul><p data-start="1990" data-end="2067">Smart Lists allow you to dynamically group contacts based on filters such as:</p><ul data-start="2068" data-end="2138"><li data-start="2068" data-end="2079"><p data-start="2070" data-end="2079">Has tag</p></li><li data-start="2080" data-end="2102"><p data-start="2082" data-end="2102">Booked appointment</p></li><li data-start="2103" data-end="2119"><p data-start="2105" data-end="2119">Opened email</p></li><li data-start="2120" data-end="2138"><p data-start="2122" data-end="2138">Pipeline stage</p></li></ul><p data-start="2140" data-end="2191">Tags organise.<br data-start="2154" data-end="2157" />Smart Lists automate segmentation.</p><p data-start="2140" data-end="2191"><img role="img" draggable="false" src="https://s.w.org/images/core/emoji/17.0.2/svg/1f4d6.svg" alt="📖" />  <strong><a href="https://help.alveya.io/tags-smart-lists/">Learn more Creating tags and building a Smart List.</a></strong></p><p data-start="2306" data-end="2340">Duplicate contacts can occur when:</p>
+<ul data-start="2342" data-end="2444">
+<li data-start="2342" data-end="2376">
+<p data-start="2344" data-end="2376">Someone submits multiple forms</p>
+<p></li></p>
+<li data-start="2377" data-end="2409">
+<p data-start="2379" data-end="2409">You import overlapping lists</p>
+<p></li></p>
+<li data-start="2410" data-end="2444">
+<p data-start="2412" data-end="2444">Email and phone entries differ</p>
+<p></li> </ul></p>
+<p data-start="2446" data-end="2466">To merge duplicates:</p>
+<ol data-start="2468" data-end="2567">
+<li data-start="2468" data-end="2491">
+<p data-start="2471" data-end="2491">Search the contact</p>
+<p></li></p>
+<li data-start="2492" data-end="2521">
+<p data-start="2495" data-end="2521">Select duplicate records</p>
+<p></li></p>
+<li data-start="2522" data-end="2542">
+<p data-start="2525" data-end="2542">Click "More"</p>
+<p></li></p>
+<li data-start="2543" data-end="2567">
+<p data-start="2546" data-end="2567">Select "Merge"</p>
+<p></li> </ol></p>
+<p data-start="2569" data-end="2609">Always review before confirming a merge.</p>		
+															<img width="800" height="473" src="https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-10.50.30-am-1024x606.png" alt="" srcset="https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-10.50.30-am-1024x606.png 1024w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-10.50.30-am-300x178.png 300w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-10.50.30-am-768x454.png 768w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-10.50.30-am-1536x909.png 1536w, https://help.alveya.io/wp-content/uploads/2026/02/Screenshot-2026-02-22-at-10.50.30-am-2048x1212.png 2048w" sizes="(max-width: 800px) 100vw, 800px" />															
+		<p data-start="2700" data-end="2759">Now configure your CRM to match how your business operates.</p><p data-start="2761" data-end="2777">You may need to:</p><ul data-start="2779" data-end="2878"><li data-start="2779" data-end="2803"><p data-start="2781" data-end="2803">Create custom fields</p></li><li data-start="2804" data-end="2824"><p data-start="2806" data-end="2824">Create pipelines</p></li><li data-start="2825" data-end="2850"><p data-start="2827" data-end="2850">Assign contact owners</p></li><li data-start="2851" data-end="2878"><p data-start="2853" data-end="2878">Define lifecycle stages</p></li></ul><p data-start="2880" data-end="2893">This ensures:</p><ul data-start="2894" data-end="2969"><li data-start="2894" data-end="2914"><p data-start="2896" data-end="2914">Clear visibility</p></li><li data-start="2915" data-end="2945"><p data-start="2917" data-end="2945">Proper automation triggers</p></li><li data-start="2946" data-end="2969"><p data-start="2948" data-end="2969">Team accountability</p></li></ul> 🎥 Embed video: Custom fields and pipelines overview.https://www.youtube.com/watch?v=XHOmBV4js_E<p data-start="3082" data-end="3137">Every contact file contains a full interaction history.</p><p data-start="3139" data-end="3178">Inside a contact profile, you can view:</p><ul data-start="3180" data-end="3413"><li data-start="3180" data-end="3235"><p data-start="3182" data-end="3235">All conversations (Email, SMS, Instagram, Facebook)</p></li><li data-start="3236" data-end="3262"><p data-start="3238" data-end="3262">Tags and custom fields</p></li><li data-start="3263" data-end="3283"><p data-start="3265" data-end="3283">Form submissions</p></li><li data-start="3284" data-end="3320"><p data-start="3286" data-end="3320">Booked or cancelled appointments</p></li><li data-start="3321" data-end="3352"><p data-start="3323" data-end="3352">Courses or community access</p></li><li data-start="3353" data-end="3375"><p data-start="3355" data-end="3375">Uploaded documents</p></li><li data-start="3376" data-end="3395"><p data-start="3378" data-end="3395">Payment history</p></li><li data-start="3396" data-end="3413"><p data-start="3398" data-end="3413">Activity logs</p></li></ul><p data-start="3415" data-end="3461">From within the contact profile, you can also:</p><ul data-start="3463" data-end="3618"><li data-start="3463" data-end="3484"><p data-start="3465" data-end="3484">Send email or SMS</p></li><li data-start="3485" data-end="3522"><p data-start="3487" data-end="3522">Send Instagram DMs (if connected)</p></li><li data-start="3523" data-end="3553"><p data-start="3525" data-end="3553">Use templates and snippets</p></li><li data-start="3554" data-end="3578"><p data-start="3556" data-end="3578">Leave internal notes</p></li><li data-start="3579" data-end="3595"><p data-start="3581" data-end="3595">Assign tasks</p></li><li data-start="3596" data-end="3618"><p data-start="3598" data-end="3618">Add or remove tags</p></li></ul><p data-start="3620" data-end="3661">This becomes your single source of truth.</p>https://www.youtube.com/watch?v=XHOmBV4js_E
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

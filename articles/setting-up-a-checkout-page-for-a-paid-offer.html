@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setting Up a Checkout Page for a Paid Offer — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=courses-funnels">Courses & Funnels</a>
+        <span>›</span>
+        <span>Setting Up a Checkout Page for a Paid Offer</span>
+      </nav>
+      <h1 class="article-title">Setting Up a Checkout Page for a Paid Offer</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=courses-funnels" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Courses & Funnels
+    </a>
+
+    <div class="article-content">
+      <p><i>This guide walks you through connecting a paid offer to a checkout page in Alvéya — from creating the offer in the right place, to setting up the order form, confirmation page, and post-purchase automation.</i></p>
+<h2><b>Step 1: Create Your Offer in the Right Place</b></h2>
+<p>Before you set up the checkout page itself, you need to create the offer in Alvéya. Where you create it depends on what you are selling:</p>
+
+<table>
+<thead>
+<tr>
+<th>
+<p><b>Offer type</b></p>
+<p></th></p>
+<th>
+<p><b>Where to create it</b></p>
+<p></th></p>
+<th>
+<p><b>What you'll get</b></p>
+<p></th> </tr> </thead></p>
+<tbody>
+<tr>
+<td>
+<p><b>Online course</b></p>
+<p></td></p>
+<td>
+<p>Courses</p>
+<p></td></p>
+<td>
+<p>A signup link to connect to your funnel order form</p>
+<p></td> </tr></p>
+<tr>
+<td>
+<p><b>Recurring subscription</b></p>
+<p></td></p>
+<td>
+<p>Products</p>
+<p></td></p>
+<td>
+<p>A product to connect to your funnel order form</p>
+<p></td> </tr> </tbody> </table></p>
+
+<h3><b>Online Course</b></h3>
+<p>Go to Courses and create your course there. Once it is set up, Alvéya will provide you with a signup link — this is what you will connect to your funnel order form in the next step.</p>
+<h3><b>Recurring Subscription</b></h3>
+<p>Go to Products and add your subscription as a product. Set your pricing, billing frequency, and any other details. Once saved, this product will be available to connect to your funnel order form.</p>
+<p><i>💡  Not sure which one applies to you? If your client pays once and gets ongoing access, that is typically a course. If they pay regularly (weekly, monthly, or annually) to maintain access or receive ongoing services, that is a subscription product.</i></p>
+<h2><b>Step 2: Set Up the Funnel Order Form Page</b></h2>
+<p>Alvéya's funnel templates include a built-in order form page — you do not need to build the checkout from scratch.</p>
+<ul>
+<li aria-level="1">Go to Websites &amp; Funnels and open one of the funnel templates.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">If the template includes a sales page before the order form, remove it. You only need the order form page for this setup.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Open the order form page in the editor.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">On the right-hand side panel, find the Products section.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Connect the product or course signup you created in Step 1 to this order form page.</li>
+<p></ul></p>
+<p><i>💡  You can always add the sales page back in later if you decide you want a full sales funnel. For now, starting with just the order form keeps things simple and gets your offer live faster.</i></p>
+<h2><b>Step 3: Set the Confirmation Page</b></h2>
+<p>After a client completes their purchase, they need somewhere to land. This is your confirmation page — it can be a thank you message, instructions for next steps, or a redirect to their course or membership area.</p>
+<ul>
+<li aria-level="1">In the funnel builder, look at the steps listed in your funnel sequence.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Set the confirmation page as the next step after the order form page.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Customise the confirmation page content to let your new client know what happens next.</li>
+<p></ul></p>
+<p><i>⚠️  Do not skip setting the confirmation page. Without it, clients who complete a purchase will land on a blank or broken page, which creates a poor first impression right at the moment they have just bought from you.</i></p>
+<h2><b>Step 4: Set Up a Post-Purchase Automation</b></h2>
+<p>Alvéya has pre-built automation templates to handle what happens after someone buys. You will find these in the Automations section — look for:</p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">Post Purchase Workflow — the standard automation for sending a welcome email, granting access, and onboarding a new client after a purchase.</li>
+<li style="font-weight: 400;" aria-level="1">Bump Offer Post Purchase Workflow — use this if your checkout includes an order bump (an add-on offer shown at the point of purchase).</li>
+<p></ul></p>
+<p>Select the template that matches your setup, review the steps inside, and activate it. These templates are a starting point — you can customise the email content, timing, and actions to suit your offer.</p>
+<p><i>💡  Even if you are not ready to build out a full welcome sequence yet, activate the basic Post Purchase Workflow so that at minimum your new client receives a confirmation email straight away.</i></p>
+
+<p><b>With your checkout page connected and your post-purchase automation in place, your offer is ready to sell.</b></p>
+<p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

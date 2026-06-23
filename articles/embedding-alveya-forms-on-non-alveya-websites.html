@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embedding Alvéya Forms on Non-Alvéya Websites — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=courses-funnels">Courses & Funnels</a>
+        <span>›</span>
+        <span>Embedding Alvéya Forms on Non-Alvéya Websites</span>
+      </nav>
+      <h1 class="article-title">Embedding Alvéya Forms on Non-Alvéya Websites</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=courses-funnels" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Courses & Funnels
+    </a>
+
+    <div class="article-content">
+      <h2 id="What-are-HighLevel-Forms">What is Embedding of Alvéya Forms</h2>
+
+<p>Embedding Alvéya forms means integrating a form from Alvéya directly onto your website using your own website editor, allowing visitors to fill it out without being redirected elsewhere. This makes the process seamless, ensuring that opt ins, customer enquiries, or appointment bookings happen right within your branded environment. The best part? You won’t need to switch between multiple platforms or make adjustments in different places—just copy the embed code from Alvéya and paste it into your website editor.</p>
+
+<hr />
+
+<h3 id="Key-Benefits-of-Embedding-HighLevel-Forms">Key Benefits of Embedding Alvéya Forms</h3>
+
+<p>Embedding Alvéya forms can significantly improve engagement and lead generation on your website. Here are the key benefits:</p>
+
+<ul>
+<li style="list-style-type: none;">
+<ul></ul>
+<p></li> </ul></p>
+
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li><strong>Capture More Leads: </strong>Alvéya forms enable you to collect visitor information directly on your site, making it easier to nurture leads.</li>
+<p></ul> </li> </ul></p>
+
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li><strong>Cross-Platform Integration: </strong>Use the forms on various website platforms such as SquareSpace, Wix, Shopify and WordPress.</li>
+<p></ul> </li> </ul></p>
+
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li><strong>Seamless CRM Syncing: </strong>Automatically sync collected data with your Alvéya CRM for streamlined follow-up and automation.</li>
+<p></ul> </li> </ul></p>
+
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li><strong>Improved Engagement: </strong>Use customizable forms to display targeted messages, promotions, or surveys.</li>
+<p></ul> </li> </ul></p>
+
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li><strong>Performance Tracking: </strong>Leverage Alvéya’s built-in analytics to monitor and optimize the performance of your forms.</li>
+<p></ul> </li> </ul></p>
+
+
+<hr />
+
+<h2 id="Where-to-Find-the-Embed-Link-in-HighLevel?">Where to Find the Embed Link in Alvéya?</h2>
+
+<p>To embed Alvéya forms on your website, you first need to locate the embed link in your Alvéya account. This link provides the script that allows the form to appear on your chosen website. Here’s how you can find it:</p>
+
+<h3 id="Access-Form-Builder"><strong>Access Form Builder</strong></h3>
+
+<p>From the dashboard, go to the <strong>“Websites &amp; Funnels” </strong>section in the main navigation menu. Click on the <strong>“Forms”</strong> menu located at the top right corner. It will take you to the form builder area.</p>
+
+<figure><img src="https://help.alveya.io/wp-content/uploads/2026/03/form-embedding.png" alt="" /></figure>
+
+<h3 id="Choose-or-Create-a-Form"><strong>Choose or Create a Form</strong></h3>
+
+<p>To embed a form, you can either select an existing one from the list or create a new form. If you’re starting fresh, simply click the <strong>“+ Add Form”</strong> button to build your form. If you already have a form ready, just select it from the available options.</p>
+
+<h3 id="Access-the-Embed-Link"><strong>Access the Embed Link</strong></h3>
+
+<p>Once your form is ready, go to the <strong>"Integrate"</strong> tab located at the top right corner. Select the type of form from the  options and click on the <strong>Copy Embed Code</strong> option. If you want it to be on a page, choose "Inline"</p>
+
+<figure><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155040479721/original/rSGHQM4NMq0Xu5nQQ7LbOleG3Vy6oiC6Ag.gif?1737960624" alt="" /></figure>
+
+<h3 id="Ready-to-Use"><strong>Ready to Use</strong></h3>
+
+<p>Your embed link is now ready to be pasted into your website’s code, following the platform-specific instructions outlined below.</p>
+
+<hr />
+
+<h2> </h2>
+<h2> </h2>
+<h2 id="How-to-Embed-HighLevel-Pop-Up-Forms">How to Embed Alvéya Pop-Up Forms</h2>
+
+<p>Now that you’ve obtained the embed code for your pop-up form, let’s walk through the steps to seamlessly integrate it into your website. We’ve outlined detailed instructions for the most popular website builders.</p>
+
+		
+					<a href="#Squarespace">
+<p>Squarespace </a></p>
+					<a href="#wix">
+<p>wix </a></p>
+					<a href="#wordpress">
+<p>wordpress </a></p>
+		<h3 id="Squarespace">Squarespace</h3>
+
+<p id="Squarespace-allows-adding-custom-code-through-its-code-injection-tool,-enabling-easy-embedding-of-different-types-of-forms.-Let's-understand-each-step-in-details-:Access-Settings"><strong>POP UP FORM - </strong></p>
+<p>Squarespace allows adding custom code through its code injection tool, enabling easy embedding of different types of forms. Let's understand each step in details :</p>
+<p><strong>Access Settings</strong></p>
+
+<p>Start by logging in to your website builder account and navigating to the <strong>Website -. Pages</strong> menu in your dashboard.</p>
+
+
+
+<p id="Select-Code-Injection"><strong>Select Code Injection</strong></p>
+
+
+<p id="Add-the-Embed-Code"><strong>Add the Embed Code</strong></p>
+
+<p>Decide where to add the embed code:</p>
+
+<p>To display the form across all pages, paste the code into the Header or Footer section of the Code Injection panel.</p>
+
+<figure><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155040478489/original/y3ZB1pWgpRXjY0kExdLTfGBhDd4cTiQ-QA.png?1737958972" alt="" /></figure>
+
+<p id="Save-and-Publish"><strong>Save and Publish</strong></p>
+
+<p>Once the code is added, click <strong>Save</strong> in the Code Injection panel or the Per-Page Code Injection field. </p>
+
+<p>Publish your website to apply the changes.</p>
+
+<pre>** SquareSpace does not support embedding of forms on checkout pages. Ensure your forms target other areas of your website.</pre>
+<p><strong>EMBED THE FORM ON A PAGE</strong></p>
+<p>Add a HTML code block to the page you want it on. from Alvéya, use the inline embed code</p>
+<h3 id="Squarespace"><strong>Wix Integration</strong></h3>
+
+
+<p id="Wix-Website-Builder-Options"><strong>Wix Website Builder Options</strong></p>
+
+<ol>
+<li style="list-style-type: none;">
+<ol></ol>
+<p></li> </ol></p>
+<ol>
+<li style="list-style-type: none;">
+<ol>
+<li>Click the <strong>"+"</strong> button to find the embed option.</li>
+<p></ol> </li> </ol></p>
+
+<ol>
+<li style="list-style-type: none;">
+<ol>
+<li>Click <strong>Embed</strong> option.</li>
+<p></ol> </li> </ol></p>
+
+<ol>
+<li style="list-style-type: none;">
+<ol>
+<li>Select the <strong>Embed a Widget</strong> option.</li>
+<p></ol> </li> </ol></p>
+
+
+<figure><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155040484664/original/Y6uNfx7-bWPgkTHjD8Sjk3EEleRNldLKmw.png?1737964819" alt="" /></figure>
+
+<p id="Paste-the-Code-in-Wix-Editor"><strong>Paste the Code in Wix Editor</strong></p>
+
+<p>Select <strong>Code</strong> option. Paste the embed script and click <strong>Update </strong>option to save your changes.</p>
+
+<figure><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155040484717/original/0yBNSWCitojfaCx_5c2QkASUvCfwCz0FzQ.png?1737964859" alt="" /></figure>
+
+<p id="Publish-Your-Website"><strong>Publish Your Website</strong></p>
+
+<p>Preview the site to confirm the form appears correctly. Once confirmed, publish your Wix website.</p>
+
+<hr />
+
+<figure></figure>
+
+<h3 id="WordPress-Integration">WordPress Integration</h3>
+
+<p>WordPress supports embedding scripts via plugins or theme settings, making it versatile for adding pop-up forms.</p>
+
+<p id="Access-the-Editor"><strong>Access the Editor</strong></p>
+
+<p>To begin, navigate to the <strong>Pages</strong> section in your website’s admin dashboard. This is where you can manage your site’s visual settings and design elements. To get into the editor mode, hover over the page where you wish to embed your Alvéya form and click the <strong>Edit</strong> button</p>
+
+<figure><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155040574447/original/Sn1fU2qwIsCMN1lw-COpW7NLryJquimxew.png?1738064144" alt="" /></figure>
+
+<p id="Open-the-Block-Menu"><strong>Open the Block Menu</strong></p>
+
+<p>Click the <strong>”+” </strong>icon in the editor to reveal the list of available blocks for customizing your page.</p>
+
+<figure><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155040574471/original/aig7pzyEvRb_1S6_Sugwdj7dQy5YqVIX4A.png?1738064169" alt="" /></figure>
+
+<p id="Select-the-Custom-HTML-Block"><strong>Select the Custom HTML Block</strong></p>
+
+<p>Scroll down and select the <strong>Custom HTML</strong> option to insert your own code into the page layout.</p>
+
+<figure><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155040574498/original/-zABymPaYB2OW21Swd_0oXHgzXV4o8S17A.png?1738064197" alt="" /></figure>
+
+<p id="Inserting-the-Embed-Code"><strong>Inserting the Embed Code</strong></p>
+
+<p>Paste the embed code into the appropriate section within the selected file. Ensure it’s placed correctly between the &lt;head&gt; or &lt;footer&gt; tags for proper functionality. Save your changes once done.</p>
+
+<figure><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155040574521/original/z-cfbrRl8pPi1KEPF9M8qjrhz-VGVYQmHQ.png?1738064220" alt="" /></figure>
+
+<p id="Update-and-Test"><strong>Update and Test</strong></p>
+
+<p>Save changes and refresh your website to verify the form appears correctly</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

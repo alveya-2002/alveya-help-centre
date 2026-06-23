@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create a Countdown Timer in Alvéya™ — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=email-marketing">Email Marketing</a>
+        <span>›</span>
+        <span>Create a Countdown Timer in Alvéya™</span>
+      </nav>
+      <h1 class="article-title">Create a Countdown Timer in Alvéya™</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=email-marketing" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Email Marketing
+    </a>
+
+    <div class="article-content">
+      <p data-start="427" data-end="578">Countdown timers help build anticipation and encourage action — whether you’re promoting an event, a special offer, or a limited-time booking window.</p>
+<p data-start="580" data-end="628">In Alvéya™, you can create timers in two ways:</p>
+<ul data-start="629" data-end="766">
+<li data-start="629" data-end="704">
+<p data-start="631" data-end="704">From <strong data-start="636" data-end="668">Marketing → Countdown Timers</strong> (for reusable, global timers), or</p>
+<p></li></p>
+<li data-start="705" data-end="766">
+<p data-start="707" data-end="766">Inside the <strong data-start="718" data-end="734">Page Builder</strong> (for single-page countdowns).</p>
+<p></li> </ul></p>
+					<h2>Option 1: Create a Global Countdown Timer (Recommended)</h2>				
+		<p>This option gives you the most flexibility — you can choose between <strong data-start="926" data-end="935">Fixed</strong>, <strong data-start="937" data-end="948">Dynamic</strong>, and <strong data-start="954" data-end="967">Recurring</strong> timers, and reuse them across multiple pages or emails.</p>		
+						<h3>Step 1: Open the Countdown Timer Tool</h3><ul>
+<li data-start="1041" data-end="1114">
+<p data-start="1044" data-end="1114">From your Alvéya™ dashboard, go to <strong data-start="1079" data-end="1111">Marketing → Countdown Timers</strong>.</p>
+<p></li></p>
+<li data-start="1115" data-end="1155">
+<p data-start="1118" data-end="1155">Click <strong data-start="1124" data-end="1152">+ Create Countdown Timer</strong>.</p>
+<p></li> </ul></p>
+						<h3>Step 2: Choose the Timer Type</h3><p data-start="1201" data-end="1253">When creating your timer, select from three types:</p>
+<ul data-start="1255" data-end="1578">
+<li data-start="1255" data-end="1356">
+<p data-start="1257" data-end="1356"><strong data-start="1257" data-end="1272">Fixed Timer</strong> → counts down to a specific date and time (e.g. <em data-start="1321" data-end="1352">Offer ends Friday at midnight</em>).</p>
+<p></li></p>
+<li data-start="1357" data-end="1487">
+<p data-start="1359" data-end="1487"><strong data-start="1359" data-end="1376">Dynamic Timer</strong> → counts down individually for each contact based on when they first visit the page or trigger the campaign.</p>
+<p></li></p>
+<li data-start="1488" data-end="1578">
+<p data-start="1490" data-end="1578"><strong data-start="1490" data-end="1509">Recurring Timer</strong> → repeats automatically on a schedule (daily, weekly, or monthly).</p>
+<p></li> </ul></p>
+<p data-start="1580" data-end="1705">💡 <em data-start="1583" data-end="1703">Use Fixed for launches, Dynamic for evergreen funnels, and Recurring for ongoing weekly offers or appointment windows.</em></p>
+						<h3>Step 3: Configure Your Timer Settings</h3><ul>
+<li data-start="1759" data-end="1824">
+<p data-start="1762" data-end="1824">Enter a clear <strong data-start="1776" data-end="1790">Timer Name</strong> (e.g. <em data-start="1797" data-end="1820">Spring Sale Countdown</em>).</p>
+<p></li></p>
+<li data-start="1825" data-end="1894">
+<p data-start="1828" data-end="1894">Set your <strong data-start="1837" data-end="1859">start and end time</strong> (or duration, if using Dynamic).</p>
+<p></li></p>
+<li data-start="1895" data-end="2104">
+<p data-start="1898" data-end="1939">Choose what happens when time runs out:</p>
+<ul data-start="1943" data-end="2104">
+<li data-start="1943" data-end="2016">
+<p data-start="1945" data-end="2016">Redirect visitors to another page (e.g. “Waitlist” or “Closed” page).</p>
+<p></li></p>
+<li data-start="2020" data-end="2070">
+<p data-start="2022" data-end="2070">Display a message like <em data-start="2045" data-end="2068">This offer has ended.</em></p>
+<p></li></p>
+<li data-start="2074" data-end="2104">
+<p data-start="2076" data-end="2104">Hide the timer completely.</p>
+<p></li> </ul> </li></p>
+<li data-start="2105" data-end="2200">
+<p data-start="2108" data-end="2200">Select your <strong data-start="2120" data-end="2132">timezone</strong> to make sure the countdown aligns with your audience or location.</p>
+<p></li> </ul></p>
+						<h3>Step 4: Customise Your Timer Design</h3><ol data-start="2252" data-end="2437">
+<li data-start="2252" data-end="2342">
+<p data-start="2255" data-end="2342">Adjust your <strong data-start="2267" data-end="2284">colour scheme</strong>, <strong data-start="2286" data-end="2300">font style</strong>, and <strong data-start="2306" data-end="2319">alignment</strong> to match your brand.</p>
+<p></li></p>
+<li data-start="2343" data-end="2416">
+<p data-start="2346" data-end="2416">Preview your timer on-screen to confirm everything looks consistent.</p>
+<p></li></p>
+<li data-start="2417" data-end="2437">
+<p data-start="2420" data-end="2437">Click <strong data-start="2426" data-end="2434">Save</strong>.</p>
+<p></li> </ol></p>
+						<h3>Step 5: Embed Your Timer</h3><p data-start="2478" data-end="2551">After saving, Alvéya™ generates an <strong data-start="2513" data-end="2527">embed code</strong> you can use anywhere.</p>
+<ol data-start="2553" data-end="2750">
+<li data-start="2553" data-end="2587">
+<p data-start="2556" data-end="2587">Copy the provided embed code.</p>
+<p></li></p>
+<li data-start="2588" data-end="2641">
+<p data-start="2591" data-end="2641">Open your <strong data-start="2601" data-end="2611">Funnel</strong> or <strong data-start="2615" data-end="2626">Website</strong> page editor.</p>
+<p></li></p>
+<li data-start="2642" data-end="2710">
+<p data-start="2645" data-end="2710">Add a <strong data-start="2651" data-end="2666">Custom Code</strong> block where you want the timer to appear.</p>
+<p></li></p>
+<li data-start="2711" data-end="2750">
+<p data-start="2714" data-end="2750">Paste the code and click <strong data-start="2739" data-end="2747">Save</strong>.</p>
+<p></li> </ol></p>
+<p data-start="2752" data-end="2850">💡 <em data-start="2755" data-end="2848">Any edits you make to this global timer will automatically update everywhere it’s embedded.</em></p>
+		<ul>
+<li data-start="1041" data-end="1114">
+<p data-start="1044" data-end="1114">From your Alvéya™ dashboard, go to <strong data-start="1079" data-end="1111">Marketing → Countdown Timers</strong>.</p>
+<p></li></p>
+<li data-start="1115" data-end="1155">
+<p data-start="1118" data-end="1155">Click <strong data-start="1124" data-end="1152">+ Create Countdown Timer</strong>.</p>
+<p></li> </ul><p data-start="1201" data-end="1253">When creating your timer, select from three types:</p>
+<ul data-start="1255" data-end="1578">
+<li data-start="1255" data-end="1356">
+<p data-start="1257" data-end="1356"><strong data-start="1257" data-end="1272">Fixed Timer</strong> → counts down to a specific date and time (e.g. <em data-start="1321" data-end="1352">Offer ends Friday at midnight</em>).</p>
+<p></li></p>
+<li data-start="1357" data-end="1487">
+<p data-start="1359" data-end="1487"><strong data-start="1359" data-end="1376">Dynamic Timer</strong> → counts down individually for each contact based on when they first visit the page or trigger the campaign.</p>
+<p></li></p>
+<li data-start="1488" data-end="1578">
+<p data-start="1490" data-end="1578"><strong data-start="1490" data-end="1509">Recurring Timer</strong> → repeats automatically on a schedule (daily, weekly, or monthly).</p>
+<p></li> </ul></p>
+<p data-start="1580" data-end="1705">💡 <em data-start="1583" data-end="1703">Use Fixed for launches, Dynamic for evergreen funnels, and Recurring for ongoing weekly offers or appointment windows.</em></p><ul>
+<li data-start="1759" data-end="1824">
+<p data-start="1762" data-end="1824">Enter a clear <strong data-start="1776" data-end="1790">Timer Name</strong> (e.g. <em data-start="1797" data-end="1820">Spring Sale Countdown</em>).</p>
+<p></li></p>
+<li data-start="1825" data-end="1894">
+<p data-start="1828" data-end="1894">Set your <strong data-start="1837" data-end="1859">start and end time</strong> (or duration, if using Dynamic).</p>
+<p></li></p>
+<li data-start="1895" data-end="2104">
+<p data-start="1898" data-end="1939">Choose what happens when time runs out:</p>
+<ul data-start="1943" data-end="2104">
+<li data-start="1943" data-end="2016">
+<p data-start="1945" data-end="2016">Redirect visitors to another page (e.g. “Waitlist” or “Closed” page).</p>
+<p></li></p>
+<li data-start="2020" data-end="2070">
+<p data-start="2022" data-end="2070">Display a message like <em data-start="2045" data-end="2068">This offer has ended.</em></p>
+<p></li></p>
+<li data-start="2074" data-end="2104">
+<p data-start="2076" data-end="2104">Hide the timer completely.</p>
+<p></li> </ul> </li></p>
+<li data-start="2105" data-end="2200">
+<p data-start="2108" data-end="2200">Select your <strong data-start="2120" data-end="2132">timezone</strong> to make sure the countdown aligns with your audience or location.</p>
+<p></li> </ul><ol data-start="2252" data-end="2437"></p>
+<li data-start="2252" data-end="2342">
+<p data-start="2255" data-end="2342">Adjust your <strong data-start="2267" data-end="2284">colour scheme</strong>, <strong data-start="2286" data-end="2300">font style</strong>, and <strong data-start="2306" data-end="2319">alignment</strong> to match your brand.</p>
+<p></li></p>
+<li data-start="2343" data-end="2416">
+<p data-start="2346" data-end="2416">Preview your timer on-screen to confirm everything looks consistent.</p>
+<p></li></p>
+<li data-start="2417" data-end="2437">
+<p data-start="2420" data-end="2437">Click <strong data-start="2426" data-end="2434">Save</strong>.</p>
+<p></li> </ol><p data-start="2478" data-end="2551">After saving, Alvéya™ generates an <strong data-start="2513" data-end="2527">embed code</strong> you can use anywhere.</p>
+<ol data-start="2553" data-end="2750">
+<li data-start="2553" data-end="2587">
+<p data-start="2556" data-end="2587">Copy the provided embed code.</p>
+<p></li></p>
+<li data-start="2588" data-end="2641">
+<p data-start="2591" data-end="2641">Open your <strong data-start="2601" data-end="2611">Funnel</strong> or <strong data-start="2615" data-end="2626">Website</strong> page editor.</p>
+<p></li></p>
+<li data-start="2642" data-end="2710">
+<p data-start="2645" data-end="2710">Add a <strong data-start="2651" data-end="2666">Custom Code</strong> block where you want the timer to appear.</p>
+<p></li></p>
+<li data-start="2711" data-end="2750">
+<p data-start="2714" data-end="2750">Paste the code and click <strong data-start="2739" data-end="2747">Save</strong>.</p>
+<p></li> </ol></p>
+<p data-start="2752" data-end="2850">💡 <em data-start="2755" data-end="2848">Any edits you make to this global timer will automatically update everywhere it’s embedded.</em></p>		
+					<h2>Option 2: Add a Countdown Timer Inside the Page Builder</h2>				
+		<p>If you just need a simple countdown for a one-off page or offer, you can add a <strong data-start="2764" data-end="2785">countdown element</strong> directly in the page builder.<br data-start="2815" data-end="2818" />This version is limited to a single fixed end date/time and doesn’t include Dynamic or Recurring options.</p>		
+						<h3>Step 1: Open the Page Builder</h3><ol>
+<li data-start="3071" data-end="3123">Go to <strong data-start="3077" data-end="3096">Sites → Funnels</strong> or <strong data-start="3100" data-end="3120">Sites → Websites</strong>.</li>
+<li data-start="3127" data-end="3180">Choose your funnel or site and click <strong data-start="3164" data-end="3177">Edit Page</strong> on the page you want the timer to appear on</li>
+<p></ol></p>
+						<h3>Step 2: Add a Countdown Element</h3><ol>
+<li data-start="3231" data-end="3294">Click the <strong>&#8220;+&#8221;</strong> to add an element and search for Countdown in the search bar</li>
+<li data-start="3298" data-end="3392">Drag it into your layout — for example, above your “Book Now” button or under your headline.</li>
+<p></ol></p>
+						<h3>Step 3: Set Your End Date and Time</h3><h4 data-start="3036" data-end="3059">Timer Settings</h4>
+<ul data-start="3060" data-end="3395">
+<li data-start="3060" data-end="3117">
+<p data-start="3062" data-end="3117"><strong data-start="3062" data-end="3072">Float:</strong> choose alignment (left, center, or right).</p>
+<p></li></p>
+<li data-start="3118" data-end="3184">
+<p data-start="3120" data-end="3184"><strong data-start="3120" data-end="3133">End Date:</strong> select the exact date you want the timer to end.</p>
+<p></li></p>
+<li data-start="3185" data-end="3254">
+<p data-start="3187" data-end="3254"><strong data-start="3187" data-end="3200">End Time:</strong> choose the specific time the countdown will finish.</p>
+<p></li></p>
+<li data-start="3255" data-end="3332">
+<p data-start="3257" data-end="3332"><strong data-start="3257" data-end="3282">Language (Translate):</strong> select your preferred language for time labels.</p>
+<p></li></p>
+<li data-start="3333" data-end="3395">
+<p data-start="3335" data-end="3395"><strong data-start="3335" data-end="3349">Time Zone:</strong> set the correct timezone for your audience.</p>
+<p></li> </ul></p>
+<h4 data-start="3397" data-end="3420"> </h4>
+<h4 data-start="3397" data-end="3420">Expire Actions</h4>
+<ul>
+<li style="list-style-type: none;">
+<ul data-start="3421" data-end="3699">
+<li data-start="3421" data-end="3606">
+<p data-start="3423" data-end="3496"><strong data-start="3423" data-end="3441">Expire Action:</strong> choose what happens when the countdown reaches zero.</p>
+<ul data-start="3499" data-end="3606">
+<li data-start="3499" data-end="3557">
+<p data-start="3501" data-end="3557"><em data-start="3501" data-end="3518">Redirect to URL</em> (e.g. a “Waitlist” or “Closed” page)</p>
+<p></li></p>
+<li data-start="3560" data-end="3580">
+<p data-start="3562" data-end="3580"><em data-start="3562" data-end="3578">Hide Countdown</em></p>
+<p></li></p>
+<li data-start="3583" data-end="3606">
+<p data-start="3585" data-end="3606"><em data-start="3585" data-end="3604">Show Text Message</em></p>
+<p></li> </ul> </li></p>
+<li data-start="3607" data-end="3699">
+<p data-start="3609" data-end="3699"><strong data-start="3609" data-end="3626">Redirect URL:</strong> if you’re redirecting, enter the destination link (e.g. <code data-start="3683" data-end="3695">/thank-you</code>).</p>
+<p></li> </ul> </li> </ul></p>
+						<h3>Step 4: Customise the Design</h3><h3 data-start="3701" data-end="3725">Colour Settings</h3>
+<ul data-start="3726" data-end="3851">
+<li data-start="3726" data-end="3770">
+<p data-start="3728" data-end="3770"><strong data-start="3728" data-end="3738">Colour:</strong> sets the timer number colour.</p>
+<p></li></p>
+<li data-start="3771" data-end="3851">
+<p data-start="3773" data-end="3851"><strong data-start="3773" data-end="3789">Label Colour:</strong> sets the text colour for days, hours, minutes, and seconds.</p>
+<p></li> </ul></p>
+<h3 data-start="3858" data-end="3889">Style the Timer</h3>
+<p data-start="3891" data-end="4064">Click the <strong data-start="3901" data-end="3911">Styles</strong> tab to adjust spacing, borders, or alignment.</p>
+<p data-start="3891" data-end="4064">You can match the timer’s appearance with your brand by using your primary colour and preferred fonts.</p>
+						<h3>Step 5: Save and Test</h3><ol data-start="4102" data-end="4282">
+<li data-start="4102" data-end="4146">
+<p data-start="4105" data-end="4146">Click <strong data-start="4111" data-end="4119">Save</strong> in the top-right corner.</p>
+<p></li></p>
+<li data-start="4147" data-end="4243">
+<p data-start="4150" data-end="4243">Click <strong data-start="4156" data-end="4167">Preview</strong> to ensure the countdown displays correctly and redirects (if applicable).</p>
+<p></li></p>
+<li data-start="4244" data-end="4282">
+<p data-start="4247" data-end="4282">Adjust time or colours as needed.</p>
+<p></li> </ol></p>
+<p data-start="4284" data-end="4408">💡 <em data-start="4287" data-end="4406">If you’re testing the redirect, set the countdown to end in a few minutes to confirm the behaviour works as expected.</em></p>
+		<ol>
+<li data-start="3071" data-end="3123">Go to <strong data-start="3077" data-end="3096">Sites → Funnels</strong> or <strong data-start="3100" data-end="3120">Sites → Websites</strong>.</li>
+<li data-start="3127" data-end="3180">Choose your funnel or site and click <strong data-start="3164" data-end="3177">Edit Page</strong> on the page you want the timer to appear on</li>
+<p></ol><ol></p>
+<li data-start="3231" data-end="3294">Click the <strong>"+"</strong> to add an element and search for Countdown in the search bar</li>
+<li data-start="3298" data-end="3392">Drag it into your layout — for example, above your “Book Now” button or under your headline.</li>
+<p></ol><h4 data-start="3036" data-end="3059">Timer Settings</h4></p>
+<ul data-start="3060" data-end="3395">
+<li data-start="3060" data-end="3117">
+<p data-start="3062" data-end="3117"><strong data-start="3062" data-end="3072">Float:</strong> choose alignment (left, center, or right).</p>
+<p></li></p>
+<li data-start="3118" data-end="3184">
+<p data-start="3120" data-end="3184"><strong data-start="3120" data-end="3133">End Date:</strong> select the exact date you want the timer to end.</p>
+<p></li></p>
+<li data-start="3185" data-end="3254">
+<p data-start="3187" data-end="3254"><strong data-start="3187" data-end="3200">End Time:</strong> choose the specific time the countdown will finish.</p>
+<p></li></p>
+<li data-start="3255" data-end="3332">
+<p data-start="3257" data-end="3332"><strong data-start="3257" data-end="3282">Language (Translate):</strong> select your preferred language for time labels.</p>
+<p></li></p>
+<li data-start="3333" data-end="3395">
+<p data-start="3335" data-end="3395"><strong data-start="3335" data-end="3349">Time Zone:</strong> set the correct timezone for your audience.</p>
+<p></li> </ul></p>
+<h4 data-start="3397" data-end="3420"> </h4>
+<h4 data-start="3397" data-end="3420">Expire Actions</h4>
+<ul>
+<li style="list-style-type: none;">
+<ul data-start="3421" data-end="3699">
+<li data-start="3421" data-end="3606">
+<p data-start="3423" data-end="3496"><strong data-start="3423" data-end="3441">Expire Action:</strong> choose what happens when the countdown reaches zero.</p>
+<ul data-start="3499" data-end="3606">
+<li data-start="3499" data-end="3557">
+<p data-start="3501" data-end="3557"><em data-start="3501" data-end="3518">Redirect to URL</em> (e.g. a “Waitlist” or “Closed” page)</p>
+<p></li></p>
+<li data-start="3560" data-end="3580">
+<p data-start="3562" data-end="3580"><em data-start="3562" data-end="3578">Hide Countdown</em></p>
+<p></li></p>
+<li data-start="3583" data-end="3606">
+<p data-start="3585" data-end="3606"><em data-start="3585" data-end="3604">Show Text Message</em></p>
+<p></li> </ul> </li></p>
+<li data-start="3607" data-end="3699">
+<p data-start="3609" data-end="3699"><strong data-start="3609" data-end="3626">Redirect URL:</strong> if you’re redirecting, enter the destination link (e.g. <code data-start="3683" data-end="3695">/thank-you</code>).</p>
+<p></li> </ul> </li> </ul><h3 data-start="3701" data-end="3725">Colour Settings</h3></p>
+<ul data-start="3726" data-end="3851">
+<li data-start="3726" data-end="3770">
+<p data-start="3728" data-end="3770"><strong data-start="3728" data-end="3738">Colour:</strong> sets the timer number colour.</p>
+<p></li></p>
+<li data-start="3771" data-end="3851">
+<p data-start="3773" data-end="3851"><strong data-start="3773" data-end="3789">Label Colour:</strong> sets the text colour for days, hours, minutes, and seconds.</p>
+<p></li> </ul></p>
+<h3 data-start="3858" data-end="3889">Style the Timer</h3>
+<p data-start="3891" data-end="4064">Click the <strong data-start="3901" data-end="3911">Styles</strong> tab to adjust spacing, borders, or alignment.</p>
+<p data-start="3891" data-end="4064">You can match the timer’s appearance with your brand by using your primary colour and preferred fonts.</p><ol data-start="4102" data-end="4282">
+<li data-start="4102" data-end="4146">
+<p data-start="4105" data-end="4146">Click <strong data-start="4111" data-end="4119">Save</strong> in the top-right corner.</p>
+<p></li></p>
+<li data-start="4147" data-end="4243">
+<p data-start="4150" data-end="4243">Click <strong data-start="4156" data-end="4167">Preview</strong> to ensure the countdown displays correctly and redirects (if applicable).</p>
+<p></li></p>
+<li data-start="4244" data-end="4282">
+<p data-start="4247" data-end="4282">Adjust time or colours as needed.</p>
+<p></li> </ol></p>
+<p data-start="4284" data-end="4408">💡 <em data-start="4287" data-end="4406">If you’re testing the redirect, set the countdown to end in a few minutes to confirm the behaviour works as expected.</em></p>		
+					<h2>FAQS</h2>				
+		<p data-start="4430" data-end="4637"><strong data-start="4430" data-end="4492">Q: Can I use the page builder timer across multiple pages?</strong><br data-start="4492" data-end="4495" />No — timers created directly in the page builder are unique to that page. For reusable timers, use <strong data-start="4594" data-end="4626">Marketing → Countdown Timers</strong> instead.</p>
+<p data-start="4639" data-end="4789"><strong data-start="4639" data-end="4701">Q: Can I make the page builder timer repeat automatically?</strong><br data-start="4701" data-end="4704" />Not currently. The built-in countdown element supports <strong data-start="4759" data-end="4786">one fixed end time only</strong>.</p>
+<p data-start="4791" data-end="4959"><strong data-start="4791" data-end="4834">Q: What happens when the timer expires?</strong><br data-start="4834" data-end="4837" />It will follow your selected <strong data-start="4866" data-end="4883">Expire Action</strong> — for example, redirect to another page, disappear, or display a message.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

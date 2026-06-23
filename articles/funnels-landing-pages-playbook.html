@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funnels &amp;amp; Landing Pages Playbook — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=getting-started">Getting Started</a>
+        <span>›</span>
+        <span>Funnels &amp;amp; Landing Pages Playbook</span>
+      </nav>
+      <h1 class="article-title">Funnels &amp;amp; Landing Pages Playbook</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=getting-started" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Getting Started
+    </a>
+
+    <div class="article-content">
+      <h2>A Complete Setup Guide for Alvéya™
+<p></h2></p>
+		<p>Funnels and landing pages are designed to guide visitors toward a specific action. Whether that action is booking an appointment, downloading a free resource, or purchasing a product, a funnel removes distractions and creates a clear path.</p><p>Unlike a website, which allows open navigation, a funnel is intentional and structured. When built correctly, it improves conversions, tracks performance accurately, and connects directly to your automations and payments.</p><p>This Playbook walks you through creating and launching a funnel from start to finish.</p>		
+						<h3>What You’ll Complete in This Guide</h3><p>You’ll move through the following steps:</p><ol><li style="font-weight: 400;" aria-level="1">Create Your Funnel</li><li style="font-weight: 400;" aria-level="1">Build &amp; Structure Your Pages</li><li style="font-weight: 400;" aria-level="1">Configure Forms or Checkout</li><li style="font-weight: 400;" aria-level="1">Connect Automations</li><li style="font-weight: 400;" aria-level="1">Set Domain &amp; URL Paths</li><li style="font-weight: 400;" aria-level="1">Test &amp; Publish<br /><br /></li></ol><p>Work through these steps in order to ensure your funnel functions correctly.</p>
+						<h3>Before You Begin</h3><p><strong>Before building your funnel, ensure:</strong></p><ul><li style="font-weight: 400;" aria-level="1">Your email sending is configured (if collecting leads)</li><li style="font-weight: 400;" aria-level="1">Your calendar is set up (if taking bookings)</li><li style="font-weight: 400;" aria-level="1">Your payment processor is connected (if selling)</li><li style="font-weight: 400;" aria-level="1">Your domain is ready (if publishing on a custom URL)</li></ul>
+		<p>You’ll move through the following steps:</p><ol><li style="font-weight: 400;" aria-level="1">Create Your Funnel</li><li style="font-weight: 400;" aria-level="1">Build &amp; Structure Your Pages</li><li style="font-weight: 400;" aria-level="1">Configure Forms or Checkout</li><li style="font-weight: 400;" aria-level="1">Connect Automations</li><li style="font-weight: 400;" aria-level="1">Set Domain &amp; URL Paths</li><li style="font-weight: 400;" aria-level="1">Test &amp; Publish<br /><br /></li></ol><p>Work through these steps in order to ensure your funnel functions correctly.</p><p><strong>Before building your funnel, ensure:</strong></p><ul><li style="font-weight: 400;" aria-level="1">Your email sending is configured (if collecting leads)</li><li style="font-weight: 400;" aria-level="1">Your calendar is set up (if taking bookings)</li><li style="font-weight: 400;" aria-level="1">Your payment processor is connected (if selling)</li><li style="font-weight: 400;" aria-level="1">Your domain is ready (if publishing on a custom URL)</li></ul>		
+					<h2>Steps to setting up Funnels &amp; Landing Pages</h2>				
+						<h3>Step 1 – Create Your Funnel</h3><h3><b>Overview</b></h3><p>Go to <b>Sites → Funnels</b>.<br />Click <b>Create Funnel</b>.</p><p>You can:</p><ul><li style="font-weight: 400;" aria-level="1">Choose a blank funnel</li><li style="font-weight: 400;" aria-level="1">Use a template</li><li style="font-weight: 400;" aria-level="1">Import a shared funnel</li></ul><p>Name your funnel clearly so it’s easy to identify later.</p><p>A funnel is made up of individual steps. Each step represents one page in the journey, such as:</p><ul><li style="font-weight: 400;" aria-level="1">Opt-in page</li><li style="font-weight: 400;" aria-level="1">Sales page</li><li style="font-weight: 400;" aria-level="1">Checkout page</li><li style="font-weight: 400;" aria-level="1">Thank you page</li></ul><p>📖 Understanding Funnel Structure →</p>
+						<h3>Step 2 – Build &amp; Structure Your Pages</h3><h3><b>Overview</b></h3><p>Open each funnel step and customise the layout using sections, rows, columns, and elements.</p><p>Update:</p><ul><li style="font-weight: 400;" aria-level="1">Headlines</li><li style="font-weight: 400;" aria-level="1">Copy</li><li style="font-weight: 400;" aria-level="1">Images</li><li style="font-weight: 400;" aria-level="1">Buttons</li><li style="font-weight: 400;" aria-level="1">Spacing<br /><br /></li></ul><p>Always check both desktop and mobile views before saving.</p><p>If needed, you can:</p><ul><li style="font-weight: 400;" aria-level="1">Duplicate steps</li><li style="font-weight: 400;" aria-level="1">Reorder steps</li><li style="font-weight: 400;" aria-level="1">Rename steps<br /><br /></li></ul><p>📖 Page Builder Overview →<br /> 📖 Sections, Rows &amp; Elements Explained →</p>
+						<h3>Step 3 – Configure Forms or Checkout</h3><h3><b>Overview</b></h3><p>This step connects your funnel to a real action.</p><p>If collecting leads:</p><ul><li style="font-weight: 400;" aria-level="1">Add a Form element</li><li style="font-weight: 400;" aria-level="1">Connect it to the correct form</li><li style="font-weight: 400;" aria-level="1">Ensure submission triggers are configured<br /><br /></li></ul><p>If selling a product:</p><ul><li style="font-weight: 400;" aria-level="1">Add a Checkout element</li><li style="font-weight: 400;" aria-level="1">Select your product</li><li style="font-weight: 400;" aria-level="1">Confirm pricing and payment processor<br /><br /></li></ul><p>If offering bookings:</p><ul><li style="font-weight: 400;" aria-level="1">Add a Calendar element</li><li style="font-weight: 400;" aria-level="1">Select the correct calendar<br /><br /></li></ul><p>Test the action immediately after configuring it.</p><p>📖 Creating Forms →</p><p>📖 Setting Up Products &amp; Payments →</p><p>📖 Adding a Calendar to a Funnel →</p>
+						<h3>Step 4 – Connect Automations</h3><h3><b>Overview</b></h3><p>Funnels work best when connected to workflows.</p><p>Common automations include:</p><ul><li style="font-weight: 400;" aria-level="1">Sending confirmation emails</li><li style="font-weight: 400;" aria-level="1">Adding a contact tag</li><li style="font-weight: 400;" aria-level="1">Triggering a nurture sequence</li><li style="font-weight: 400;" aria-level="1">Sending SMS confirmations<br /><br /></li></ul><p>Go to <b>Automations → Workflows</b> and create or connect a trigger such as:</p><ul><li style="font-weight: 400;" aria-level="1">Form Submitted</li><li style="font-weight: 400;" aria-level="1">Order Submitted</li><li style="font-weight: 400;" aria-level="1">Appointment Booked</li></ul><p>Test the workflow before moving forward.</p><p>📖 Automations &amp; Workflows Playbook →</p>
+						<h3>Step 5 – Set Domain &amp; URL Paths</h3><h3><b>Overview</b></h3><p>Each funnel step requires a clean URL.</p><p>You can:</p><ul><li style="font-weight: 400;" aria-level="1">Publish under your main domain</li><li style="font-weight: 400;" aria-level="1">Use a subdomain</li><li style="font-weight: 400;" aria-level="1">Use the default system URL for testing<br /><br /></li></ul><p>Go to <b>Settings → Domains</b> to connect your domain if needed.</p><p>If publishing under your main website domain, ensure paths are unique.</p><p><a href="https://help.alveya.io/connect-your-domain-to-alveya/">📖 Connecting Your Domain →</a></p><p><a href="https://help.alveya.io/update-your-dns-records-by-domain-provider/">📖 DNS Setup by Provider →</a></p>
+						<h3>Step 6 – Test &amp; Publish</h3><h3><b>Overview</b></h3><p>Before going live:</p><ul><li style="font-weight: 400;" aria-level="1">Click through each step in order</li><li style="font-weight: 400;" aria-level="1">Submit a test form</li><li style="font-weight: 400;" aria-level="1">Complete a test purchase (if selling)</li><li style="font-weight: 400;" aria-level="1">Book a test appointment (if applicable)</li><li style="font-weight: 400;" aria-level="1">Confirm emails and SMS are received</li><li style="font-weight: 400;" aria-level="1">Check mobile layout<br /><br /></li></ul><p>When ready, publish the funnel.</p><p>If changes are not appearing, confirm the step has been published.</p>
+		<h3><b>Overview</b></h3><p>Go to <b>Sites → Funnels</b>.<br />Click <b>Create Funnel</b>.</p><p>You can:</p><ul><li style="font-weight: 400;" aria-level="1">Choose a blank funnel</li><li style="font-weight: 400;" aria-level="1">Use a template</li><li style="font-weight: 400;" aria-level="1">Import a shared funnel</li></ul><p>Name your funnel clearly so it’s easy to identify later.</p><p>A funnel is made up of individual steps. Each step represents one page in the journey, such as:</p><ul><li style="font-weight: 400;" aria-level="1">Opt-in page</li><li style="font-weight: 400;" aria-level="1">Sales page</li><li style="font-weight: 400;" aria-level="1">Checkout page</li><li style="font-weight: 400;" aria-level="1">Thank you page</li></ul><p>📖 Understanding Funnel Structure →</p>https://www.youtube.com/watch?v=XHOmBV4js_E<h3><b>Overview</b></h3><p>Open each funnel step and customise the layout using sections, rows, columns, and elements.</p><p>Update:</p><ul><li style="font-weight: 400;" aria-level="1">Headlines</li><li style="font-weight: 400;" aria-level="1">Copy</li><li style="font-weight: 400;" aria-level="1">Images</li><li style="font-weight: 400;" aria-level="1">Buttons</li><li style="font-weight: 400;" aria-level="1">Spacing<br /><br /></li></ul><p>Always check both desktop and mobile views before saving.</p><p>If needed, you can:</p><ul><li style="font-weight: 400;" aria-level="1">Duplicate steps</li><li style="font-weight: 400;" aria-level="1">Reorder steps</li><li style="font-weight: 400;" aria-level="1">Rename steps<br /><br /></li></ul><p>📖 Page Builder Overview →<br /> 📖 Sections, Rows &amp; Elements Explained →</p>https://www.youtube.com/watch?v=XHOmBV4js_E<h3><b>Overview</b></h3><p>This step connects your funnel to a real action.</p><p>If collecting leads:</p><ul><li style="font-weight: 400;" aria-level="1">Add a Form element</li><li style="font-weight: 400;" aria-level="1">Connect it to the correct form</li><li style="font-weight: 400;" aria-level="1">Ensure submission triggers are configured<br /><br /></li></ul><p>If selling a product:</p><ul><li style="font-weight: 400;" aria-level="1">Add a Checkout element</li><li style="font-weight: 400;" aria-level="1">Select your product</li><li style="font-weight: 400;" aria-level="1">Confirm pricing and payment processor<br /><br /></li></ul><p>If offering bookings:</p><ul><li style="font-weight: 400;" aria-level="1">Add a Calendar element</li><li style="font-weight: 400;" aria-level="1">Select the correct calendar<br /><br /></li></ul><p>Test the action immediately after configuring it.</p><p>📖 Creating Forms →</p><p>📖 Setting Up Products &amp; Payments →</p><p>📖 Adding a Calendar to a Funnel →</p>https://www.youtube.com/watch?v=XHOmBV4js_E<h3><b>Overview</b></h3><p>Funnels work best when connected to workflows.</p><p>Common automations include:</p><ul><li style="font-weight: 400;" aria-level="1">Sending confirmation emails</li><li style="font-weight: 400;" aria-level="1">Adding a contact tag</li><li style="font-weight: 400;" aria-level="1">Triggering a nurture sequence</li><li style="font-weight: 400;" aria-level="1">Sending SMS confirmations<br /><br /></li></ul><p>Go to <b>Automations → Workflows</b> and create or connect a trigger such as:</p><ul><li style="font-weight: 400;" aria-level="1">Form Submitted</li><li style="font-weight: 400;" aria-level="1">Order Submitted</li><li style="font-weight: 400;" aria-level="1">Appointment Booked</li></ul><p>Test the workflow before moving forward.</p><p>📖 Automations &amp; Workflows Playbook →</p>https://www.youtube.com/watch?v=XHOmBV4js_E<h3><b>Overview</b></h3><p>Each funnel step requires a clean URL.</p><p>You can:</p><ul><li style="font-weight: 400;" aria-level="1">Publish under your main domain</li><li style="font-weight: 400;" aria-level="1">Use a subdomain</li><li style="font-weight: 400;" aria-level="1">Use the default system URL for testing<br /><br /></li></ul><p>Go to <b>Settings → Domains</b> to connect your domain if needed.</p><p>If publishing under your main website domain, ensure paths are unique.</p><p><a href="https://help.alveya.io/connect-your-domain-to-alveya/">📖 Connecting Your Domain →</a></p><p><a href="https://help.alveya.io/update-your-dns-records-by-domain-provider/">📖 DNS Setup by Provider →</a></p>https://www.youtube.com/watch?v=XHOmBV4js_E<h3><b>Overview</b></h3><p>Before going live:</p><ul><li style="font-weight: 400;" aria-level="1">Click through each step in order</li><li style="font-weight: 400;" aria-level="1">Submit a test form</li><li style="font-weight: 400;" aria-level="1">Complete a test purchase (if selling)</li><li style="font-weight: 400;" aria-level="1">Book a test appointment (if applicable)</li><li style="font-weight: 400;" aria-level="1">Confirm emails and SMS are received</li><li style="font-weight: 400;" aria-level="1">Check mobile layout<br /><br /></li></ul><p>When ready, publish the funnel.</p><p>If changes are not appearing, confirm the step has been published.</p>		
+					<h2>FAQs</h2>				
+						<h3>Can I use funnels and websites on the same domain?</h3><p>Yes. Funnels can live under your primary domain using separate URL paths.</p>
+						<h3>Can I duplicate a funnel?</h3><p>Yes. Funnels and steps can be duplicated for reuse or testing.</p>
+						<h3>Do funnels automatically send emails?</h3><p>No. Emails must be configured via workflows.</p>
+						<h3>Can I track conversions?What if I delete a page accidentally?</h3><p>Yes. Funnel stats provide insights into views, opt-ins, sales, and conversion rates.</p>
+		<p>Yes. Funnels can live under your primary domain using separate URL paths.</p><p>Yes. Funnels and steps can be duplicated for reuse or testing.</p><p>No. Emails must be configured via workflows.</p><p>Yes. Funnel stats provide insights into views, opt-ins, sales, and conversion rates.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

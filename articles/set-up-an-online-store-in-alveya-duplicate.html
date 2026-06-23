@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create a Marketing Email in Alvéya™ — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=email-marketing">Email Marketing</a>
+        <span>›</span>
+        <span>Create a Marketing Email in Alvéya™</span>
+      </nav>
+      <h1 class="article-title">Create a Marketing Email in Alvéya™</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=email-marketing" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Email Marketing
+    </a>
+
+    <div class="article-content">
+      <p data-start="412" data-end="562">Alvéya makes it easy to create and send professional marketing emails using built-in templates and a visual email builder. This guide walks you through creating a standard email campaign, from setup through to sending or scheduling.</p>		
+					<h2>Step 1: Navigate to the Email Campaigns Area</h2>				
+		<p data-start="567" data-end="709">From your Alvéya dashboard, go to <strong data-start="601" data-end="614">Marketing</strong>, then select <strong data-start="628" data-end="637">Email</strong>.<br data-start="638" data-end="641" />Click <strong data-start="647" data-end="666">Create Campaign</strong> to begin setting up a new marketing email.</p><p data-start="711" data-end="780">This is where all one-off email campaigns and broadcasts are managed.</p>		
+					<h2>Step 2: Choose an Email Template</h2>				
+		<p data-start="820" data-end="994">Next, select the email template you would like to use for your campaign.<br data-start="892" data-end="895" />You can preview each template before selecting it to ensure it suits your message and layout needs.</p><p data-start="996" data-end="1096">Templates help you get started quickly, but they can be fully customised once you enter the builder.</p>		
+					<h2>Step 3: Design Your Email Content</h2>				
+		<p data-start="1137" data-end="1207">Once a template is selected, you will be taken into the Email Builder.</p><p data-start="1209" data-end="1222">Here you can:</p><ul data-start="1223" data-end="1381"><li data-start="1223" data-end="1247"><p data-start="1225" data-end="1247">Edit text and headings</p></li><li data-start="1248" data-end="1292"><p data-start="1250" data-end="1292">Add images, buttons, dividers, and spacers</p></li><li data-start="1293" data-end="1340"><p data-start="1295" data-end="1340">Adjust colours and layout to match your brand</p></li><li data-start="1341" data-end="1381"><p data-start="1343" data-end="1381">Rearrange sections using drag and drop</p></li></ul><p data-start="1383" data-end="1532">The Email Builder is designed to be flexible, allowing you to work on different sections in any order and review the email as a whole before sending.</p>					
+		<img  
+<p>id="2403" src="https://help.alveya.io/wp-content/uploads/2026/01/Alveya-email-campaign-design-scaled.png" width="2560" height="1351" srcset="https://help.alveya.io/wp-content/uploads/2026/01/Alveya-email-campaign-design-scaled.png 2560w, https://help.alveya.io/wp-content/uploads/2026/01/Alveya-email-campaign-design-300x158.png 300w, https://help.alveya.io/wp-content/uploads/2026/01/Alveya-email-campaign-design-1024x540.png 1024w, https://help.alveya.io/wp-content/uploads/2026/01/Alveya-email-campaign-design-768x405.png 768w, https://help.alveya.io/wp-content/uploads/2026/01/Alveya-email-campaign-design-1536x811.png 1536w, https://help.alveya.io/wp-content/uploads/2026/01/Alveya-email-campaign-design-2048x1081.png 2048w" alt="" /></p>
+					<h2>Step 4: Prepare Your Email for Sending</h2>				
+		<p data-start="1578" data-end="1645">When your email design is complete, click <strong data-start="1620" data-end="1628">Send</strong> or <strong data-start="1632" data-end="1644">Schedule</strong>.</p><p data-start="1647" data-end="1736">Before sending, complete the pre-send checklist to ensure everything is set up correctly.</p><p data-start="1738" data-end="1763"><strong data-start="1738" data-end="1763">Pre-Sending Checklist</strong></p><ul data-start="1764" data-end="1991"><li data-start="1764" data-end="1844"><p data-start="1766" data-end="1844">Select recipients in the <strong data-start="1791" data-end="1797">To</strong> section using individual emails or smart lists</p></li><li data-start="1845" data-end="1902"><p data-start="1847" data-end="1902">Choose the sender email address in the <strong data-start="1886" data-end="1894">From</strong> section</p></li><li data-start="1903" data-end="1933"><p data-start="1905" data-end="1933">Add a sender name if desired</p></li><li data-start="1934" data-end="1962"><p data-start="1936" data-end="1962">Write a clear subject line</p></li><li data-start="1963" data-end="1991"><p data-start="1965" data-end="1991">Add preview text if needed</p></li></ul><p data-start="1993" data-end="2038">Next, choose how the email will be delivered.</p><p data-start="2040" data-end="2201">You can select <strong data-start="2055" data-end="2067">Send Now</strong> to send immediately, or <strong data-start="2092" data-end="2104">Schedule</strong> to send at a later date and time. Scheduled emails are sent according to the location time zone.</p><h2 data-start="4715" data-end="4738">Managing Scheduled Emails</h2><p data-start="2234" data-end="2395">If an email is scheduled, you will have the option to reschedule or delete it if needed.<br data-start="2322" data-end="2325" />Rescheduling is allowed up to one hour before the scheduled send time.</p><p data-start="2397" data-end="2486">For example, if an email is scheduled for 11:00 AM, it can be rescheduled until 10:00 AM.</p>					
+		<img  
+<p>id="2402" src="https://help.alveya.io/wp-content/uploads/2026/01/Send-or-schedule-email-campaign-detail-setup-scaled.png" width="2560" height="1343" srcset="https://help.alveya.io/wp-content/uploads/2026/01/Send-or-schedule-email-campaign-detail-setup-scaled.png 2560w, https://help.alveya.io/wp-content/uploads/2026/01/Send-or-schedule-email-campaign-detail-setup-300x157.png 300w, https://help.alveya.io/wp-content/uploads/2026/01/Send-or-schedule-email-campaign-detail-setup-1024x537.png 1024w, https://help.alveya.io/wp-content/uploads/2026/01/Send-or-schedule-email-campaign-detail-setup-768x403.png 768w, https://help.alveya.io/wp-content/uploads/2026/01/Send-or-schedule-email-campaign-detail-setup-1536x806.png 1536w, https://help.alveya.io/wp-content/uploads/2026/01/Send-or-schedule-email-campaign-detail-setup-2048x1074.png 2048w" alt="" /></p>
+<hr   />
+					<h2>FAQS</h2>				
+		<h3 data-start="2524" data-end="2662">Can I reschedule an email campaign?</h3><p data-start="2524" data-end="2662">Yes. Scheduled email campaigns can be rescheduled up to one hour before the scheduled send time.</p><h3 data-start="2664" data-end="2864">Can I preview or test an email before sending it?</h3><p data-start="2664" data-end="2864">Yes. You can preview the email and send a test email to review formatting and content. Test and preview emails do not include unsubscribe links.</p><h3 data-start="2866" data-end="3085">Can I restore a previous version of an email?</h3><p data-start="2866" data-end="3085">Yes. From the campaign editor, open the menu and select Version History. This allows you to restore earlier versions of the email if changes were made incorrectly.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

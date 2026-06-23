@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email notifications for communities — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=courses-funnels">Courses & Funnels</a>
+        <span>›</span>
+        <span>Email notifications for communities</span>
+      </nav>
+      <h1 class="article-title">Email notifications for communities</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=courses-funnels" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Courses & Funnels
+    </a>
+
+    <div class="article-content">
+      <p><em>Alvéya Communities include a comprehensive set of automated email notifications that keep your members informed and your admin workflows running smoothly. This guide explains each notification type, who receives it, and how to customise the email templates to match your brand.</em></p>
+<h2 class="wp-block-heading"><strong>How to Access Email Notification Settings</strong></h2>
+<p>To configure community email notifications, navigate to:</p>
+<p>📍&nbsp; <strong>Sites&nbsp; →&nbsp; Client Portal&nbsp; →&nbsp; Memberships&nbsp; →&nbsp; Settings&nbsp; →&nbsp; Email Settings&nbsp; →&nbsp; Communities</strong></p>
+<p>From here you can enable or disable individual notification types and access the templates for each email. Each email type has a Default Template that you can preview using the eye icon, and customise to match your tone and branding.</p>
+<p><em>💡&nbsp; Reviewing and customising your notification emails before you invite members is worthwhile — these are often the first automated touchpoints your community members experience, and they should feel consistent with the rest of your brand communication.</em></p>
+<h2 class="wp-block-heading"><strong>1. Group Invitation Email</strong></h2>
+<p>This email is triggered when a user is added to a group.</p>
+<p><strong>Joined the Group (User)</strong>&nbsp; Sends an invitation email notifying the user that they have been added to a specific community or group.</p>
+<h2 class="wp-block-heading"><strong>2. Group Membership Status Emails</strong></h2>
+<p>These emails manage communications related to membership approvals, rejections, and private channel access.</p>
+<p><strong>Approved (User)</strong>&nbsp; Notifies a user that their request to join the group has been approved.</p>
+<p><strong>Declined (User)</strong>&nbsp; Alerts a user that their request to join was not approved.</p>
+<p><strong>New Member Request (Admin)</strong>&nbsp; Notifies admins when someone submits a request to join the group. Useful if your community requires approval before members can access content.</p>
+<p><strong>Declined / Removed by Admin (Admin)</strong>&nbsp; Informs admins when a member has been declined or removed from the group.</p>
+<p><strong>Added to Private Channel (User)</strong>&nbsp; Lets a user know they have been given access to a private discussion channel within the community.</p>
+<p><em>💡&nbsp; If your community is set to require membership approval, make sure the Approved and Declined emails are enabled so applicants receive a clear response either way. Leaving people without a response creates a poor first impression.</em></p>
+<h2 class="wp-block-heading"><strong>3. General Group Emails</strong></h2>
+<p>These notifications keep members informed about interactions and activity within the community.</p>
+<p><strong>New Comment on Post</strong>&nbsp; Sent when someone comments on a post the member has created or is following.</p>
+<p><strong>New Comment Reply</strong>&nbsp; Sent when someone replies to a comment the member has made.</p>
+<p><strong>Like on Post</strong>&nbsp; Notifies a member when their post receives a like.</p>
+<p><strong>Like on Comment</strong>&nbsp; Notifies a member when their comment receives a like.</p>
+<p><strong>Tagged in Post</strong>&nbsp; Sent when a member is mentioned directly in a post.</p>
+<p><strong>Tagged in Post @Everyone</strong>&nbsp; Sent to all group members when a post uses the @Everyone mention.</p>
+<p><strong>Tagged in Comment</strong>&nbsp; Sent when a member is mentioned directly in a comment.</p>
+<p><strong>Tagged in Comment @Everyone</strong>&nbsp; Sent to all group members when a comment uses the @Everyone mention.</p>
+<p><strong>Content Reported</strong>&nbsp; Alerts admins and moderators when a piece of content has been flagged by a member. Allows you to review and act on reported content promptly.</p>
+<p><strong>New Calendar Event Created</strong>&nbsp; Notifies members when a new event is scheduled within the group.</p>
+<p><em>💡&nbsp; Consider which of these notifications add genuine value for your members and which might feel like noise. Engagement notifications like likes and comments are helpful for active communities but can become overwhelming in very busy groups. You can always adjust these as your community grows.</em></p>
+<h2 class="wp-block-heading"><strong>4. Group Events Emails</strong></h2>
+<p>These notifications manage communications around community events and calendar reminders.</p>
+<p><strong>Event Reminder (User)</strong>&nbsp; Sent to members ahead of a scheduled community event. Helps improve attendance and reduces no-shows.</p>
+<p><strong>New Calendar Event Created</strong>&nbsp; Notifies members when a new event is added to the group calendar.</p>
+<p>You can preview the default template for each of these using the eye icon, and customise them to reflect your brand voice and event details.</p>
+<h2 class="wp-block-heading"><strong>5. Learning (Courses) Emails</strong></h2>
+<p>These automated emails relate to the learning content and courses linked to your community.</p>
+<p><strong>New Course Added</strong>&nbsp; Informs members when a new course becomes available within the group.</p>
+<p><strong>Join Group Learning Alert</strong>&nbsp; Sent when a user joins a community that includes learning content, prompting them to explore what is available.</p>
+<p><strong>Course Unlocked (Time-Based Unlock)</strong>&nbsp; Triggered automatically when a course module or lesson becomes available after a set waiting period. Keeps members on track with drip-released content.</p>
+<p><strong>Course Subscription Cancelled (User / Admin)</strong>&nbsp; Notifies both the member and the admin when a course subscription is cancelled.</p>
+<p><strong>Course Payment Successful (User / Admin)</strong>&nbsp; Confirms a successful course purchase or subscription payment to both the member and the admin.</p>
+<p><em>💡&nbsp; The Course Unlocked notification is particularly useful for structured programs with drip content. Members receive a timely prompt when new material is ready — reducing the need for you to manually follow up.</em></p>
+<h2 class="wp-block-heading"><strong>6. Role Change Notifications</strong></h2>
+<p>These emails keep members informed when their role or permissions within the group change.</p>
+<p><strong>Member Role Upgraded in Channel</strong>&nbsp; Sent to a user when they are promoted within a channel — for example, from member to moderator.</p>
+<p><strong>Group Ownership Changed (New Group Owner)</strong>&nbsp; Notifies a user when they have been assigned ownership of the group, informing them of their elevated permissions and responsibilities.</p>
+<h2 class="wp-block-heading"><strong>7. Customising Email Templates</strong></h2>
+<p>Every notification type in Alvéya Communities has a Default Template that you can customise. Taking the time to personalise these emails ensures they feel consistent with your brand and communication style, rather than looking like generic system messages.</p>
+<p>To customise any template:</p>
+<ol class="wp-block-list">
+<li>Locate the notification type you want to edit in the Email Settings panel.</li>
+<li>Click Default Template, then click Edit to open the template editor.</li>
+<li>Update the Subject line and email Body. Use merge fields to personalise content dynamically — for example, inserting the member's name or the group name automatically.</li>
+<li>Preview the email to check how it will appear to recipients.</li>
+<li>Click Save when you are happy with the changes.</li>
+<p></ol></p>
+<h3 class="wp-block-heading"><strong>Customising the Event Reminder Email</strong></h3>
+<p>The Event Reminder email is particularly worth customising, as it directly influences whether members show up to your community events. A well-branded, clearly written reminder with the event details, date, time, and a warm tone will significantly improve attendance.</p>
+<ol start="6" class="wp-block-list">
+<li>Navigate to Group Event Reminder Email in the Email Settings panel.</li>
+<li>Click Default Template, then Edit.</li>
+<li>Update the subject line to reflect the event (e.g. Your reminder — [Event Name] is coming up).</li>
+<li>Update the body with the event details, what to expect, and any preparation notes for members.</li>
+<li>Insert merge fields for the event name, date, and time so the template works dynamically across all future events.</li>
+<li>Preview and Save.</li>
+<p></ol></p>
+<p><em>💡&nbsp; Even small personalisation changes — such as adding your name to the sign-off or writing in your natural voice — make a meaningful difference in how members experience your community communications.</em></p>
+<p><strong>Well-configured notifications keep your community feeling active, connected, and professionally run — without requiring you to manually follow up on every interaction.</strong></p>
+<p>If you get stuck at any point, reach out via live chat or submit a support request and</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inviting members and setting up user roles — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=courses-funnels">Courses & Funnels</a>
+        <span>›</span>
+        <span>Inviting members and setting up user roles</span>
+      </nav>
+      <h1 class="article-title">Inviting members and setting up user roles</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=courses-funnels" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Courses & Funnels
+    </a>
+
+    <div class="article-content">
+      <p data-start="889" data-end="895">This article is step one from the Communities playbook. To continue the process of setting up your community after this step, <a href="https://help.alveya.io/communities-playbook/">head back to the playbook here.</a></p><p data-start="889" data-end="895">Written step by step instructions and links to the templates for this video are below.</p>https://youtu.be/1W8jR4F8HQ8		
+						<h3>WRITTEN INSTRUCTIONS:</h3><p data-pm-slice="1 3 []"><strong>1. Logging into Your Community</strong></p><ul data-tight="true"><li><p>Navigate to the Communities tab in Elvaya.</p></li><li><p>Click the big blue login button.</p></li><li><p>Optionally, bookmark the community tab for easy access.</p></li></ul><p><strong>2. Inviting Members to Your Community</strong></p><ul data-tight="true"><li><p>Click on &#8216;Invite Members&#8217; in the right-hand corner.</p></li><li><p>Choose to invite members via:</p><ul data-tight="true"><li><p>Sharing the group link.</p></li><li><p>Inviting them by email.</p></li></ul></li><li><p>Optionally grant admin privileges to new members.</p></li></ul><p><strong>3. Member Sign-Up Process</strong></p><ul data-tight="true"><li><p>After sending the invite link, new members will see a sign-up screen.</p></li><li><p>They need to enter their full name, email, and create a password.</p></li><li><p>After clicking &#8216;Sign Up&#8217;, they will receive a secure code via email to complete the process.</p></li></ul><p><strong>4. Member Profile Setup</strong></p><ul data-tight="true"><li><p>New members can upload a photo and write a bio.</p></li><li><p>They have the option to invite other members to the group.</p></li></ul><p><strong>5. Adjusting Member Invitation Settings</strong></p><ul data-tight="true"><li><p>Go to the admin area of your community.</p></li><li><p>Click on &#8216;Settings&#8217; and then &#8216;Details&#8217;.</p></li><li><p>To restrict member invitations, untick &#8216;Allow Members to Invite Members&#8217;.</p></li><li><p>Important for paid groups.</p></li></ul><p><strong>6. Setting Group Visibility</strong></p><ul data-tight="true"><li><p>You can set your group to Private.</p></li><li><p>Control visibility in the SwitchBar for non-group members.</p></li></ul><p><strong>7. Managing User Roles</strong></p><ul data-tight="true"><li><p>In the Members Area, click on the three dots next to a member&#8217;s name.</p></li><li><p>Options include:</p><ul data-tight="true"><li><p>Change Role (Admin or Contributor).</p></li><li><p>Ban from the group.</p></li><li><p>Manage course access.</p></li><li><p>Remove from the group.</p></li></ul></li></ul><p><strong>8. Additional Resources</strong></p><ul data-tight="true"><li><p>For more information on User Roles and Descriptions, refer to the written guide linked below the video.</p></li></ul>
+		<p data-pm-slice="1 3 []"><strong>1. Logging into Your Community</strong></p><ul data-tight="true"><li><p>Navigate to the Communities tab in Elvaya.</p></li><li><p>Click the big blue login button.</p></li><li><p>Optionally, bookmark the community tab for easy access.</p></li></ul><p><strong>2. Inviting Members to Your Community</strong></p><ul data-tight="true"><li><p>Click on 'Invite Members' in the right-hand corner.</p></li><li><p>Choose to invite members via:</p><ul data-tight="true"><li><p>Sharing the group link.</p></li><li><p>Inviting them by email.</p></li></ul></li><li><p>Optionally grant admin privileges to new members.</p></li></ul><p><strong>3. Member Sign-Up Process</strong></p><ul data-tight="true"><li><p>After sending the invite link, new members will see a sign-up screen.</p></li><li><p>They need to enter their full name, email, and create a password.</p></li><li><p>After clicking 'Sign Up', they will receive a secure code via email to complete the process.</p></li></ul><p><strong>4. Member Profile Setup</strong></p><ul data-tight="true"><li><p>New members can upload a photo and write a bio.</p></li><li><p>They have the option to invite other members to the group.</p></li></ul><p><strong>5. Adjusting Member Invitation Settings</strong></p><ul data-tight="true"><li><p>Go to the admin area of your community.</p></li><li><p>Click on 'Settings' and then 'Details'.</p></li><li><p>To restrict member invitations, untick 'Allow Members to Invite Members'.</p></li><li><p>Important for paid groups.</p></li></ul><p><strong>6. Setting Group Visibility</strong></p><ul data-tight="true"><li><p>You can set your group to Private.</p></li><li><p>Control visibility in the SwitchBar for non-group members.</p></li></ul><p><strong>7. Managing User Roles</strong></p><ul data-tight="true"><li><p>In the Members Area, click on the three dots next to a member's name.</p></li><li><p>Options include:</p><ul data-tight="true"><li><p>Change Role (Admin or Contributor).</p></li><li><p>Ban from the group.</p></li><li><p>Manage course access.</p></li><li><p>Remove from the group.</p></li></ul></li></ul><p><strong>8. Additional Resources</strong></p><ul data-tight="true"><li><p>For more information on User Roles and Descriptions, refer to the written guide linked below the video.</p></li></ul>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

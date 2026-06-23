@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Category page extras ────────────────────────────── */
+    .cat-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 56px 24px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cat-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 40%, rgba(138,170,126,0.1) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 80% 60%, rgba(212,197,174,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cat-hero-inner {
+      position: relative;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .breadcrumb span { color: var(--text-muted); }
+
+    .cat-icon-large {
+      width: 56px; height: 56px;
+      background: #fff;
+      border: 1.5px solid var(--sage-200);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-card);
+    }
+    .cat-icon-large svg { width: 28px; height: 28px; color: var(--sage-600); }
+
+    .cat-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+      font-weight: 400;
+      color: var(--sage-800);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .cat-subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    /* ── Articles list ───────────────────────────────────── */
+    .articles-section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    .articles-count {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+    .articles-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .article-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #fff;
+      border: 1.5px solid var(--sage-100);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.18s cubic-bezier(0.34,1.2,0.64,1), box-shadow 0.18s ease, border-color 0.18s;
+      box-shadow: var(--shadow-card);
+    }
+    .article-row:hover {
+      transform: translateX(4px);
+      box-shadow: var(--shadow-card-hover);
+      border-color: var(--sage-200);
+    }
+    .article-row-body { flex: 1; min-width: 0; }
+    .article-row-title {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--sage-800);
+      margin-bottom: 4px;
+    }
+    .article-row-excerpt {
+      font-size: 0.8375rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .article-row-arrow {
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: color 0.18s, transform 0.18s;
+    }
+    .article-row:hover .article-row-arrow {
+      color: var(--sage-600);
+      transform: translateX(3px);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--sage-600);
+      margin-top: 32px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Category Hero -->
+  <section class="cat-hero">
+    <div class="cat-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <span id="bc-cat">Category</span>
+      </nav>
+      <div class="cat-icon-large" id="cat-icon"><!-- injected --></div>
+      <h1 class="cat-title" id="cat-title">Loading…</h1>
+      <p class="cat-subtitle" id="cat-subtitle"></p>
+    </div>
+  </section>
+
+  <!-- Articles -->
+  <main class="articles-section">
+    <p class="articles-count" id="articles-count"></p>
+    <div class="articles-list" id="articles-list"></div>
+    <a href="/" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to all categories
+    </a>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="search.js"></script>
+  <script>
+    const CATEGORIES = {
+      "getting-started": {
+        title: "Getting Started",
+        subtitle: "Set up your account, explore the dashboard, and launch your first project with confidence.",
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14.5 14.5"/></svg>`
+      },
+      "website-templates": {
+        title: "Website Templates",
+        subtitle: "Customise and publish beautiful, conversion-ready websites built for natural health practitioners.",
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>`
+      },
+      "email-marketing": {
+        title: "Email Marketing",
+        subtitle: "Create campaigns, grow your list, and nurture clients with personalised email sequences.",
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`
+      },
+      "courses-funnels": {
+        title: "Courses & Funnels",
+        subtitle: "Build and sell online courses, membership programmes, and high-converting sales funnels.",
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`
+      },
+      "crm-contacts": {
+        title: "CRM & Contacts",
+        subtitle: "Manage client relationships, track interactions, and keep your contact database organised.",
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`
+      },
+      "automations": {
+        title: "Automations",
+        subtitle: "Save time by automating follow-ups, bookings, reminders, and repetitive administrative tasks.",
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`
+      },
+      "integrations": {
+        title: "Integrations",
+        subtitle: "Connect Alvéya with the tools you already use — from payment gateways to booking calendars.",
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>`
+      },
+      "account-billing": {
+        title: "Account & Billing",
+        subtitle: "Update your profile, manage your subscription, view invoices, and handle payment details.",
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>`
+      }
+    };
+
+    
+    const catKey = window.location.hash.slice(1) || '';
+    const catMeta = CATEGORIES[catKey];
+
+    if (catMeta) {
+      document.title = `${catMeta.title} — Alvéya™ Help Centre`;
+      document.getElementById('bc-cat').textContent = catMeta.title;
+      document.getElementById('cat-title').textContent = catMeta.title;
+      document.getElementById('cat-subtitle').textContent = catMeta.subtitle;
+      document.getElementById('cat-icon').innerHTML = catMeta.icon;
+    }
+
+    const articles = ARTICLES.filter(a => a.cat === catKey);
+    const count = articles.length;
+    document.getElementById('articles-count').textContent =
+      `${count} article${count !== 1 ? 's' : ''}`;
+
+    const list = document.getElementById('articles-list');
+    if (articles.length === 0) {
+      list.innerHTML = `<p style="color:var(--text-secondary);font-size:.9rem;">No articles found in this category yet.</p>`;
+    } else {
+      list.innerHTML = articles.map(a => `
+        <a class="article-row" href="${a.slug ? `/articles/${a.slug}.html` : `/article.html?cat=${a.cat}&title=${encodeURIComponent(a.title)}`}">
+          <div class="article-row-body">
+            <p class="article-row-title">${a.title}</p>
+            <p class="article-row-excerpt">${a.excerpt}</p>
+          </div>
+          <svg class="article-row-arrow" viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="8" x2="12" y2="8"/><polyline points="9 5 12 8 9 11"/>
+          </svg>
+        </a>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

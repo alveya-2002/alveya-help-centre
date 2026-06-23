@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Add a Subdomain to a Funnel, portal or course — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=getting-started">Getting Started</a>
+        <span>›</span>
+        <span>How to Add a Subdomain to a Funnel, portal or course</span>
+      </nav>
+      <h1 class="article-title">How to Add a Subdomain to a Funnel, portal or course</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=getting-started" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Getting Started
+    </a>
+
+    <div class="article-content">
+      <div class="video-wrap"><iframe src="https://www.youtube.com/embed/sECKvzKuq0s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p>Connecting a subdomain to your funnel allows you to create a clean, branded URL for your landing pages even if you have your website hosted somewhere else</p>
+<p>Instead of using your default url, you can publish your funnel on something like:</p>
+<ul>
+<li>offers.yourdomain.com</li>
+<li>launch.yourdomain.com</li>
+<li>freebie.yourdomain.com</li>
+<p></ul></p>
+<p>This strengthens brand credibility and keeps your ecosystem cohesive without having to purchase another domain name.</p>
+<h2>Before You Begin</h2>
+<p>Make sure:</p>
+<ul>
+<li>You own the main domain (e.g. yourdomain.com)</li>
+<li>You have access to your domain provider (GoDaddy, Namecheap, Cloudflare, etc.)</li>
+<p></ul></p>
+<h2>Step 1: Decide on Your Subdomain</h2>
+<p>A subdomain is the part that appears <strong>before</strong> your main domain.</p>
+<p>Example:</p>
+<p><strong>launch.</strong>yourdomain.com<br />“launch” is the subdomain.</p>
+<p>Choose something that reflects the purpose of the funnel:</p>
+<ul>
+<li>offers</li>
+<li>book</li>
+<li>join</li>
+<li>apply</li>
+<li>events</li>
+<li>free</li>
+<li>programs</li>
+<p></ul></p>
+<p>Keep it simple and easy to type.</p>
+<h2>Step 2: Add the Subdomain Inside Alvéya</h2>
+<p>The process for this is almost identical how you would connect your primary domain so you can watch the video above. Instead of adding th "@", type in your subdomain word.</p>
+<ol>
+<li>Go to <strong>Settings → Domains</strong> inside your sub-account</li>
+<li>Click <strong>Connect Domain</strong></li>
+<li>Enter your chosen subdomain (e.g. launch.yourdomain.com)</li>
+<li>Continue to the DNS instructions</li>
+<p></ol></p>
+<p>Alvéya will generate the required DNS record.</p>
+<h2>Step 3: Update DNS Records in Your Domain Provider</h2>
+<p>Log into your domain provider.</p>
+<p><strong>Go to:</strong><br />DNS Settings or Manage DNS</p>
+<p>You will add a new record.</p>
+<p>This will be:</p>
+<p><strong>Type:</strong> CNAME<br /><strong>Host/Name</strong>: launch (or your chosen subdomain)<br /><strong>Points to</strong>: the target value provided by Alvéya (usually sites.ludicrous.cloud)</p>
+<p>Save the record.</p>
+<p>Important:<br />Do not modify your main domain A record if your website is hosted elsewhere.</p>
+<p>Only add the new subdomain record.</p>
+<h2>Step 4: Verify the Domain in Alvéya</h2>
+<p>Return to:</p>
+<p>Settings → Domains</p>
+<p>Click <strong>Verify</strong>.</p>
+<p>DNS propagation can take:</p>
+<ul>
+<li>A few minutes</li>
+<li>Up to 24 hours in some cases</li>
+<p></ul></p>
+<p>Once verified, the status will show as connected.</p>
+<h2>Step 5: Assign the Subdomain to Your Funnel</h2>
+<ol>
+<li>The next screen will be where you can allocate the subdomain</li>
+<p></ol></p>
+<p>Your funnel will now publish at:</p>
+<p>subdomain.yourdomain.com/page-slug</p>
+<h2>Best Practice Recommendations</h2>
+<p>Use:</p>
+<ul>
+<li>Your main domain for your website</li>
+<li>A dedicated subdomain for funnels</li>
+<li>A separate subdomain for email sending</li>
+<li>A separate subdomain for client portals</li>
+<p></ul></p>
+<p>Avoid using your root domain for funnels if your website is hosted elsewhere.</p>
+<p>Keeping domains structured prevents conflicts and protects email deliverability.</p>
+<h2>Common Issues &amp; Fixes</h2>
+<p>Issue: Domain won’t verify<br />Check:</p>
+<ul>
+<li>CNAME record is entered correctly</li>
+<li>No extra spaces</li>
+<li>DNS has propagated</li>
+<p></ul></p>
+<p><strong>Issue: </strong>SSL error<br />Wait for automatic SSL provisioning. This can take time after verification.</p>
+<p><strong>Issue:</strong> Funnel loads but styling looks broken<br />Check:</p>
+<ul>
+<li>Correct domain selected inside funnel settings</li>
+<li>Funnel is published</li>
+<p></ul></p>
+<h2>When to Use a Subdomain for Funnels</h2>
+<p>Use a subdomain when:</p>
+<ul>
+<li>Running a campaign</li>
+<li>Hosting a webinar registration</li>
+<li>Delivering a free resource</li>
+<li>Launching a program</li>
+<li>Creating a dedicated sales page</li>
+<p></ul></p>
+<p>This keeps your main website clean while allowing marketing flexibility.</p>
+<div class="video-wrap"><iframe src="https://www.youtube.com/embed/Puv5vMnjtEc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

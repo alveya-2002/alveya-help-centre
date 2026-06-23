@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setting your branding for the system generated emails — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=email-marketing">Email Marketing</a>
+        <span>›</span>
+        <span>Setting your branding for the system generated emails</span>
+      </nav>
+      <h1 class="article-title">Setting your branding for the system generated emails</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=email-marketing" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Email Marketing
+    </a>
+
+    <div class="article-content">
+      <p><strong>Before you start:&nbsp; </strong>Have your logo file ready to upload, and your brand hex colour codes on hand. You will need a primary (darker) colour and a secondary (lighter) colour.</p>
+<h2 class="wp-block-heading"><strong>Step 1 — Upload Your Logo</strong></h2>
+<p>Your logo needs to be stored in your Alvéya media library before you can link it to your email templates.</p>
+<ol class="wp-block-list">
+<li>In your Alvéya dashboard, navigate to Media Storage.</li>
+<li>Upload your logo file.</li>
+<li>Once uploaded, click the three dots next to the file and select Get Link.</li>
+<li>Copy the link — you will need it in the next step.</li>
+<p></ol></p>
+<p><em>💡&nbsp; Use a version of your logo that works on a light or white background. Most email templates use a light-coloured email body.</em></p>
+<h2 class="wp-block-heading"><strong>Step 2 — Set Your Custom Values</strong></h2>
+<p>Custom Values are placeholders that feed your branding into the email templates automatically. You only need to set these once.</p>
+<ol start="5" class="wp-block-list">
+<li>Go to Settings, then Custom Values.</li>
+<li>Locate the logo field. Click Edit, paste in the logo link you copied in Step 1, and click Update.</li>
+<li>Locate the primary colour field. Click Edit and enter your primary brand hex code. This colour is used for buttons — choose a darker shade, as the button text is white.</li>
+<li>Locate the secondary colour field. Click Edit and enter your lighter brand hex code. This is used for the email background.</li>
+<li>Save each value as you go.</li>
+<p></ol></p>
+<p><em>⚠️&nbsp; Hex codes should be entered without the # symbol — for example, 07636E rather than #07636E. Check this if your colours are not displaying correctly.</em></p>
+<h2 class="wp-block-heading"><strong>Step 3 — Check Your Email Templates</strong></h2>
+<p>The system email templates have already been loaded into your account. Once your Custom Values are saved, they will pull in your branding automatically.</p>
+<ol start="10" class="wp-block-list">
+<li>Go to Marketing, then Emails, then Templates.</li>
+<li>Open any of the system email templates.</li>
+<li>Confirm that your logo, background colour, and button colour are all displaying correctly.</li>
+<p></ol></p>
+<p><em>💡&nbsp; If a template contains a button, that is the best one to check — it will show you all three brand values at once.</em></p>
+<h2 class="wp-block-heading"><strong>Step 4 — Assign Templates in Courses and Memberships</strong></h2>
+<p>There is one more area to update. Inside your Courses and Memberships settings, each email trigger is set to a default template. You need to reassign these to the branded templates that are already in your account.</p>
+<p>This step takes a few minutes, but it is worth completing now so everything is on brand from the start.</p>
+<ol start="13" class="wp-block-list">
+<li>Go to Memberships and Courses, then Settings, then Email Settings.</li>
+<li>You will see a list of email triggers — for example, course enrolment, drip content release, and community activity emails.</li>
+<li>For each trigger, click on the current template (it will be set to Default) and search for the matching branded template by name.</li>
+<li>Select the correct template and save.</li>
+<li>Work through the full list until every trigger is assigned.</li>
+<p></ol></p>
+<p><em>💡&nbsp; To find the right template for each trigger, match the name of the trigger to the template name — for example, the Joined Group trigger maps to the Joined Group template.</em></p>
+<p><strong>Your system emails are now fully on brand — every automated message that leaves your account will look like it came from you.</strong></p>
+<p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+<p><em>Alvéya automatically sends emails on your behalf for things like course enrolments, invoice delivery, and community activity. This guide walks you through adding your logo and brand colours so those emails look like they came from you — not a generic system.</em></p>
+<p><strong>Before you start:&nbsp; </strong>Have your logo file ready to upload, and your brand hex colour codes on hand. You will need a primary (darker) colour and a secondary (lighter) colour.</p>
+<h2 class="wp-block-heading"><strong>Step 1 — Upload Your Logo</strong></h2>
+<p>Your logo needs to be stored in your Alvéya media library before you can link it to your email templates.</p>
+<ol class="wp-block-list">
+<li>In your Alvéya dashboard, navigate to Media Storage.</li>
+<li>Upload your logo file.</li>
+<li>Once uploaded, click the three dots next to the file and select Get Link.</li>
+<li>Copy the link — you will need it in the next step.</li>
+<p></ol></p>
+<p><em>💡&nbsp; Use a version of your logo that works on a light or white background. Most email templates use a light-coloured email body.</em></p>
+<h2 class="wp-block-heading"><strong>Step 2 — Set Your Custom Values</strong></h2>
+<p>Custom Values are placeholders that feed your branding into the email templates automatically. You only need to set these once.</p>
+<ol start="5" class="wp-block-list">
+<li>Go to Settings, then Custom Values.</li>
+<li>Locate the logo field. Click Edit, paste in the logo link you copied in Step 1, and click Update.</li>
+<li>Locate the primary colour field. Click Edit and enter your primary brand hex code. This colour is used for buttons — choose a darker shade, as the button text is white.</li>
+<li>Locate the secondary colour field. Click Edit and enter your lighter brand hex code. This is used for the email background.</li>
+<li>Save each value as you go.</li>
+<p></ol></p>
+<p><em>⚠️&nbsp; Hex codes should be entered without the # symbol — for example, 07636E rather than #07636E. Check this if your colours are not displaying correctly.</em></p>
+<h2 class="wp-block-heading"><strong>Step 3 — Check Your Email Templates</strong></h2>
+<p>The system email templates have already been loaded into your account. Once your Custom Values are saved, they will pull in your branding automatically.</p>
+<ol start="10" class="wp-block-list">
+<li>Go to Marketing, then Emails, then Templates.</li>
+<li>Open any of the system email templates.</li>
+<li>Confirm that your logo, background colour, and button colour are all displaying correctly.</li>
+<p></ol></p>
+<p><em>💡&nbsp; If a template contains a button, that is the best one to check — it will show you all three brand values at once.</em></p>
+<h2 class="wp-block-heading"><strong>Step 4 — Assign Templates in Courses and Memberships</strong></h2>
+<p>There is one more area to update. Inside your Courses and Memberships settings, each email trigger is set to a default template. You need to reassign these to the branded templates that are already in your account.</p>
+<p>This step takes a few minutes, but it is worth completing now so everything is on brand from the start.</p>
+<ol start="13" class="wp-block-list">
+<li>Go to Memberships and Courses, then Settings, then Email Settings.</li>
+<li>You will see a list of email triggers — for example, course enrolment, drip content release, and community activity emails.</li>
+<li>For each trigger, click on the current template (it will be set to Default) and search for the matching branded template by name.</li>
+<li>Select the correct template and save.</li>
+<li>Work through the full list until every trigger is assigned.</li>
+<p></ol></p>
+<p><em>💡&nbsp; To find the right template for each trigger, match the name of the trigger to the template name — for example, the Joined Group trigger maps to the Joined Group template.</em></p>
+<p><strong>Your system emails are now fully on brand — every automated message that leaves your account will look like it came from you.</strong></p>
+<p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+<p data-start="889" data-end="895"><i>When a client replies to one of your emails, where does that reply go? By default it comes into your Conversations tab — but you can also route it to a specific email inbox, or even set a custom reply-to address so replies land exactly where you need them. This guide walks you through both options.</i></p>
+<h2 
+<p>data-interaction-id="55b377e" class="e-heading-base" data-e-type="widget" data-id="55b377e" ><br /> Where to Find These Settings<br /> </h2></p>
+<p>All reply and forwarding options live in one place. To get there:</p>
+<ul>
+<li aria-level="1">From the left-hand menu, click Settings.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Select Email Services.</li>
+<li aria-level="1">Click the Reply &amp; Forward Settings tab at the top</li>
+<p></ul></p>
+<p>															<img width="800" height="446" src="https://help.alveya.io/wp-content/uploads/2026/06/Setting-the-default-reply-email-address-1024x571.png" alt="" srcset="https://help.alveya.io/wp-content/uploads/2026/06/Setting-the-default-reply-email-address-1024x571.png 1024w, https://help.alveya.io/wp-content/uploads/2026/06/Setting-the-default-reply-email-address-300x167.png 300w, https://help.alveya.io/wp-content/uploads/2026/06/Setting-the-default-reply-email-address-768x428.png 768w, https://help.alveya.io/wp-content/uploads/2026/06/Setting-the-default-reply-email-address-1536x856.png 1536w, https://help.alveya.io/wp-content/uploads/2026/06/Setting-the-default-reply-email-address-2048x1141.png 2048w" sizes="(max-width: 800px) 100vw, 800px" />															</p>
+<p><i>💡  You will see four sections on this page: Forwarding Address, BCC Emails, Forward to Assigned User, and Reply Address. This guide focuses on the Reply Address — but it is worth knowing the other options are here too.</i></p>
+<h2 
+<p>data-interaction-id="1eae9e0" class="e-heading-base" data-e-type="widget" data-id="1eae9e0" ><br /> Setting a Default Reply Address<br /> </h2></p>
+<p>The Reply Address tells Alvéya where to send replies when a client hits Reply on your email. By default, replies come into your Conversations tab. Adding a reply address here overrides that — replies will go to the inbox you specify instead.</p>
+<p><i>⚠️  If you add a reply address, replies from clients will no longer sync back to your Conversations tab automatically. You will need to manage those replies from your external inbox</i></p>
+<p><b>How to add your reply address</b></p>
+<ul>
+<li aria-level="1">On the Reply &amp; Forward Settings page, scroll down to the Reply Address section.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">Type the email address you want replies sent to into the field provided.</li>
+<p></ul></p>
+<ul>
+<li aria-level="1">You can add up to five addresses if needed — press Enter after each one.</li>
+<li aria-level="1">Click Save.</li>
+<p></ul></p>
+<p><i>💡 Not sure which email to use here? Most practitioners use their main business inbox (e.g. hello@yourpractice.com) so all client communication lands in one place.</i></p>
+<h2>Also On This Page: Forwarding Address</h2>
+<p>The Forwarding Address is slightly different from the Reply Address — and it is easy to mix them up.</p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><strong>Reply Address:</strong> changes where client replies are delivered. Use this if you want replies to go to a specific inbox rather than your Conversations tab.</li>
+<li style="font-weight: 400;" aria-level="1"><strong>Forwarding Address:</strong> sends you a copy of the client's reply in addition to it appearing in Conversations. The Conversations tab still receives the reply — you just also get a copy in your inbox.</li>
+<p></ul></p>
+<p>To add a forwarding address, enter the email(s) in the Forwarding Address field at the top of the page and click Save. You can add multiple addresses separated by commas.</p>
+<p><i>⚠️  Forwarding only works with Alvéya's built-in email service (LC Email) or Mailgun. If you are using a third-party SMTP provider, forwarding is not supported.</i></p>
+<h2>BCC Emails<br />
+<p></h2></p>
+<p>If you want a blind copy of every email sent from your account — not just replies — use the BCC Emails field. This sends a hidden copy of outgoing emails to the address(es) you specify.</p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">BCC applies to one-on-one emails, workflow emails, and billing emails.</li>
+<li style="font-weight: 400;" aria-level="1">It does not apply to bulk campaign emails.</li>
+<p></ul></p>
+<p><i>💡  BCC is helpful if you have a practice manager or virtual assistant who needs visibility over all client communications without being visible to the client.</i></p>
+<h2>Forward to Assigned User</h2>
+<p>There is also a toggle on this page called Forward to Assigned User. When this is switched on, any email reply from a lead or client is automatically forwarded to whichever team member is assigned to that contact.</p>
+<p>The reply goes to the email address set up under Settings &gt; My Staff &gt; Edit User &gt; User Info. Make sure those email addresses are current before turning this on.</p>
+<h3>Why are attached files not forwarded along with email replies?<br />
+			<br />
+			<br /></h3><p>The forwarding settings in the Email Services tab do not support forwarding attachments. If a contact replies with an attachment, you must log in to the HighLevel conversation view to access it.</p>
+<h3>Why do the forwarding emails I've added disappear after saving?<br />
+			<br />
+			<br /></h3><p>If email addresses are invalid, or they conflict with a dedicated domain added to your sub-account, they cannot be used as a forwarding address and will not be saved.</p>
+<h3>Are forwarded emails free?<br />
+			<br />
+			<br /></h3><p>No.  Each forwarded email is billed like a normal outgoing email.</p>
+<p>The forwarding settings in the Email Services tab do not support forwarding attachments. If a contact replies with an attachment, you must log in to the HighLevel conversation view to access it.</p>
+<p>If email addresses are invalid, or they conflict with a dedicated domain added to your sub-account, they cannot be used as a forwarding address and will not be saved.</p>
+<p>No.  Each forwarded email is billed like a normal outgoing email.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

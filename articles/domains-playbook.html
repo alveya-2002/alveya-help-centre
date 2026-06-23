@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domains Playbook — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=getting-started">Getting Started</a>
+        <span>›</span>
+        <span>Domains Playbook</span>
+      </nav>
+      <h1 class="article-title">Domains Playbook</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=getting-started" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Getting Started
+    </a>
+
+    <div class="article-content">
+      <h2>A Complete Setup Guide for Alvéya™
+<p></h2></p>
+		<p data-start="310" data-end="379">Your domain setup is the foundation of your entire digital ecosystem.</p><p data-start="381" data-end="539">Inside Alvéya™, domains control how your website loads, how your emails are delivered, how your client portal is accessed, and how your links appear publicly.</p><p data-start="541" data-end="686">This Playbook walks you through every domain type available in Alvéya™, explains when to use each one, and guides you step-by-step through setup.</p><p data-start="330" data-end="422">This Playbook walks you through the essential setup so you can start scheduling confidently.</p>		
+						<h3>What You’ll Set Up</h3><p data-start="2554" data-end="2589">Before connecting anything, decide:</p><ul data-start="2591" data-end="2731"><li data-start="2591" data-end="2629"><p data-start="2593" data-end="2629">Will you use your existing domain?</p></li><li data-start="2630" data-end="2681"><p data-start="2632" data-end="2681">Are you moving a website from another platform?</p></li><li data-start="2682" data-end="2731"><p data-start="2684" data-end="2731">Do you need subdomains for email and portals?</p></li></ul><p data-start="2733" data-end="2783">Write down your final structure before proceeding.</p><p data-start="2785" data-end="2793">Example:</p><p data-start="2795" data-end="2927">Main domain → yourbusiness.com<br data-start="2825" data-end="2828" />Email → mail.yourbusiness.com<br data-start="2857" data-end="2860" />Portal → clients.yourbusiness.com<br data-start="2893" data-end="2896" />Forms → book.yourbusiness.com</p><p data-start="2929" data-end="2968">Clarity first prevents confusion later.</p>
+						<h3>Domain Types Explained</h3><h3 data-start="1045" data-end="1085">Main Website Domain (Recommended)</h3><p data-start="1087" data-end="1129">This is your primary public-facing domain.</p><p data-start="1131" data-end="1160">Example:<br data-start="1139" data-end="1142" />yourbusiness.com</p><p data-start="1162" data-end="1175">Use this for:</p><ul data-start="1176" data-end="1248"><li data-start="1176" data-end="1192"><p data-start="1178" data-end="1192">Your website</p></li><li data-start="1193" data-end="1204"><p data-start="1195" data-end="1204">Funnels</p></li><li data-start="1205" data-end="1222"><p data-start="1207" data-end="1222">Landing pages</p></li><li data-start="1223" data-end="1231"><p data-start="1225" data-end="1231">Blog</p></li><li data-start="1232" data-end="1248"><p data-start="1234" data-end="1248">Online store</p></li></ul><p data-start="1250" data-end="1337">If everything is built inside Alvéya™, this domain becomes the base for your ecosystem.</p><p data-start="1339" data-end="1463">Important:<br data-start="1349" data-end="1352" />Your main domain should not be used for email sending or your client portal. Those require separate subdomains.</p><hr data-start="1465" data-end="1468" /><h3 data-start="1470" data-end="1521">Dedicated Email Sending Domain (Recommended)</h3><p data-start="1523" data-end="1572">This is a subdomain used only for email delivery.</p><p data-start="1574" data-end="1608">Example:<br data-start="1582" data-end="1585" />mail.yourbusiness.com</p><p data-start="1610" data-end="1666">Clients will not see this domain directly. It exists to:</p><ul data-start="1668" data-end="1773"><li data-start="1668" data-end="1694"><p data-start="1670" data-end="1694">Improve deliverability</p></li><li data-start="1695" data-end="1736"><p data-start="1697" data-end="1736">Protect your main domain’s reputation</p></li><li data-start="1737" data-end="1773"><p data-start="1739" data-end="1773">Maintain long-term sender health</p></li></ul><p data-start="1775" data-end="1858">Using a dedicated sending domain is best practice for professional email marketing.</p><hr data-start="1860" data-end="1863" /><h3 data-start="1865" data-end="1903">Client Portal Domain (Optional)</h3><p data-start="1905" data-end="1961">This is a branded subdomain used for your client portal.</p><p data-start="1963" data-end="2025">Example:<br />clients.yourbusiness.com<br data-start="1996" data-end="1999" />members.yourbusiness.com</p><p data-start="2027" data-end="2142">This replaces the default system-generated portal link and creates a more professional experience for your clients.</p><hr data-start="2144" data-end="2147" /><h3 data-start="2149" data-end="2181">Branded Domain (Optional)</h3><p data-start="2183" data-end="2219">This is a custom subdomain used for:</p><ul data-start="2221" data-end="2271"><li data-start="2221" data-end="2230"><p data-start="2223" data-end="2230">Forms</p></li><li data-start="2231" data-end="2244"><p data-start="2233" data-end="2244">Calendars</p></li><li data-start="2245" data-end="2258"><p data-start="2247" data-end="2258">Proposals</p></li><li data-start="2259" data-end="2271"><p data-start="2261" data-end="2271">Invoices</p></li></ul><p data-start="2273" data-end="2330">Example:<br />book.yourbusiness.com<br data-start="2303" data-end="2306" />forms.yourbusiness.com</p><p data-start="2332" data-end="2428">Instead of using system URLs, you can create a clean branded experience across every touchpoint.</p>
+		<p data-start="2554" data-end="2589">Before connecting anything, decide:</p><ul data-start="2591" data-end="2731"><li data-start="2591" data-end="2629"><p data-start="2593" data-end="2629">Will you use your existing domain?</p></li><li data-start="2630" data-end="2681"><p data-start="2632" data-end="2681">Are you moving a website from another platform?</p></li><li data-start="2682" data-end="2731"><p data-start="2684" data-end="2731">Do you need subdomains for email and portals?</p></li></ul><p data-start="2733" data-end="2783">Write down your final structure before proceeding.</p><p data-start="2785" data-end="2793">Example:</p><p data-start="2795" data-end="2927">Main domain → yourbusiness.com<br data-start="2825" data-end="2828" />Email → mail.yourbusiness.com<br data-start="2857" data-end="2860" />Portal → clients.yourbusiness.com<br data-start="2893" data-end="2896" />Forms → book.yourbusiness.com</p><p data-start="2929" data-end="2968">Clarity first prevents confusion later.</p><h3 data-start="1045" data-end="1085">Main Website Domain (Recommended)</h3><p data-start="1087" data-end="1129">This is your primary public-facing domain.</p><p data-start="1131" data-end="1160">Example:<br data-start="1139" data-end="1142" />yourbusiness.com</p><p data-start="1162" data-end="1175">Use this for:</p><ul data-start="1176" data-end="1248"><li data-start="1176" data-end="1192"><p data-start="1178" data-end="1192">Your website</p></li><li data-start="1193" data-end="1204"><p data-start="1195" data-end="1204">Funnels</p></li><li data-start="1205" data-end="1222"><p data-start="1207" data-end="1222">Landing pages</p></li><li data-start="1223" data-end="1231"><p data-start="1225" data-end="1231">Blog</p></li><li data-start="1232" data-end="1248"><p data-start="1234" data-end="1248">Online store</p></li></ul><p data-start="1250" data-end="1337">If everything is built inside Alvéya™, this domain becomes the base for your ecosystem.</p><p data-start="1339" data-end="1463">Important:<br data-start="1349" data-end="1352" />Your main domain should not be used for email sending or your client portal. Those require separate subdomains.</p><hr data-start="1465" data-end="1468" /><h3 data-start="1470" data-end="1521">Dedicated Email Sending Domain (Recommended)</h3><p data-start="1523" data-end="1572">This is a subdomain used only for email delivery.</p><p data-start="1574" data-end="1608">Example:<br data-start="1582" data-end="1585" />mail.yourbusiness.com</p><p data-start="1610" data-end="1666">Clients will not see this domain directly. It exists to:</p><ul data-start="1668" data-end="1773"><li data-start="1668" data-end="1694"><p data-start="1670" data-end="1694">Improve deliverability</p></li><li data-start="1695" data-end="1736"><p data-start="1697" data-end="1736">Protect your main domain’s reputation</p></li><li data-start="1737" data-end="1773"><p data-start="1739" data-end="1773">Maintain long-term sender health</p></li></ul><p data-start="1775" data-end="1858">Using a dedicated sending domain is best practice for professional email marketing.</p><hr data-start="1860" data-end="1863" /><h3 data-start="1865" data-end="1903">Client Portal Domain (Optional)</h3><p data-start="1905" data-end="1961">This is a branded subdomain used for your client portal.</p><p data-start="1963" data-end="2025">Example:<br />clients.yourbusiness.com<br data-start="1996" data-end="1999" />members.yourbusiness.com</p><p data-start="2027" data-end="2142">This replaces the default system-generated portal link and creates a more professional experience for your clients.</p><hr data-start="2144" data-end="2147" /><h3 data-start="2149" data-end="2181">Branded Domain (Optional)</h3><p data-start="2183" data-end="2219">This is a custom subdomain used for:</p><ul data-start="2221" data-end="2271"><li data-start="2221" data-end="2230"><p data-start="2223" data-end="2230">Forms</p></li><li data-start="2231" data-end="2244"><p data-start="2233" data-end="2244">Calendars</p></li><li data-start="2245" data-end="2258"><p data-start="2247" data-end="2258">Proposals</p></li><li data-start="2259" data-end="2271"><p data-start="2261" data-end="2271">Invoices</p></li></ul><p data-start="2273" data-end="2330">Example:<br />book.yourbusiness.com<br data-start="2303" data-end="2306" />forms.yourbusiness.com</p><p data-start="2332" data-end="2428">Instead of using system URLs, you can create a clean branded experience across every touchpoint.</p>		
+					<h2>Steps to setting up the domain</h2>				
+						<h3>Step 1 – Decide Your Domain Structure</h3><p data-start="2554" data-end="2589">Before connecting anything, decide:</p><ul data-start="2591" data-end="2731"><li data-start="2591" data-end="2629"><p data-start="2593" data-end="2629">Will you use your existing domain?</p></li><li data-start="2630" data-end="2681"><p data-start="2632" data-end="2681">Are you moving a website from another platform?</p></li><li data-start="2682" data-end="2731"><p data-start="2684" data-end="2731">Do you need subdomains for email and portals?</p></li></ul><p data-start="2733" data-end="2783">Write down your final structure before proceeding.</p><p data-start="2785" data-end="2793">Example:</p><p data-start="2795" data-end="2927">Main domain → yourbusiness.com<br data-start="2825" data-end="2828" />Email → mail.yourbusiness.com<br data-start="2857" data-end="2860" />Portal → clients.yourbusiness.com<br data-start="2893" data-end="2896" />Forms → book.yourbusiness.com</p><p data-start="2929" data-end="2968">Clarity first prevents confusion later.</p>
+						<h3>Step 2 – Connect Your Main Domain</h3><p>Go to:<br data-start="3032" data-end="3035" />Settings → Domains</p><p data-start="3307" data-end="3348"><a href="https://help.alveya.io/connect-your-domain-to-alveya/">📖 Step-by-step DNS update instructions →</a></p><p data-start="3350" data-end="3443">Once DNS is updated, allow time for propagation (can take up to 24 hours, often much faster).</p>
+						<h3>Step 3 – Set Up Your Email Sending Domain</h3><p data-start="3509" data-end="3549">Create a subdomain in your DNS provider.</p><p data-start="3551" data-end="3583">Example:<br />mail.yourbusiness.com</p><p data-start="3585" data-end="3652">Inside Alvéya, connect this as your dedicated email sending domain.</p><p data-start="3654" data-end="3732">You will be asked to add specific DNS records (usually CNAME and TXT records).</p><p data-start="3734" data-end="3761">This step is essential for:</p><ul data-start="3762" data-end="3823"><li data-start="3762" data-end="3780"><p data-start="3764" data-end="3780">Authentication</p></li><li data-start="3781" data-end="3788"><p data-start="3783" data-end="3788">SPF</p></li><li data-start="3789" data-end="3797"><p data-start="3791" data-end="3797">DKIM</p></li><li data-start="3798" data-end="3823"><p data-start="3800" data-end="3823">Deliverability health</p></li></ul><p data-start="3874" data-end="3913">📖 Understanding email authentication →</p>
+						<h3>Step 4 – Connect Optional Subdomains</h3><p data-start="3974" data-end="3991">If you are using:</p><ul data-start="3993" data-end="4055"><li data-start="3993" data-end="4010"><p data-start="3995" data-end="4010">Client Portal</p></li><li data-start="4011" data-end="4028"><p data-start="4013" data-end="4028">Branded forms</p></li><li data-start="4029" data-end="4055"><p data-start="4031" data-end="4055">Branded calendar links</p></li></ul><p data-start="4057" data-end="4113">Repeat the same DNS process using additional subdomains.</p><p data-start="4115" data-end="4200">Each subdomain must be created in your DNS provider and then connected inside Alvéya.</p><p data-start="4202" data-end="4261">Example:<br />clients.yourbusiness.com<br data-start="4235" data-end="4238" />book.yourbusiness.com</p><p data-start="4263" data-end="4296">Keep naming simple and intuitive.</p>
+		<p data-start="2554" data-end="2589">Before connecting anything, decide:</p><ul data-start="2591" data-end="2731"><li data-start="2591" data-end="2629"><p data-start="2593" data-end="2629">Will you use your existing domain?</p></li><li data-start="2630" data-end="2681"><p data-start="2632" data-end="2681">Are you moving a website from another platform?</p></li><li data-start="2682" data-end="2731"><p data-start="2684" data-end="2731">Do you need subdomains for email and portals?</p></li></ul><p data-start="2733" data-end="2783">Write down your final structure before proceeding.</p><p data-start="2785" data-end="2793">Example:</p><p data-start="2795" data-end="2927">Main domain → yourbusiness.com<br data-start="2825" data-end="2828" />Email → mail.yourbusiness.com<br data-start="2857" data-end="2860" />Portal → clients.yourbusiness.com<br data-start="2893" data-end="2896" />Forms → book.yourbusiness.com</p><p data-start="2929" data-end="2968">Clarity first prevents confusion later.</p><p>Go to:<br data-start="3032" data-end="3035" />Settings → Domains</p><p data-start="3307" data-end="3348"><a href="https://help.alveya.io/connect-your-domain-to-alveya/">📖 Step-by-step DNS update instructions →</a></p><p data-start="3350" data-end="3443">Once DNS is updated, allow time for propagation (can take up to 24 hours, often much faster).</p><p data-start="3509" data-end="3549">Create a subdomain in your DNS provider.</p><p data-start="3551" data-end="3583">Example:<br />mail.yourbusiness.com</p><p data-start="3585" data-end="3652">Inside Alvéya, connect this as your dedicated email sending domain.</p><p data-start="3654" data-end="3732">You will be asked to add specific DNS records (usually CNAME and TXT records).</p><p data-start="3734" data-end="3761">This step is essential for:</p><ul data-start="3762" data-end="3823"><li data-start="3762" data-end="3780"><p data-start="3764" data-end="3780">Authentication</p></li><li data-start="3781" data-end="3788"><p data-start="3783" data-end="3788">SPF</p></li><li data-start="3789" data-end="3797"><p data-start="3791" data-end="3797">DKIM</p></li><li data-start="3798" data-end="3823"><p data-start="3800" data-end="3823">Deliverability health</p></li></ul><p data-start="3874" data-end="3913">📖 Understanding email authentication →</p>https://www.youtube.com/watch?v=XHOmBV4js_E<p data-start="3974" data-end="3991">If you are using:</p><ul data-start="3993" data-end="4055"><li data-start="3993" data-end="4010"><p data-start="3995" data-end="4010">Client Portal</p></li><li data-start="4011" data-end="4028"><p data-start="4013" data-end="4028">Branded forms</p></li><li data-start="4029" data-end="4055"><p data-start="4031" data-end="4055">Branded calendar links</p></li></ul><p data-start="4057" data-end="4113">Repeat the same DNS process using additional subdomains.</p><p data-start="4115" data-end="4200">Each subdomain must be created in your DNS provider and then connected inside Alvéya.</p><p data-start="4202" data-end="4261">Example:<br />clients.yourbusiness.com<br data-start="4235" data-end="4238" />book.yourbusiness.com</p><p data-start="4263" data-end="4296">Keep naming simple and intuitive.</p>		
+					<h2>FAQs</h2>				
+						<h3>Can I use the same domain for everything?</h3><p data-start="4380" data-end="4437">You should use your main domain for websites and funnels.</p><p data-start="4439" data-end="4447">However:</p><ul data-start="4448" data-end="4594"><li data-start="4448" data-end="4495"><p data-start="4450" data-end="4495">Email sending must use a separate subdomain</p></li><li data-start="4496" data-end="4545"><p data-start="4498" data-end="4545">Client portal should use a separate subdomain</p></li><li data-start="4546" data-end="4594"><p data-start="4548" data-end="4594">Branded links should use separate subdomains</p></li></ul><p data-start="4596" data-end="4652">This protects domain reputation and keeps systems clean.</p>
+						<h3>Can I use a .com.au domain?</h3><p data-start="4692" data-end="4696">Yes.</p><p data-start="4698" data-end="4804">Some domain extensions cannot be purchased or transferred directly inside certain platforms. In that case:</p><ol data-start="4806" data-end="4913"><li data-start="4806" data-end="4861"><p data-start="4809" data-end="4861">Purchase the domain through a third-party provider</p></li><li data-start="4862" data-end="4886"><p data-start="4865" data-end="4886">Update DNS manually (Or if you are with Godaddy or have your domain rerouted through Cloudflare, it can add the DNS records automatically)</p></li><li data-start="4887" data-end="4913"><p data-start="4890" data-end="4913">Connect inside Alvéya</p></li></ol><p data-start="4915" data-end="4970">This works seamlessly once DNS is configured correctly.</p>
+						<h3>Why is my domain not connecting?</h3><p data-start="5015" data-end="5030">Common reasons:</p><ul data-start="5032" data-end="5170"><li data-start="5032" data-end="5069"><p data-start="5034" data-end="5069">DNS records not entered correctly</p></li><li data-start="5070" data-end="5103"><p data-start="5072" data-end="5103">Propagation still in progress</p></li><li data-start="5104" data-end="5123"><p data-start="5106" data-end="5123">CNAME conflicts</p></li><li data-start="5124" data-end="5170"><p data-start="5126" data-end="5170">Domain still connected to another platform</p></li></ul><p data-start="5172" data-end="5240">Check spelling carefully and confirm there are no duplicate records.</p><p data-start="5172" data-end="5240">If you still cannot fix it, contact your domain name host.</p>
+						<h3>Can the Alvéya team connect my domain for me</h3><p>Due to security risk, we cannot connect your domain for you. Your domain name is a major asset for your business and we do not want to compromise the security of it. Please contact your domain host provider if you require assistance.</p>
+						<h3>How long does DNS propagation take?</h3><p data-start="5288" data-end="5328">Anywhere from a few minutes to 24 hours.</p><p data-start="5330" data-end="5368">Most updates reflect within 1–2 hours.</p>
+		<p data-start="4380" data-end="4437">You should use your main domain for websites and funnels.</p><p data-start="4439" data-end="4447">However:</p><ul data-start="4448" data-end="4594"><li data-start="4448" data-end="4495"><p data-start="4450" data-end="4495">Email sending must use a separate subdomain</p></li><li data-start="4496" data-end="4545"><p data-start="4498" data-end="4545">Client portal should use a separate subdomain</p></li><li data-start="4546" data-end="4594"><p data-start="4548" data-end="4594">Branded links should use separate subdomains</p></li></ul><p data-start="4596" data-end="4652">This protects domain reputation and keeps systems clean.</p><p data-start="4692" data-end="4696">Yes.</p><p data-start="4698" data-end="4804">Some domain extensions cannot be purchased or transferred directly inside certain platforms. In that case:</p><ol data-start="4806" data-end="4913"><li data-start="4806" data-end="4861"><p data-start="4809" data-end="4861">Purchase the domain through a third-party provider</p></li><li data-start="4862" data-end="4886"><p data-start="4865" data-end="4886">Update DNS manually (Or if you are with Godaddy or have your domain rerouted through Cloudflare, it can add the DNS records automatically)</p></li><li data-start="4887" data-end="4913"><p data-start="4890" data-end="4913">Connect inside Alvéya</p></li></ol><p data-start="4915" data-end="4970">This works seamlessly once DNS is configured correctly.</p><p data-start="5015" data-end="5030">Common reasons:</p><ul data-start="5032" data-end="5170"><li data-start="5032" data-end="5069"><p data-start="5034" data-end="5069">DNS records not entered correctly</p></li><li data-start="5070" data-end="5103"><p data-start="5072" data-end="5103">Propagation still in progress</p></li><li data-start="5104" data-end="5123"><p data-start="5106" data-end="5123">CNAME conflicts</p></li><li data-start="5124" data-end="5170"><p data-start="5126" data-end="5170">Domain still connected to another platform</p></li></ul><p data-start="5172" data-end="5240">Check spelling carefully and confirm there are no duplicate records.</p><p data-start="5172" data-end="5240">If you still cannot fix it, contact your domain name host.</p><p>Due to security risk, we cannot connect your domain for you. Your domain name is a major asset for your business and we do not want to compromise the security of it. Please contact your domain host provider if you require assistance.</p><p data-start="5288" data-end="5328">Anywhere from a few minutes to 24 hours.</p><p data-start="5330" data-end="5368">Most updates reflect within 1–2 hours.</p>		
+					<h2>Troubleshooting</h2>				
+						<h3>Issue: Domain shows as pending</h3><p>Fix: Double-check CNAME target values and remove conflicting A records.</p>
+						<h3>Issue: Emails landing in spam</h3><p>Fix: Confirm SPF, DKIM and domain authentication records are valid. Check that you dont have multiple SPF records. Sometimes placing your domain in a DNS record checker or secure AI model can help pin point the issues</p>
+						<h3>Issue: Portal link not working</h3><p data-start="5601" data-end="5695">Fix: <a href="https://help.alveya.io/client-portal-domain-name/">Ensure subdomain is correctly pointed</a></p>
+		<p>Fix: Double-check CNAME target values and remove conflicting A records.</p><p>Fix: Confirm SPF, DKIM and domain authentication records are valid. Check that you dont have multiple SPF records. Sometimes placing your domain in a DNS record checker or secure AI model can help pin point the issues</p><p data-start="5601" data-end="5695">Fix: <a href="https://help.alveya.io/client-portal-domain-name/">Ensure subdomain is correctly pointed</a></p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

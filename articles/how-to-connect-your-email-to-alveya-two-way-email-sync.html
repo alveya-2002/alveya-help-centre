@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Connect Your Email to Alvéya (Two-Way Email Sync) — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=email-marketing">Email Marketing</a>
+        <span>›</span>
+        <span>How to Connect Your Email to Alvéya (Two-Way Email Sync)</span>
+      </nav>
+      <h1 class="article-title">How to Connect Your Email to Alvéya (Two-Way Email Sync)</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=email-marketing" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Email Marketing
+    </a>
+
+    <div class="article-content">
+      <p><strong>What this does:</strong> When you connect your Gmail or Outlook to Alvéya, your emails will automatically appear in both places — your personal inbox AND Alvéya. You won't have to copy or forward anything. It just stays in sync!</p>
+<p>⚠️ <strong>Please Note:</strong> This feature only works with <strong>Gmail</strong> and <strong>Outlook</strong> accounts. If your email address is hosted directly through your domain provider (e.g. GoDaddy, Namecheap, Squarespace, Wix, or similar), it is <strong>not supported</strong> and cannot be connected. You would need to route your email through Google Workspace (Gmail) or Microsoft 365 (Outlook) for this feature to work.</p>
+<h2 class="wp-block-heading">Part 1: What Is Two-Way Email Sync?</h2>
+<p>Think of it like this: when you send or receive an email, it shows up in <strong>both</strong> your Gmail/Outlook inbox and inside Alvéya at the same time.</p>
+<ul class="wp-block-list">
+<li>Emails you send from Alvéya appear in your Gmail/Outlook sent folder.</li>
+<li>Emails a contact sends to your Gmail/Outlook appear in Alvéya under that contact's conversation.</li>
+<p></ul></p>
+<p>This works with <strong>Gmail</strong> and <strong>Outlook</strong>.</p>
+<h2 class="wp-block-heading">Part 2: How to Connect Your Email</h2>
+<p><strong>Step 1:</strong> In Alvéya, click on <strong>Settings</strong> (usually found in the left sidebar or bottom-left menu).</p>
+<p><strong>Step 2:</strong> Go to the <strong>Profile</strong> tab, then click <strong>General</strong>.</p>
+<p><strong>Step 3:</strong> Scroll down until you see the section called <strong>Email (2-Way Sync)</strong>.</p>
+<p><strong>Step 4:</strong> Choose your email type — <strong>Gmail</strong> or <strong>Outlook</strong> — then click <strong>Connect</strong>.</p>
+<p><strong>Step 5 (Gmail):</strong> A pop-up will appear asking you to choose your Gmail account. Select it, then make sure to <strong>allow all the permissions</strong> when asked. Click <strong>Continue</strong> when done. ✅</p>
+<p><strong>Step 5 (Outlook):</strong> Enter your Outlook email and password when prompted, then approve the permissions requested. ✅</p>
+<p>That's it! You'll see your email address listed as "Connected" on the page.</p>
+<h2 class="wp-block-heading">Part 3: How Does It Work After Connecting?</h2>
+<h3 class="wp-block-heading">For Gmail users:</h3>
+<p>There are two ways emails start syncing:</p>
+<ol class="wp-block-list">
+<li><strong>You send first</strong> — If you send an email to a contact from inside Alvéya, that email (and all future replies in that thread) will sync between Gmail and Alvéya automatically.</li>
+<li><strong>They email you first</strong> — If a contact that's already saved in Alvéya sends an email to your Gmail, it will automatically appear in your Alvéya conversations too. (Note: the contact must be assigned to you first.)</li>
+<p></ol></p>
+<h3 class="wp-block-heading">For Outlook users:</h3>
+<ul class="wp-block-list">
+<li>The sync only starts when <strong>you send the first email from Alvéya</strong>. After that, all replies in that thread will sync in both directions.</li>
+<li>Emails you start from Outlook (not from Alvéya) will <strong>not</strong> sync into Alvéya.</li>
+<p></ul></p>
+<h2 class="wp-block-heading">Part 4: Important Limits to Know</h2>
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th></th><th>Gmail</th><th>Outlook</th></tr></thead><tbody><tr><td>Daily email limit</td><td>~500 emails/day</td><td>No stated limit</td></tr><tr><td>Max attachment size</td><td>25 MB</td><td>3 MB</td></tr><tr><td>Supported file types</td><td>All common types</td><td>JPG, PNG, PDF, DOC, MP4, ZIP, RAR, TXT</td></tr></tbody></table></figure>
+<p>💡 <strong>Tip for Gmail users:</strong> The 500/day limit only applies to <strong>one-on-one emails</strong>. Bulk emails and automated messages sent through Alvéya are sent separately and don't count toward this limit.</p>
+<h2 class="wp-block-heading">Part 5: Other Helpful Features</h2>
+<h3 class="wp-block-heading">Change your connected email</h3>
+<p>You can switch to a different email address without losing your history. Just go back to the Email (2-Way Sync) section and use the <strong>Update Email</strong> option. New emails will sync with the new address going forward.</p>
+<h3 class="wp-block-heading">Disconnect your email</h3>
+<p>If you want to stop syncing, click <strong>Disconnect Email</strong> in the same section. Your past emails will stay in Alvéya — nothing gets deleted. New emails just won't sync anymore.</p>
+<h3 class="wp-block-heading">BCC trick to pull in new contacts</h3>
+<p>When sending an email from Gmail or Outlook, you can add your special <strong>BCC address</strong> (found in the Email Sync settings) to the BCC or CC field. This will automatically log the contact and conversation in Alvéya, even if the email wasn't sent from Alvéya directly.</p>
+<h2 class="wp-block-heading">Part 6: Common Questions</h2>
+<h3 class="wp-block-heading">Will my old emails import into Alvéya?</h3>
+<p>No. Only emails sent or received <em>after</em> you connect will sync. Past emails won't be pulled in.</p>
+<h3 class="wp-block-heading">If I disconnect my email, will my emails be deleted?</h3>
+<p>No! Your already-synced emails stay in Alvéya. You just won't get any new ones syncing until you reconnect.</p>
+<h3 class="wp-block-heading">Does this affect bulk emails or automations?</h3>
+<p>No. Bulk emails and automated workflows are sent through Alvéya's own email system — not through your personal Gmail or Outlook — so they're not affected by this sync.</p>
+<h3 class="wp-block-heading">What if I'm CC'd on an email — will it show in Alvéya?</h3>
+<p>Yes! If you're CC'd or BCC'd on an email, it will still show up under the right contact in Alvéya.</p>
+<h3 class="wp-block-heading">What if my Gmail password changes?</h3>
+<p>If your Google password changes, you'll need to reconnect your Gmail account in the Email Sync settings to keep everything working.</p>
+<p><em>Need more help? Contact the Alvéya support team.</em></p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

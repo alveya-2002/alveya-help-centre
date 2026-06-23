@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scheduling Posts to Your Community Groups — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=courses-funnels">Courses & Funnels</a>
+        <span>›</span>
+        <span>Scheduling Posts to Your Community Groups</span>
+      </nav>
+      <h1 class="article-title">Scheduling Posts to Your Community Groups</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=courses-funnels" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Courses & Funnels
+    </a>
+
+    <div class="article-content">
+      <p>Alvéya's Social Planner connects directly to your community groups, allowing you to plan, schedule, and automate posts into specific channels in advance. This guide shows you how to connect your community, create posts, and set up recurring content to keep your members consistently engaged.</p>
+<h2 class="wp-block-heading"><strong>Why Scheduled Community Posts Matter</strong></h2>
+<p>Showing up consistently inside your community is one of the most effective ways to keep members engaged and invested in your program. The challenge is that between client appointments, content creation, and everything else involved in running a practice, community management can easily fall to the bottom of the list.</p>
+<p>Scheduling posts in advance removes that friction. You can batch your community content in one sitting and have it go out automatically — daily, weekly, or at whatever cadence works best for your program.</p>
+<p><em>💡&nbsp; A simple weekly engagement prompt — such as asking members to share their win of the week every Monday — creates a reliable community rhythm that members begin to look forward to, without requiring you to remember to post it manually each time.</em></p>
+<h2 class="wp-block-heading"><strong>Step 1 — Connect Your Community to the Social Planner</strong></h2>
+<p>Before you can schedule posts to your community groups, you need to connect them to the Social Planner. You only need to do this once per group.</p>
+<ul class="wp-block-list">
+<li>Navigate to Marketing from the left-hand menu and select Social Planner at the top.</li>
+<li>Click the Settings icon within the Social Planner.</li>
+<li>Click Connect Social, then select Connect Community.</li>
+<li>All community groups attached to your Alvéya account will appear. Click Add next to the group you want to connect.</li>
+<li>The group will now appear as a connected account in the Social Planner.</li>
+<p></ul></p>
+<p><em>⚠️&nbsp; You can only connect community groups that are hosted within your own Alvéya account. Groups from other accounts cannot be connected here.</em></p>
+<p><em>💡&nbsp; If you create new channels or community groups after completing this setup, they will not appear in the Social Planner automatically. You will need to return to Settings → Community and click Resync to add the new channels and groups.</em></p>
+<h2 class="wp-block-heading"><strong>Step 2 — Create a Post</strong></h2>
+<p>Once your community is connected, click New Post and then Create New Post to open the post editor.</p>
+<h3 class="wp-block-heading"><strong>Select your destination</strong></h3>
+<p>Click the dropdown menu to choose where the post will be published. Scroll past your regular social media accounts to find your community groups and their individual channels listed below.</p>
+<p>You can post to a single channel, or create a post group to publish to multiple channels at once:</p>
+<ul class="wp-block-list">
+<li>To post to a single channel, simply select it from the dropdown.</li>
+<li>To post to multiple channels, click New Group, give it a name, then select all the channels you want to include. Once created, select the group from the dropdown and the post will go to every channel in that group when published.</li>
+<p></ul></p>
+<p><em>💡&nbsp; Posting to individual channels gives you more control over what content goes where. Channel-specific posts feel more intentional and relevant to members in that space — especially useful in structured programs with week-by-week content.</em></p>
+<h3 class="wp-block-heading"><strong>Build your post</strong></h3>
+<p>With your destination selected, add your content:</p>
+<p><strong>Images or Video&nbsp; </strong>Upload up to 10 images or 10 videos per post. The maximum file size for images is 10 MB, and for videos is 1 GB with a minimum duration of 4 seconds.</p>
+<p><strong>Post Text&nbsp; </strong>Write your post copy. You can add emojis inline.</p>
+<p><strong>Title&nbsp; </strong>Add a post title (up to 1,000 characters). This appears as a heading above the post inside the community.</p>
+<p><strong>Notify All Members&nbsp; </strong>Enable this option to tag @everyone in the post, which sends a notification to all group members when it is published. Use this for high-priority posts where you want maximum visibility.</p>
+<p><strong>Post As&nbsp; </strong>Select which user will appear as the author of the post. This user must already be a member of both the group and the specific channel. You can set a default poster in Settings so you do not need to select this manually each time.</p>
+<p>As you fill in the details, a live preview on the right-hand side shows you how the post will appear to members inside the community.</p>
+<h2 class="wp-block-heading"><strong>Step 3 — Publish, Schedule, or Recur</strong></h2>
+<p>When your post is ready, click the dropdown arrow next to the Post button to choose how you want to send it.</p>
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Option</strong></th><th><strong>What it does</strong></th></tr></thead><tbody><tr><td><strong>Post Now</strong></td><td>Publishes the post immediately to the selected channel or group.</td></tr><tr><td><strong>Schedule Post</strong></td><td>Choose a specific date and time for the post to go live. Useful for planning content ahead without it going out immediately.</td></tr><tr><td><strong>Schedule Recurring Post</strong></td><td>Set the post to repeat automatically — daily, weekly, or at a custom interval. Ideal for regular engagement prompts such as a weekly check-in.</td></tr><tr><td><strong>Send for Approval</strong></td><td>Routes the post to another team member or admin for review before it is published. Useful if you have support staff managing your community content.</td></tr><tr><td><strong>Pause</strong></td><td>Saves the post as a draft without scheduling or publishing it.</td></tr></tbody></table></figure>
+<p><em>💡&nbsp; The Schedule Recurring Post option is particularly valuable for engagement-driven content. A weekly prompt that goes out at the same time each week — without you needing to remember to post it — is one of the simplest ways to build a consistent, active community culture.</em></p>
+<h2 class="wp-block-heading"><strong>Step 4 — Review and Manage Scheduled Posts</strong></h2>
+<p>Once a post is scheduled, it will appear in the Social Planner calendar view. It may take a few seconds to appear after saving — this is normal.</p>
+<p>From the planner you can:</p>
+<ul class="wp-block-list">
+<li>See the status of each post — scheduled, in progress, published, or paused.</li>
+<li>Click on a scheduled post to edit it, change the date or time, or pause it before it goes out.</li>
+<li>Review all upcoming community content alongside your other social media posts in one view.</li>
+<p></ul></p>
+<p><em>💡&nbsp; Reviewing your planner at the start of each week is a good habit. It gives you a clear picture of what is scheduled across all your channels and allows you to make adjustments before content goes live.</em></p>
+<h2 class="wp-block-heading"><strong>Bulk Uploading Posts via CSV</strong></h2>
+<p>If you have a large volume of content to schedule — for example, a full program's worth of daily or weekly posts — you can upload a CSV file rather than creating each post individually.</p>
+<p>Prepare your CSV file with your post content, scheduling dates, and destination channels, then upload it through the Social Planner. Each row in the CSV will create a separate scheduled post.</p>
+<p><em>💡&nbsp; This is especially useful when setting up a new cohort of a course or program. You can prepare the entire run of community posts in one spreadsheet and upload them all at once, so the content is ready to go before the program even begins.</em></p>
+<h2 class="wp-block-heading"><strong>Setting a Default Post Author</strong></h2>
+<p>Rather than selecting the posting user manually every time you create a new post, you can set a default author for your community posts in the Social Planner settings.</p>
+<ul class="wp-block-list">
+<li>Navigate to Marketing → Social Planner → Settings.</li>
+<li>Click the Community tab.</li>
+<li>Select the user you want to appear as the default author on all community posts.</li>
+<p></ul></p>
+<p>This saves time when creating posts in bulk and ensures consistency in how content appears inside the community — always appearing as coming from the same practitioner or team member.</p>
+<p><em>⚠️&nbsp; The user selected as the default poster must already be a member of the community group and the specific channels you are posting to. If they are not, the post will not publish correctly.</em></p>
+<h2 class="wp-block-heading"><strong>Quick Recap</strong></h2>
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>#</strong></th><th><strong>Action</strong></th></tr></thead><tbody><tr><td><strong>1</strong></td><td>Go to Marketing → Social Planner → Settings → Connect Social → Connect Community. Add your community group.</td></tr><tr><td><strong>2</strong></td><td>Click New Post → Create New Post. Select your destination channel or post group from the dropdown.</td></tr><tr><td><strong>3</strong></td><td>Add your image or video, write your post text, set a title, choose whether to notify all members, and select the posting user.</td></tr><tr><td><strong>4</strong></td><td>Use the Post button dropdown to choose: Post Now, Schedule Post, Schedule Recurring Post, Send for Approval, or Pause.</td></tr><tr><td><strong>5</strong></td><td>Review scheduled posts in the planner calendar. Edit, pause, or reschedule as needed.</td></tr><tr><td><strong>6</strong></td><td>For bulk content, upload a CSV file instead of creating posts individually.</td></tr><tr><td><strong>7</strong></td><td>Set a default post author in Settings → Community to save time on future posts.</td></tr><tr><td><strong>8</strong></td><td>When adding new channels or groups, return to Settings → Community and click Resync to make them available in the planner.</td></tr></tbody></table></figure>
+<p><strong>Consistent community engagement does not have to mean being constantly available. Scheduled posts let you show up reliably for your members — without adding more to your daily to-do list.</strong></p>
+<p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarding with Alvéya™ — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=getting-started">Getting Started</a>
+        <span>›</span>
+        <span>Onboarding with Alvéya™</span>
+      </nav>
+      <h1 class="article-title">Onboarding with Alvéya™</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=getting-started" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Getting Started
+    </a>
+
+    <div class="article-content">
+      <p><search role="search"></p>
+<p><form action="https://help.alveya.io" method="get"> <label for="search-64d7272"><br /> Search<br /> </label><br /> <input id="search-64d7272" placeholder="Type to start searching..." type="search" name="s" value="" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results-64d7272" aria-haspopup="listbox"><br /> <output id="results-64d7272" aria-live="polite" aria-atomic="true" aria-label="Results for search" tabindex="0"><br /> </output><br /> <button type="submit"><br /> Search<br /> </button><br /> <input type="hidden" name="e_search_props" value="64d7272-2125"><br /> </form></p>
+<p>		</search></p>
+<h2>Welcome to Alvéya™ knowledge base</h2>
+<h5>your all-in-one system for running a thriving health practice or service-based business.</h5>
+
+<p>We understand tech can be overwhelming when it's not your area of genius. After all, you're a health or wellness prac, not a web/tech expert.</p>
+<p>Our core mission for Alvéya™ has always been to create a platform that is as user friendly as possible, but to also guide you through the parts that can be a little more in depth.</p>
+<p>This checklist will walk you through the essential first steps to get your account ready. Follow along in order and by the end, you’ll have everything connected, branded, and working smoothly.</p>
+
+<h3>Step 1: Watch the Welcome Video<br />
+			<br />
+			<br /></h3><p>									Start with a short walkthrough that introduces your dashboard, shows where everything lives, and gives you a feel for the platform.<br />
+<h3>Step 2: Add Your Business Information<br />
+			<br />
+			<br /></h3><p>Your business details appear in invoices, emails, and booking pages. Setting these up correctly keeps your communications professional and consistent.</p>
+<ul>
+<li>Go to <strong>Settings → Business Profile </strong></li>
+<li>Enter your business name, ABN (if applicable), and contact details</li>
+<li>Upload your logo</li>
+<p></ul></p>
+<p>															<img src="https://help.alveya.io/wp-content/plugins/elementor/assets/images/placeholder.png" title="" alt="" loading="lazy" /><br />
+															<img src="https://help.alveya.io/wp-content/plugins/elementor/assets/images/placeholder.png" title="" alt="" loading="lazy" /><br />
+					<a href="#"><br />
+<p>📖 How to add your business details →<br /> </a><br /></p>
+<h3>Step 3: Connect Your Domain<br />
+			<br />
+			<br /></h3><p>Using your own domain makes everything client-facing look polished and trustworthy.</p>
+<ul>
+<li>Update your DNS records with your domain provider (A Record + CNAME)</li>
+<li>Enable SSL for security</li>
+<li>Test the connection</li>
+<p></ul></p>
+<p>					<a href="#"><br />
+<p>📖 How to connect your domain →<br /> </a><br /></p>
+<h3>Step 4: Set Up Email &amp; SMS<br />
+			<br />
+			<br /></h3><p>Reliable communication is key. Connect your email and SMS so reminders, campaigns, and confirmations send automatically.</p>
+<ul>
+<li>Add your sending email (SMTP, Gmail, Outlook, or Mailgun)</li>
+<li>Connect or purchase an SMS number</li>
+<li>Send a test message</li>
+<p></ul></p>
+<p>					<a href="#"><br />
+<p>📖 How to connect your email →<br /> </a><br /></p>
+					<a href="#"><br />
+<p>📖 How to set up SMS →<br /> </a><br /></p>
+<h3>Step 5: Create Your Booking Calendar<br />
+			<br />
+			<br /></h3><p>Make it easy for clients to book with you online.</p>
+<ul>
+<li>Go to <strong>Calendars → Create Calendar</strong></li>
+<li>Add your availability and appointment types</li>
+<li>Sync with your external calendar</li>
+<li>Share your booking link or embed it on your site</li>
+<p></ul></p>
+<p>					<a href="#"><br />
+<p>📖 How to create your calendar →<br /> </a><br /></p>
+<h3>Step 6: Import Your Clients<br />
+			<br />
+			<br /></h3><p>Keep your client database in one place for easier communication and tracking.</p>
+<ul>
+<li>Go to <strong>Contacts → Import </strong></li>
+<li>Upload a CSV or add contacts manually</li>
+<li>Apply tags or assign them to a pipeline stage</li>
+<p></ul></p>
+<p>					<a href="#"><br />
+<p>📖 How to import contacts →<br /> </a><br /></p>
+<h3>Step 7: Customise Your Branding<br />
+			<br />
+			<br /></h3><p>Bring your brand to life inside Alvéya™.</p>
+<ul>
+<li>Set your brand colours and fonts</li>
+<li>Add your logo to the client portal</li>
+<li>Customise your email templates</li>
+<p></ul></p>
+<p>					<a href="#"><br />
+<p>📖 How to update your branding →<br /> </a><br /></p>
+<h3>Step 8: Download the Mobile App<br />
+			<br />
+			<br /></h3><p>Manage your bookings, messages, and client updates on the go.</p>
+<ul>
+<li>Download from Apple App Store or Google Play</li>
+<li>Log in with your The Alvéya™ details</li>
+<p></ul></p>
+<h3>Step 9: Keep Building<br />
+			<br />
+			<br /></h3><p>Your account is ready to go 🎉. Now it’s time to build on these foundations. You don’t need to learn everything at once — just choose one area to focus on next.</p>
+<p>✨ Common next steps:</p>
+<ul>
+<li>Launch your first funnel</li>
+<li>Automate a welcome email sequence</li>
+<li>Set up payments and invoicing</li>
+<li>Create your first course or membership</li>
+<p></ul></p>
+<p>		Start with a short walkthrough that introduces your dashboard, shows where everything lives, and gives you a feel for the platform.https://www.youtube.com/watch?v=XHOmBV4js_E</p>
+<p>Your business details appear in invoices, emails, and booking pages. Setting these up correctly keeps your communications professional and consistent.</p>
+<ul>
+<li>Go to <strong>Settings → Business Profile </strong></li>
+<li>Enter your business name, ABN (if applicable), and contact details</li>
+<li>Upload your logo</li>
+<p></ul></p>
+<p>															<img src="https://help.alveya.io/wp-content/plugins/elementor/assets/images/placeholder.png" title="" alt="" loading="lazy" /><br />
+															<img src="https://help.alveya.io/wp-content/plugins/elementor/assets/images/placeholder.png" title="" alt="" loading="lazy" /><br />
+					<a href="#"><br />
+<p>📖 How to add your business details →<br /> </a></p>
+<p>Using your own domain makes everything client-facing look polished and trustworthy.</p>
+<ul>
+<li>Update your DNS records with your domain provider (A Record + CNAME)</li>
+<li>Enable SSL for security</li>
+<li>Test the connection</li>
+<p></ul></p>
+<p>					<a href="#"><br />
+<p>📖 How to connect your domain →<br /> </a></p>
+<p>Reliable communication is key. Connect your email and SMS so reminders, campaigns, and confirmations send automatically.</p>
+<ul>
+<li>Add your sending email (SMTP, Gmail, Outlook, or Mailgun)</li>
+<li>Connect or purchase an SMS number</li>
+<li>Send a test message</li>
+<p></ul></p>
+<p>					<a href="#"><br />
+<p>📖 How to connect your email →<br /> </a><br /></p>
+					<a href="#"><br />
+<p>📖 How to set up SMS →<br /> </a></p>
+<p>Make it easy for clients to book with you online.</p>
+<ul>
+<li>Go to <strong>Calendars → Create Calendar</strong></li>
+<li>Add your availability and appointment types</li>
+<li>Sync with your external calendar</li>
+<li>Share your booking link or embed it on your site</li>
+<p></ul></p>
+<p>					<a href="#"><br />
+<p>📖 How to create your calendar →<br /> </a></p>
+<p>Keep your client database in one place for easier communication and tracking.</p>
+<ul>
+<li>Go to <strong>Contacts → Import </strong></li>
+<li>Upload a CSV or add contacts manually</li>
+<li>Apply tags or assign them to a pipeline stage</li>
+<p></ul></p>
+<p>					<a href="#"><br />
+<p>📖 How to import contacts →<br /> </a></p>
+<p>Bring your brand to life inside Alvéya™.</p>
+<ul>
+<li>Set your brand colours and fonts</li>
+<li>Add your logo to the client portal</li>
+<li>Customise your email templates</li>
+<p></ul></p>
+<p>					<a href="#"><br />
+<p>📖 How to update your branding →<br /> </a></p>
+<p>Manage your bookings, messages, and client updates on the go.</p>
+<ul>
+<li>Download from Apple App Store or Google Play</li>
+<li>Log in with your The Alvéya™ details</li>
+<p></ul></p>
+<p>Your account is ready to go 🎉. Now it’s time to build on these foundations. You don’t need to learn everything at once — just choose one area to focus on next.</p>
+<p>✨ Common next steps:</p>
+<ul>
+<li>Launch your first funnel</li>
+<li>Automate a welcome email sequence</li>
+<li>Set up payments and invoicing</li>
+<li>Create your first course or membership</li>
+<p></ul></p>
+<h2>Extra Support</h2>
+<p>If you get stuck:</p>
+<ul>
+<li>Use the chat widget inside Alvéya for instant help</li>
+<li>Browse our Help Articles for step-by-step guides</li>
+<li>Or reach out to our support team </li>
+<p></ul></p>
+<p>We’ve got your back at every stage.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

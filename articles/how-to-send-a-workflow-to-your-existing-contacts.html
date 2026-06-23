@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manually adding a contact to a workflow — Alvéya™ Help Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--sage-50) 0%, var(--sand-50) 60%, #fdf7ef 100%);
+      border-bottom: 1px solid var(--sage-100);
+      padding: 48px 24px 40px;
+    }
+    .article-hero-inner { max-width: 740px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-muted);
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--sage-600); }
+    .breadcrumb a:hover { color: var(--sage-800); }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 400; color: var(--sage-800);
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px;
+    }
+    .article-meta {
+      font-size: 0.8125rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .article-body-wrap { max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    .article-content { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+    .article-content h2 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400;
+      color: var(--sage-800); margin: 36px 0 12px; letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px;
+    }
+    .article-content h4, .article-content h5, .article-content h6 {
+      font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); margin: 20px 0 6px;
+    }
+    .article-content p { margin-bottom: 16px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 16px; }
+    .article-content li { margin-bottom: 6px; }
+    .article-content strong { color: var(--text-primary); font-weight: 500; }
+    .article-content a { color: var(--sage-600); text-decoration: underline; }
+    .article-content a:hover { color: var(--sage-800); }
+    .article-content img { max-width: 100%; border-radius: 8px; margin: 16px 0; }
+    .article-content .callout {
+      background: var(--sage-50); border-left: 3px solid var(--sage-400);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.875rem;
+    }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      overflow: hidden; border-radius: 12px; margin: 24px 0;
+      background: var(--sage-50);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .article-feedback { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--sage-100); }
+    .feedback-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; }
+    .feedback-btns { display: flex; gap: 10px; }
+    .feedback-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--sage-200);
+      background: #fff; font-family: var(--font-sans); font-size: 0.8375rem;
+      font-weight: 500; color: var(--text-secondary); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .feedback-btn:hover { border-color: var(--sage-400); background: var(--sage-50); color: var(--sage-600); }
+    .feedback-btn.selected { border-color: var(--sage-400); background: var(--sage-100); color: var(--sage-600); }
+    .feedback-thanks { font-size: 0.875rem; color: var(--sage-600); display: none; margin-top: 10px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.875rem; font-weight: 500; color: var(--sage-600);
+      margin-bottom: 32px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sage-800); }
+    .back-link svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="../assets/alveya-logo-teal.svg" alt="Alvéya" class="logo-img" />
+      </a>
+      <nav class="header-nav">
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a request</a>
+        <a href="https://app.alveya.io" class="btn-signin" target="_blank" rel="noopener">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Help Centre</a>
+        <span>›</span>
+        <a href="../category.html?cat=automations">Automations</a>
+        <span>›</span>
+        <span>Manually adding a contact to a workflow</span>
+      </nav>
+      <h1 class="article-title">Manually adding a contact to a workflow</h1>
+      <div class="article-meta">
+        <span>Updated June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body-wrap">
+    <a href="../category.html?cat=automations" class="back-link">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="8" x2="4" y2="8"/><polyline points="7 5 4 8 7 11"/>
+      </svg>
+      Back to Automations
+    </a>
+
+    <div class="article-content">
+      <p data-start="889" data-end="895"><i>Once your automation workflow is set up and published, you can send it to any contacts already in your Alvéya account — whether that's your entire list, a filtered group, or just a handful of specific people. This guide shows you how to do exactly that using the Trigger Automation feature in your Contacts tab.</i></p><p><b>Before you start:</b></p><p>Your workflow must be published and set to Active before you can trigger it for contacts. If you haven't built your workflow yet, start with the guide: How to Set Up an Email Automation Workflow.</p>					<h2 
+<p>data-interaction-id="55b377e" class="e-heading-base" data-e-type="widget" data-id="55b377e" > Option 1 — Send to a Filtered Group of Contacts </h2></p>
+		<p>If your contacts are already tagged or organised into a segment, you can filter down to that group and trigger the workflow for all of them at once.</p><ul><li aria-level="1">Go to Contacts in the left-hand menu.</li></ul><ul><li aria-level="1">Use the filter options at the top to narrow your list. You can filter by tag, source, pipeline stage, or other criteria.</li></ul><ul><li aria-level="1">Once your filter is applied and you can see the contacts you want, select all of them using the checkbox at the top of the list.</li></ul><ul><li aria-level="1">Click the Trigger Automation button that appears in the toolbar.</li></ul><ul><li aria-level="1">Search for and select your workflow from the list.</li></ul><ul><li aria-level="1">Confirm to enrol those contacts into the workflow.</li></ul>		
+															<img width="800" height="554" src="https://help.alveya.io/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-1.41.53-pm-1024x709.png" alt="" srcset="https://help.alveya.io/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-1.41.53-pm-1024x709.png 1024w, https://help.alveya.io/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-1.41.53-pm-300x208.png 300w, https://help.alveya.io/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-1.41.53-pm-768x531.png 768w, https://help.alveya.io/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-1.41.53-pm-1536x1063.png 1536w, https://help.alveya.io/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-1.41.53-pm.png 1792w" sizes="(max-width: 800px) 100vw, 800px" />															
+															<img width="800" height="757" src="https://help.alveya.io/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-1.44.03-pm-1024x969.png" alt="" srcset="https://help.alveya.io/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-1.44.03-pm-1024x969.png 1024w, https://help.alveya.io/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-1.44.03-pm-300x284.png 300w, https://help.alveya.io/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-1.44.03-pm-768x726.png 768w, https://help.alveya.io/wp-content/uploads/2026/06/Screenshot-2026-06-22-at-1.44.03-pm.png 1218w" sizes="(max-width: 800px) 100vw, 800px" />															
+		<p><i>💡 Tags are the easiest way to group contacts for this kind of send. If you haven't tagged your list yet, it's worth doing before you start — it makes targeting much simpler, especially if you plan to run similar campaigns in the future.</i></p>		
+							<h2 
+<p>data-interaction-id="1eae9e0" class="e-heading-base" data-e-type="widget" data-id="1eae9e0" > Option 2 — Select Contacts Manually </h2></p>
+		<p>If you want to trigger the workflow for specific individuals rather than a filtered group, you can select them by hand.</p><ul><li aria-level="1">Go to Contacts in the left-hand menu.</li></ul><ul><li aria-level="1">Scroll through your list and tick the checkbox next to each contact you want to include.</li></ul><ul><li aria-level="1">Once you've made your selections, click the Trigger Automation button in the toolbar.</li></ul><ul><li aria-level="1">Select your workflow from the list and confirm.</li></ul><p><i>💡  This option works well for smaller groups or one-off sends where you know exactly who should receive the emails.</i></p>		
+					<h2>Option 3 — Send to Your Entire List
+<p></h2></p>
+		<p>If you want to send to everyone in your contacts with no filtering, select all contacts and trigger the workflow.</p><ul><li aria-level="1">Go to Contacts in the left-hand menu.</li></ul><ul><li aria-level="1">Make sure no filters are active so your full contact list is showing.</li></ul><ul><li aria-level="1">Use the Select All checkbox at the top of the list to select every contact.</li></ul><ul><li aria-level="1">Click Trigger Automation in the toolbar.</li></ul><ul><li aria-level="1">Select your workflow and confirm.</li></ul><p><i>⚠️  Before triggering to your entire list, double-check that you want everyone to receive this particular sequence. Contacts who have already received these emails — or who you've previously unsubscribed — should be excluded where possible.</i></p>		
+					<h2>What Happens Next</h2>				
+		<p>The first email will send according to the workflow's schedule, and each following email will go out based on the wait times you set.</p><p>You can monitor progress by going to Automation and clicking on the workflow — the Enrolled tab will show you who is active in the sequence and where they are up to.</p><p><i>💡 If you need to stop the workflow for any contact at any time, you can remove them from the automation inside their individual contact record.</i></p><p><b>Your contacts are enrolled and your emails are on their way — your sequence is doing the follow-up work for you.</b></p><p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    </div>
+
+    <div class="article-feedback">
+      <p class="feedback-label">Was this article helpful?</p>
+      <div class="feedback-btns">
+        <button class="feedback-btn" id="btn-yes">👍 Yes</button>
+        <button class="feedback-btn" id="btn-no">👎 No</button>
+      </div>
+      <p class="feedback-thanks" id="feedback-thanks">Thanks for the feedback — we appreciate it!</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo"><img src="../assets/alveya-logo-white.svg" alt="Alvéya" class="footer-logo-img" /></p>
+      <p class="footer-tagline">The all-in-one platform for natural health practitioners.</p>
+      <div class="footer-links">
+        <a href="https://alveya.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://alveya.io/user-terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://links.alveya.io/widget/form/8VwhmHNhP9wwO2ZNNz2M" target="_blank" rel="noopener">Submit a Request</a>
+      </div>
+      <p class="footer-copy">© 2026 Alvéya™. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btnYes = document.getElementById('btn-yes');
+    const btnNo  = document.getElementById('btn-no');
+    const thanks = document.getElementById('feedback-thanks');
+    [btnYes, btnNo].forEach(btn => {
+      btn.addEventListener('click', () => {
+        btnYes.classList.remove('selected'); btnNo.classList.remove('selected');
+        btn.classList.add('selected'); thanks.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
