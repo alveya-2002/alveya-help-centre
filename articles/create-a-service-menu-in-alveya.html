@@ -135,6 +135,7 @@
 					<h2>Step 5: Test the Menu</h2>				
 		<ol><li>Open the service menu link.</li><li>Choose a service and make a test booking.</li><li>Confirm it goes into the correct calendar.</li></ol>		
 		<h2>Troubleshooting</h2><ul><li style="font-weight: 400;" aria-level="1">Service not appearing? Make sure the calendar is published.</li><li style="font-weight: 400;" aria-level="1">Wrong order? Reorder services in the Service Menu settings.</li><li style="font-weight: 400;" aria-level="1">Booking not saving? Double-check the calendar is active and has availability.</li></ul>
+    tive and has availability.</li></ul>
     </div>
 
     <div class="article-feedback">
@@ -160,6 +161,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

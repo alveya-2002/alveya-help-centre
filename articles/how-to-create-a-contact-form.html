@@ -129,7 +129,7 @@
 <li>Log in to your Alvéya account.</li>
 <li>In the left-hand menu, click on Websites &amp; Funnels → Forms.</li>
 <li>Click the + Create New Form button to start a new form.</li>
-<p></ol></p>
+</ol>
 <pre>You may choose to use one of our existing templates for "Contact Forms" or create a new one that suits your needs.</pre>
 <figure><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155040687827/original/6z1TSd579mh0i28xATOEYkmSNi9llMrIEQ.png?1738208049" alt="" /></figure>
 <h2 id="Step-2:-Add-Form-Fields-(optional)">Step 2: Add Form Fields (optional)</h2>
@@ -157,7 +157,9 @@
 <h2>Troubleshooting:</h2>
 <ul>
 <li>If you find that the form is not accepting a submission, check that you have set up the step for after they have submitted the form. Depending on where you have placed the form, this is either in the form settings or if its on a website or funnel page, you can choose the next step in the widget settings on the website/funnel.</li>
-<p></ul></p>
+</ul>
+    gs on the website/funnel.</li>
+</ul>
     </div>
 
     <div class="article-feedback">
@@ -183,6 +185,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

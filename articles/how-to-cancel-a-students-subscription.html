@@ -130,9 +130,10 @@
 <li><strong>Search</strong> for the student by name or email and open their contact record.</li>
 <li>Click on the <strong>three dots</strong> to the far right of their information.</li>
 <li>Select <strong>Cancel </strong>Subscription and confirm the action.</li>
-<p></ol></p>
+</ol>
 <p><em>💡&nbsp; Cancelling a subscription does not automatically remove the student's course access. If you want access removed at the same time, you will need to do this manually (see above) or set up the automation covered in the next section.</em></p>
 <p><em>⚠️&nbsp; This action cannot be undone. If you cancel a subscription in error, the student will need to re-enrol through your checkout or be manually re-granted access.</em></p>
+    manually re-granted access.</em></p>
     </div>
 
     <div class="article-feedback">
@@ -158,6 +159,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

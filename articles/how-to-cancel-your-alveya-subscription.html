@@ -133,8 +133,6 @@
 <p>• Setting up your funnels, automations or client portal<br />• Connecting your domain or email settings<br />• Understanding how features work together<br />• Simplifying your setup so it feels more manageable</p>
 <p>Our support team can guide you through this or even assist with setup where needed.</p>
 <p>If you’d like support before cancelling, simply reach out via the <strong>chat widget</strong> or email us and we’ll help you find a solution.</p>
-<hr />
-<h2> </h2>
 <h2>How to Cancel Your Subscription</h2>
 <p>If you would still like to proceed, you can cancel your subscription directly from your account.</p>
 <ol>
@@ -143,14 +141,13 @@
 <li>Locate your active subscription</li>
 <li>Click <strong>Cancel Subscription</strong></li>
 <li>Follow the prompts to confirm your cancellation</li>
-<p></ol></p>
+</ol>
 <figure><img style="aspect-ratio: 1.5268749607091219; width: 557px; height: auto;" src="https://help.alveya.io/wp-content/uploads/2026/03/Screenshot-2026-03-17-at-9.58.05-pm-1024x671.png" alt="" /></figure>
 <p>Once cancelled, your subscription will remain active until the end of your current billing period.</p>
-<hr />
-<h2> </h2>
 <h2>Important Things to Know</h2>
 <p>• Your account will remain accessible until the end of your billing cycle<br />• After cancellation, access to your account and data may be removed<br />• Any active automations, funnels or services will stop once your account is no longer active</p>
 <p>If you’re unsure about anything before cancelling, we recommend reaching out so we can help you make the best decision for your business.</p>
+    best decision for your business.</p>
     </div>
 
     <div class="article-feedback">
@@ -176,6 +173,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

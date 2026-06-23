@@ -135,10 +135,10 @@
 <li aria-level="1">Add the filter conditions from the list you want to merge in — for example, include the 4-star tags.</li>
 <li aria-level="1">Click Apply.</li>
 <li aria-level="1">Alvéya will prompt you to either save the updated filter setup or create a new list. Choose Save.</li>
-<p></ol></p>
-<ol>
+</ol>
 <li aria-level="1">Once the merged list is saved and confirmed, you can delete the old 4-star list.</li>
 <p></ol><p><i>⚠️  Double-check that the merged list is showing the correct contacts before deleting the old one — just to make sure no contacts have been missed.</i></p>
+    o contacts have been missed.</i></p>
     </div>
 
     <div class="article-feedback">
@@ -164,6 +164,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

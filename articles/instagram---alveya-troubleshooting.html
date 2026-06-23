@@ -126,56 +126,37 @@
       <h3 class="wp-block-heading">1. Account Type Issues</h3>
 <ul class="wp-block-list">
 <li>Make sure your Instagram account is set to <strong>Business or Creator</strong> — not a personal profile. If it's personal, convert it to Professional in Instagram settings.</li>
-<p></ul></p>
+</ul>
 <h3 class="wp-block-heading">2. Facebook Page Not Linked</h3>
-<ul class="wp-block-list">
 <li>Your Instagram Business profile must be connected to a Facebook Page or Creator Profile. The permissions to manage your Instagram profile are granted to Alvéya through Facebook — this is a requirement from Meta (which owns Instagram).</li>
 <li>If using the Facebook-linked method, make sure Instagram is connected to the <strong>correct</strong> Facebook Page.</li>
-<p></ul></p>
 <h3 class="wp-block-heading">3. Admin Access Problem</h3>
-<ul class="wp-block-list">
 <li>Your Facebook profile must have <strong>admin or full control</strong> of the Page connected to your Instagram. Without this, Alvéya won't be able to access your account.</li>
-<p></ul></p>
 <h3 class="wp-block-heading">4. Permissions Not Fully Granted</h3>
-<ul class="wp-block-list">
 <li>If you previously denied some permissions during setup, you need to <strong>remove Alvéya from Facebook Business Integrations</strong> and reconnect — making sure to <strong>allow all permission scopes</strong> this time.</li>
-<p></ul></p>
 <h3 class="wp-block-heading">5. Instagram DM Access Not Enabled</h3>
-<ul class="wp-block-list">
 <li>To enable DM access for Alvéya, go to your Instagram profile → <strong>Settings → Privacy → Messages → Connected Tools</strong>, and toggle on <strong>"Allow Access to Messages."</strong></li>
-<p></ul></p>
 <h3 class="wp-block-heading">6. Facebook Integration Not Connected in Alvéya</h3>
-<ul class="wp-block-list">
 <li>If Instagram actions and triggers aren't appearing in your workflows, check whether your Facebook account is actually integrated. Go to <strong>Settings → Integrations</strong> tab inside Alvéya to verify and connect it.</li>
-<p></ul></p>
 <h3 class="wp-block-heading">7. Wrong Connection Method</h3>
 <p>Alvéya offers two methods — make sure you're using the right one:</p>
-<ul class="wp-block-list">
 <li><strong>Direct Instagram Integration</strong> — does NOT require connecting a Facebook Page during setup in Social Planner. You authenticate only with Instagram.</li>
 <li><strong>Facebook-Linked Integration</strong> — requires explicitly connecting a Facebook Page inside Social Planner. This is required if you need legacy features or view-count analytics.</li>
-<p></ul></p>
 <h3 class="wp-block-heading">8. Wrong Navigation Path</h3>
-<ul class="wp-block-list">
 <li>For Messenger/DM automation: go to <strong>Settings → Integrations → Connect under Facebook &amp; Instagram</strong> inside Alvéya, log in to Facebook, choose your Facebook Page (the one connected to Instagram), then click <strong>Connect Facebook &amp; Instagram</strong> and hit <strong>Sync Leads.</strong></li>
-<p></ul></p>
 <h3 class="wp-block-heading">9. Lead Ads Not Showing Up</h3>
-<ul class="wp-block-list">
 <li>For Instagram Lead Ads, navigate to <strong>Marketing → Ad Manager → Activate Ads Manager → Connect Facebook</strong> inside Alvéya and select the correct Facebook Page before setting up any campaigns.</li>
-<p></ul></p>
 <h3 class="wp-block-heading">10. Using ManyChat as a Bridge (Advanced)</h3>
-<ul class="wp-block-list">
 <li>If you're routing Instagram DMs/comments through ManyChat to Alvéya, make sure you explicitly <strong>map all fields</strong> (like tags or email) inside the Alvéya action block in ManyChat — it only sends data you explicitly configure in its own settings block.</li>
-<p></ul></p>
 <hr class="wp-block-separator has-alpha-channel-opacity"/>
 <p><strong>Quick Checklist Before Reconnecting:</strong></p>
-<ul class="wp-block-list">
 <li>Instagram is a Business or Creator account</li>
 <li>Instagram is linked to the correct Facebook Page</li>
 <li>You have Admin access on that Facebook Page</li>
 <li>All permissions accepted during Alvéya auth</li>
 <li>"Allow Access to Messages" is ON in Instagram settings</li>
 <li>Facebook integration is active under Alvéya Settings → Integrations</li>
-<p></ul></p>
+     Alvéya Settings → Integrations</li>
     </div>
 
     <div class="article-feedback">
@@ -201,6 +182,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

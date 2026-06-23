@@ -134,6 +134,7 @@
 		<ol><li style="font-weight: 400;" aria-level="1">Visit your live website.</li><li style="font-weight: 400;" aria-level="1">Click the button or use the embedded calendar/service menu.</li><li style="font-weight: 400;" aria-level="1">Make a test booking to confirm:<ul><li style="font-weight: 400;" aria-level="2">The booking form works correctly.</li><li style="font-weight: 400;" aria-level="2">The booking appears in your calendar.</li><li style="font-weight: 400;" aria-level="2">Notifications are sent to both you and the client.</li></ul></li></ol>		
 					<h2>Troubleshooting</h2>				
 		<ul><li style="font-weight: 400;" aria-level="1">Booking form not showing? Double-check you pasted the correct embed code.</li><li style="font-weight: 400;" aria-level="1">Layout looks off? Adjust the width/height settings in your website editor.</li><li style="font-weight: 400;" aria-level="1">Mobile display issues? Consider using the Booking Link instead of embed for a smoother mobile experience.</li></ul>
+    moother mobile experience.</li></ul>
     </div>
 
     <div class="article-feedback">
@@ -159,6 +160,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

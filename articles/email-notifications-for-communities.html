@@ -179,7 +179,7 @@
 <li>Update the Subject line and email Body. Use merge fields to personalise content dynamically — for example, inserting the member's name or the group name automatically.</li>
 <li>Preview the email to check how it will appear to recipients.</li>
 <li>Click Save when you are happy with the changes.</li>
-<p></ol></p>
+</ol>
 <h3 class="wp-block-heading"><strong>Customising the Event Reminder Email</strong></h3>
 <p>The Event Reminder email is particularly worth customising, as it directly influences whether members show up to your community events. A well-branded, clearly written reminder with the event details, date, time, and a warm tone will significantly improve attendance.</p>
 <ol start="6" class="wp-block-list">
@@ -189,10 +189,10 @@
 <li>Update the body with the event details, what to expect, and any preparation notes for members.</li>
 <li>Insert merge fields for the event name, date, and time so the template works dynamically across all future events.</li>
 <li>Preview and Save.</li>
-<p></ol></p>
 <p><em>💡&nbsp; Even small personalisation changes — such as adding your name to the sign-off or writing in your natural voice — make a meaningful difference in how members experience your community communications.</em></p>
 <p><strong>Well-configured notifications keep your community feeling active, connected, and professionally run — without requiring you to manually follow up on every interaction.</strong></p>
 <p>If you get stuck at any point, reach out via live chat or submit a support request and</p>
+     or submit a support request and</p>
     </div>
 
     <div class="article-feedback">
@@ -218,6 +218,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

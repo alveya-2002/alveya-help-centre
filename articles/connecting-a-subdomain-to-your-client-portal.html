@@ -123,7 +123,7 @@
     </a>
 
     <div class="article-content">
-      <p>https://youtu.be/Puv5vMnjtEc</p>
+      <div class="video-wrap"><iframe width="100%" height="400" src="https://www.youtube.com/embed/Puv5vMnjtEc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 <figure></figure>
 
 <p>Connecting a subdomain to your client portal allows you to create a clean, branded URL for client portal even if you have your website hosted somewhere else</p>
@@ -134,11 +134,10 @@
 <li style="list-style-type: none;">
 <ul></ul>
 <p></li> </ul></p>
-<ul>
 <li>members.yourdomain.com</li>
 <li>portal.yourdomain.com</li>
 <li>clients.yourdomain.com</li>
-<p></ul></p>
+</ul>
 <p>This strengthens brand credibility and keeps your ecosystem cohesive without having to purchase another domain name. Keep in mind that this sub domain for the client portal may be used for people who are not actually patients yet but are accessing courses or freebies that are apart of your funnels.</p>
 
 <h2> </h2>
@@ -146,17 +145,10 @@
 
 <p>Make sure:</p>
 
-<ul>
-<li style="list-style-type: none;">
-<ul></ul>
-<p></li> </ul></p>
-<ul>
 <li>You own the main domain (e.g. <a href="http://yourdomain.com" target="_blank" rel="noreferrer noopener">yourdomain.com</a>)</li>
 <li>You have access to your domain provider (GoDaddy, Namecheap, Cloudflare, etc.)</li>
-<p></ul></p>
 
 
-<h2> </h2>
 <h2>Step 1: Decide on Your Subdomain</h2>
 
 <p>A subdomain is the part that appears <strong>before</strong> your main domain.</p>
@@ -167,49 +159,33 @@
 
 <p>Choose something that reflects the purpose of the funnel:</p>
 
-<ul>
-<li style="list-style-type: none;">
-<ul></ul>
-<p></li> </ul></p>
-<ul>
 <li>members</li>
 <li>portal</li>
 <li>join</li>
 <li>workwith</li>
-<p></ul></p>
 
 
 <p>Keep it simple and easy to type.</p>
 
-<h2> </h2>
 <h2>Step 2: Add the Subdomain Inside Alvéya</h2>
 
 <p>The process for this is almost identical how you would connect your primary domain so you can watch the video above. Instead of adding the "@", type in your subdomain word.</p>
 
 <ol>
-<li style="list-style-type: none;">
 <ol></ol>
 <p></li> </ol></p>
-<ol>
 <li>Go to <strong>Settings → Domains</strong> inside your sub-account</li>
 <li>Click <strong>Connect Domain</strong></li>
 <li>Enter your chosen subdomain (e.g. members.yourdomain.com)</li>
 <li>Continue to the DNS instructions</li>
 <li>Alvéya will generate the required DNS record.</li>
-<p></ol></p>
+</ol>
 
-<h2> </h2>
 <h2>Step 3: Update DNS Records in Your Domain Provider</h2>
 
-<ol>
-<li style="list-style-type: none;">
-<ol></ol>
-<p></li> </ol></p>
-<ol>
 <li>Log into your domain provider.</li>
 <li>Go to:<br />DNS Settings or Manage DNS</li>
 <li>You will add a new record.Most commonly this will be:<strong>Type:</strong> CNAME<br /><strong>Host/Name</strong>: members (or your chosen subdomain)<br /><strong>Points to</strong>: the target value provided by Alvéya (usually sites.ludicrous.cloud)</li>
-<p></ol></p>
 
 
 <p>Save the record.</p>
@@ -218,7 +194,6 @@
 
 <p>Only add the new subdomain record.</p>
 
-<h2> </h2>
 <h2>Step 4: Verify the Domain in Alvéya</h2>
 
 <p>Return to Alvéya:</p>
@@ -229,19 +204,12 @@
 
 <p>DNS propagation can take:</p>
 
-<ul>
-<li style="list-style-type: none;">
-<ul></ul>
-<p></li> </ul></p>
-<ul>
 <li>A few minutes</li>
 <li>Up to 24 hours in some cases</li>
-<p></ul></p>
 
 
 <p>Once verified, the status will show as connected.</p>
 
-<h2> </h2>
 <h2>Step 5: Assign the Subdomain to Your Funnel</h2>
 
 <p>The next screen will be where you can allocate the subdomain to the client portal.</p>
@@ -250,24 +218,18 @@
 
 <p>subdomain.yourdomain.com</p>
 
-<h2> </h2>
 <h2>Best Practice Recommendations</h2>
 
 <p>Use:</p>
 
-<ul>
-<li style="list-style-type: none;">
-<ul></ul>
-<p></li> </ul></p>
-<ul>
 <li>Your main domain for your website</li>
 <li>A dedicated subdomain for funnels</li>
 <li>A separate subdomain for email sending</li>
 <li>A separate subdomain for client portals</li>
-<p></ul></p>
 
 
 <p>Keeping domains structured prevents conflicts and protects email deliverability.</p>
+    d protects email deliverability.</p>
     </div>
 
     <div class="article-feedback">
@@ -293,6 +255,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

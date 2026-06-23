@@ -151,7 +151,7 @@
 <li>Click the <strong>Invite</strong> action</li>
 <li>Select an existing contact or enter a new email address</li>
 <li>Send the invitation</li>
-<p></ol></p>
+</ol>
 <p>The user will receive an email inviting them to create their login and access the portal.</p>
 <p>Invitations are sent from your <strong>default domain</strong>.</p>
 <h3 class="wp-block-heading">Action 3 — Login Email</h3>
@@ -166,6 +166,7 @@
 <p>Once your users have access, you can start directing them to:</p>
 <p>• Your community<br>• Courses or programs<br>• Events or resources</p>
 <p>Your client portal becomes the central space where your clients engage with your business.</p>
+    ients engage with your business.</p>
     </div>
 
     <div class="article-feedback">
@@ -191,6 +192,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

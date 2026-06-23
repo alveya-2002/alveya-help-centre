@@ -135,56 +135,40 @@
 <ul class="wp-block-list">
 <li>The Funnels feature in Alvear can be used with your existing website (e.g., Squarespace, WordPress, Wix) or independently.</li>
 <li>A funnel is a step-by-step process for guiding users through actions like signing up or making a purchase.</li>
-<p></ul></p>
+</ul>
 <p>&nbsp;<strong>2. Creating a New Funnel</strong></p>
-<ul class="wp-block-list">
 <li>Click on 'New Funnel' to start.</li>
 <li>Choose to create from a blank template or select from existing templates.</li>
-<p></ul></p>
 <p>&nbsp;<strong>3. Funnel Structure Example</strong></p>
-<ul class="wp-block-list">
 <li>A typical funnel may include:
-<ul class="wp-block-list">
 <li>Step 1: Free opt-in</li>
 <li>Step 2: Sales page</li>
 <li>Step 3: Sign-up page</li>
 <li>Step 4: Sign-up confirmation page</li>
 <p></ul> </li></p>
 <li>You can customize the steps based on your needs.</li>
-<p></ul></p>
 <p>&nbsp;<strong>4. A/B Testing</strong></p>
-<ul class="wp-block-list">
 <li>The funnel feature allows for A/B testing to compare different versions of sales pages.</li>
-<p></ul></p>
 <p>&nbsp;<strong>5. Editing the Sales Page</strong></p>
-<ul class="wp-block-list">
 <li>Customize colors, copy, images, and layout of the sales page.</li>
 <li>You can rearrange, delete, or duplicate sections as needed.</li>
-<p></ul></p>
 <p>&nbsp;<strong>6. Setting Up Call-to-Action Buttons</strong></p>
-<ul class="wp-block-list">
 <li>Each call-to-action button links to the next step in the funnel.</li>
 <li>Ensure buttons are set to redirect users correctly (e.g., to the sign-up page).</li>
-<p></ul></p>
 <p>&nbsp;<strong>7. Adding Products to the Funnel</strong></p>
-<ul class="wp-block-list">
 <li>To use an order form, you must first add your product to the funnel.</li>
 <li>This is done before editing the sales page.</li>
-<p></ul></p>
 <p>&nbsp;<strong>8. Confirmation Page Setup</strong></p>
-<ul class="wp-block-list">
 <li>After checkout, users should be directed to a confirmation page.</li>
 <li>This page should inform users about what to expect next (e.g., checking email for confirmation).</li>
-<p></ul></p>
 <p><strong>9. Creating an Opt-in Funnel</strong></p>
-<ul class="wp-block-list">
 <li>For an opt-in funnel, create a form in the form builder first.</li>
 <li>Add the form to the sales page or replace the order form with the opt-in form.</li>
-<p></ul></p>
 <p>&nbsp;<strong>10. Additional Resources</strong></p>
-<ul class="wp-block-list">
 <li>Watch other videos for setting up automation and forms.</li>
 <li>Good luck with your funnel setup!</li>
+<p></ul> </div> </div> </div></p>
+    i>
 <p></ul> </div> </div> </div></p>
     </div>
 
@@ -211,6 +195,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

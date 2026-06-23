@@ -129,38 +129,30 @@
 <li><strong>Duplicate Records:</strong> You cannot have multiple A Records or CNAME records for the same subdomain.</li>
 <li><strong>Conflict with Existing Site:</strong> If your domain is currently pointed to another host (Wix, Kajabi, etc.), those old records can conflict with Alvéya.</li>
 <li><strong>Fix:</strong> Remove old A Records or CNAME records at your DNS provider (<a href="https://www.godaddy.com/" target="_blank" rel="noreferrer noopener">GoDaddy</a>, <a href="https://www.namecheap.com/" target="_blank" rel="noreferrer noopener">Namecheap</a>, etc.) and only have the ones provided by Alvéya</li>
-<p></ul></p>
+</ul>
 <h2 class="wp-block-heading">2. DNS Propagation Delays&nbsp;</h2>
-<ul class="wp-block-list">
 <li>DNS changes can take up to 24–48 hours to propagate globally.</li>
 <li><strong>Fix:</strong> Wait 24 hours, or use a tool like DNSChecker.org to see if your domain is properly pointing to <code>sites.ludicrous.cloud</code> (for landing pages) or the IP provided in Alvéya</li>
-<p></ul></p>
 <h2 class="wp-block-heading">3. Root Domain vs. Subdomain Issues</h2>
-<ul class="wp-block-list">
 <li>Using the root domain (e.g., <code>example.com</code>) instead of a subdomain (e.g., <code>go.example.com</code> or <code>www.example.com</code>) can cause issues.</li>
 <li><strong>Fix:</strong> It is recommended to use a subdomain for best performance. </li>
-<p></ul></p>
 <h2 class="wp-block-heading">4. Non-Supported Domain Providers</h2>
-<ul class="wp-block-list">
 <li>Some registrars (e.g., restricted versions of Wix or Squarespace) do not allow the necessary DNS flexibility required by Alvéya.</li>
 <li><strong>Fix:</strong> Use <a href="https://www.cloudflare.com/" target="_blank" rel="noreferrer noopener">Cloudflare</a>, GoDaddy, or Google Domains, which are known to be fully supported. </li>
-<p></ul></p>
 <h2 class="wp-block-heading">5. Domain Already in Use</h2>
-<ul class="wp-block-list">
 <li>A domain can only be connected to one Alvéya sub-account at a time.</li>
 <li><strong>Fix:</strong> Check if the domain is already attached to another Alvéya account. </li>
-<p></ul></p>
 <h2 class="wp-block-heading">6. SSL Configuration Errors</h2>
-<ul class="wp-block-list">
 <li>If your domain shows a "Not Private" or "SSL Error," it's likely that the SSL certificate hasn't been issued yet, or there is a DNS conflict.</li>
 <li><strong>Fix:</strong> Ensure your DNS is set to only one record type (either A or CNAME) and wait for the SSL to auto-generate (up to 24-48 hours). </li>
-<p></ul></p>
 <h2 class="wp-block-heading">Recommended Troubleshooting Steps</h2>
 <ol class="wp-block-list">
 <li><strong>Use Cloudflare:</strong> Transfer your DNS management to Cloudflare for the fastest and most reliable setup.</li>
 <li><strong>Verify via Domain Connect:</strong> If you use a major provider (GoDaddy, Cloudflare), use the automatic "Authorize" feature in Alvéya to avoid manual errors.</li>
 <li><strong>Use In-App Support:</strong> Use the "Troubleshoot This Issue" link in the Alvéya domain settings if the system detects a conflict.</li>
-<p></ol></p>
+</ol>
+    ystem detects a conflict.</li>
+</ol>
     </div>
 
     <div class="article-feedback">
@@ -186,6 +178,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

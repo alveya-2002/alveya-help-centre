@@ -126,7 +126,7 @@
       <h2 class="wp-block-heading">What You'll Need</h2>
 <ul class="wp-block-list">
 <li>Your contact list exported as a <strong>CSV file</strong> (Excel spreadsheet in CSV format) from your previous email platform</li>
-<p></ul></p>
+</ul>
 <hr class="wp-block-separator has-alpha-channel-opacity"/>
 <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
 <div class="video-wrap"><iframe src="https://www.youtube.com/embed/dYk9dHJTAsY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
@@ -136,36 +136,29 @@
 <p><strong>Step 2: Start the Import</strong> Click the <strong>Import</strong> button in the top right corner.</p>
 <p><strong>Step 3: Choose Import Type</strong> Select the <strong>Contacts</strong> option (it should be pre-selected) and click <strong>Next</strong>.</p>
 <p><strong>Step 4: Prepare Your File</strong></p>
-<ul class="wp-block-list">
 <li>If you're unsure of the required format, download the <strong>sample file</strong> provided on this screen as a reference.</li>
 <li>Export your contacts from your previous email platform in the same format.</li>
-<p></ul></p>
 <p><strong>Step 5: Upload Your File</strong> Drag and drop your CSV file into the upload area.</p>
 <p><strong>Step 6: Choose How to Import</strong> Select one of the following options based on your needs:</p>
-<ul class="wp-block-list">
 <li><strong>Create new contacts</strong> – adds all contacts as new entries</li>
 <li><strong>Create and update contacts</strong> – adds new contacts and updates any that already exist</li>
 <li><strong>Update contacts only</strong> – only updates existing contacts, no new ones created</li>
-<p></ul></p>
 <p>Click <strong>Next</strong>.</p>
 <p><strong>Step 7: Map Your Fields</strong> Match the columns from your spreadsheet to the correct fields in the platform (e.g. phone → phone, email → email, first name, last name, business name, etc.). If you don't want a field to be updated, tick the <strong>"do not update this value"</strong> option. Click <strong>Next</strong>.</p>
 <p><strong>Step 8: Configure Additional Options</strong> On this screen you can optionally:</p>
-<ul class="wp-block-list">
 <li>Add imported contacts to an existing or new <strong>smart list / segmented list</strong></li>
 <li>Add contacts into a <strong>workflow</strong></li>
 <li>Add <strong>tags</strong> to the imported contacts</li>
-<p></ul></p>
 <p>Review all the details carefully before proceeding.</p>
 <p><strong>Step 9: Confirm and Start Import</strong> Once everything looks correct, tick <strong>"I confirm"</strong> and click <strong>Start Bulk Import</strong>. The import may take some time to process.</p>
 <p><strong>Step 10: Check Import Progress</strong> Click on <strong>Bulk Actions</strong> to monitor the progress of your import. From here you can also:</p>
-<ul class="wp-block-list">
 <li><strong>Revert</strong> the import if you made a mistake</li>
 <li><strong>View details</strong> to see exactly what was imported</li>
-<p></ul></p>
 <p>Once complete, refresh your screen and your new contacts will appear.</p>
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
 <blockquote class="wp-block-quote">
 <p>💡 <strong>Tip:</strong> Always download and check the sample file first to make sure your CSV is formatted correctly before importing.</p>
+<p></blockquote></p>
+     importing.</p>
 <p></blockquote></p>
     </div>
 
@@ -192,6 +185,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

@@ -130,7 +130,7 @@
 <li>Click the Bell icon to open the Notifications tab.</li>
 <li>All notifications are listed in chronological order. Click on any notification to view the details or take the relevant action.</li>
 <li>When a notification relates to a community post, clicking it will open the post in a full-page view for easier reading.</li>
-<p></ul></p>
+</ul>
 <p><em>💡&nbsp; Members who have downloaded the Alvéya mobile app will also receive push notifications on their device, in addition to in-app and email notifications.</em></p>
 <p><em>⚠️&nbsp; All notifications sent via the Client Portal — including community notifications — are charged. Review your notification settings to ensure you are only sending alerts that add genuine value for your members.</em></p>
 <h2 class="wp-block-heading"><strong>What Notifications Are Available</strong></h2>
@@ -141,20 +141,16 @@
 <p>Both portal owners and individual members have control over how notifications are delivered. This flexibility means members can tailor their experience to suit their preferences, while portal owners can set appropriate defaults and limits across the whole platform.</p>
 <h3 class="wp-block-heading"><strong>What Members Can Control</strong></h3>
 <p>Members have full control over their own email and push notification preferences for the following event types:</p>
-<ul class="wp-block-list">
 <li>Community updates</li>
 <li>Course certificates</li>
 <li>Likes on posts</li>
 <li>Likes on comments</li>
-<p></ul></p>
 <p>These preferences can be turned on or off independently for email and push notifications, giving members a personalised experience that reduces notification fatigue without missing important updates.</p>
 <p><em>💡&nbsp; Encouraging members to set their notification preferences during onboarding helps them get the most from your community without feeling overwhelmed by alerts. It is worth including a brief note about this in your welcome communications.</em></p>
 <h3 class="wp-block-heading"><strong>What Portal Owners Can Control</strong></h3>
 <p>As the portal owner, you can configure default notification settings that apply across your entire portal. Your owner-level settings include:</p>
-<ul class="wp-block-list">
 <li>Enabling or disabling email notifications for post likes across the portal.</li>
 <li>Enabling or disabling email notifications for comment likes across the portal.</li>
-<p></ul></p>
 <p>When a notification setting is locked at the owner level, members will see a tooltip in their preferences panel indicating that the setting is managed by the administrator. This prevents confusion and reduces the need for support queries about why a toggle is unavailable.</p>
 <p><em>⚠️&nbsp; Owner-level settings may override individual member preferences in some cases. Review your portal-wide defaults carefully to ensure they align with the experience you want to create for your community.</em></p>
 <h2 class="wp-block-heading"><strong>How Members Manage Their Notification Preferences</strong></h2>
@@ -165,7 +161,7 @@
 <li>Select Manage Your Account from the dropdown menu.</li>
 <li>Choose Notifications from the left-hand menu.</li>
 <li>Use the toggle switches to turn email or push notifications on or off for each event type.</li>
-<p></ol></p>
+</ol>
 <p><em>💡&nbsp; Members can adjust these settings as often as they like. If someone mentions they are receiving too many notifications, directing them to this area is a quick and simple resolution.</em></p>
 <h2 class="wp-block-heading"><strong>Benefits of Notification Management</strong></h2>
 <p>A well-configured notification system benefits both you as the portal owner and your members as the audience. Here is a summary of what the notification management features make possible:</p>
@@ -176,6 +172,7 @@
 <p><strong>Cleaner communication&nbsp; </strong>By giving members control, you reduce the chance of them disengaging because of notification overload — a common reason people switch off from online communities entirely.</p>
 <p><strong>The right notifications keep members engaged and informed — without overwhelming them. Getting this balance right is a small but meaningful part of building a community your clients genuinely want to be part of.</strong></p>
 <p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    t and we will guide you through.</p>
     </div>
 
     <div class="article-feedback">
@@ -201,6 +198,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

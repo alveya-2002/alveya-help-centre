@@ -126,18 +126,18 @@
       <p>When you connect your domain to Alvéya™, you’ll need to update something called your <b>DNS records</b>. This tells the internet where your website, booking pages, and funnels should live.</p><p>Because every domain provider looks a little different, we’ve created step-by-step instructions for the most common ones.</p>		
 					<h2>Step 1: Add Your Domain in Alvéya™</h2>				
 		<p>Before you make changes with your provider, be sure to first add your domain inside Alvéya™.</p><p><a href="https://help.alveya.io/how-to-connect-your-domain-to-alveya/">📖 How to Add a Domain in Alvéya™ →</a></p>		
-					<h2>Step 2: Choose Your Provider
-<p></h2></p>
-		<ol><li style="list-style-type: none;"><ol><li><p>Click the link below for detailed instructions tailored to your domain host:</p><ul><li style="font-weight: 400;" aria-level="1">📖 GoDaddy DNS Instructions</li><li style="font-weight: 400;" aria-level="1">📖 SiteGround DNS Instructions</li><li style="font-weight: 400;" aria-level="1">📖 VentraIP DNS Instructions</li><li style="font-weight: 400;" aria-level="1">📖 Namecheap DNS Instructions</li><li style="font-weight: 400;" aria-level="1">📖 Google Domains DNS Instructions</li></ul></li></ol></li></ol><p>👉 If you use a different provider, don’t worry — the process is very similar. You’ll just need to update two types of records:</p><ul><li style="font-weight: 400;" aria-level="1"><b>A Record</b> → points your root domain (yourclinic.com) to Alvéya™.</li><li style="font-weight: 400;" aria-level="1"><b>CNAME Record</b> → points www to Alvéya™.</li></ul><p>📖 Generic DNS Instructions (any provider) →</p>		
+					<h2>Step 2: Choose Your Provider</h2>
+		<ol><li style="list-style-type: none;"><ol><li>Click the link below for detailed instructions tailored to your domain host:</p><ul><li style="font-weight: 400;" aria-level="1">📖 GoDaddy DNS Instructions</li><li style="font-weight: 400;" aria-level="1">📖 SiteGround DNS Instructions</li><li style="font-weight: 400;" aria-level="1">📖 VentraIP DNS Instructions</li><li style="font-weight: 400;" aria-level="1">📖 Namecheap DNS Instructions</li><li style="font-weight: 400;" aria-level="1">📖 Google Domains DNS Instructions</li></ul></li></ol></li></ol><p>👉 If you use a different provider, don’t worry — the process is very similar. You’ll just need to update two types of records:</p><ul><li style="font-weight: 400;" aria-level="1"><b>A Record</b> → points your root domain (yourclinic.com) to Alvéya™.</li><li style="font-weight: 400;" aria-level="1"><b>CNAME Record</b> → points www to Alvéya™.</li></ul><p>📖 Generic DNS Instructions (any provider) →</p>		
 					<h2>Step 3: Verify in Alvéya™</h2>				
-		<ol><li style="font-weight: 400;" aria-level="1"><p>Once you’ve updated your DNS:</p><ol><li style="font-weight: 400;" aria-level="1">Return to <b>Settings → Domains</b> in Alvéya™.</li><li style="font-weight: 400;" aria-level="1">Click <b>Verify</b>.</li><li style="font-weight: 400;" aria-level="1">Switch on <b>SSL</b> for a secure (https://) connection.</li></ol><p>📖 How to Enable SSL in Alvéya™ →</p></li></ol><h2>Troubleshooting</h2><ul><li style="font-weight: 400;" aria-level="1">DNS changes can take <b>up to 24–48 hours</b> to go live.</li><li style="font-weight: 400;" aria-level="1">Use WhatsMyDNS.net to check if your records are updating worldwide.</li></ul><p>Double-check that you’ve replaced any old A Records and pointed your www CNAME to Alvéya™.<br /></p>		
+		<ol><li style="font-weight: 400;" aria-level="1"><p>Once you’ve updated your DNS:</p><ol><li style="font-weight: 400;" aria-level="1">Return to <b>Settings → Domains</b> in Alvéya™.</li><li style="font-weight: 400;" aria-level="1">Click <b>Verify</b>.</li><li style="font-weight: 400;" aria-level="1">Switch on <b>SSL</b> for a secure (https://) connection.</li></ol><p>📖 How to Enable SSL in Alvéya™ →</li></ol><h2>Troubleshooting</h2><ul><li style="font-weight: 400;" aria-level="1">DNS changes can take <b>up to 24–48 hours</b> to go live.</li><li style="font-weight: 400;" aria-level="1">Use WhatsMyDNS.net to check if your records are updating worldwide.</li></ul><p>Double-check that you’ve replaced any old A Records and pointed your www CNAME to Alvéya™.<br /></p>		
 					<h2>Still Stuck?</h2>				
 		<ul>
 <li style="font-weight: 400;" aria-level="1">Check our DNS Troubleshooting Guide.</li>
 <li style="font-weight: 400;" aria-level="1">Use the <b>chat widget</b> inside Alvéya™ for live support.</li>
 <li style="font-weight: 400;" aria-level="1">Or contact your domain provider for DNS-specific help.</li>
-<p></ul></p>
+</ul>
 					<h2>✅ Next step: Set Up Email &amp; SMS Sending</h2>
+     Set Up Email &amp; SMS Sending</h2>
     </div>
 
     <div class="article-feedback">
@@ -163,6 +163,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

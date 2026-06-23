@@ -136,7 +136,7 @@
 <li>How many times a failed payment should be retried</li>
 <li>The interval between retry attempts</li>
 <li>Email notifications to your clients when a payment fails</li>
-<p></ul></p>
+</ul>
 <p><em>💡&nbsp; To find these settings, go to Payments &gt; Settings inside Alvéya and look for the subscription retry or dunning management options.</em></p>
 <h3 class="wp-block-heading"><strong>Stripe</strong></h3>
 <p>If you are using Stripe as your payment processor, the retry and notification settings are managed inside your Stripe dashboard — not inside Alvéya. Stripe has its own smart retry logic and email notification tools built in, and these are the settings you should configure.</p>
@@ -168,7 +168,7 @@
 <li>Review and edit the client-facing email or SMS in the workflow. Update the message to reflect your brand voice, your course name, and any specific instructions for how clients should update their payment details.</li>
 <li>Set the timing if applicable — for example, how long after a failed payment the message should send.</li>
 <li>Once you are happy with the setup, set the workflow to Active.</li>
-<p></ol></p>
+</ol>
 <p><em>💡&nbsp; Keep the client message clear and reassuring. Let them know their access has not been removed yet and give them simple instructions for updating their payment details.</em></p>
 <h3 class="wp-block-heading"><strong>Step 2: Duplicate the Access Revocation Template</strong></h3>
 <ol start="9" class="wp-block-list">
@@ -179,14 +179,11 @@
 <li>Review the internal notification email. Update it with your own email address so you receive the alert, and adjust the message if needed.</li>
 <li>Review any client-facing message included in the workflow and update the tone and content to match your communication style.</li>
 <li>Set the workflow to Active when you are ready.</li>
-<p></ol></p>
 <p><em>⚠️&nbsp; Test this workflow carefully before going live. Accidentally revoking access to the wrong product, or triggering it too early, can create a poor client experience and additional admin work for you.</em></p>
 <h3 class="wp-block-heading"><strong>Connecting the Two Workflows</strong></h3>
 <p>These two workflows are designed to run in sequence:</p>
-<ul class="wp-block-list">
 <li>The Failed Payment template fires first — notifying your client and giving them a chance to resolve the issue.</li>
 <li>The Access Revocation template fires later — removing access if the payment is still unresolved after your chosen timeframe.</li>
-<p></ul></p>
 <p>You can connect them using a condition or a wait step inside the revocation workflow, so that access is only removed if the payment has not been successfully collected by the time the wait period ends.</p>
 <p><em>💡&nbsp; A common approach is to wait 5–7 days after the initial failed payment before revoking access — this gives clients enough time to update their details without feeling like access was removed without warning.</em></p>
 <h2 class="wp-block-heading"><strong>A Note on Repeat Setup</strong></h2>
@@ -194,6 +191,7 @@
 <p>Once you have set up the first pair of workflows, duplicating and adapting them for additional products is quick — most of the structure is already in place and you are only updating product names, timing, and message copy.</p>
 <p><strong>With these workflows in place, you can handle payment issues professionally — protecting your business without losing the relationship.</strong></p>
 <p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    t and we will guide you through.</p>
     </div>
 
     <div class="article-feedback">
@@ -219,6 +217,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

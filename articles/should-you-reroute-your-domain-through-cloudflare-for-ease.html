@@ -132,43 +132,30 @@
 <li>Cloudflare allows for automatic addition of domain records.</li>
 <li>It can improve speed and security for your domain.</li>
 <li>Centralizes management of multiple domain names in one place.</li>
-<p></ul></p>
+</ul>
 <p><strong>2. Keeping Your Domain Registration</strong></p>
-<ul class="wp-block-list">
 <li>Maintain your domain registration with your current provider (e.g., GoDaddy, Crazy Domains).</li>
 <li>Route your domain through Cloudflare for easier management.</li>
-<p></ul></p>
 <p>&nbsp;3<strong>. Onboarding Your Domain to Cloudflare</strong></p>
-<ul class="wp-block-list">
 <li>Start the onboarding process by selecting your domain (e.g., lharrison.design).</li>
 <li>Choose to perform a quick scan of existing DNS records (recommended) or enter them manually.</li>
-<p></ul></p>
 <p>&nbsp;<strong>4. Scanning DNS Records</strong></p>
-<ul class="wp-block-list">
 <li>Cloudflare will scan your current DNS records and display them.</li>
 <li>Review the scanned records for accuracy.</li>
-<p></ul></p>
 <p>&nbsp;<strong>5. Adjusting Proxied Status</strong></p>
-<ul class="wp-block-list">
 <li>Decide whether to keep the proxied status on or off for your records.</li>
 <li>In this case, turn off the proxied status.</li>
-<p></ul></p>
 <p><strong>6. Updating Nameservers in Crazy Domains</strong></p>
-<ul class="wp-block-list">
 <li>Log into Crazy Domains and navigate to your domain management settings.</li>
 <li>Click on the cogwheel, select 'manage domain', and go to 'nameservers'.</li>
 <li>Replace the existing nameservers with the ones provided by Cloudflare.</li>
-<p></ul></p>
 <p>&nbsp;<strong>7. Saving Changes and Propagation</strong></p>
-<ul class="wp-block-list">
 <li>Save the updated nameserver records.</li>
 <li>Acknowledge that it may take some time for changes to propagate.</li>
-<p></ul></p>
 <p>&nbsp;<strong>8. Automatic DNS Record Management</strong></p>
-<ul class="wp-block-list">
 <li>Once set up, any changes or additions to your domain in Alvear will automatically update DNS records in Cloudflare.</li>
 <li>This eliminates the need for manual copying and pasting of records.</li>
-<p></ul></p>
+    copying and pasting of records.</li>
     </div>
 
     <div class="article-feedback">
@@ -194,6 +181,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

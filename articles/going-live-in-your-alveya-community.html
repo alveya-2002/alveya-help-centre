@@ -132,7 +132,7 @@
 <li>Orientation or onboarding calls for new members joining a program.</li>
 <li>Group check-ins or accountability sessions throughout a course.</li>
 <li>Informal community connection calls to build relationships between members.</li>
-<p></ul></p>
+</ul>
 <p><em>💡&nbsp; Running live sessions inside your community rather than through a separate platform keeps everything in one place — members do not need to manage multiple logins, links, or apps to participate.</em></p>
 <h2 class="wp-block-heading"><strong>Before You Go Live</strong></h2>
 <p>To host a live session, you need to be logged into your community as an admin. Navigate to your community by going to Memberships from your Alvéya dashboard, then Communities, then Groups, and click Log In on the group you want to go live in.</p>
@@ -143,7 +143,6 @@
 <p>Your browser will ask for permission to access your camera and microphone. You will need to allow both. This is a standard browser security prompt — it only appears the first time or if you have previously blocked access.</p>
 <h3 class="wp-block-heading"><strong>Configure your session settings</strong></h3>
 <p>Before going live, take a moment to set up the session correctly:</p>
-<ul class="wp-block-list">
 <li>Channel — use the dropdown menu to select which channel the live video will be posted to once the session ends. Choose the channel that is most relevant to the session content (e.g. a specific week's channel in a program, or your general Announcements channel).</li>
 <li>Timing — choose whether to go live immediately or schedule the session for a future date and time.</li>
 <li>Camera and microphone — toggle these on or off as needed in the centre of the setup panel.</li>
@@ -151,7 +150,6 @@
 <li>Description — add a brief description of what will be discussed or covered in the session.</li>
 <li>Keep as post — enable this option so the recording is automatically saved and posted to the selected channel after the session ends. Members who could not attend live can then watch the replay.</li>
 <li>Notify members — enable this to send in-app and push notifications to members when you go live, prompting them to join.</li>
-<p></ul></p>
 <p><em>💡&nbsp; Writing a clear title and description before going live is worth taking a moment to do — these appear on the saved post in the channel, so members browsing for replay content can quickly understand what each session covers.</em></p>
 <h2 class="wp-block-heading"><strong>Step 2 — Choose Your Streaming Mode</strong></h2>
 <p>Alvéya offers two options for how you run your live session. Choose the one that best suits your session format.</p>
@@ -179,18 +177,14 @@
 <h2 class="wp-block-heading"><strong>Step 5 — Managing the Recording After the Session</strong></h2>
 <p>Once the recording is posted to the channel, you have several options for managing it.</p>
 <h3 class="wp-block-heading"><strong>Viewing and sharing</strong></h3>
-<ul class="wp-block-list">
 <li>Members can click Play to watch the full recording at any time.</li>
 <li>Click the three dots on the post to copy a direct link to the recording. This link opens the video in a focused view without other community content — useful if you want to share it with a specific member.</li>
-<p></ul></p>
 <h3 class="wp-block-heading"><strong>Managing the post</strong></h3>
-<ul class="wp-block-list">
 <li>Edit — update the title or description of the post, or add additional content such as images, links, or supplementary resources.</li>
 <li>Move to Another Channel — if you want to reorganise the recording into a different channel (e.g. moving a session into a specific week's content folder), use the dropdown to relocate it.</li>
 <li>Download — save the recording to your device for local storage or repurposing.</li>
 <li>Delete — permanently remove the post and recording from the channel.</li>
 <li>Report — flag the post if needed (primarily relevant for member-generated content).</li>
-<p></ul></p>
 <p><em>💡&nbsp; Adding resources, notes, or a summary to the recording post after the session is a great way to extend the value of each live call. Members watching the replay get more context, and it makes the content easier to reference later.</em></p>
 <h3 class="wp-block-heading"><strong>Mini player</strong></h3>
 <p>Members can also click a button on the post to open the recording in a mini player in the bottom right corner of their screen. This allows them to watch the replay while continuing to scroll through and read other content in the community — a small but helpful feature for engaged members who want to multitask.</p>
@@ -198,6 +192,7 @@
 <figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>#</strong></th><th><strong>Action</strong></th></tr></thead><tbody><tr><td><strong>1</strong></td><td>Log into your community as admin via Memberships → Communities → Groups.</td></tr><tr><td><strong>2</strong></td><td>Click Go Live. Allow browser permissions for camera and microphone.</td></tr><tr><td><strong>3</strong></td><td>Select your channel, set the timing, add a title and description, and choose whether to keep the recording as a post and notify members.</td></tr><tr><td><strong>4</strong></td><td>Select your mode — Meeting Room for interactive sessions, Streaming Software for broadcast-style sessions.</td></tr><tr><td><strong>5</strong></td><td>Click Go Live. Participants join, can chat, react, raise hands, and share screens.</td></tr><tr><td><strong>6</strong></td><td>Click End Session when finished and confirm. The recording processes automatically and is posted to the selected channel.</td></tr><tr><td><strong>7</strong></td><td>After the session, edit the post to add resources, move it to another channel, download it, or share the link with members.</td></tr></tbody></table></figure>
 <p><strong>Live sessions are one of the most effective ways to deepen connection with your community — bringing the warmth of real-time interaction to practitioners who are growing their impact beyond the clinic.</strong></p>
 <p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    t and we will guide you through.</p>
     </div>
 
     <div class="article-feedback">
@@ -223,6 +218,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

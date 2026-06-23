@@ -130,20 +130,17 @@
 <li>offers.yourdomain.com</li>
 <li>launch.yourdomain.com</li>
 <li>freebie.yourdomain.com</li>
-<p></ul></p>
+</ul>
 <p>This strengthens brand credibility and keeps your ecosystem cohesive without having to purchase another domain name.</p>
 <h2>Before You Begin</h2>
 <p>Make sure:</p>
-<ul>
 <li>You own the main domain (e.g. yourdomain.com)</li>
 <li>You have access to your domain provider (GoDaddy, Namecheap, Cloudflare, etc.)</li>
-<p></ul></p>
 <h2>Step 1: Decide on Your Subdomain</h2>
 <p>A subdomain is the part that appears <strong>before</strong> your main domain.</p>
 <p>Example:</p>
 <p><strong>launch.</strong>yourdomain.com<br />“launch” is the subdomain.</p>
 <p>Choose something that reflects the purpose of the funnel:</p>
-<ul>
 <li>offers</li>
 <li>book</li>
 <li>join</li>
@@ -151,7 +148,6 @@
 <li>events</li>
 <li>free</li>
 <li>programs</li>
-<p></ul></p>
 <p>Keep it simple and easy to type.</p>
 <h2>Step 2: Add the Subdomain Inside Alvéya</h2>
 <p>The process for this is almost identical how you would connect your primary domain so you can watch the video above. Instead of adding th "@", type in your subdomain word.</p>
@@ -160,7 +156,7 @@
 <li>Click <strong>Connect Domain</strong></li>
 <li>Enter your chosen subdomain (e.g. launch.yourdomain.com)</li>
 <li>Continue to the DNS instructions</li>
-<p></ol></p>
+</ol>
 <p>Alvéya will generate the required DNS record.</p>
 <h2>Step 3: Update DNS Records in Your Domain Provider</h2>
 <p>Log into your domain provider.</p>
@@ -176,51 +172,40 @@
 <p>Settings → Domains</p>
 <p>Click <strong>Verify</strong>.</p>
 <p>DNS propagation can take:</p>
-<ul>
 <li>A few minutes</li>
 <li>Up to 24 hours in some cases</li>
-<p></ul></p>
 <p>Once verified, the status will show as connected.</p>
 <h2>Step 5: Assign the Subdomain to Your Funnel</h2>
-<ol>
 <li>The next screen will be where you can allocate the subdomain</li>
-<p></ol></p>
 <p>Your funnel will now publish at:</p>
 <p>subdomain.yourdomain.com/page-slug</p>
 <h2>Best Practice Recommendations</h2>
 <p>Use:</p>
-<ul>
 <li>Your main domain for your website</li>
 <li>A dedicated subdomain for funnels</li>
 <li>A separate subdomain for email sending</li>
 <li>A separate subdomain for client portals</li>
-<p></ul></p>
 <p>Avoid using your root domain for funnels if your website is hosted elsewhere.</p>
 <p>Keeping domains structured prevents conflicts and protects email deliverability.</p>
 <h2>Common Issues &amp; Fixes</h2>
 <p>Issue: Domain won’t verify<br />Check:</p>
-<ul>
 <li>CNAME record is entered correctly</li>
 <li>No extra spaces</li>
 <li>DNS has propagated</li>
-<p></ul></p>
 <p><strong>Issue: </strong>SSL error<br />Wait for automatic SSL provisioning. This can take time after verification.</p>
 <p><strong>Issue:</strong> Funnel loads but styling looks broken<br />Check:</p>
-<ul>
 <li>Correct domain selected inside funnel settings</li>
 <li>Funnel is published</li>
-<p></ul></p>
 <h2>When to Use a Subdomain for Funnels</h2>
 <p>Use a subdomain when:</p>
-<ul>
 <li>Running a campaign</li>
 <li>Hosting a webinar registration</li>
 <li>Delivering a free resource</li>
 <li>Launching a program</li>
 <li>Creating a dedicated sales page</li>
-<p></ul></p>
 <p>This keeps your main website clean while allowing marketing flexibility.</p>
 <div class="video-wrap"><iframe src="https://www.youtube.com/embed/Puv5vMnjtEc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    ure" allowfullscreen></iframe></div>
     </div>
 
     <div class="article-feedback">
@@ -246,6 +231,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

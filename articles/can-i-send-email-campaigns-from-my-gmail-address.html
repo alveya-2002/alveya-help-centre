@@ -147,13 +147,14 @@
 <li>Click Add From Address and enter your new domain email address.</li>
 <li>You may be asked to verify the address — follow the prompts to confirm ownership.</li>
 <li>Once verified, set this address as the default sender for your campaigns.</li>
-<p></ol></p>
+</ol>
 <p><em>💡&nbsp; If you plan to use this address as a genuine inbox as well, make sure you check it regularly. Replies from subscribers and auto-responses from inbox providers will land there.</em><br></p>
 <h2 class="wp-block-heading"><strong>In summary</strong></h2>
 <p>A domain-based email address is not optional when it comes to email campaigns — it is the foundation that makes reliable delivery possible. The good news is that it is a straightforward thing to set up, and once it is done, you will not need to think about it again.</p>
 <p>If you are unsure which option is right for you, the most common choice for practitioners is Google Workspace. It keeps everything familiar and gives you a professional address you can use across all of your business communications — not just for campaigns.</p>
 <p><strong>With your domain email address in place, your campaigns are set up to reach your subscribers' inboxes reliably.</strong></p>
 <p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    t and we will guide you through.</p>
     </div>
 
     <div class="article-feedback">
@@ -179,6 +180,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

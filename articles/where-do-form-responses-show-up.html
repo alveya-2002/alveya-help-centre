@@ -125,6 +125,7 @@
     <div class="article-content">
       <p>Forms will help you capture information about contacts that fill out and submit the form. In order to view this information, start by navigating to "Websites &amp; Funnels" > "Forms" (at the top of the screen) > "Submissions"  where, you will be able to filter or search through form submissions and view the information that was provided on a particular form submission. </p>
 <figure class="wp-block-image size-large"><img src="https://help.alveya.io/wp-content/uploads/2026/03/Form-submissions-1024x570.png" alt="" class="wp-image-2870"/></figure>
+    ="" class="wp-image-2870"/></figure>
     </div>
 
     <div class="article-feedback">
@@ -150,6 +151,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

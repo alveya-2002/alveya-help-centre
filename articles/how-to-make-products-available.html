@@ -144,30 +144,25 @@
 <li>Add the <strong>Order / Payment element</strong></li>
 <li>Select your product from the product list</li>
 <li>Save and publish the form<br></li>
-<p></ol></p>
+</ol>
 <p>This form can now be embedded or linked anywhere.</p>
 <h3 class="wp-block-heading">Option 2 — Add Product to a Funnel or Page</h3>
 <p>You can also connect your product to a funnel or landing page.</p>
-<ol class="wp-block-list">
 <li>Go to <strong>Sites → Funnels</strong></li>
 <li>Open your funnel or create a new one</li>
 <li>Add or edit a page (such as a sales page or checkout page)</li>
 <li>Add a <strong>button or order form element</strong></li>
 <li>Link it to your product</li>
-<p></ol></p>
 <p>This allows you to guide users through a full journey:</p>
 <p>Sales page → checkout → confirmation → delivery</p>
 <h3 class="wp-block-heading">Option 3 — Add Product to Your Shop</h3>
 <p>If you are using the shop feature, you can display your product there.</p>
-<ol class="wp-block-list">
 <li>Go to <strong>Payments → Products</strong></li>
 <li>Ensure your product is active</li>
 <li>Add it to your <strong>shop page or product list</strong></li>
-<p></ol></p>
 <p>This allows customers to browse and purchase multiple products in one place.</p>
 <h2 class="wp-block-heading">Step 3 — Share Your Product Link</h2>
 <p>Once your product is connected to a page or form, you can share it with your audience.</p>
-<p>You can:</p>
 <p>• Add it to your website<br>• Share it via email campaigns<br>• Link it in your social media<br>• Include it in your client portal<br>• Use it inside webinars or funnels</p>
 <h2 class="wp-block-heading">Step 4 — Test Your Checkout</h2>
 <p>Before promoting your product, test the full process.</p>
@@ -181,6 +176,7 @@
 <p>Once your product is available, you can:</p>
 <p>• Automate delivery using workflows<br>• Tag customers for segmentation<br>• Connect products to courses or memberships<br>• Track sales and performance</p>
 <p>This allows you to create a seamless and scalable sales system inside Alvéya.</p>
+    able sales system inside Alvéya.</p>
     </div>
 
     <div class="article-feedback">
@@ -206,6 +202,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

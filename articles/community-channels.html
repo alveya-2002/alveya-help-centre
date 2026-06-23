@@ -129,8 +129,9 @@
 <li>Give the channel a name that clearly describes its purpose (e.g. Weekly Wins, Ask Me Anything, Recipe Ideas).</li>
 <li>Add a short description and choose a channel icon.</li>
 <li>Click Create Channel to save it.</li>
-<p></ul></p>
+</ul>
 <p><em>💡&nbsp; Start with just two or three channels. Too many channels can feel overwhelming for new members. You can always add more as your community grows and you get a sense of where conversation naturally flows.</em></p>
+    nversation naturally flows.</em></p>
     </div>
 
     <div class="article-feedback">
@@ -156,6 +157,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

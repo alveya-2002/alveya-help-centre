@@ -133,31 +133,18 @@
 <th>
 <p><b>Offer type</b></p>
 <p></th></p>
-<th>
 <p><b>Where to create it</b></p>
-<p></th></p>
-<th>
 <p><b>What you'll get</b></p>
 <p></th> </tr> </thead></p>
 <tbody>
-<tr>
 <td>
 <p><b>Online course</b></p>
 <p></td></p>
-<td>
 <p>Courses</p>
-<p></td></p>
-<td>
 <p>A signup link to connect to your funnel order form</p>
 <p></td> </tr></p>
-<tr>
-<td>
 <p><b>Recurring subscription</b></p>
-<p></td></p>
-<td>
 <p>Products</p>
-<p></td></p>
-<td>
 <p>A product to connect to your funnel order form</p>
 <p></td> </tr> </tbody> </table></p>
 
@@ -170,43 +157,28 @@
 <p>Alvéya's funnel templates include a built-in order form page — you do not need to build the checkout from scratch.</p>
 <ul>
 <li aria-level="1">Go to Websites &amp; Funnels and open one of the funnel templates.</li>
-<p></ul></p>
-<ul>
+</ul>
 <li aria-level="1">If the template includes a sales page before the order form, remove it. You only need the order form page for this setup.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Open the order form page in the editor.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">On the right-hand side panel, find the Products section.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Connect the product or course signup you created in Step 1 to this order form page.</li>
-<p></ul></p>
 <p><i>💡  You can always add the sales page back in later if you decide you want a full sales funnel. For now, starting with just the order form keeps things simple and gets your offer live faster.</i></p>
 <h2><b>Step 3: Set the Confirmation Page</b></h2>
 <p>After a client completes their purchase, they need somewhere to land. This is your confirmation page — it can be a thank you message, instructions for next steps, or a redirect to their course or membership area.</p>
-<ul>
 <li aria-level="1">In the funnel builder, look at the steps listed in your funnel sequence.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Set the confirmation page as the next step after the order form page.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Customise the confirmation page content to let your new client know what happens next.</li>
-<p></ul></p>
 <p><i>⚠️  Do not skip setting the confirmation page. Without it, clients who complete a purchase will land on a blank or broken page, which creates a poor first impression right at the moment they have just bought from you.</i></p>
 <h2><b>Step 4: Set Up a Post-Purchase Automation</b></h2>
 <p>Alvéya has pre-built automation templates to handle what happens after someone buys. You will find these in the Automations section — look for:</p>
-<ul>
 <li style="font-weight: 400;" aria-level="1">Post Purchase Workflow — the standard automation for sending a welcome email, granting access, and onboarding a new client after a purchase.</li>
 <li style="font-weight: 400;" aria-level="1">Bump Offer Post Purchase Workflow — use this if your checkout includes an order bump (an add-on offer shown at the point of purchase).</li>
-<p></ul></p>
 <p>Select the template that matches your setup, review the steps inside, and activate it. These templates are a starting point — you can customise the email content, timing, and actions to suit your offer.</p>
 <p><i>💡  Even if you are not ready to build out a full welcome sequence yet, activate the basic Post Purchase Workflow so that at minimum your new client receives a confirmation email straight away.</i></p>
 
 <p><b>With your checkout page connected and your post-purchase automation in place, your offer is ready to sell.</b></p>
 <p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    t and we will guide you through.</p>
     </div>
 
     <div class="article-feedback">
@@ -232,6 +204,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Webinar Registration confirmation &amp;amp; reminder workflow — Alvéya™ Help Centre</title>
+  <title>Webinar Registration confirmation &amp; reminder workflow — Alvéya™ Help Centre</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
@@ -105,9 +105,9 @@
         <span>›</span>
         <a href="../category.html?cat=automations">Automations</a>
         <span>›</span>
-        <span>Webinar Registration confirmation &amp;amp; reminder workflow</span>
+        <span>Webinar Registration confirmation &amp; reminder workflow</span>
       </nav>
-      <h1 class="article-title">Webinar Registration confirmation &amp;amp; reminder workflow</h1>
+      <h1 class="article-title">Webinar Registration confirmation &amp; reminder workflow</h1>
       <div class="article-meta">
         <span>Updated June 2026</span>
       </div>
@@ -129,20 +129,17 @@
 <ul class="wp-block-list">
 <li>Navigate to the Automation section in your Alvear Workflow Templates folder.</li>
 <li>Locate the template for Webinar Registration Confirmation and Reminders.</li>
-<p></ul></p>
+</ul>
 <p><strong>2. Duplicate the Workflow</strong></p>
 <figure class="wp-block-image"><img src="https://loom.com/i/e2c540310d3a48019f6581fa2ac5b6dd?workflows_screenshot=true" alt="generated-image-at-00:00:17"/></figure>
-<ul class="wp-block-list">
 <li>Duplicate the workflow to ensure you have a clean slate.</li>
 <li>Rename the duplicated workflow to something identifiable (e.g., 'Create').</li>
 <li>Move the duplicated workflow out of the template folder to avoid confusion.</li>
-<p></ul></p>
 <p><strong>3. Connect Registration Form</strong></p>
 <figure class="wp-block-image"><img src="https://loom.com/i/e3122bdb9f904ac9b9c5a2c35252b98c?workflows_screenshot=true" alt="generated-image-at-00:01:02"/></figure>
-<ul class="wp-block-list">
 <li>Open the duplicated workflow.</li>
 <li>Connect the registration form created in step one as the trigger for the workflow (i.e., when the form is submitted).</li>
-<p></ul></p>
+    ., when the form is submitted).</li>
     </div>
 
     <div class="article-feedback">
@@ -168,6 +165,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

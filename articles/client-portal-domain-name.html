@@ -130,98 +130,44 @@
 <p data-pm-slice="1 3 []"><strong>1. Access Domain Setup</strong></p>
 <p><img src="https://loom.com/i/539a22da97ab4d9b91d24611cb5d24b6?workflows_screenshot=true" alt="generated-image-at-00:00:00" width="289" height="179"></p>
 <ul data-tight="true">
-<li>
-<p>Go to <strong>Members and Courses</strong>.</p>
-<p></li></p>
-<li>
-<p>Click on <strong>Settings</strong> at the top.</p>
-<p></li></p>
-<li>
-<p>Select <strong>Domain Setup</strong>.</p>
+<li>Go to <strong>Members and Courses</strong>.</li>
+<li>Click on <strong>Settings</strong> at the top.</li>
+<li>Select <strong>Domain Setup</strong>.</p>
 <p></li> </ul></p>
 <p><strong>2. Choose Domain Type</strong></p>
-<ul data-tight="true">
 <li>
 <p>You have two options:</p>
-<ul data-tight="true">
-<li>
-<p>Use a <strong>system-generated subdomain</strong> (enter your brand/business name).</p>
-<p></li></p>
-<li>
-<p>Use a <strong>custom domain</strong> (recommended).</p>
+<p>Use a <strong>system-generated subdomain</strong> (enter your brand/business name).</li>
+<li>Use a <strong>custom domain</strong> (recommended).</p>
 <p></li> </ul> </li> </ul></p>
 <p><strong>3. Set Up a Subdomain</strong></p>
-<ul data-tight="true">
-<li>
-<p>Avoid using your main domain (e.g., alveo.io) to prevent conflicting records.</p>
-<p></li></p>
-<li>
-<p>Recommended subdomains:</p>
-<ul data-tight="true">
-<li>
-<p><strong>members</strong></p>
-<p></li></p>
-<li>
-<p><strong>portal</strong></p>
+<p>Avoid using your main domain (e.g., alveo.io) to prevent conflicting records.</li>
+<li>Recommended subdomains:</p>
+<p><strong>members</strong></li>
+<li><strong>portal</strong></p>
 <p></li> </ul> </li></p>
-<li>
 <p>Choose a subdomain that reflects the purpose of the portal.</p>
-<p></li> </ul></p>
 <p><strong>4. Add Domain</strong></p>
-<ul data-tight="true">
-<li>
-<p>Click on <strong>Add Domain</strong>.</p>
-<p></li></p>
-<li>
-<p>If using <strong>GoDaddy or cloudflare</strong>, click <strong>Continue</strong> to automatically add DNS records.</p>
-<p></li></p>
-<li>
-<p>If using another host, proceed to manual setup.</p>
-<p></li> </ul></p>
+<p>Click on <strong>Add Domain</strong>.</li>
+<li>If using <strong>GoDaddy or cloudflare</strong>, click <strong>Continue</strong> to automatically add DNS records.</li>
+<li>If using another host, proceed to manual setup.</p>
 <p><strong>5. Manual DNS Record Setup</strong></p>
-<ul data-tight="true">
-<li>
 <p>Add a new DNS record:</p>
-<ul data-tight="true">
-<li>
-<p><strong>Record Type</strong>: CNAME</p>
-<p></li></p>
-<li>
-<p><strong>Host Name</strong>: 9what you chose as your subdomain)</p>
-<p></li></p>
-<li>
-<p><strong>Value</strong>: Copy the required value from the setup instructions.</p>
-<p></li> </ul> </li></p>
-<li>
+<p><strong>Record Type</strong>: CNAME</li>
+<li><strong>Host Name</strong>: 9what you chose as your subdomain)</li>
+<li><strong>Value</strong>: Copy the required value from the setup instructions.</p>
 <p>Save the record.</p>
-<p></li> </ul></p>
 <p><strong>6. Verify Domain Settings</strong></p>
-<ul data-tight="true">
-<li><p>Click verify records</p></li><li>
-<p>Wait approximately <strong>30 seconds</strong> for verification.</p>
-<p></li></p>
-<li>
-<p>Confirm that the domain name settings have been confirmed.</p>
-<p></li> </ul></p>
+<li><p>Click verify records</li><li>Wait approximately <strong>30 seconds</strong> for verification.</li>
+<li>Confirm that the domain name settings have been confirmed.</p>
 <p><strong>7. Access Client Portal Link</strong></p><ul data-tight="true">
-<li>
-<p>Go to <strong>Client Portal and Dashboard</strong>.</p>
-<p></li></p>
-<li>
-<p>Find the URL link for the client portal.</p>
-<p></li> </ul></p>
+<p>Go to <strong>Client Portal and Dashboard</strong>.</li>
+<li>Find the URL link for the client portal.</p>
 <p><strong>8. Share Login Information</strong></p>
 <p><img src="https://loom.com/i/b07f3d74fb2b4f69a125d93576075d56?workflows_screenshot=true" alt="generated-image-at-00:02:17" width="384px" height="240px"></p>
-<ul data-tight="true">
-<li>
-<p>Use the portal link in emails for clients to log in.</p>
-<p></li></p>
-<li>
-<p>Optionally, create a <strong>magic link</strong> for easier access.</p>
-<p></li></p>
-<li>
+<p>Use the portal link in emails for clients to log in.</li>
+<li>Optionally, create a <strong>magic link</strong> for easier access.</li>
 <p>Invite clients to the client portal and send a login email.</p>
-<p></li> </ul></p>
 		
 					<h2>Extra Support</h2>				
 		<p>If you get stuck:</p>
@@ -229,9 +175,10 @@
 <li>Use the chat widget inside Alvéya for instant help</li>
 <li>Browse our Help Articles for step-by-step guides</li>
 <li>Or reach out to our support team </li>
-<p></ul></p>
+</ul>
 
 <p>We’ve got your back at every stage.</p>
+    ve got your back at every stage.</p>
     </div>
 
     <div class="article-feedback">
@@ -257,6 +204,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

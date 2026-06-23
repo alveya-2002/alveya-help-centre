@@ -123,120 +123,64 @@
     </a>
 
     <div class="article-content">
-      <p>https://youtu.be/0CJly52qtXM<p data-pm-slice="1 3 []">This guide outlines the steps to create a section in Alvéya's website builder, including adding elements, adjusting styles, and ensuring mobile responsiveness.</p>
+      <p><div class="video-wrap"><iframe width="100%" height="400" src="https://www.youtube.com/embed/0CJly52qtXM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p data-pm-slice="1 3 []">This guide outlines the steps to create a section in Alvéya's website builder, including adding elements, adjusting styles, and ensuring mobile responsiveness.</p>
 <h3>Key Steps</h3>
 
 <p><strong>1. Understanding Structure</strong></p>
 <ul data-tight="true">
-<li>
-<p>Alvéya's website builder uses sections, rows, and columns.</p>
-<p></li></p>
-<li>
-<p>Start with a section, then add rows, and finally columns within those rows.</p>
+<li>Alvéya's website builder uses sections, rows, and columns.</li>
+<li>Start with a section, then add rows, and finally columns within those rows.</p>
 <p></li> </ul></p>
 
 <p><strong>2. Adding a Section</strong></p>
-<ul data-tight="true">
 <li>
-<p>Click on 'Add Element' or hover over the green button to add a section.</p>
-<p></li></p>
-<li>
-<p>Select 'Full Width' for the section.</p>
-<p></li> </ul></p>
+<p>Click on 'Add Element' or hover over the green button to add a section.</li>
+<li>Select 'Full Width' for the section.</p>
 
 <p><strong>3. Adding Rows and Columns</strong></p>
-<ul data-tight="true">
-<li>
-<p>After adding a section, create a two-column row.</p>
-<p></li></p>
-<li>
-<p>Adjust the row settings to ensure it spans the full width of the screen.</p>
-<p></li> </ul></p>
+<p>After adding a section, create a two-column row.</li>
+<li>Adjust the row settings to ensure it spans the full width of the screen.</p>
 
 <p><strong>4. Adding Elements to Columns</strong></p>
 <p>Click 'Add' in the column to insert elements like headlines, sub-headlines, and paragraphs.</p>
 
 <p><strong>5. Adjusting Padding and Margins</strong></p>
-<ul data-tight="true">
-<li>
-<p>Click on the column or element to change styles.</p>
-<p></li></p>
-<li>
-<p>Use padding for space inside elements and margins for space outside.</p>
-<p></li> </ul></p>
+<p>Click on the column or element to change styles.</li>
+<li>Use padding for space inside elements and margins for space outside.</p>
 
 <p><strong>6. Consistent Padding Across Sections</strong></p>
-<ul data-tight="true">
-<li>
-<p>Use a percentage (5-10%) for padding to ensure responsiveness.</p>
-<p></li></p>
-<li>
-<p>Maintain consistent padding throughout the page.</p>
-<p></li> </ul></p>
+<p>Use a percentage (5-10%) for padding to ensure responsiveness.</li>
+<li>Maintain consistent padding throughout the page.</p>
 
 <p><strong>7. Naming Elements for Clarity</strong></p>
-<ul data-tight="true">
-<li>
 <p>Click on elements to rename them for easier identification (e.g., 'Text Block', 'Image Block').</p>
-<p></li> </ul></p>
 
 <p><strong>8. Using Global and Universal Sections</strong></p>
-<ul data-tight="true">
-<li>
-<p>Save sections as global if changes should reflect across multiple pages.</p>
-<p></li></p>
-<li>
-<p>Use universal sections for templates that can be reused across different websites.</p>
-<p></li> </ul></p>
+<p>Save sections as global if changes should reflect across multiple pages.</li>
+<li>Use universal sections for templates that can be reused across different websites.</p>
 
 <p><strong>9. Adding Images</strong></p>
-<ul data-tight="true">
-<li>
-<p>Upload images while maintaining their dimensions.</p>
-<p></li></p>
-<li>
-<p>For full-width images, set the column background as the image.</p>
-<p></li> </ul></p>
+<p>Upload images while maintaining their dimensions.</li>
+<li>For full-width images, set the column background as the image.</p>
 
 <p><strong>10. Adjusting Image Settings</strong></p>
-<ul data-tight="true">
-<li>
 <p>Remove padding from sections and rows to allow images to stretch to the edges.</p>
-<p></li> </ul></p>
 
 <p><strong>11. Checking Mobile View</strong>Use the mobile view option to ensure proper layout on mobile devices.</p>
-<ul data-tight="true">
-<li>
 <p>Duplicate columns if necessary to rearrange elements for mobile.</p>
-<p></li> </ul></p>
 
 <p><strong>12. Final Adjustments for Mobile</strong></p>
-<ul data-tight="true">
-<li>
 <p>Adjust image sizes and padding for mobile view to ensure consistency.</p>
-<p></li> </ul></p>
 
 <p><strong>13. Duplicating Sections</strong></p>
-<ul data-tight="true">
-<li>
 <p>Once spacing is correct, duplicate sections as needed for consistency.</p>
-<p></li> </ul></p>
 <h3>Cautionary Notes</h3>
-<ul data-tight="true">
-<li>
-<p>Always check the mobile view after making changes to ensure responsiveness.</p>
-<p></li></p>
-<li>
-<p>Be cautious when using global sections, as changes will affect all instances across the website.</p>
-<p></li> </ul></p>
+<p>Always check the mobile view after making changes to ensure responsiveness.</li>
+<li>Be cautious when using global sections, as changes will affect all instances across the website.</p>
 <h3>Tips for Efficiency</h3>
-<ul data-tight="true">
-<li>
-<p>Use saved sections and templates to streamline the building process.</p>
-<p></li></p>
-<li>
+<p>Use saved sections and templates to streamline the building process.</li>
 <p>Maintain consistent padding and margins to avoid layout issues.</p>
-<p></li> </ul></p>
+     margins to avoid layout issues.</p>
     </div>
 
     <div class="article-feedback">
@@ -262,6 +206,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

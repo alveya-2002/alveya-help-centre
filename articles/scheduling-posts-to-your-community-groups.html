@@ -136,7 +136,7 @@
 <li>Click Connect Social, then select Connect Community.</li>
 <li>All community groups attached to your Alvéya account will appear. Click Add next to the group you want to connect.</li>
 <li>The group will now appear as a connected account in the Social Planner.</li>
-<p></ul></p>
+</ul>
 <p><em>⚠️&nbsp; You can only connect community groups that are hosted within your own Alvéya account. Groups from other accounts cannot be connected here.</em></p>
 <p><em>💡&nbsp; If you create new channels or community groups after completing this setup, they will not appear in the Social Planner automatically. You will need to return to Settings → Community and click Resync to add the new channels and groups.</em></p>
 <h2 class="wp-block-heading"><strong>Step 2 — Create a Post</strong></h2>
@@ -144,10 +144,8 @@
 <h3 class="wp-block-heading"><strong>Select your destination</strong></h3>
 <p>Click the dropdown menu to choose where the post will be published. Scroll past your regular social media accounts to find your community groups and their individual channels listed below.</p>
 <p>You can post to a single channel, or create a post group to publish to multiple channels at once:</p>
-<ul class="wp-block-list">
 <li>To post to a single channel, simply select it from the dropdown.</li>
 <li>To post to multiple channels, click New Group, give it a name, then select all the channels you want to include. Once created, select the group from the dropdown and the post will go to every channel in that group when published.</li>
-<p></ul></p>
 <p><em>💡&nbsp; Posting to individual channels gives you more control over what content goes where. Channel-specific posts feel more intentional and relevant to members in that space — especially useful in structured programs with week-by-week content.</em></p>
 <h3 class="wp-block-heading"><strong>Build your post</strong></h3>
 <p>With your destination selected, add your content:</p>
@@ -164,11 +162,9 @@
 <h2 class="wp-block-heading"><strong>Step 4 — Review and Manage Scheduled Posts</strong></h2>
 <p>Once a post is scheduled, it will appear in the Social Planner calendar view. It may take a few seconds to appear after saving — this is normal.</p>
 <p>From the planner you can:</p>
-<ul class="wp-block-list">
 <li>See the status of each post — scheduled, in progress, published, or paused.</li>
 <li>Click on a scheduled post to edit it, change the date or time, or pause it before it goes out.</li>
 <li>Review all upcoming community content alongside your other social media posts in one view.</li>
-<p></ul></p>
 <p><em>💡&nbsp; Reviewing your planner at the start of each week is a good habit. It gives you a clear picture of what is scheduled across all your channels and allows you to make adjustments before content goes live.</em></p>
 <h2 class="wp-block-heading"><strong>Bulk Uploading Posts via CSV</strong></h2>
 <p>If you have a large volume of content to schedule — for example, a full program's worth of daily or weekly posts — you can upload a CSV file rather than creating each post individually.</p>
@@ -176,17 +172,16 @@
 <p><em>💡&nbsp; This is especially useful when setting up a new cohort of a course or program. You can prepare the entire run of community posts in one spreadsheet and upload them all at once, so the content is ready to go before the program even begins.</em></p>
 <h2 class="wp-block-heading"><strong>Setting a Default Post Author</strong></h2>
 <p>Rather than selecting the posting user manually every time you create a new post, you can set a default author for your community posts in the Social Planner settings.</p>
-<ul class="wp-block-list">
 <li>Navigate to Marketing → Social Planner → Settings.</li>
 <li>Click the Community tab.</li>
 <li>Select the user you want to appear as the default author on all community posts.</li>
-<p></ul></p>
 <p>This saves time when creating posts in bulk and ensures consistency in how content appears inside the community — always appearing as coming from the same practitioner or team member.</p>
 <p><em>⚠️&nbsp; The user selected as the default poster must already be a member of the community group and the specific channels you are posting to. If they are not, the post will not publish correctly.</em></p>
 <h2 class="wp-block-heading"><strong>Quick Recap</strong></h2>
 <figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>#</strong></th><th><strong>Action</strong></th></tr></thead><tbody><tr><td><strong>1</strong></td><td>Go to Marketing → Social Planner → Settings → Connect Social → Connect Community. Add your community group.</td></tr><tr><td><strong>2</strong></td><td>Click New Post → Create New Post. Select your destination channel or post group from the dropdown.</td></tr><tr><td><strong>3</strong></td><td>Add your image or video, write your post text, set a title, choose whether to notify all members, and select the posting user.</td></tr><tr><td><strong>4</strong></td><td>Use the Post button dropdown to choose: Post Now, Schedule Post, Schedule Recurring Post, Send for Approval, or Pause.</td></tr><tr><td><strong>5</strong></td><td>Review scheduled posts in the planner calendar. Edit, pause, or reschedule as needed.</td></tr><tr><td><strong>6</strong></td><td>For bulk content, upload a CSV file instead of creating posts individually.</td></tr><tr><td><strong>7</strong></td><td>Set a default post author in Settings → Community to save time on future posts.</td></tr><tr><td><strong>8</strong></td><td>When adding new channels or groups, return to Settings → Community and click Resync to make them available in the planner.</td></tr></tbody></table></figure>
 <p><strong>Consistent community engagement does not have to mean being constantly available. Scheduled posts let you show up reliably for your members — without adding more to your daily to-do list.</strong></p>
 <p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    t and we will guide you through.</p>
     </div>
 
     <div class="article-feedback">
@@ -212,6 +207,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

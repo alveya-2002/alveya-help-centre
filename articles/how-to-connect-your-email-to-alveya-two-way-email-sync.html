@@ -130,7 +130,7 @@
 <ul class="wp-block-list">
 <li>Emails you send from Alvéya appear in your Gmail/Outlook sent folder.</li>
 <li>Emails a contact sends to your Gmail/Outlook appear in Alvéya under that contact's conversation.</li>
-<p></ul></p>
+</ul>
 <p>This works with <strong>Gmail</strong> and <strong>Outlook</strong>.</p>
 <h2 class="wp-block-heading">Part 2: How to Connect Your Email</h2>
 <p><strong>Step 1:</strong> In Alvéya, click on <strong>Settings</strong> (usually found in the left sidebar or bottom-left menu).</p>
@@ -146,12 +146,10 @@
 <ol class="wp-block-list">
 <li><strong>You send first</strong> — If you send an email to a contact from inside Alvéya, that email (and all future replies in that thread) will sync between Gmail and Alvéya automatically.</li>
 <li><strong>They email you first</strong> — If a contact that's already saved in Alvéya sends an email to your Gmail, it will automatically appear in your Alvéya conversations too. (Note: the contact must be assigned to you first.)</li>
-<p></ol></p>
+</ol>
 <h3 class="wp-block-heading">For Outlook users:</h3>
-<ul class="wp-block-list">
 <li>The sync only starts when <strong>you send the first email from Alvéya</strong>. After that, all replies in that thread will sync in both directions.</li>
 <li>Emails you start from Outlook (not from Alvéya) will <strong>not</strong> sync into Alvéya.</li>
-<p></ul></p>
 <h2 class="wp-block-heading">Part 4: Important Limits to Know</h2>
 <figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th></th><th>Gmail</th><th>Outlook</th></tr></thead><tbody><tr><td>Daily email limit</td><td>~500 emails/day</td><td>No stated limit</td></tr><tr><td>Max attachment size</td><td>25 MB</td><td>3 MB</td></tr><tr><td>Supported file types</td><td>All common types</td><td>JPG, PNG, PDF, DOC, MP4, ZIP, RAR, TXT</td></tr></tbody></table></figure>
 <p>💡 <strong>Tip for Gmail users:</strong> The 500/day limit only applies to <strong>one-on-one emails</strong>. Bulk emails and automated messages sent through Alvéya are sent separately and don't count toward this limit.</p>
@@ -174,6 +172,7 @@
 <h3 class="wp-block-heading">What if my Gmail password changes?</h3>
 <p>If your Google password changes, you'll need to reconnect your Gmail account in the Email Sync settings to keep everything working.</p>
 <p><em>Need more help? Contact the Alvéya support team.</em></p>
+    ct the Alvéya support team.</em></p>
     </div>
 
     <div class="article-feedback">
@@ -199,6 +198,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

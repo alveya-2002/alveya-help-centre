@@ -150,13 +150,14 @@
 <p>If you would like us to add them for you, simply send their <strong>name and email address</strong> through the <strong>chat widget</strong>, and confirm that you would like them to have access to your account. Our team can then jump in and update this for you.</p>
 		<p>This message usually appears when the person you are trying to add is <strong>already connected to another Alvéya™ account</strong>.</p>
 
-<p>Because of the way user permissions work, this can sometimes prevent you from adding them directly from your dashboard.</p>
 
-<p>We can add this person to your account from our end if needed. It is just important to note that if they currently have <strong>admin access in another Alvéya™ account</strong>, they will also have <strong>admin access in your account</strong>.</p>
 
-<p>If you would prefer them to have <strong>user access only</strong>, you will need to ask them for an <strong>email address that is not already connected to an Alvéya™ account</strong>. You can then add that email address as a team member inside your account.</p>
 
-<p>If you would like us to add them for you, simply send their <strong>name and email address</strong> through the <strong>chat widget</strong>, and confirm that you would like them to have access to your account. Our team can then jump in and update this for you.</p>
+    er Alvéya™ account</strong>.</p>
+
+
+
+
     </div>
 
     <div class="article-feedback">
@@ -182,6 +183,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

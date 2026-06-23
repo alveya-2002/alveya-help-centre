@@ -132,52 +132,35 @@
 <li>Navigate to the bottom of your account settings.</li>
 <li>Click on <strong>Settings</strong>.</li>
 <li>Select <strong>Email Services</strong>.</li>
-<p></ul></p>
+</ul>
 <p><strong>2. Understand Shared Domain Usage</strong></p>
-<ul class="wp-block-list">
 <li>Currently, you are using a shared domain for sending emails (e.g., noreply.alvear.io).</li>
 <li>It is recommended to connect your own domain to avoid issues caused by other users.</li>
-<p></ul></p>
 <p><strong>3. Create a Dedicated Domain</strong></p>
-<ul class="wp-block-list">
 <li>Click on <strong>Create Dedicated Domain</strong>.</li>
 <li>Consider using a subdomain (e.g., mg.mydomain.com) for sending emails.</li>
-<p></ul></p>
 <p><strong>4. Configure MX Records</strong></p>
-<ul class="wp-block-list">
 <li>If using a subdomain, ensure you configure the MX records.</li>
 <li>This helps separate email campaigns from your personal emails.</li>
-<p></ul></p>
 <p><strong>5. Choose Between Subdomain or Root Domain</strong></p>
-<ul class="wp-block-list">
 <li>Decide whether to use a subdomain or keep the current setup based on your email campaign performance.</li>
-<p></ul></p>
 <p><strong>6. Set Up Your Subdomain</strong></p>
-<ul class="wp-block-list">
 <li>If you have a professional email (e.g., through Google Workspace), use a subdomain (e.g., connect.elharrison.design).</li>
 <li>Click <strong>Add and Verify</strong>.</li>
-<p></ul></p>
 <p><strong>7. Add DNS Records</strong></p>
-<ul class="wp-block-list">
 <li>You can add records manually or automatically through Cloudflare.</li>
 <li>Follow the instructions to copy and paste the DNS records.</li>
-<p></ul></p>
 <p><strong>8. Verify Domain</strong></p>
-<ul class="wp-block-list">
 <li>After a few minutes, return to verify your domain.</li>
 <li>Ensure that the SSL security certificate is issued.</li>
-<p></ul></p>
 <p><strong>9. Set Dedicated Headers</strong></p>
-<ul class="wp-block-list">
 <li>Click on the three buttons and select <strong>Set Headers</strong>.</li>
 <li>Add your name/business name and the from email address.</li>
-<p></ul></p>
 <p><strong>10. Configure Domain for Email Features</strong></p>
-<ul class="wp-block-list">
 <li>Go to <strong>Domain Configuration</strong>.</li>
 <li>Specify the purpose of the domain (e.g., calendar, payments, campaigns).</li>
 <li>You can use different subdomains for different features or keep it simple.</li>
-<p></ul></p>
+    ent features or keep it simple.</li>
     </div>
 
     <div class="article-feedback">
@@ -203,6 +186,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

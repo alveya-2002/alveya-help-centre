@@ -123,85 +123,39 @@
     </a>
 
     <div class="article-content">
-      <p data-start="889" data-end="895">This article is a step from the  Playbook. To continue the process of setting up your <strong>Calendars</strong> after this step, <a href="https://help.alveya.io/calendar-playbook/"><strong>head back to the playbook here.</strong></a></p>
-<p data-start="889" data-end="895"> </p>
+      <p>This article is a step from the  Playbook. To continue the process of setting up your <strong>Calendars</strong> after this step, <a href="https://help.alveya.io/calendar-playbook/"><strong>head back to the playbook here.</strong></a></p>
+<p> </p>
 <p><i>When a client books an appointment through Alvéya, you want the video link to be there waiting — no copy-pasting, no back-and-forth. This guide walks you through connecting your video conferencing platform so that unique meeting links are generated automatically for every booking.</i></p><h2><b>Two Ways to Handle Video Links</b></h2>
 <p>Before you start, it helps to know that Alvéya gives you two options for adding video links to appointments. The right one depends on how you prefer to run your calls.</p>
 
 <ul>
 <li style="font-weight: 400;" aria-level="1"><b>Connected integration (unique links) — </b>Connect Google Meet, Zoom, or Microsoft Teams to Alvéya. A brand new, unique meeting link is automatically generated for every single booking. This is the recommended option for most practitioners.</li>
 <li style="font-weight: 400;" aria-level="1"><b>Personal meeting room link (static link) — </b>If you prefer to use the same link for every appointment (such as a Zoom personal meeting room), you can skip the integration entirely and paste that link directly into your calendar settings instead.</li>
-<p></ul></p>
+</ul>
 <p><i>💡  Not sure which to choose? If privacy between sessions matters to you or your clients — for example, you would not want one client to accidentally join another session — go with the connected integration so every booking gets its own unique link.</i></p>		
 						<h3>Option 1 — Connect Your Video Platform</h3><p>Follow these steps to connect Google Meet, Zoom, or Microsoft Teams to Alvéya.<b></b></p>
-<ul>
 <li aria-level="1">Go to Settings in your Alvéya sidebar.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Select Calendars, then click the Connections tab.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Scroll down to the Video Conferencing section and click Add New.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Choose your platform — Google Meet, Zoom, or Microsoft Teams.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Sign in and authorise Alvéya to connect to your account.</li>
-<p></ul></p>
 
 <p>Once connected, Alvéya will automatically generate a unique meeting link for every appointment booked through your calendars. Your clients will receive this link in their booking confirmation, and it will also appear in the appointment details inside Alvéya.</p>
 <p><i>⚠️  Make sure you connect the video platform account that you actually use for client calls. If you have multiple Google or Zoom accounts, double-check you are signing into the right one.</i></p>
 						<h3>Option 2 — Use a Personal Meeting Room Link</h3><p>If you use a fixed meeting room link — such as a Zoom personal meeting room or a permanent Google Meet link — you do not need to connect an integration at all. Instead, you can paste the link directly into your calendar.</p>
-<ul>
 <li aria-level="1">Go to Settings → Calendars and open the calendar you want to update.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">In the calendar settings, find the Meeting Location field.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Paste your personal meeting room link into this field.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Save your changes.</li>
-<p></ul></p>
 
 <p>Every booking made through this calendar will now include your personal meeting room link in the confirmation details.</p>
 <p><i>⚠️  Keep in mind that with a static link, the same URL is used for every appointment. If a client holds onto an old confirmation email, they could technically join a future session uninvited. For this reason, unique generated links are generally the more secure choice.</i></p>
 		<p>Follow these steps to connect Google Meet, Zoom, or Microsoft Teams to Alvéya.<b></b></p>
-<ul>
-<li aria-level="1">Go to Settings in your Alvéya sidebar.</li>
-<p></ul></p>
-<ul>
-<li aria-level="1">Select Calendars, then click the Connections tab.</li>
-<p></ul></p>
-<ul>
-<li aria-level="1">Scroll down to the Video Conferencing section and click Add New.</li>
-<p></ul></p>
-<ul>
-<li aria-level="1">Choose your platform — Google Meet, Zoom, or Microsoft Teams.</li>
-<p></ul></p>
-<ul>
-<li aria-level="1">Sign in and authorise Alvéya to connect to your account.</li>
-<p></ul></p>
 
-<p>Once connected, Alvéya will automatically generate a unique meeting link for every appointment booked through your calendars. Your clients will receive this link in their booking confirmation, and it will also appear in the appointment details inside Alvéya.</p>
-<p><i>⚠️  Make sure you connect the video platform account that you actually use for client calls. If you have multiple Google or Zoom accounts, double-check you are signing into the right one.</i></p><p>If you use a fixed meeting room link — such as a Zoom personal meeting room or a permanent Google Meet link — you do not need to connect an integration at all. Instead, you can paste the link directly into your calendar.</p>
-<ul>
-<li aria-level="1">Go to Settings → Calendars and open the calendar you want to update.</li>
-<p></ul></p>
-<ul>
-<li aria-level="1">In the calendar settings, find the Meeting Location field.</li>
-<p></ul></p>
-<ul>
-<li aria-level="1">Paste your personal meeting room link into this field.</li>
-<p></ul></p>
-<ul>
-<li aria-level="1">Save your changes.</li>
-<p></ul></p>
 
-<p>Every booking made through this calendar will now include your personal meeting room link in the confirmation details.</p>
-<p><i>⚠️  Keep in mind that with a static link, the same URL is used for every appointment. If a client holds onto an old confirmation email, they could technically join a future session uninvited. For this reason, unique generated links are generally the more secure choice.</i></p>https://youtu.be/Js5KCoqrsZ4
+    rosoft Teams to Alvéya.<b></b></p>
+
+
     </div>
 
     <div class="article-feedback">
@@ -227,6 +181,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

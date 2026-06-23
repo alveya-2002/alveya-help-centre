@@ -131,6 +131,7 @@
 <p>Yes. The notification email that accompanies a course access removal can be customised in your email template settings, or removed from the workflow entirely if you prefer not to send one. Navigate to Settings &gt; Email Templates to edit or disable it.</p>
 <p><strong>▸&nbsp; Why isn't a course showing under the 'All Courses' or 'My Courses' tab?</strong></p>
 <p>This usually happens for one of three reasons: the course has not been published yet, the student does not have active access to that course, or there is a membership filter applied that is hiding certain courses. Check that the course is Published, that the student's access record is active, and that no visibility filters are restricting what they can see.</p>
+    e restricting what they can see.</p>
     </div>
 
     <div class="article-feedback">
@@ -156,6 +157,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

@@ -129,61 +129,49 @@
 <ol>
 <li>From your Alvéya™ dashboard, click <strong>Marketing → Emails → Templates</strong>.</li>
 <li>Click <strong>+ New</strong> and select <strong>Blank Template</strong>.</li>
-<p></ol></p>
+</ol>
 <p>💡 <em>It’s best to create templates before building your workflows or campaigns so you can reuse them easily across your account.</em></p>
 <h2>Step 2: Choose a Template Type</h2>
 <p>You’ll see two editor options:</p>
 <ul>
 <li><strong>Plain Text Editor</strong> → best for system or appointment emails (simple, reliable formatting).</li>
 <li><strong>Design Editor</strong> → ideal for branded newsletters or promotional emails.</li>
-<p></ul></p>
+</ul>
 <p>Select the editor that suits your goal, then click <strong>Create Template</strong>.</p>
 <h2>Step 3: Add Your Email Content</h2>
-<ol>
 <li>Paste your email copy into the editor.</li>
 <li>Remove any placeholder text that appears.</li>
 <li>Rename your template clearly, such as <em>Appointment Confirmation – Plain Text</em> or <em>Newsletter Template</em>.</li>
-<p></ol></p>
 <p>💡 <em>Keep your subject line short and clear — aim for under 50 characters.</em></p>
 <h2>Step 4: Insert Custom Values (Optional)</h2>
 <p>You can personalise your emails by adding <strong>Custom Values</strong> — these automatically pull contact or appointment details.</p>
-<ol>
 <li>Click the <strong>Custom Values</strong> icon in the toolbar.</li>
 <li>Select a field from the list, such as:<br />
-<ul>
 <li><strong>Contact → First Name</strong></li>
 <li><strong>Appointment → Start Date</strong></li>
 <li><strong>Appointment → Start Time</strong></li>
 <li><strong>Location → Name</strong><strong><br /></strong></li>
 <p></ul> </li></p>
 <li>The value will appear in brackets (e.g. {{contact.first_name}}).</li>
-<p></ol></p>
 <p>💡 <em>Use only the fields you need to keep emails clean and easy to read.</em></p>
 <h2>Step 5: Add Reschedule or Cancellation Links</h2>
 <p>If you’re creating an appointment-related template:</p>
-<ol>
 <li>Type text such as “Reschedule Appointment” or “Cancel Appointment.”</li>
 <li>Highlight the text and click the <strong>Link icon</strong> in the toolbar.</li>
 <li>Open the <strong>Custom Values</strong> menu → choose:
-<ul>
 <li><strong>Appointment → Reschedule Link</strong>, or</li>
 <li><strong>Appointment → Cancel Link</strong></li>
-<p></ul> </li></p>
 <li>Paste the value into the link URL field.</li>
-<p></ol></p>
 <p>💡 <em>Including reschedule and cancellation links helps reduce no-shows and support requests.</em></p>
 <h2>Step 6: Save and Test Your Template</h2>
-<ol>
 <li>Click <strong>Save Template</strong> in the top-right corner.</li>
 <li>Use <strong>Send Test Email</strong> to preview your message and confirm formatting, spacing, and links are correct.</li>
-<p></ol></p>
 <h2>Step 7: Organise Your Templates</h2>
 <p>To stay organised:</p>
-<ol>
 <li>Use folders to group templates (e.g. <em>Appointments</em>, <em>Newsletters</em>, <em>Internal Messages</em>).</li>
 <li>Drag and drop each template into the right folder.</li>
-<p></ol></p>
 <p>💡 <em>Naming templates consistently (e.g. “Appointment Reminder – Email”) makes them easy to find later.</em></p>
+    es them easy to find later.</em></p>
     </div>
 
     <div class="article-feedback">
@@ -209,6 +197,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to Set Up Email &amp;amp; SMS Sending in Alvéya™ — Alvéya™ Help Centre</title>
+  <title>How to Set Up Email &amp; SMS Sending in Alvéya™ — Alvéya™ Help Centre</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
@@ -105,9 +105,9 @@
         <span>›</span>
         <a href="../category.html?cat=email-marketing">Email Marketing</a>
         <span>›</span>
-        <span>How to Set Up Email &amp;amp; SMS Sending in Alvéya™</span>
+        <span>How to Set Up Email &amp; SMS Sending in Alvéya™</span>
       </nav>
-      <h1 class="article-title">How to Set Up Email &amp;amp; SMS Sending in Alvéya™</h1>
+      <h1 class="article-title">How to Set Up Email &amp; SMS Sending in Alvéya™</h1>
       <div class="article-meta">
         <span>Updated June 2026</span>
       </div>
@@ -126,8 +126,7 @@
       <p>Alvéya™ lets you send emails and SMS directly from your account so you can confirm bookings, deliver resources, and stay in touch with your clients. Before you start building automations or campaigns, you’ll need to connect your sending email and secure an SMS number.</p>		
 					<h2>Step 1: Decide Which Email Option to Use</h2>				
 		<p>You can connect your email in one of three ways:</p><ul><li style="font-weight: 400;" aria-level="1"><b>SMTP</b> → works with most email providers.</li><li style="font-weight: 400;" aria-level="1"><b>Google (Gmail / Google Workspace)</b> → quick if your business email runs through Google.</li><li style="font-weight: 400;" aria-level="1"><b>Outlook / Microsoft 365</b> → for those using Microsoft.</li><li style="font-weight: 400;" aria-level="1"><b>Mailgun</b> → good if you want higher deliverability at scale.<br /><br /></li></ul><p>📖 How to Connect Gmail as SMTP →<br />📖 How to Connect Outlook as SMTP →<br />📖 How to Connect Mailgun →</p>		
-					<h2>Step 2: Connect Your Email
-<p></h2></p>
+					<h2>Step 2: Connect Your Email</h2>
 		<ol><li>Log into Alvéya™.</li><li>Go to <b>Settings → Email Services</b>.</li><li>Click <b>Add Service</b> and choose your provider.</li><li>Follow the prompts (username, password, SMTP server, port, or OAuth login for Google/Outlook).</li><li>Save and test your connection.</li></ol>		
 					<h2>Step 3: Purchase or Connect an SMS Number</h2>				
 		<p>To send SMS reminders and campaigns, you’ll need a dedicated number.</p><ol><li>In Alvéya™, go to <b>Settings → Phone Numbers</b>.</li><li>Click <b>Add Number</b>.</li><li>Search by country (e.g., Australia) and choose a number.</li><li>Click <b>Save</b>.</li></ol><p><img role="img" draggable="false" src="https://s.w.org/images/core/emoji/16.0.1/svg/1f4d6.svg" alt="📖" /> How to Buy &amp; Verify an SMS Number →</p>		
@@ -137,6 +136,7 @@
 		<ul><li><b style="background-color: transparent;">Emails not sending?</b> Check SMTP username, password, and port.</li><li><b style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';">SMS not sending?</b> Make sure you’ve added credits (if applicable) and that the number is verified.</li><li><b>Deliverability issues?</b> Always use your own custom domain for sending — avoid free emails like @gmail.com.</li></ul>		
 					<h2>Next Steps</h2>				
 		<p>Now that your email and SMS are live, you can:</p><ul><li style="font-weight: 400;" aria-level="1">Create Your First Booking Calendar →</li><li style="font-weight: 400;" aria-level="1">Build an Automation (Freebie Delivery) →</li><li style="font-weight: 400;" aria-level="1">Send Your First Newsletter →</li></ul>
+    nd Your First Newsletter →</li></ul>
     </div>
 
     <div class="article-feedback">
@@ -162,6 +162,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

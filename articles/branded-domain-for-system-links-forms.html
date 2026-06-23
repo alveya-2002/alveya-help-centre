@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Branded Domain for system links &amp;amp; forms — Alvéya™ Help Centre</title>
+  <title>Branded Domain for system links &amp; forms — Alvéya™ Help Centre</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
@@ -105,9 +105,9 @@
         <span>›</span>
         <a href="../category.html?cat=courses-funnels">Courses & Funnels</a>
         <span>›</span>
-        <span>Branded Domain for system links &amp;amp; forms</span>
+        <span>Branded Domain for system links &amp; forms</span>
       </nav>
-      <h1 class="article-title">Branded Domain for system links &amp;amp; forms</h1>
+      <h1 class="article-title">Branded Domain for system links &amp; forms</h1>
       <div class="article-meta">
         <span>Updated June 2026</span>
       </div>
@@ -123,7 +123,7 @@
     </a>
 
     <div class="article-content">
-      <p data-start="889" data-end="895">This article is step one from the Domains playbook. To continue the process of setting up your domains after this step, <a href="https://help.alveya.io/domains-playbook/">head back to the playbook here.</a></p>
+      <p>This article is step one from the Domains playbook. To continue the process of setting up your domains after this step, <a href="https://help.alveya.io/domains-playbook/">head back to the playbook here.</a></p>
 <p>A branded domain ensures that system-generated links — such as form links, calendar booking links, survey links, and trigger links — display your own domain name rather than a default Alvéya address. This guide walks you through how to set one up.</p>
 <h2 dir="ltr" style="line-height: 1.2; margin-top: 18pt; margin-bottom: 8pt;">What Is a Branded Domain?</h2>
 <p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 8pt;">When Alvéya generates links for things like opt-in forms, booking calendars, or surveys, those links include a domain name. Without a branded domain configured, the links will display a default Alvéya address — for example, links.alveya.io.</p>
@@ -134,9 +134,9 @@
 <ul>
 <li dir="ltr" style="line-height: 1.2;" role="presentation">Access to your Alvéya Business Profile Settings.</li>
 <li dir="ltr" style="line-height: 1.2;" role="presentation">Access to the DNS settings for your domain — this is usually managed through your domain registrar (e.g. VentraIP, GoDaddy, Cloudflare, Namecheap, or similar).</li>
-<p></ul></p>
+</ul>
 <p dir="ltr" style="line-height: 1.2; border-left: solid #698c8e 1.5pt; background-color: #d6e8e9; margin-top: 5pt; margin-bottom: 9pt; background-clip: padding-box; padding: 0pt 0pt 0pt 8pt;">⚠️  You must use a subdomain for your branded domain — a root domain (e.g. yourwebsite.com) will not work here. A subdomain such as links.yourwebsite.com is the recommended format.</p>
-<p>https://youtu.be/abNemdA53pQ</p>
+<div class="video-wrap"><iframe width="100%" height="400" src="https://www.youtube.com/embed/abNemdA53pQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 						<h3>WRITTEN INSTRUCTIONS:</h3><h2><b>Step-by-Step Setup</b></h2>
 <h3><b>Step 1 — Open Business Profile Settings</b></h3>
 <p>Log in to Alvéya and navigate to your Business Profile Settings. The branded domain section is located within this settings area.</p>
@@ -147,28 +147,22 @@
 <p><i>💡  Keep your subdomain short and easy to read. The word &#8216;links&#8217; is the most common and intuitive choice for this purpose.</i></p>
 <h3><b>Step 3 — Note the CNAME Details</b></h3>
 <p>Once you have entered your subdomain, Alvéya will display the DNS record you need to add. Note down both values:</p>
-<ul>
 <li style="font-weight: 400;" aria-level="1">Type — this will be CNAME.</li>
 <li style="font-weight: 400;" aria-level="1">Host — this is the subdomain word you entered (e.g. links).</li>
 <li style="font-weight: 400;" aria-level="1">Value — this is the destination address provided by Alvéya. Copy this carefully.</li>
-<p></ul></p>
 <h3><b>Step 4 — Add the CNAME Record in Your DNS Settings</b></h3>
 <p>Log in to your domain registrar and navigate to your DNS settings. The exact location varies depending on your provider, but it is usually found under DNS Management, DNS Records, or Zone Editor.</p>
-<ul>
 <li style="font-weight: 400;" aria-level="1">Click to add a new DNS record.</li>
 <li style="font-weight: 400;" aria-level="1">Set the record type to CNAME.</li>
 <li style="font-weight: 400;" aria-level="1">In the Host or Name field, enter the subdomain word (e.g. links).</li>
 <li style="font-weight: 400;" aria-level="1">In the Value or Points To field, paste the value copied from Alvéya.</li>
 <li style="font-weight: 400;" aria-level="1">Save the record.</li>
-<p></ul></p>
 <p><i>💡  If your DNS provider asks for a TTL (Time to Live), the default setting is fine. You do not need to change it.</i></p>
 <h3><b>Step 5 — Verify the Record in Alvéya</b></h3>
 <p>Head back to your Alvéya Business Profile Settings and click Verify Records.</p>
-<ul>
 <li style="font-weight: 400;" aria-level="1">Verification can take up to 30 seconds.</li>
 <li style="font-weight: 400;" aria-level="1">If it does not verify immediately, wait a moment and try again. DNS changes can occasionally take a few minutes to propagate.</li>
 <li style="font-weight: 400;" aria-level="1">Once verified successfully, a Modify button will appear next to your domain, confirming the setup is complete.</li>
-<p></ul></p>
 <p><i>⚠️  If verification fails, double-check that the CNAME record was saved correctly in your DNS settings — particularly the Host and Value fields. Even a small typo will prevent verification from succeeding.</i></p>
 
 <h2><b>What Happens After Setup</b></h2>
@@ -183,150 +177,37 @@
 <th>
 <p><b>#</b></p>
 <p></th></p>
-<th>
 <p><b>Action</b></p>
 <p></th> </tr> </thead></p>
 <tbody>
-<tr>
 <td>
 <p><b>1</b></p>
 <p></td></p>
-<td>
 <p>Go to Business Profile Settings in Alvéya.</p>
 <p></td> </tr></p>
-<tr>
-<td>
 <p><b>2</b></p>
-<p></td></p>
-<td>
 <p>Enter your subdomain (e.g. links.yourwebsite.com) in the branded domain field.</p>
-<p></td> </tr></p>
-<tr>
-<td>
 <p><b>3</b></p>
-<p></td></p>
-<td>
 <p>Note the CNAME type, host, and value provided by Alvéya.</p>
-<p></td> </tr></p>
-<tr>
-<td>
 <p><b>4</b></p>
-<p></td></p>
-<td>
 <p>Log in to your DNS provider and add a new CNAME record with the host and value from Alvéya.</p>
-<p></td> </tr></p>
-<tr>
-<td>
 <p><b>5</b></p>
-<p></td></p>
-<td>
 <p>Return to Alvéya and click Verify Records. Wait up to 30 seconds for confirmation.</p>
-<p></td> </tr></p>
-<tr>
-<td>
 <p><b>6</b></p>
-<p></td></p>
-<td>
 <p>Once verified, your branded domain is active on all system-generated links.</p>
 <p></td> </tr> </tbody> </table></p>
 
 <p><b>Once your branded domain is verified, every link Alvéya generates will carry your name — not ours.</b></p>
 <p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
 		<h2><b>Step-by-Step Setup</b></h2>
-<h3><b>Step 1 — Open Business Profile Settings</b></h3>
-<p>Log in to Alvéya and navigate to your Business Profile Settings. The branded domain section is located within this settings area.</p>
-<h3><b>Step 2 — Enter Your Subdomain</b></h3>
-<p>In the branded domain field, type the subdomain you want to use. The recommended format is:</p>
-<p><b>  links.yourwebsite.com</b></p>
-<p>Replace yourwebsite.com with your actual domain name. Do not enter the root domain on its own — Alvéya requires a subdomain prefix such as links, go, or connect.</p>
 <p><i>💡  Keep your subdomain short and easy to read. The word 'links' is the most common and intuitive choice for this purpose.</i></p>
-<h3><b>Step 3 — Note the CNAME Details</b></h3>
-<p>Once you have entered your subdomain, Alvéya will display the DNS record you need to add. Note down both values:</p>
-<ul>
-<li style="font-weight: 400;" aria-level="1">Type — this will be CNAME.</li>
-<li style="font-weight: 400;" aria-level="1">Host — this is the subdomain word you entered (e.g. links).</li>
-<li style="font-weight: 400;" aria-level="1">Value — this is the destination address provided by Alvéya. Copy this carefully.</li>
-<p></ul></p>
-<h3><b>Step 4 — Add the CNAME Record in Your DNS Settings</b></h3>
-<p>Log in to your domain registrar and navigate to your DNS settings. The exact location varies depending on your provider, but it is usually found under DNS Management, DNS Records, or Zone Editor.</p>
-<ul>
-<li style="font-weight: 400;" aria-level="1">Click to add a new DNS record.</li>
-<li style="font-weight: 400;" aria-level="1">Set the record type to CNAME.</li>
-<li style="font-weight: 400;" aria-level="1">In the Host or Name field, enter the subdomain word (e.g. links).</li>
-<li style="font-weight: 400;" aria-level="1">In the Value or Points To field, paste the value copied from Alvéya.</li>
-<li style="font-weight: 400;" aria-level="1">Save the record.</li>
-<p></ul></p>
-<p><i>💡  If your DNS provider asks for a TTL (Time to Live), the default setting is fine. You do not need to change it.</i></p>
-<h3><b>Step 5 — Verify the Record in Alvéya</b></h3>
-<p>Head back to your Alvéya Business Profile Settings and click Verify Records.</p>
-<ul>
-<li style="font-weight: 400;" aria-level="1">Verification can take up to 30 seconds.</li>
-<li style="font-weight: 400;" aria-level="1">If it does not verify immediately, wait a moment and try again. DNS changes can occasionally take a few minutes to propagate.</li>
-<li style="font-weight: 400;" aria-level="1">Once verified successfully, a Modify button will appear next to your domain, confirming the setup is complete.</li>
-<p></ul></p>
-<p><i>⚠️  If verification fails, double-check that the CNAME record was saved correctly in your DNS settings — particularly the Host and Value fields. Even a small typo will prevent verification from succeeding.</i></p>
 
-<h2><b>What Happens After Setup</b></h2>
-<p>Once your branded domain is verified, any system-generated links in Alvéya — including form links, calendar booking links, survey links, and trigger links — will automatically display your branded subdomain rather than the default Alvéya address.</p>
-<p>You do not need to update or recreate any existing links. Alvéya applies the branded domain going forward from the moment verification is complete.</p>
-<p><i>💡  After setup, send yourself a test link to confirm it is displaying your branded domain correctly before sharing any links with your audience.</i></p>
 
-<h2><b>Quick Recap</b></h2>
-<table>
-<thead>
-<tr>
-<th>
-<p><b>#</b></p>
-<p></th></p>
-<th>
-<p><b>Action</b></p>
-<p></th> </tr> </thead></p>
-<tbody>
-<tr>
-<td>
-<p><b>1</b></p>
-<p></td></p>
-<td>
-<p>Go to Business Profile Settings in Alvéya.</p>
-<p></td> </tr></p>
-<tr>
-<td>
-<p><b>2</b></p>
-<p></td></p>
-<td>
-<p>Enter your subdomain (e.g. links.yourwebsite.com) in the branded domain field.</p>
-<p></td> </tr></p>
-<tr>
-<td>
-<p><b>3</b></p>
-<p></td></p>
-<td>
-<p>Note the CNAME type, host, and value provided by Alvéya.</p>
-<p></td> </tr></p>
-<tr>
-<td>
-<p><b>4</b></p>
-<p></td></p>
-<td>
-<p>Log in to your DNS provider and add a new CNAME record with the host and value from Alvéya.</p>
-<p></td> </tr></p>
-<tr>
-<td>
-<p><b>5</b></p>
-<p></td></p>
-<td>
-<p>Return to Alvéya and click Verify Records. Wait up to 30 seconds for confirmation.</p>
-<p></td> </tr></p>
-<tr>
-<td>
-<p><b>6</b></p>
-<p></td></p>
-<td>
-<p>Once verified, your branded domain is active on all system-generated links.</p>
-<p></td> </tr> </tbody> </table></p>
 
-<p><b>Once your branded domain is verified, every link Alvéya generates will carry your name — not ours.</b></p>
-<p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+     choice for this purpose.</i></p>
+
+
+
     </div>
 
     <div class="article-feedback">
@@ -352,6 +233,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

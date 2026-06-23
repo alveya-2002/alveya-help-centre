@@ -132,17 +132,15 @@
 <li>The creation of fake contacts that can clutter your CRM.</li>
 <li>Excessive automated form submissions that overload your infrastructure.</li>
 <li>Increased costs from automated SMS, email, or other communication updates triggered by fake entries.</li>
-<p></ul></p>
+</ul>
 <p>To add captcha to you form navigate to forms &gt; custom fields &gt; captcha.</p>
 <figure class="wp-block-image size-large"><img src="https://help.alveya.io/wp-content/uploads/2026/03/Screenshot-2026-03-13-at-9.27.09-pm-1024x508.png" alt="" class="wp-image-2892"/></figure>
 <pre class="wp-block-preformatted">This is especially useful when you have automations setup to send SMS, email or other form of communication updates. Else you may experience increased costs due to fake contacts being created in your CRM by bad actors. </pre>
 <h2 class="wp-block-heading" id="2.-Validate-Email-and-Phone-Numbers">2. Validate Email and Phone Numbers</h2>
 <p>Ensure only legitimate users submit forms by enabling&nbsp;<strong>email and phone number validation</strong>. This helps:</p>
-<ul class="wp-block-list">
 <li>Block temporary, invalid, or fake contact details.</li>
 <li>Prevent fraudulent entries from affecting your marketing and sales data.</li>
 <li>Reduce unnecessary outreach costs.</li>
-<p></ul></p>
 <figure class="wp-block-image size-large"><img src="https://help.alveya.io/wp-content/uploads/2026/03/Screenshot-2026-03-13-at-9.28.38-pm-1024x563.png" alt="" class="wp-image-2893"/></figure>
 <h2 class="wp-block-heading" id="3.-Restrict-SMS-Permissions-Based-on-Geography">3. Restrict SMS Permissions Based on Geography</h2>
 <p>If your form triggers SMS communications, configure <strong>SMS geo-permissions</strong> to prevent messages from being sent to high-risk regions. </p>
@@ -158,10 +156,11 @@
 <li>Zimbabwe (+263)</li>
 <li>Afghanistan (+93)</li>
 <li>Yemen (+967)</li>
-<p></ol></p>
+</ol>
 <pre class="wp-block-preformatted">Best Practice - For optimal security it is a good idea to ONLY ENABLE SMS permission for regions where your actual customers are located. Be cautious when activating SMS in high-risk areas to prevent fraudulent activities.</pre>
 <h1 class="wp-block-heading" id="Key-Takeaways">Key Takeaways</h1>
 <p>Enhancing form security protects your business from spam, fake contacts, and unnecessary costs. While built-in protections help, adding&nbsp;<strong>CAPTCHA, email/phone validation, and geo-restricted SMS permissions</strong>&nbsp;further strengthens security. Implement these best practices to ensure only genuine submissions reach your system.</p>
+    e submissions reach your system.</p>
     </div>
 
     <div class="article-feedback">
@@ -187,6 +186,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

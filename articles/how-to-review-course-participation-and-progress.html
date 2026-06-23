@@ -130,14 +130,15 @@
 <li>Select the course you want to review.</li>
 <li>Click on the Analytics tab inside that course.</li>
 <li>Here you can see:</li>
-<p></ol></p>
+</ol>
 <ul class="wp-block-list">
 <li>Overall completion rates for the course</li>
 <li>Individual student progress — how many lessons each person has completed</li>
 <li>Which lessons have the highest and lowest completion rates</li>
 <li>When each student last accessed the course</li>
-<p></ul></p>
+</ul>
 <p><em>💡&nbsp; If a student's progress shows as 0% but they are enrolled, they may not have logged in yet or may be having trouble accessing the platform. Consider sending them a login reminder.</em></p>
+    ding them a login reminder.</em></p>
     </div>
 
     <div class="article-feedback">
@@ -163,6 +164,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

@@ -123,43 +123,32 @@
     </a>
 
     <div class="article-content">
-      <p data-start="889" data-end="895"><i>When a client replies to one of your emails, where does that reply go? By default it comes into your Conversations tab — but you can also route it to a specific email inbox, or even set a custom reply-to address so replies land exactly where you need them. This guide walks you through both options.</i></p>					<h2 
+      <p><i>When a client replies to one of your emails, where does that reply go? By default it comes into your Conversations tab — but you can also route it to a specific email inbox, or even set a custom reply-to address so replies land exactly where you need them. This guide walks you through both options.</i></p>					<h2 
 <p>data-interaction-id="55b377e" class="e-heading-base" data-e-type="widget" data-id="55b377e" > Where to Find These Settings </h2></p>
 		<p>All reply and forwarding options live in one place. To get there:</p>
 <ul>
 <li aria-level="1">From the left-hand menu, click Settings.</li>
-<p></ul></p>
-<ul>
+</ul>
 <li aria-level="1">Select Email Services.</li>
 <li aria-level="1">Click the Reply &amp; Forward Settings tab at the top</li>
-<p></ul></p>
-															<img width="800" height="446" src="https://help.alveya.io/wp-content/uploads/2026/06/Setting-the-default-reply-email-address-1024x571.png" alt="" srcset="https://help.alveya.io/wp-content/uploads/2026/06/Setting-the-default-reply-email-address-1024x571.png 1024w, https://help.alveya.io/wp-content/uploads/2026/06/Setting-the-default-reply-email-address-300x167.png 300w, https://help.alveya.io/wp-content/uploads/2026/06/Setting-the-default-reply-email-address-768x428.png 768w, https://help.alveya.io/wp-content/uploads/2026/06/Setting-the-default-reply-email-address-1536x856.png 1536w, https://help.alveya.io/wp-content/uploads/2026/06/Setting-the-default-reply-email-address-2048x1141.png 2048w" sizes="(max-width: 800px) 100vw, 800px" />															
+															<img width="800" height="446" src="https://help.alveya.io/wp-content/uploads/2026/06/Setting-the-default-reply-email-address-1024x571.png" alt="" />															
 		<p><i>💡  You will see four sections on this page: Forwarding Address, BCC Emails, Forward to Assigned User, and Reply Address. This guide focuses on the Reply Address — but it is worth knowing the other options are here too.</i></p>		
 							<h2 
 <p>data-interaction-id="1eae9e0" class="e-heading-base" data-e-type="widget" data-id="1eae9e0" > Setting a Default Reply Address </h2></p>
 		<p>The Reply Address tells Alvéya where to send replies when a client hits Reply on your email. By default, replies come into your Conversations tab. Adding a reply address here overrides that — replies will go to the inbox you specify instead.</p><p><i>⚠️  If you add a reply address, replies from clients will no longer sync back to your Conversations tab automatically. You will need to manage those replies from your external inbox</i></p><p><b>How to add your reply address</b></p>
-<ul>
 <li aria-level="1">On the Reply &amp; Forward Settings page, scroll down to the Reply Address section.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Type the email address you want replies sent to into the field provided.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">You can add up to five addresses if needed — press Enter after each one.</li>
 <li aria-level="1">Click Save.</li>
 <p></ul><p><i>💡 Not sure which email to use here? Most practitioners use their main business inbox (e.g. hello@yourpractice.com) so all client communication lands in one place.</i></p>
 					<h2>Also On This Page: Forwarding Address</h2>				
 		<p>The Forwarding Address is slightly different from the Reply Address — and it is easy to mix them up.</p>
-<ul>
 <li style="font-weight: 400;" aria-level="1"><strong>Reply Address:</strong> changes where client replies are delivered. Use this if you want replies to go to a specific inbox rather than your Conversations tab.</li>
 <li style="font-weight: 400;" aria-level="1"><strong>Forwarding Address:</strong> sends you a copy of the client's reply in addition to it appearing in Conversations. The Conversations tab still receives the reply — you just also get a copy in your inbox.</li>
-<p></ul></p>
 
 <p>To add a forwarding address, enter the email(s) in the Forwarding Address field at the top of the page and click Save. You can add multiple addresses separated by commas.</p><p><i>⚠️  Forwarding only works with Alvéya's built-in email service (LC Email) or Mailgun. If you are using a third-party SMTP provider, forwarding is not supported.</i></p>		
-					<h2>BCC Emails
-<p></h2></p>
+					<h2>BCC Emails</h2>
 		<p>If you want a blind copy of every email sent from your account — not just replies — use the BCC Emails field. This sends a hidden copy of outgoing emails to the address(es) you specify.</p>
-<ul>
 <li style="font-weight: 400;" aria-level="1">BCC applies to one-on-one emails, workflow emails, and billing emails.</li>
 <li style="font-weight: 400;" aria-level="1">It does not apply to bulk campaign emails.</li>
 <p></ul><p><i>💡  BCC is helpful if you have a practice manager or virtual assistant who needs visibility over all client communications without being visible to the client.</i></p>
@@ -170,6 +159,7 @@
 						<h3>Why do the forwarding emails I've added disappear after saving?</h3><p>If email addresses are invalid, or they conflict with a dedicated domain added to your sub-account, they cannot be used as a forwarding address and will not be saved.</p>
 						<h3>Are forwarded emails free?</h3><p>No.  Each forwarded email is billed like a normal outgoing email.</p>
 		<p>The forwarding settings in the Email Services tab do not support forwarding attachments. If a contact replies with an attachment, you must log in to the HighLevel conversation view to access it.</p><p>If email addresses are invalid, or they conflict with a dedicated domain added to your sub-account, they cannot be used as a forwarding address and will not be saved.</p><p>No.  Each forwarded email is billed like a normal outgoing email.</p>
+    ed like a normal outgoing email.</p>
     </div>
 
     <div class="article-feedback">
@@ -195,6 +185,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

@@ -130,17 +130,17 @@
 <li>Check whether the action Send Internal Notification is already included in the workflow. If it is, you are all set.</li>
 <li>If it is not included, click the [+] button to add a new action and select Send Internal Notification.</li>
 <li>Choose how you want to receive the notification:</li>
-<p></ol></p>
+</ol>
 <ul class="wp-block-list">
 <li>Platform Notification — appears as a bell icon alert inside Alvéya</li>
 <li>Email — sends directly to your inbox</li>
-<p></ul></p>
+</ul>
 <ol start="5" class="wp-block-list">
 <li>Write your notification message. You can use personalisation fields to include the student's name or the course they enrolled in.</li>
 <li>Select which team member should receive the notification.</li>
 <li>Click the toggle in the top right corner to Publish your workflow, then click Save.</li>
-<p></ol></p>
 <p><em>💡&nbsp; You can add multiple notification actions to a single workflow — for example, one to notify you via email and another to notify a team member via platform notification.</em></p>
+     via platform notification.</em></p>
     </div>
 
     <div class="article-feedback">
@@ -166,6 +166,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

@@ -138,38 +138,18 @@
 <ul></ul>
 <p></li> </ul></p>
 
-<ul>
-<li style="list-style-type: none;">
-<ul>
 <li><strong>Capture More Leads: </strong>Alvéya forms enable you to collect visitor information directly on your site, making it easier to nurture leads.</li>
 <p></ul> </li> </ul></p>
 
-<ul>
-<li style="list-style-type: none;">
-<ul>
 <li><strong>Cross-Platform Integration: </strong>Use the forms on various website platforms such as SquareSpace, Wix, Shopify and WordPress.</li>
-<p></ul> </li> </ul></p>
 
-<ul>
-<li style="list-style-type: none;">
-<ul>
 <li><strong>Seamless CRM Syncing: </strong>Automatically sync collected data with your Alvéya CRM for streamlined follow-up and automation.</li>
-<p></ul> </li> </ul></p>
 
-<ul>
-<li style="list-style-type: none;">
-<ul>
 <li><strong>Improved Engagement: </strong>Use customizable forms to display targeted messages, promotions, or surveys.</li>
-<p></ul> </li> </ul></p>
 
-<ul>
-<li style="list-style-type: none;">
-<ul>
 <li><strong>Performance Tracking: </strong>Leverage Alvéya’s built-in analytics to monitor and optimize the performance of your forms.</li>
-<p></ul> </li> </ul></p>
 
 
-<hr />
 
 <h2 id="Where-to-Find-the-Embed-Link-in-HighLevel?">Where to Find the Embed Link in Alvéya?</h2>
 
@@ -195,9 +175,7 @@
 
 <p>Your embed link is now ready to be pasted into your website’s code, following the platform-specific instructions outlined below.</p>
 
-<hr />
 
-<h2> </h2>
 <h2> </h2>
 <h2 id="How-to-Embed-HighLevel-Pop-Up-Forms">How to Embed Alvéya Pop-Up Forms</h2>
 
@@ -246,26 +224,14 @@
 <p id="Wix-Website-Builder-Options"><strong>Wix Website Builder Options</strong></p>
 
 <ol>
-<li style="list-style-type: none;">
 <ol></ol>
 <p></li> </ol></p>
-<ol>
-<li style="list-style-type: none;">
-<ol>
 <li>Click the <strong>"+"</strong> button to find the embed option.</li>
 <p></ol> </li> </ol></p>
 
-<ol>
-<li style="list-style-type: none;">
-<ol>
 <li>Click <strong>Embed</strong> option.</li>
-<p></ol> </li> </ol></p>
 
-<ol>
-<li style="list-style-type: none;">
-<ol>
 <li>Select the <strong>Embed a Widget</strong> option.</li>
-<p></ol> </li> </ol></p>
 
 
 <figure><img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155040484664/original/Y6uNfx7-bWPgkTHjD8Sjk3EEleRNldLKmw.png?1737964819" alt="" /></figure>
@@ -280,7 +246,6 @@
 
 <p>Preview the site to confirm the form appears correctly. Once confirmed, publish your Wix website.</p>
 
-<hr />
 
 <figure></figure>
 
@@ -315,6 +280,7 @@
 <p id="Update-and-Test"><strong>Update and Test</strong></p>
 
 <p>Save changes and refresh your website to verify the form appears correctly</p>
+    erify the form appears correctly</p>
     </div>
 
     <div class="article-feedback">
@@ -340,6 +306,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

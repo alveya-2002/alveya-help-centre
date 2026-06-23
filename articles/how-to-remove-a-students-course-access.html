@@ -132,9 +132,10 @@
 <li>Find the student in the list. You can search by name or email address.</li>
 <li>Click the three-dot menu next to the student's name and select Revoke Access.</li>
 <li>Confirm the action when prompted.</li>
-<p></ol></p>
+</ol>
 <p><em>⚠️&nbsp; Revoking access is immediate. The student will no longer be able to log in and view course content. This action can be reversed by re-granting access manually if needed.</em></p>
 <p><em>💡&nbsp; If you want access to be revoked automatically when a subscription ends, see the section below on How to Remove Course Access When a Subscription Is Cancelled — this saves you from needing to do it manually each time.</em></p>
+    o do it manually each time.</em></p>
     </div>
 
     <div class="article-feedback">
@@ -160,6 +161,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

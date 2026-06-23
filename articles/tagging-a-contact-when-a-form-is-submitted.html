@@ -143,11 +143,10 @@
 <p><strong>Option 2 — Tag as the trigger for a larger workflow</strong></p>
 <p>More often, the form submission is just the beginning. The tag you apply is what kicks off an automated workflow — a sequence of emails, delays, or other actions that follow the contact through a specific journey.</p>
 <p>Common examples include:</p>
-<ul>
 <li>Course enrolment — tag triggers a welcome email, then a series of onboarding messages</li>
 <li>Webinar registration — tag triggers a confirmation email, then a reminder the day before, then a replay link email after</li>
 <li>Lead magnet opt-in — tag triggers a delivery email with the freebie, followed by a nurture sequence</li>
-<p></ul></p>
+</ul>
 <p>In each case, the workflow is set up to run "when a tag is added" — and the form is what adds that tag. The form itself does not directly connect to the emails; the tag is the bridge between the two.</p>
 <p><em>⚠️  If you are using this method, make sure the tag name on the form matches exactly the tag name your workflow is listening for. Even a small difference in spacing or capitalisation will mean the workflow does not fire.</em></p>
 <p><strong>Common use cases at a glance</strong></p>
@@ -160,32 +159,22 @@
 <th><strong>Stand-alone or workflow?</strong></th>
 <p></tr> </thead></p>
 <tbody>
-<tr>
 <td><strong>Newsletter sign-up form</strong></td>
 <td>Website sign-up</td>
 <td>Standalone trigger — add the tag and done</td>
 <p></tr></p>
-<tr>
 <td><strong>Free resource / lead magnet</strong></td>
 <td>Downloaded: [Resource Name]</td>
 <td>Standalone or start of a nurture sequence</td>
-<p></tr></p>
-<tr>
 <td><strong>Webinar registration form</strong></td>
 <td>Webinar: [Topic] Registered</td>
 <td>Start of workflow — confirmation email, reminders, replay link</td>
-<p></tr></p>
-<tr>
 <td><strong>Course enrolment form</strong></td>
 <td>Course: [Name] Enrolled</td>
 <td>Start of workflow — welcome email, onboarding steps, module access</td>
-<p></tr></p>
-<tr>
 <td><strong>Opt-in / waitlist form</strong></td>
 <td>Waitlist: [Product Name]</td>
 <td>Start of workflow — nurture emails until launch</td>
-<p></tr></p>
-<tr>
 <td><strong>Discovery call booking form</strong></td>
 <td>Discovery Call Booked</td>
 <td>Standalone or triggers a prep email sequence</td>
@@ -205,14 +194,13 @@
 <p><strong>If you are connecting the tag to a workflow</strong></p>
 <p>Once your tag is set up on the form, head to Automations and open the workflow you want to connect it to (or create a new one).</p>
 <p>Set the workflow trigger to:</p>
-<ul>
 <li>Trigger type: Contact Tag</li>
 <li>Tag: </li>
-<p></ul></p>
 <p>From there, build out the rest of your workflow — confirmation emails, delays, follow-up messages, or any other actions that should follow the form submission. The workflow will fire automatically every time that tag is added to a contact, including from your form.</p>
 <p><em>💡  You can use the same tag in multiple workflows if needed. For example, adding the tag "Webinar: July Registered" could trigger both a confirmation email workflow and add the contact to a specific pipeline stage simultaneously.</em></p>
 <p><strong>You now have a reliable, automatic way to organise your contacts from the moment they raise their hand.</strong></p>
 <p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    t and we will guide you through.</p>
     </div>
 
     <div class="article-feedback">
@@ -238,6 +226,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

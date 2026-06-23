@@ -135,179 +135,76 @@
 <ul>
 <li style="font-weight: 400;" aria-level="1">Block A shows the personalised greeting — but only if the contact has a first name saved.</li>
 <li style="font-weight: 400;" aria-level="1">Block B shows your chosen fallback — but only if the first name field is empty.</li>
-<p></ul></p>
+</ul>
 
 <p>Alvéya checks each contact at send time and shows only the block that applies to them. Neither group ever sees a blank or broken greeting.</p>
 
 <h3><b>Step 1 — Add your personalised greeting block</b></h3>
-<ul>
 <li aria-level="1">Open your email in the Alvéya email builder.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Add a text block where you want your greeting to appear.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Type your personalised greeting, including the name merge field:</li>
-<p></ul></p>
 <p>Hi {{contact.first_name}},</p>
-<ul>
 <li aria-level="1">In the content block&#8217;s sidebar, find and enable the Conditional Sending toggle.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Under Set your conditions, configure the following:</li>
-<p></ul></p>
-<ul>
 <li style="font-weight: 400;" aria-level="1">Custom field: First Name</li>
 <li style="font-weight: 400;" aria-level="1">Condition: Is Not</li>
 <li style="font-weight: 400;" aria-level="1">Value: leave this blank</li>
-<p></ul></p>
 
 <p>This tells Alvéya to show this block only when the First Name field is not empty — i.e. when the contact actually has a name saved.</p>
 <p><br /><br /></p>								
 									<p><i>💡  The Value field being blank is intentional. You are not filtering by a specific word — you are simply checking whether the field has any content at all.</i></p>								
 									<h3><b>Step 2 — Add your fallback greeting block</b></h3>
-<ul>
 <li aria-level="1">Add a second text block directly below (or in the same position as) your first block.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Type your fallback greeting — the one that will show when no name is available:</li>
-<p></ul></p>
 <p>Hi there,</p>
-<ul>
 <li aria-level="1">Enable the Conditional Sending toggle on this block as well.</li>
-<p></ul></p>
-<ul>
-<li aria-level="1">Under Set your conditions, configure the following:</li>
-<p></ul></p>
-<ul>
-<li style="font-weight: 400;" aria-level="1">Custom field: First Name</li>
 <li style="font-weight: 400;" aria-level="1">Condition: Is</li>
-<li style="font-weight: 400;" aria-level="1">Value: leave this blank</li>
-<p></ul></p>
 <h3> </h3>
 <p>This tells Alvéya to show this block only when the First Name field is empty.</p>								
 									<p><i>💡  You can use any fallback text that suits your brand. &#8220;Hello,&#8221;, &#8220;Dear friend,&#8221; or &#8220;Hi lovely,&#8221; all work — just make sure it reads naturally without a name following it.</i></p>								
 									<h3><b>Step 3 — Preview and test</b></h3>
-<ul>
 <li aria-level="1">Use the Preview feature in the email builder to check how your email appears.</li>
-<p></ul></p>
-<ul>
 <li aria-level="1">Test with a contact who has a first name saved, and again with a contact who does not.</li>
 <li aria-level="1">Confirm that each contact sees only the correct greeting block — not both.</li>
-<p></ul></p>
 									<p><i>⚠️  Always preview before sending. If both blocks appear for the same contact, double-check your conditions — one block should use &#8220;Is Not&#8221; (blank) and the other should use &#8220;Is&#8221; (blank).</i></p>
 		<p>The quickest solution does not require Conditional Sending at all. Just write your greeting like this:</p>
-<p>Hey there {{contact.first_name}},</p>
 <p>Here is why it works: if the contact has a first name saved, the email reads "Hey there Sarah," — warm and personal. If the name field is empty, the merge field simply disappears and the email reads "Hey there," — which still sounds natural and intentional.</p>
 <p>No extra blocks. No conditions. Just one line that handles both situations gracefully.</p><p><i>💡  This is the approach we recommend starting with. It is quick, it works, and it reads well for most practitioners. If "Hey there" suits your tone, you are done right here.</i></p><p>If "Hey there" does not suit your tone — or you want to use a completely different greeting for contacts without a name — Conditional Sending gives you that flexibility. It takes a few extra minutes to set up, but lets you choose exactly what each contact sees.</p>
-<h3><b>How it works</b></h3>
-<p>Rather than one greeting line, you create two separate greeting blocks in your email:</p>
-<ul>
-<li style="font-weight: 400;" aria-level="1">Block A shows the personalised greeting — but only if the contact has a first name saved.</li>
-<li style="font-weight: 400;" aria-level="1">Block B shows your chosen fallback — but only if the first name field is empty.</li>
-<p></ul></p>
 
-<p>Alvéya checks each contact at send time and shows only the block that applies to them. Neither group ever sees a blank or broken greeting.</p>
 
-<h3><b>Step 1 — Add your personalised greeting block</b></h3>
-<ul>
-<li aria-level="1">Open your email in the Alvéya email builder.</li>
-<p></ul></p>
-<ul>
-<li aria-level="1">Add a text block where you want your greeting to appear.</li>
-<p></ul></p>
-<ul>
-<li aria-level="1">Type your personalised greeting, including the name merge field:</li>
-<p></ul></p>
-<p>Hi {{contact.first_name}},</p>
-<ul>
 <li aria-level="1">In the content block's sidebar, find and enable the Conditional Sending toggle.</li>
-<p></ul></p>
-<ul>
-<li aria-level="1">Under Set your conditions, configure the following:</li>
-<p></ul></p>
-<ul>
-<li style="font-weight: 400;" aria-level="1">Custom field: First Name</li>
-<li style="font-weight: 400;" aria-level="1">Condition: Is Not</li>
-<li style="font-weight: 400;" aria-level="1">Value: leave this blank</li>
-<p></ul></p>
 
-<p>This tells Alvéya to show this block only when the First Name field is not empty — i.e. when the contact actually has a name saved.</p>
 <p><br /><br /></p><p><i>💡  The Value field being blank is intentional. You are not filtering by a specific word — you are simply checking whether the field has any content at all.</i></p><h3><b>Step 2 — Add your fallback greeting block</b></h3>
-<ul>
-<li aria-level="1">Add a second text block directly below (or in the same position as) your first block.</li>
-<p></ul></p>
-<ul>
-<li aria-level="1">Type your fallback greeting — the one that will show when no name is available:</li>
-<p></ul></p>
-<p>Hi there,</p>
-<ul>
-<li aria-level="1">Enable the Conditional Sending toggle on this block as well.</li>
-<p></ul></p>
-<ul>
-<li aria-level="1">Under Set your conditions, configure the following:</li>
-<p></ul></p>
-<ul>
-<li style="font-weight: 400;" aria-level="1">Custom field: First Name</li>
-<li style="font-weight: 400;" aria-level="1">Condition: Is</li>
-<li style="font-weight: 400;" aria-level="1">Value: leave this blank</li>
-<p></ul></p>
-<h3> </h3>
 <p>This tells Alvéya to show this block only when the First Name field is empty.</p><p><i>💡  You can use any fallback text that suits your brand. "Hello,", "Dear friend," or "Hi lovely," all work — just make sure it reads naturally without a name following it.</i></p><h3><b>Step 3 — Preview and test</b></h3>
-<ul>
-<li aria-level="1">Use the Preview feature in the email builder to check how your email appears.</li>
-<p></ul></p>
-<ul>
-<li aria-level="1">Test with a contact who has a first name saved, and again with a contact who does not.</li>
-<li aria-level="1">Confirm that each contact sees only the correct greeting block — not both.</li>
 <p></ul><p><i>⚠️  Always preview before sending. If both blocks appear for the same contact, double-check your conditions — one block should use "Is Not" (blank) and the other should use "Is" (blank).</i></p>
 					<h2>Things to Keep in Mind</h2>				
-		<ul>
 <li style="font-weight: 400;" aria-level="1">Each content block can only hold one Conditional Sending condition. You cannot stack multiple field conditions within a single block.</li>
 <li style="font-weight: 400;" aria-level="1">This setup applies per email — you will need to configure it in each template or campaign where you want the fallback to work.</li>
 <li style="font-weight: 400;" aria-level="1">Conditional Sending works for any custom field, not just First Name. Use the same approach for Company, Location, or any field that might sometimes be empty.</li>
-<p></ul></p>
-					<h2>Common Questions
-<p></h2></p>
+					<h2>Common Questions</h2>
 		<table>
 <thead>
 <tr>
 <th>
 <p><b>Question</b></p>
 <p></th></p>
-<th>
 <p><b>Answer</b></p>
 <p></th> </tr> </thead></p>
 <tbody>
-<tr>
 <td>
 <p><b>Can I use this for fields other than First Name?</b></p>
 <p></td></p>
-<td>
 <p>Yes — Conditional Sending works for any custom field in Alvéya.</p>
 <p></td> </tr></p>
-<tr>
-<td>
 <p><b>Can I use multiple custom fields in one content block?</b></p>
-<p></td></p>
-<td>
 <p>No — only one custom field condition per content block is supported.</p>
-<p></td> </tr></p>
-<tr>
-<td>
 <p><b>What if I leave the value field blank in my condition?</b></p>
-<p></td></p>
-<td>
 <p>That is intentional. A blank value tells Alvéya to check whether the field itself is empty or not — it is how the logic works.</p>
-<p></td> </tr></p>
-<tr>
-<td>
 <p><b>Can I customise the default greeting text?</b></p>
-<p></td></p>
-<td>
 <p>Yes — use any text that fits your brand. "Hi there,", "Hello Friend," or "Dear Practitioner," all work perfectly.</p>
 <p></td> </tr> </tbody> </table><p><b>Every contact on your list will now receive a greeting that looks intentional — no blank names, no awkward gaps.</b></p>
 <p>If you get stuck at any point, reach out via live chat or submit a support request and we will guide you through.</p>
+    t and we will guide you through.</p>
     </div>
 
     <div class="article-feedback">
@@ -333,6 +230,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

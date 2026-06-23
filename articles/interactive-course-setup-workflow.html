@@ -130,62 +130,54 @@
             <li>Privacy policy link</li>
             <li>Thank you page</li>
 <p></ul> course-lead › <!-- Step 2 --> 2 Instant Delivery</p>
-          <ul>
             <li>Confirmation email</li>
             <li>Freebie delivery email</li>
             <li>Download link / redirect</li>
 <p></ul> Triggered by: form submit › <!-- Step 3 --> 3 Nurture Sequence</p>
-          <ul>
             <li>Email 1: Value + intro</li>
             <li>Email 2: Problem-aware</li>
             <li>Email 3: Tease the course</li>
             <li>Email 4: Social proof</li>
             <li>Email 5: Sales page CTA</li>
 <p></ul> 7–14 day sequence › <!-- Step 4 --> 4 Sales Page</p>
-          <ul>
             <li>Hero + problem block</li>
             <li>Course overview</li>
             <li>Proof + credibility</li>
             <li>Pricing + CTA</li>
             <li>Objection handling</li>
 <p></ul> › <!-- Step 5 --> 5 Checkout</p>
-          <ul>
             <li>GHL order form</li>
             <li>Stripe connected</li>
             <li>One-time or plan</li>
             <li>Order bump (optional)</li>
             <li>T&Cs link</li>
 <p></ul> › <!-- Step 6 --> 6 Purchase Trigger</p>
-          <ul>
             <li>Workflow fires</li>
             <li>Add tags</li>
             <li>Grant access</li>
             <li>Send emails</li>
             <li>Update pipeline</li>
 <p></ul> course-purchased course-active › <!-- Step 7 --> 7 Course Access</p>
-          <ul>
             <li>GHL membership portal</li>
             <li>Modules + lessons live</li>
             <li>Login details sent</li>
             <li>Drip schedule (if set)</li>
 <p></ul> › <!-- Step 8 --> 8 Onboarding Sequence</p>
-          <ul>
             <li>Email 1: Welcome + login</li>
             <li>Email 2: Quick win tip</li>
             <li>Email 3: Check-in</li>
 <p></ul> Days 0, 2, 5 › <!-- Step 9 --> 9 Active Member</p>
-          <ul>
             <li>Course in progress</li>
             <li>Re-engagement if stalled</li>
             <li>Community access (if on)</li>
             <li>Progress tracked</li>
 <p></ul> course-active › <!-- Step 10 --> 10 Completion</p>
-          <ul>
             <li>Completion trigger fires</li>
             <li>Congrats email</li>
             <li>Next offer CTA</li>
             <li>Update pipeline stage</li>
 <p></ul> course-completed <!-- ===================== BRANCH FLOWS ===================== --> Branch Workflows Triggered automations you can set up for every scenario outside the happy path <!-- PAYMENT FAILURE --> ⚠ Payment Failure ⚡ Trigger: Subscription Payment Status: Failed Recurring charge declined 🏷 Add tag course-payment-failed ✉ Email 1 (immediate) Friendly notice + update payment link ✉ Email 2 (48hrs) Second notice, increased urgency ✉ Email 3 (96hrs) Final notice before access paused 🚫 Access revoked Remove from membership offer <!-- PAYMENT RECOVERY --> ✓ Payment Recovery ⚡ Trigger: Payment updated / successful retry Stripe payment succeeds after failure 📋 Action: Remove from workflow Filter: Payment failed workflow 🏷 Remove failed tag course-payment-failed removed ✅ Restore access Re-add to membership offer ✉ Confirmation email sent "You're back in — pick up where you left off" 📋 Pipeline updated Return to Active stage <!-- CANCELLATION --> ✕ Cancellation ⚡ Trigger: Subscription cancelled Manual or auto via Stripe 🏷 Tag update Remove course-active<br/>Add course-cancelled 🚫 Remove from membership offer Access revoked immediately ✉ Cancellation confirmation email Warm close, door left open 📋 Pipeline moved to Churned Internal note added to contact <!-- REFUND / CHARGEBACK --> ↩ Refund / Chargeback ⚡ Trigger: Refund issued or dispute opened Via Stripe or manually 🚫 Access revoked immediately Remove from membership offer 🏷 Tag update Remove active, add course-cancelled 📝 Internal note added Flag contact for manual review ✉ Refund confirmation email Professional, no-burn-bridges tone <!-- COMPLETION + UPSELL --> 🎓 Completion + Upsell ⚡ Trigger: Course completed All modules marked complete 🏷 Add tag course-completed ✉ Congratulations email Celebrate the win + next step 📋 Pipeline → Completed stage 💼 Upsell sequence triggers (2–3 emails) Logical next offer introduced <!-- RE-ENGAGEMENT --> ↻ Re-engagement ⚡ Trigger: No login activity for X days Or stalled at specific module ✉ Re-engagement email "You've got X modules left — here's why it matters" ✉ Follow-up nudge (if no action) Targeted to where they dropped off 📝 Internal note if still no activity Flag for manual personal outreach <!-- ===================== CRM & TAG REFERENCE ===================== --> CRM Tag Map Every tag used in this funnel and when it is applied or removed Applied on opt-in course-lead Applied when form submitted. Triggers freebie delivery + nurture sequence. Applied on purchase course-purchased course-active Applied together on successful payment. Triggers access grant + onboarding. Applied on payment failure course-payment-failed Applied when Stripe payment fails. Triggers 3-email dunning sequence. Applied on cancellation course-cancelled Applied on cancel or refund. course-active removed simultaneously. Applied on completion course-completed Applied when all modules marked complete. Triggers completion email + upsell sequence. Removed on recovery course-payment-failed → removed Removed when payment recovers. Access restored and confirmation email sent. <!-- ===================== PIPELINE STAGES ===================== --> Pipeline Stage Map Contact movement through the GHL pipeline Lead Opted in › Nurture In sequence › Sales Page Visit Considering › Purchased Payment taken › Active In course › Completed Finished course ↘ Churned Cancelled / refunded </body> </html></p>
+    elled / refunded </body> </html></p>
     </div>
 
     <div class="article-feedback">
@@ -211,6 +203,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

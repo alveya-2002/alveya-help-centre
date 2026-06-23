@@ -468,6 +468,88 @@ a { text-decoration: none; color: inherit; }
   color: rgba(255,255,255,0.35);
 }
 
+/* ── Accordion / FAQ ───────────────────────────────────────── */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 0 24px;
+}
+
+.faq-item {
+  border: 1.5px solid var(--sage-100);
+  border-radius: var(--radius-md);
+  background: #fff;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.faq-item.open {
+  border-color: var(--sage-200);
+  box-shadow: 0 2px 12px rgba(7,99,110,0.07);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--sage-800);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+  line-height: 1.45;
+}
+
+.faq-question:hover { background: var(--sage-50); }
+.faq-item.open .faq-question { background: var(--sage-50); color: var(--sage-600); }
+
+.faq-chevron {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--sage-400);
+  transition: transform 0.25s cubic-bezier(0.34,1.2,0.64,1);
+}
+
+.faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--sage-600); }
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease;
+}
+
+.faq-item.open .faq-answer { grid-template-rows: 1fr; }
+
+.faq-answer-inner {
+  overflow: hidden;
+  padding: 0 20px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.faq-item.open .faq-answer-inner { padding: 4px 20px 20px; }
+
+.faq-answer-inner p:last-child { margin-bottom: 0; }
+.faq-answer-inner img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 12px 0;
+  border: 1px solid var(--sage-100);
+}
+.faq-answer-inner ul,
+.faq-answer-inner ol { padding-left: 20px; margin-bottom: 12px; }
+.faq-answer-inner li { margin-bottom: 4px; }
+
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 600px) {
   .hero { padding: 56px 20px 52px; }

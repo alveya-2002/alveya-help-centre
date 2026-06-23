@@ -133,23 +133,21 @@
 <li>Choose to add immediately, schedule, or use drip mode.</li>
 <p></ol> </li></p>
 <li><strong>From Inside the Contact Profile:</strong>
-<ol class="wp-block-list">
 <li>Open the specific contact record.</li>
 <li>Scroll to the <strong>"Campaigns and Workflows"</strong> section.</li>
 <li>Click <strong>"Add"</strong> under active workflows and select the workflow.</li>
-<p></ol> </li></p>
 <li><strong>Within the Workflow Builder (Testing):</strong>
-<ol class="wp-block-list">
 <li>Go to <strong>Automation</strong> and select your workflow.</li>
 <li>Click <strong>"Test Workflow"</strong>.</li>
 <li>Select the contact to run through the workflow. </li>
 <p></ol> </li> </ul></p>
 <p>Key Tips</p>
-<ul class="wp-block-list">
 <li><strong>Ensure Published:</strong> The workflow must be in "Published" mode to add contacts manually.</li>
 <li><strong>Remove Contacts:</strong> To remove someone, go to the contact record and click the remove option under "Campaigns and Workflows" or use the enrollment history inside the workflow.</li>
 <li><strong>Action Name:</strong> You can name the action to track it later in the Bulk Actions log</li>
-<p></ul></p>
+</ul>
+    r in the Bulk Actions log</li>
+</ul>
     </div>
 
     <div class="article-feedback">
@@ -175,6 +173,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');

@@ -157,54 +157,40 @@
 <p><img draggable="false" role="img" alt="👉" src="https://s.w.org/images/core/emoji/16.0.1/svg/1f449.svg"> <em>Tip: Double-check spelling here — these details appear everywhere clients interact with your brand.</em></p>
 
 
-<hr>
 
-<h2>&nbsp;</h2>
 <h2>Step 3: Add Your Logo</h2>
 
-<ol>
 <li>Under <strong>Branding</strong>, upload your logo file.<br><br>
-<ul>
 <li>Recommended format: PNG with transparent background.</li>
 
 <li>Recommended size: at least 500px wide.</li>
-</ul>
 </li>
 
 <li>Save your changes.</li>
-</ol>
 
 <p>This logo will appear in your client portal and on outgoing messages.</p><p><br></p>
 
-<hr>
 
-<h2>&nbsp;</h2>
 <h2>Step 4: Save &amp; Test</h2>
 
-<ol>
 <li>Click <strong>Save Changes</strong>.</li>
 
 <li>Send yourself a test email to confirm that your business name and logo display correctly.</li></ol><br><ol>
-</ol>
 
-<hr>
 
-<h2>&nbsp;</h2>
 <h2>Next Steps</h2>
 
 <p>Now that your business details are set up, you’re ready to:</p>
 
-<ul>
 <li>Connect Your Domain</li>
 
 <li>Set Up Email &amp; SMS</li>
-</ul>
 
 
-<hr>
 
 
 <h6><img draggable="false" role="img" alt="✨" src="https://s.w.org/images/core/emoji/16.0.1/svg/2728.svg"> That’s it — your business information is now saved and ready to go across your entire Alvéya™ account.</h6>
+    ss your entire Alvéya™ account.</h6>
     </div>
 
     <div class="article-feedback">
@@ -230,6 +216,18 @@
     </div>
   </footer>
 
+
+  <script>
+    // Accordion / FAQ
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.closest('.faq-accordion').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
   <script>
     const btnYes = document.getElementById('btn-yes');
     const btnNo  = document.getElementById('btn-no');
